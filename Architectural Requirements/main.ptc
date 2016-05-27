@@ -1,0 +1,313 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Vision}{7}{chapter.1}
+\ttl@starttoc {default@1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Background}{8}{chapter.2}
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Architecture Requirements}{9}{chapter.3}
+\ttl@stoptoc {default@2}
+\ttl@starttoc {default@3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Architectural Scope}{9}{section.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Access Channel Requirements}{9}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Human Access Channels}{9}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}System Access Channels}{9}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Quality Requirements}{9}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}Performance}{9}{subsection.3.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Reliability}{9}{subsection.3.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.3}Scalability}{9}{subsection.3.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.4}Security}{9}{subsection.3.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.5}Flexibility}{9}{subsection.3.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.6}Maintainability}{9}{subsection.3.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.7}Auditability/Monitorability}{9}{subsection.3.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.8}Integrability}{9}{subsection.3.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.9}Cost}{9}{subsection.3.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.10}Usability}{9}{subsection.3.3.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Integration Requirements}{9}{section.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.5}Architecture Constraints}{9}{section.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5.1}Architectural Patterns}{9}{subsection.3.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Architectural Tactics or Strategies}{10}{chapter.4}
+\ttl@stoptoc {default@3}
+\ttl@starttoc {default@4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Software Engineering Context : Architectural Tactics}{10}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Performance Tactics}{10}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.1}Three Groups of Performance Tactics}{10}{subsection.4.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2.2}System Context}{10}{subsection.4.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Reliability Tactics}{10}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3.1}System Context}{10}{subsection.4.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Scalability Tactics}{10}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4.1}System Context}{10}{subsection.4.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Security Tactics}{10}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5.1}System Context}{11}{subsection.4.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Flexibility Tactics}{11}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6.1}System Context}{11}{subsection.4.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.7}Maintainability Tactics}{12}{section.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7.1}System Context}{12}{subsection.4.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.8}Auditability Tactics}{12}{section.4.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.8.1}System Context}{12}{subsection.4.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.9}Integrability and Extensibility Tactics}{12}{section.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.9.1}System Context}{13}{subsection.4.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.10}Cost Tactics}{13}{section.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.1}System Context}{13}{subsection.4.10.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.2}Usability Tactics}{13}{subsection.4.10.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.10.3}System Context}{13}{subsection.4.10.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Reference Architectures and Frameworks}{14}{chapter.5}
+\ttl@stoptoc {default@4}
+\ttl@starttoc {default@5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Backend System}{14}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}Programming Languages}{14}{subsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}Frameworks}{15}{subsection.5.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}Database System}{16}{subsection.5.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.4}Operating System}{16}{subsection.5.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.5}Dependency Management and Build Tools}{16}{subsection.5.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Web Interface}{16}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Programming Languages}{16}{subsection.5.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Frameworks}{17}{subsection.5.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.3}Libraries}{17}{subsection.5.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.4}Database System}{17}{subsection.5.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.5}Operating System}{18}{subsection.5.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.6}Dependency Management and Build Tools}{18}{subsection.5.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Android Client}{18}{section.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.1}Programming Languages}{18}{subsection.5.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.2}Frameworks}{18}{subsection.5.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.3}Libraries}{19}{subsection.5.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.4}Database System}{19}{subsection.5.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.5}Operating System}{19}{subsection.5.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3.6}Dependency Management and Build Tools}{19}{subsection.5.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Access and Integration Channels}{20}{chapter.6}
+\ttl@stoptoc {default@5}
+\ttl@starttoc {default@6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}Access Channels}{20}{section.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}Integration Channels}{21}{section.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Technologies}{22}{chapter.7}
+\ttl@stoptoc {default@6}
+\ttl@starttoc {default@7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Backend System}{22}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.1}Programming Languages}{22}{subsection.7.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.2}Runtime Environment}{22}{subsection.7.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.3}Frameworks}{22}{subsection.7.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.4}Database System}{22}{subsection.7.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.5}Server}{22}{subsection.7.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1.6}Dependency Management and Test Tools}{22}{subsection.7.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Web Interface}{23}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}Programming Languages}{23}{subsection.7.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}Frameworks}{23}{subsection.7.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.3}Database System}{23}{subsection.7.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.4}Browser Compatibility}{23}{subsection.7.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.5}Dependency Management and Test Tools}{23}{subsection.7.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.3}Android and iOS Client}{23}{section.7.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.1}Programming Languages}{23}{subsection.7.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.2}Frameworks}{23}{subsection.7.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.3}Database System}{24}{subsection.7.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.4}Operating System}{24}{subsection.7.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.3.5}Dependency Management and Test Tools}{24}{subsection.7.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Functional Requirements}{25}{chapter.8}
+\ttl@stoptoc {default@7}
+\ttl@starttoc {default@8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}Use Case Prioritization}{25}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}Critical}{25}{subsection.8.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.2}Important}{25}{subsection.8.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.3}Nice to have}{26}{subsection.8.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}Use Cases}{26}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.1}Login User}{26}{subsection.8.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.2}Logout User}{26}{subsection.8.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.3}Change Password}{26}{subsection.8.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.4}Recover Password}{26}{subsection.8.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.5}Create Farmer}{27}{subsection.8.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.6}View Farmer}{27}{subsection.8.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.7}Edit Farmer}{27}{subsection.8.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.8}Create Farm}{27}{subsection.8.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.9}View Farm}{28}{subsection.8.2.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.10}Edit Farm}{28}{subsection.8.2.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.11}Create Foreman}{28}{subsection.8.2.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.12}View Foreman}{28}{subsection.8.2.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.13}Edit Foreman}{28}{subsection.8.2.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.14}Create Worker}{29}{subsection.8.2.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.15}View Worker}{29}{subsection.8.2.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.16}Edit Worker}{29}{subsection.8.2.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.17}Demarcate Orchard Blocks using Coordinates}{29}{subsection.8.2.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.18}View Demarcated Orchard Blocks}{30}{subsection.8.2.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.19}Edit Demarcated Orchard Blocks }{30}{subsection.8.2.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.20}Create Irrigation Type}{30}{subsection.8.2.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.21}View Irrigation Type}{30}{subsection.8.2.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.22}Edit Irrigation Type}{30}{subsection.8.2.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.23}Create Crop Type}{31}{subsection.8.2.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.24}View Crop Type}{31}{subsection.8.2.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.25}Edit Crop Type}{31}{subsection.8.2.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.26}View Worker Performance}{31}{subsection.8.2.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.27}Update Worker Performance}{32}{subsection.8.2.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.28}Create Yield Measurement Type}{32}{subsection.8.2.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.29}View Yield Measurement Type}{32}{subsection.8.2.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.30}Edit Yield Measurement Type}{32}{subsection.8.2.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.31}Create Cultivation Method}{32}{subsection.8.2.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.32}View Cultivation Method}{33}{subsection.8.2.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.33}Edit Cultivation Method}{33}{subsection.8.2.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.34}Allocate Foreman to Orchard Block}{33}{subsection.8.2.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.35}Deallocate Foreman from Orchard Block}{33}{subsection.8.2.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.36}Assign Cultivation Method to Orchard Block}{34}{subsection.8.2.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.37}Reassign Cultivation Method to Orchard Block}{34}{subsection.8.2.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.38}Assign Workers to Foreman}{34}{subsection.8.2.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.39}Reassign Workers to Foreman}{34}{subsection.8.2.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.40}Import Census Data}{34}{subsection.8.2.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.41}Generate Statistical Report of Worker Performance (according to time intervals)}{35}{subsection.8.2.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.42}Generate Statistical Report of Crop Yield per Orchard}{35}{subsection.8.2.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.43}View Heat Map}{35}{subsection.8.2.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.44}Create Foreman’s Shift}{35}{subsection.8.2.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.45}View Foreman’s Shift}{36}{subsection.8.2.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.46}Edit Foreman’s Shift}{36}{subsection.8.2.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.47}Notify Farmer Regarding Foreman’s Locations (according to time intervals)}{36}{subsection.8.2.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.48}Notify Farmer of Foreman’s Activity History Every Half an Hour}{36}{subsection.8.2.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.49}Generate Revenue Report Regarding Seasonal Yields}{37}{subsection.8.2.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2.50}Generate Statistical Report Regarding Time Taken to Yield Specific Crops}{37}{subsection.8.2.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}Open Issues}{38}{chapter.9}
+\ttl@stoptoc {default@8}
+\ttl@starttoc {default@9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}Database Issues}{38}{section.9.1}
+\contentsfinish 

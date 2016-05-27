@@ -171,7 +171,14 @@
 		Access to database queries will be limited according to the aforementioned user hierarchy. The farmer will have direct access to view and modify the database whereas the foremen will only be able to make additions to the database regarding worker performance.			
 	\end{itemize}
 	\section{Flexibility Tactics}
+	Flexibility refers to the ability to respond to changes whether internally or externally and how the software reacts to the changes. It also describes how much changes need to be made in order to adapt to the changes.
 	\subsection{System Context}
+	\begin{itemize}
+		\item When the mobile app is adapted to run on other platforms the system must not be changed to much and easily plug into the new platform.
+		\item When a different database is chosen the system must not notice that the database is changed.
+		\item When farmers from different industries start to use the service, they only need to update the system to be aware of their specific specifications for yields and other data, with minimal effort.
+		\item Changes to the internal structure of the system should be adapted for with minimal effort.
+	\end{itemize}
 	\section{Maintainability Tactics}
 	Maintainability refers to modifying the existing system to make improvements or fix bugs without jeopardizing the data integrity and functionality. The need for maintainability is usually based on the following factors: changes in the software environment, new user requirements, bug and error fixes and the requirement of preventative measures for future problems.
 	\subsection{System Context}
@@ -188,8 +195,15 @@
 	\end{itemize}
 	
 	\section{Auditability Tactics}
+	Refers to information about the performance of the system , and to provide a log of which user provided which input at which point in time.
 	\subsection{System Context}
-	
+	\begin{itemize}
+		\item Any errors thrown by the system or fatal errors made by users should be logged for security and reliability analyses.
+		\item Any attacks aimed at the system should be logged if possible
+		\item Data in the database should be consistent and that will be achieved by constraints put in place and validation of user input.
+		\item Data in the database should never be deleted, if the user deletes data, the data will be moved to another database so that data can be recovered.
+		\item Regular data backups need to be made.
+	\end{itemize}
 	\section{Integrability and Extensibility Tactics}
 	Integrability refers to testing whether separately developed components work together correctly. Extensibility evaluation is focused on how the addition of new features can take place without losing existing features.
 	\subsection{System Context}
@@ -235,25 +249,215 @@
 	
 	\section{Backend System}
 	\subsection{Programming Languages}
+	\begin{itemize}
+		\item Javascript:
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Javascript is a dynamic scripting language that supports procedural or object orientated programming through use of prototypes. Javascript is the main language on which Node.js packages are written in.
+			\item \textbf{Performance}\\
+			Because of the fact that Javascript is a lightweight scripting language it is fairly fast and mainly depends on the performance of the javascript interpreter or runtime environment.
+			\item \textbf{Flexibility}\\
+			Javascript is a scripting language which means that javascript can run on anything that can interpret the javascript scripts.
+			\item \textbf{Usability}\\
+			Javascript can be used at the client side along with web development or it can be used on node.js to create a web server.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Frameworks}
-	\subsection{Libraries}
+	\begin{itemize}
+		\item Node.js
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Node.js is in fact not a framework but rather a runtime environment for Javascript that enables you to create web servers by only using Javascript. Node.js is built on Google’s V8 Javascript Engine which is a very high performance Javascript interpreter built into Google Chrome and written in C++.
+			\item \textbf{Performance}\\
+			Node.js uses an event driven non I/O blocking model that means that no blocking will occur on the server and waiting for real time updates from a lot of connected clients will not tax the server and reduce it’s performance. This means a lot for the real time nature of our project.
+			\item \textbf{Scalability}\\
+			Because Node.js responds to events instead of waiting on requests like other platforms such as JavaEE typically does the server can easily be scaled to handle a huge amount of client requests. The fact that Node.js runs on an asynchronous model means that many concurrent requests will not result in long waiting times for a response.
+			\item \textbf{Security}\\
+			Node.js has been built with security in mind and is still actively being improved on the security front.
+			\item \textbf{Flexibility}\\
+			Node.js relies on packages to be added, this means that virtually anything can be achieved by including a package from the huge variety of packages available from \textbf{Node Package Manager}.	
+		\end{itemize}
+		\item Express.js
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Express.js is a minimal web application framework for Node.js. It supports single page, multi page and hybrid page web and mobile applications and is the de facto framework to use for Node.js based web servers.
+			\item \textbf{Performance}\\
+			Express.js is very minimal and therefore does not affect the performance of Node.js much.
+		\end{itemize}
+		\item Sails.js
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Sails.js is a MVC style framework that runs on top of Express.js. It is built to enable rapid development of server side web applications and works very well for applications that needs real time functionality.
+			\item \textbf{Flexibility}\\
+			Sails.js does not depend on any type of front end. It also supports any database and can support many different databases in the same project. Any database that is not supported can still be used through adapters.
+			\item \textbf{Maintainability}\\
+			Sails.js is designed to be coded once and just work. Therefore it is coded once and forgotten very little maintenance is needed.
+			\item \textbf{Usability}\\
+			Sails.js is built from the start to be very easy to use and set up. It can also create RESTful api’s for you project
+		\end{itemize}
+	\end{itemize}
 	\subsection{Database System}
+	\begin{itemize}
+		\item Neo4j
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Neo4j is a popular graph database that is an ACID compliant transactional database. The database management system uses Cypher Query Language or in short CQL
+			\item \textbf{Performance}\\
+			Because of the graph nature of  Neo4j there is no need to iteratively traverse a linear list of indexes to find an entry, this means read and write performance of Neo4j is very fast.
+			\item \textbf{Scalability}\\
+			The so called index-free adjacency property of a graph means that the time it takes to get the relationships between entries stays constant as the database size increases as opposed to relational databases where the time takes longer as the database enlarges.
+			\item \textbf{Usability}\\
+			According to the developers of Neo4j it is very easy to learn and use.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Operating System}
+	\begin{itemize}
+		\item Linux
+	\end{itemize}
 	\subsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item NPM
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Node package manager is not only used to install new packages into the local Node repository, but it also has the added feature of managing dependencies on packages within your project.
+		\end{itemize}
+	\end{itemize}
 	\section{Web Interface}
 	\subsection{Programming Languages}
+	\begin{itemize}
+		\item Javascript
+		\item HTML5
+		\begin{itemize}
+			\item \textbf{Description}\\
+			HTML5 is the 5th iteration of Hyper Text Transfer Protocol. HTML is a markup language used mainly in websites to markup text into something more interesting that plain text.
+			\item \textbf{Usability}\\
+			HTML5 is mainly used for web pages but can also be used to design an interface in hybrid mobile apps.
+		\end{itemize}
+		\item CSS3
+		\begin{itemize}
+			\item \textbf{Description}\\
+			CSS3 is the third iteration of Cascading Style Sheet. CSS itself is also a markup language. CSS is used in conjunction with HTML to mark up web pages.
+			\item \textbf{Usability}\\
+			CSS is used to stylise HTML text to make it more visually appealing. It can be used to color text, define spacing define image sizing and much more.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Frameworks}
+	\begin{itemize}
+		\item Sails.js
+		\item AngularJs
+		\begin{itemize}
+			\item \textbf{Description}\\
+			AngularJS is a Javascript framework that extends HTML5. It extends HTML DOM and makes it more responsive.
+			\item \textbf{Flexibility}\\
+			AngularJS most suited for application development where single page applications are mostly used. But AngularJS also works well to make normal web pages responsive. Angular is usability test ready and is linked together by Dependency Injection.
+			\item \textbf{Usability}\\
+			AngularJS makes it very easy to implement MVC by asking the programmer to split the project into the components and then Angular will handle the rest.
+		\end{itemize}
+		\item Bootstrap
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Bootstrap is a mobile-first front-end framework for websites and webapps that mainly aids in layout design of web projects.
+			\item \textbf{Flexibility}\\
+			Bootstrap makes websites responsive to screen sizes and automatically switches to a more mobile friendly layout when screen sizes reach a certain size. This makes it possible to code the website once for different screen sizes.
+			\item \textbf{Usability}\\
+			Bootstrap can be used for normal full sized websites or for sites intended for mobile devices or even for websites meant to be viewed on both screens. Bootstrap also works brilliantly for managing the layout in hybrid apps.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Libraries}
+	\begin{itemize}
+		\item Google Maps API
+		\begin{itemize}
+			\item \textbf{Description}\\
+			There was no other place to put this but under frameworks, even though it is not a framework but rather an Application Programming Interface. Google Maps API is a service from Google that enables developers to embed google maps into their websites and perform operations on the embedded map.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Database System}
+	\begin{itemize}
+		\item Neo4j
+		\item Cookies
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Cookies are a temporary method of local storage mainly used to remember user logins or user preferences on websites
+		\end{itemize}
+		\item HTML5 Local Storage
+		\begin{itemize}
+			\item \textbf{Description}\\
+			HTML5 Local Storage is a way for websites to store data on the client in a sandbox so that the stored data is only accessible by the browser that controls the sandbox.
+			\item \textbf{Security}\\
+			The sandbox makes sure no malicious data will make it through to any important places on the computer
+			\item \textbf{Usability}\\
+			There exists some local databases that take advantage of HTML5 Local Storage to make a type of offline database that can be used to store data that needs to be synced with a web database at a later stage.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Operating System}
+	\begin{itemize}
+		\item Device Operating System Independent
+		\item Web Browser
+		\begin{itemize}
+			\item Google Chrome
+			\item Mozilla Firefox
+			\item Microsoft Internet Explorer 8,9 \& 10
+			\item Microsoft Edge
+			\item Apple Safari
+		\end{itemize}
+	\end{itemize}
 	\subsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Unit.js
+		\item Dagger
+	\end{itemize}
 	\section{Android Client}
 	\subsection{Programming Languages}
+	\begin{itemize}
+		\item Javascript
+		\item HTML5
+		\item CSS
+	\end{itemize}
 	\subsection{Frameworks}
+	\begin{itemize}
+		\item Sails.js
+		\item AngularJS
+		\item Bootstrap
+		\item Phonegap
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Phonegap is a framework that lets developers take any ordinary web development skills and make mobile apps with that knowledge.
+			\item \textbf{Usability}\\
+			Developers code the app in any website and the framework will convert the website into an app, it does this by running the website in some sort of implicit “web browser”.
+			\item \textbf{Flexibility}\\
+			The framework has support for plugins that makes more native operations possible for the hybrid app, such as being able to use the camera to take photos or use that accelerometer to take certain measurements.
+		\end{itemize}
+		\item Ionic
+		\begin{itemize}
+			\item \textbf{Description}\\
+			Ionic is a hybrid mobile app development framework that includes HTML, CSS and Javascript to create native looking hybrid mobile apps.
+			\item \textbf{Flexibility}\\
+			Ionic is built on top of AngularJS and Phonegap to create powerful yet native hybrid apps. It is native focused which means that Ionic follows the native platform designs to build apps that look like it’s been natively developed for the platform on which the hybrid app runs.
+			\item \textbf{Performance}\\
+			Ionic is optimized to be fast so that your hybrid app is fast and not slow as a website.
+			\item \textbf{Usability}\\
+			According to the Ionic website it is easy to learn if you already know web development. On top of that you also learn AngularJS as you learn Ionic.
+		\end{itemize}
+	\end{itemize}
 	\subsection{Libraries}
+	\begin{itemize}
+		\item Google Maps API
+	\end{itemize}			
 	\subsection{Database System}
+	\begin{itemize}
+		\item HTML5 Local Storage
+		\item Neo4j
+	\end{itemize}
 	\subsection{Operating System}
-	\subsection{Dependency Management and Build Tools}	
+	\begin{itemize}
+		\item Android 4.0 (Ice cream sandwich) and up.
+		\item iOS 7 and up
+	\end{itemize}
+	\subsection{Dependency Management and Build Tools}
+	\begin{itemize}
+		\item Unit.js
+		\item Dagger
+	\end{itemize}
 	
 	
 	%----------------------------------------------------------------------------------------
@@ -1184,6 +1388,10 @@
 	
 	\chapter{Open Issues}
 	
-	\section{I am the first Open Issue}
+	\section{Database Issues}
+	\begin{itemize}
+		\item We are not exactly sure how we are going to design our database and store data. We do not yet know if we need relationships or not
+		\item We have not yet decided on a proper local database that takes advantage of HTML5 Local Storage.
+	\end{itemize}
 	
 \end{document}
