@@ -83,12 +83,12 @@
 	\chapterimage{mangoes.png} % Chapter heading image
 	
 	\chapter{Vision}
-		The client, Subtrop, has requested that we implement a system to keep track of the crop yields of farms registered with them. The scope of the system entails managing the administration involved in the tracking of yields and the performance of the farm workers. Currently, this is done by manual tracking on a paper-based system. The system is required to keep track of all yield data and the associated farm’s metadata.\newline
-		The current paper-based system consists of various farmers, their farms, the foreman they have appointed, their workers that work under the foreman and the different Subtrop crop type associations. Farms are divided into orchard blocks with each block having one crop type associated with it. Workers are paid according to their performance and, thus, this data has to be recorded. These two factors provide the potential for statistical data reports, which could aid farmers in strategic decision-making.\newline
+		The client, Subtrop, has requested that we implement a system to keep track of the crop yields of farms registered with them. The scope of the system entails managing the administration involved in the tracking of yields and the performance of the farm workers. Currently, this is done by manual tracking on a paper-based system. The system is required to keep track of all yield data and the associated farm’s metadata.\newline\newline
+		The current paper-based system consists of various farmers, their farms, the foreman they have appointed, their workers that work under the foreman and the different Subtrop crop type associations. Farms are divided into orchard blocks with each block having one crop type associated with it. Workers are paid according to their performance and, thus, this data has to be recorded. These two factors provide the potential for statistical data reports, which could aid farmers in strategic decision-making.\newline\newline
 		The most fundamental requirements that the client would like the system to fulfil are:
 	\begin{itemize}
-	\itemKeeping track of yield data in order to see which orchards are successful
-	\itemKeeping track of worker performance in order to ensure that they are working to their full potential
+		\item Keeping track of yield data in order to see which orchards are successful
+		\item Keeping track of worker performance in order to ensure that they are working to their full potential
 	\end{itemize}
 
 	
@@ -241,6 +241,9 @@
 	\chapter{Access and Integration Channels}
 	
 	\section{Access Channels}
+	
+	The farmers will be able to access the system through both a Web interface, specifically designed for the farmer, and a Mobile interface with underlying web-services. The foremen will only have access to the Mobile interface. The Web interface will be accessible by navigating to the URL of the web page within the preferred web browser of the farmer. The Mobile interface will be accessible by downloading the application from the Google Play Store or the Apple AppStore and installing it on their device. Both interfaces will make use of cookies and session ID’s in order to keep the user logged in to the system to facilitate ease of use.
+	
 	\section{Integration Channels}
 	The entire system will be implemented using a client-server architecture due to the dynamic message-passing nature of the application. However, the frameworks that we will be using to implement the required functionality are based on the Model-View-Controller architecture. Thus, it will be the effective integration of these frameworks MVC-based functionality working collaboratively as a client-server architecture. The entire system will be coded using JavaScript as it is a dynamic, versatile language that has a lot of support. This also ensures that integration between the back-end and front-end system won’t cause any serious complications. Libraries and frameworks will also be used to adapt JavaScript to be able to run on a mobile environment.\newline\newline
 	Node.js will handle the server-side communication for the system as it handles real-time data transfer quickly and efficiently regardless of scalability. Express.js will be the primary web server framework to integrate with Node.js in order to handle the message-passing. Sails.js will be a fundamental framework implemented on both the front-end and back-end of the system as it offers a multitude of functionalities and primarily integrates with Node.js. The Angular.js framework will be used collaboratively with HTML5 and JavaScript to provide the required functionality. CSS3 and the Bootstrap framework will be used to handle the styling of the front-end. AJAX will potentially be used to handle the passing of any data that cannot be handled by the other abovementioned frameworks. The Google Maps JavaScript API Heatmap Layer will be incorporated into the system in order to generate the heatmap functionality that the system requires. PhoneGap and Ionic will be used together to adapt the Web interface code to run on an Android  and iOS platform.\newline\newline
