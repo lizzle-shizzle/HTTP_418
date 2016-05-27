@@ -117,26 +117,153 @@
 	\chapter{Architecture Requirements}
 	
 	\section{Architectural Scope}
+		We at HTTP_418 have taken a philosophy of quality work. Therefore we have decided to create an application that is centralised around a few core ideas. This ideology will drive us to create an application for Subtrop as best as we can.\newline
+		We will work in a persistence framework because we recognise our client’s need to have accurate, reliable data on hand when necessary. Our framework relies on databases, with integration for any database, meaning that if we wish to switch from a SQL to a NoSQL database, we will be able to do so. Alongside this, our design will incorporate security with regards to accessing the data stored. We will also be making use of techniques and technologies that will allow us to persistently add and remove data with concurrent accesses to the database.\newline
+		Our system will also feature a reporting aspect that will be characterised as central, independant, consistent & accurate as well as timely & reliable. The independence is a key feature such that a report can still be generated in the event that the rest of the system is experiencing problems.\newline
+		Our system will be accessible on the client-side via a desktop web client as well as an application on Android Mobile. The web client will have greater functionality than the Android application as it will serve as an admin/control interface where the user is able to manage the system, update details and view statistics. The Android Application will merely provide basic functionality for data input and throughput.\newline
+		The system will also require real-time updates. As the gatherers hand in their pickings and the foreman enters them on the application, the farmer must be able to view/track the changes from his web client.\newline
+		Our system is also be required to produce heat maps. These are graphical representations of the yield that a certain area delivers. They are created using the data stored in our database.\newline
+		Our system will be used in excess of 900 farmers and a much greater number of foreman, meaning that there will be a great emphasis on scalability, performance and reliability. \newline
+		Lastly we would like to create the system in such a way that a user is able to add and remove modules without it necessary to shut the system down.\newline
 	\section{Access Channel Requirements}
+		The access channels can be divided into two sections, namely Human and System.\newline
 	\subsection{Human Access Channels}
+		The user will be able to access the system through two channels, namely a web client interface and an Android application interface.\newline
+		The web client interface will be strictly reserved for the farmers with which they can interact with the system in a superuser sense. The farmer will be able to assign workers to each foreman and in real time track the progress of his harvest, each worker’s statistics, the foreman’s location as well as view statistics on his harvests and view a heat map.\newline
+		The Android application will have limited functionality. It will be used by the foreman’s while they are out with the harvesters to keep track of the amount of bags that each worker brings in. It will be made available on the Google PlayStore and will run any device running Android 4.0 or higher.\newline
+
 	\subsection{System Access Channels}
+		Our framework that we chose, namely SailsJS makes RESTful architecture easy and simple. Sails uses the RESTful API to already REST wrap all our objects. Along with that, SailsJS features Waterline, an intuitive interface for any 	database we would like to use, from MongoDB to PostgreSQL.\newline
 	
 	\section{Quality Requirements}
-	\subsection{Performance}
-	\subsection{Reliability}
-	\subsection{Scalability}
-	\subsection{Security}
-	\subsection{Flexibility}
-	\subsection{Maintainability}
-	\subsection{Auditability/Monitorability}
-	\subsection{Integrability}
-	\subsection{Cost}
-	\subsection{Usability}
-	
+		There are many quality requirements for an application such as ours. Here we will look at them and in short discuss them.\newline
+		\subsection{Performance}
+			\subsubsection{Description}
+				Application performance is measured as amount of work done within a certain time period. Our job as developers is to get as much done as quickly possible without sacrificing integrity, security and Reliability.\newline
+			\subsubsection{Justification}
+				The more work can be accomplished by the usage of this application, the more productive farmers can be in other areas and the better they can use the data to determine where to apply fertiliser etc.\newline
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item Network requests must be benchmarked, monitored and aggregate statistics about network requests must be made available.
+					\item Function calls must be timed and benchmarked and this data should be logged.
+					\item Network responses should be cached on server side to lighten the load on database as well as decreasing the round trip time of request - response.
+				\end{itemize}
+		\subsection{Reliability}
+			\subsubsection{Description}
+				The system we are developing must be reliable in its data persistence and accessibility. System crashes and data loss is not acceptable in any circumstance.
+			\subsubsection{Justification}
+				The preservation of data is extremely important for every farmer seeing as this data will be converted into valuable information used to create reports and heat maps.
+			\subsubsection{Requirements}
+			\begin{itemize}
+				\item To enable offline activity and access of data from the Android app, data synced must be made differentiable with timestamps.
+				\item The system must resolve synchronization conflicts using timestamps.
+				\item Hot swapping of system modules should not affect system service reliability.
+			\end{itemize}
+		\subsection{Scalability}
+			\subsubsection{Description}
+				Scalability is the application’s ability to handle above normal workloads. Our client has specified the estimate of number of users for our application, however we will cater for for a larger number not to only be safe, but to also cover the possibility of rapid expansion.
+			\subsubsection{Justification}
+				Our application requires scalability due to the large number of farmers that will be using this application. An estimate of in excess of 900 farmers, each with multiple foreman will make use of it.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item The application must be able to cater for more than 900 farmers each with multiple foreman each.
+					\item The application must be able to handle multiple concurrent sessions
+				\end{itemize}
+		\subsection{Security}
+			\subsubsection{Description}
+				Security in terms of software applications is referred to authentication, authorization, data security & accounting. Authentication is the ability of our application to identify a user using the application. Authorization is the level of authority that an authenticated user has to execute commands. Data security has to do with our application’s data only being accessible through secure channels and accounting refers to the fact that a user’s actions and effects on the system can be traced and accounted to them.
+			\subsubsection{Justification}
+				Security is one of the most important features in today’s age, the Information Age. Information is power. We are concerned about the user’s data integrity, availability, confidentiality and accountability.\newline
+				Our reason for our worry about data integrity is because the user will be using the data he gathers to determine how to proceed further with his/her business. Real time data analysis and viewing will be a key aspect of our application, so we need to make sure that the integrity of that data is to be trusted.\newline
+				We want to be sure that the user that uses this application does not have access to other user’s details and statistics and along with this we want accountability for the users who do use this application and bring changes to the database.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item User access rights will be checked against the database and depending on the level of clearance, a different user interface will be populated.
+					\item The Android application’s user authentication details should not be stored on the Android device itself, but on the server so that the service of the application can be denied if the need arises.
+					\item Passwords and unique salts should be used for each user.
+					\item If a user attempts to access his user account and fails to enter the correct password x amount of times, the account should be locked and require a superuser to unlock it.
+					\item Access to the database should require authentication
+				\end{itemize}
+		\subsection{Flexibility}
+			\subsubsection{Description}
+				Flexibility is the application’s ability to be changed dynamically either via a plugin for extension or otherwise.
+			\subsubsection{Justification}
+				Flexibility is necessary for any application to be successful, otherwise it would mean that the application was hardcoded to only work in a certain manner on a certain machine. It is also necessary that when changes need to be made, that as little as the as possible is influenced in the system and needs to be changed. A flexible system is also easier maintain and repair.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item The system should allow unregistered users to use existing third party web service login credentials to register or login to the service.
+					\item The system should be decoupled from the database technology it uses and allow the client to select and change the database it uses in future.
+					\item Authentication mechanisms used should be decoupled from the system, allowing them to be interchangeable.
+					\item Modules should be decoupled from one another, allowing the system to be extensible without a break in service which is achieved by integrating new modules and swapping out existing ones.
+				\end{itemize}
+		\subsection{Maintainability}
+			\subsubsection{Description}
+				The system is to be designed in such a way that it is easily updated, modified or extended by the client in the future. In order to achieve these requirements, design patterns and best practices such as coding style guides are normally used to ensure uniformity and modularity across the system.
+			\subsubsection{Justification}
+				Many systems require regular changes, not because they were poorly designed or implemented, but because of changes in external factors.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item Code should be documented in the applicable language documentation framework.
+					\item A coding style should be agreed upon between all the developers so that the same style is used throughout and the same terminology is applied.
+					\item The application should be clearly separated into clear and concise modules to divide concerns and allow for easier maintenance.
+				\end{itemize}
+		\subsection{Auditability/Monitorability}
+			\subsubsection{Description}
+				The system is to be designed to be verbose and transparent in its workings, and to ensure maximum data security, to allow role players to have insights into how the system is used and how it may be improved.\newline
+				These requirements are achieved by making the maximum amount of relevant data available to authorized users, logging performance critical information, and by enforcing strict constraints on the data that is stored.
+			\subsubsection{Justification}
+				This is an important process in Software Engineering, where all the informations must be correct so requiring all the developers to see who made changes and when so that consistency must be kept in order to keep the database accurate and reliable.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item Database data should be consistent and never deleted.
+					\item User creation and edit times should be visible.
+					\item Keep an immutable log of user actions.
+					\item Logging of stack traces and crash analytics should be implemented.
+				\end{itemize}
+		\subsection{Integrability}
+			\subsubsection{Description}
+				The system should allow for future external integration with other platforms such as security authentication providers, other external research metadata databases etc.
+			\subsubsection{Justification}
+				The system necessitates integrability to allow for maximum usability, as the integrability of the system is directly related to how usable it is. To be usable, the system must allow for easy migration, not just from previous systems, but also to future systems and future data storage mediums.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item The system should allow technology neutral importing and exporting of data.
+					\item The back-end system should integrate with a desktop web client and Android mobile app clients.
+					\item The system should be able to integrate with different back-end authentication services.
+				\end{itemize}
+		\subsection{Cost}
+			\subsubsection{Description}
+				The cost of the system entails any initial expenses as well as any ongoing expenses which the client may incur at some point. Such expenses arise from software licenses, external computing resources required as well as future maintenance of the system in terms of time.
+			\subsubsection{Justification}
+				The expenses made and software licenses cost must be taken into account in order to set the price of the software.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item System should be cheap to operate, maintain and extend. If the quality and maturity of technologies available allow it, technologies used must be freely available/usable.
+					\item As far as possible, open source compatible, mature technologies should be used, to ensure system stability as far as possible.
+				\end{itemize}
+		\subsection{Usability}
+			\subsubsection{Description}
+				Usability refers to ease with which humans, and to a lesser extent, servers, interact with the system in question. Usability can be measured in various ways such as using quantifiable scientific measures or more subjective measures with a key question point being if the API follows conventions and so on.
+			\subsubsection{Justification}
+				It is important that the new system is usable as it is a user-centric system. Ensuring that the system is usable will ensure that users capture accurate and correct information into the system which will for better performance and farmer strategic planning.
+			\subsubsection{Requirements}
+				\begin{itemize}
+					\item Each view in the desktop and mobile clients should be related to a single topic only.
+					\item The web client should render properly and be fully functional in modern web browsers.
+					\item Mobile devices running Android 4.0 and upwards should be fully supported.
+					\item Material design UI guidelines prescribed by Google must be used, to ensure that the clients feel modern and familiar.
+					\item Android app and web client should support the full back-end API specifications.
+					\item The user must be allowed to elect whether they would like their data to be available offline.
+					\item Mobile client users should be able choose between downloading data over Wi-Fi or 3G.
+				\end{itemize}
+		
 	\section{Integration Requirements}
-	
+		Our web client will be usable on most modern day PCs with support for the big browsers. With the usage of SailsJS we are able to automatically incorporate RESTful APIs with our web client as well as seamless database integration.\newline
+		Our Android application will focus on acquiring data and sending it once a internet connection is achieved seeing as the foreman won’t always have signal out in the orchids. We will persist the data entered locally on the phone only to upload the data later. Due to internet costs we will make sure we keep the data as small as possible and the bandwidth usage low as well. Phonegap and Ionic help with these regards.\newline
+
+		SailsJS provides us with the necessary framework to easily achieve this. It takes care of the REST wrapping automatically and integrates with our database. It uses NodeJS and is built on top of Express, thus we are using fully JavaScript libraries everywhere.\newline
 	\section{Architecture Constraints}
-	\subsection{Architectural Patterns}
+		The only constraints placed on us with regards to the architecture is that the client wants a web client that has a superuser functionality and an Android application. We were given free reign in our judgement on how we wish to accomplish this task. In our technologies section we discuss what we will be using and how it relates to our project.\newline
 	
 	%----------------------------------------------------------------------------------------
 	%	CHAPTER 4
@@ -147,13 +274,30 @@
 	\chapter{Architectural Tactics or Strategies}
 	
 	\section{Software Engineering Context : Architectural Tactics}
+		Architectural tactics is concerned with achieving coherence between a design decision and a quality response/promise. Simply put, this refers to how we plan to keep our promise of the level of quality stated previously.\newline
 	\section{Performance Tactics}
 	\subsection{Three Groups of Performance Tactics}
-	\subsection{System Context}
+		\begin{itemize}
+			\item Resource demand tactics\newline
+			Simply explained, these are tactics that regulate the allocation of resources
+			\item Conflict resolution tactics\newline
+			These are tactics designed specifically to resolve conflicts between modules etc
+			\item Multiple Resource Managements Tactics\newline
+			These tactics are resposible for the mangements of concurrent resource accesses and similar tasks
+		\end{itemize}
 	\section{Reliability Tactics}
+		Reliability of the system refers to amongst other things, the coherence of information stored within the system and presented to users(concurrent). This can be achieved through the use of a duplication scheme which can be sought after using Passive Redundancy, which simply means that the system is designed to store the same information multiple times in multiple independent locations. System reliability also refers to the systems automatic fault detection.
 	\subsection{System Context}
+		\begin{itemize}
+			\item Offline data storage\newline
+				The user is able to use the Android application even without signal and/or internet connection. The data entered into the application gets persisted locally and is later then sent to the server once the phone regains connection.
+		\end{itemize}
 	\section{Scalability Tactics}
-	\subsection{System Context}
+	Scalability refers to the ability to handle increased workload without adding more resources to the system. One way to achieve scalability is to perform a regular SWOT analysis on the system:\newline
+	–Strengths : the kinds of growth the system is designed to handle\newline
+	–Weaknesses : the kinds of growth the system will have trouble handling\newline
+	–Opportunities : possible changes in the system which could be exploited to increase performance\newline
+	-Threats : possible changes in the workload that the system will not be able to handle
 	\section{Security Tactics}
 	Security refers to the protection of information systems from unauthorized disruption that could potentially result in the corruption of information. It is achieved by enforcing access controls on individuals, according to a user hierarchy, to ensure only permitted users have access to the necessary information.
 	\subsection{System Context}
