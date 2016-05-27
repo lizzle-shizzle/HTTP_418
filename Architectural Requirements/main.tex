@@ -144,22 +144,54 @@
 	\subsection{System Context}
 \section{Reliability Tactics}
 	\subsection{System Context}
-\subsection{Scalability Tactics}
+\section{Scalability Tactics}
 	\subsection{System Context}
-\subsection{Security Tactics}
+\section{Security Tactics}
+	Security refers to the protection of information systems from unauthorized disruption that could potentially result in the corruption of information. It is achieved by enforcing access controls on individuals, according to a user hierarchy, to ensure only permitted users have access to the necessary information.
 	\subsection{System Context}
-\subsection{Flexibility Tactics}
+		\begin{itemize}
+			\item Resistance to SQL injections\newline\newline
+			SQL injections are dependent on data type awareness in order to be successful. To prevent this, the data being transferred will be encrypted to hide its data type so only the system can understand it. All authentication data will be stored in an encrypted form and never in plain-text.\newline
+			
+			\item Enforce access rights according to user hierarchy \newline\newline
+			The different users of the system, such as the farmer and the foremen, will have different access rights accordingly. The farmer will be a super user and will, thus, have access to all functionality that the system offers. The foremen will be general users and have restricted access to administration functionalities. This will simply be enforced by enabling and disabling certain functionalities according to user logins.\newline
+			
+			\item Password encryption\newline\newline
+			Upon registration of a user account, the user’s password will be stored in the database after it has been automatically hashed. When the user logs in, the hashed password will be retrieved and converted to plain-text to perform authentication. No passwords will be stored in the database in plain-text format.\newline
+			
+			\item Enforce database authentication\newline\newline
+			Access to database queries will be limited according to the aforementioned user hierarchy. The farmer will have direct access to view and modify the database whereas the foremen will only be able to make additions to the database regarding worker performance.			
+		\end{itemize}
+\section{Flexibility Tactics}
 	\subsection{System Context}
-\subsection{Maintainability Tactics}
+\section{Maintainability Tactics}
+	Maintainability refers to modifying the existing system to make improvements or fix bugs without jeopardizing the data integrity and functionality. The need for maintainability is usually based on the following factors: changes in the software environment, new user requirements, bug and error fixes and the requirement of preventative measures for future problems.
 	\subsection{System Context}
-\subsection{Auditability Tactics}
+		\begin{itemize}
+			\item Enforce code documentation\newline\newline
+			JSDoc will be enforced as the documentation framework as its sole purpose is to generate documentation for JavaScript, the language which the whole system will be based on. This will ensure that other developers will always be able to understand what is going on in the code.\newline
+			
+			\item Setup coding standards and conventions\newline\newline
+			The CSS3 files should be sorted alphabetically to aid in navigation and understanding for other developers. Other good practices such as naming conventions for variables, functions and classes should be specified to ensure consistency and readability throughout.\newline
+			
+			\item Enforce modularization of system components\newline\newline
+			The system should separate concerns by dividing the system components into distinct and independent modules to improve maintainability. This will be enforced with the use of various frameworks such as Node.js, Express,js, Sails,js and Angular.js, which require separation of concerns as they are MVC-oriented.
+			
+		\end{itemize}
+\section{Auditability Tactics}
 	\subsection{System Context}
-\subsection{Integrability and Extensibility Tactics}
+\section{Integrability and Extensibility Tactics}
 	\subsection{System Context}
-\subsection{Cost Tactics}
+\section{Cost Tactics}
+	Costs refer to all the funding required in order for the system to function fully. These costs include development costs, operational costs and maintenance costs.
 	\subsection{System Context}
-\subsection{Usability Tactics}
-	\subsection{System Context}
+		\begin{itemize}
+			\item Ensure costs are kept to a minimal \newline\newline
+			The chosen technologies are open-source to ensure the costs associated to the operation, maintainability and extension of the system are kept to a minimum. However, if the need arises that the system requires the incorporation of a functionality that open-source software can’t offer, then the software will be chosen according to the best value for money. Thus, development costs will be kept to a minimum. The only concerns regarding operational costs are regarding the deployment of the application onto a public exchange interface and the server. The client requires the application to be present in the Google PlayStore and the Apple AppStore, which will infer yearly costs. If the client currently has a functional server that could handle the workload of the application then the server costs won’t be an issue. Otherwise, a server will need to be bought and setup, which will result in various costs. The potential need to invest in an additional server might also occur, but this is dependent on the popularity and scalability of the system. For system development, any free open source IDE or text editor and browser can be utilized by the developers to reduce maintenance costs.
+			
+		\end{itemize}
+\section{Usability Tactics}
+		\subsection{System Context}
 	
 %----------------------------------------------------------------------------------------
 %	CHAPTER 5
@@ -201,7 +233,7 @@
 \chapter{Access and Integration Channels}
 
 	\section{Access Channels}
-	\section{Integration Channels}\newline
+	\section{Integration Channels}
 	The entire system will be implemented using a client-server architecture due to the dynamic message-passing nature of the application. However, the frameworks that we will be using to implement the required functionality are based on the Model-View-Controller architecture. Thus, it will be the effective integration of these frameworks MVC-based functionality working collaboratively as a client-server architecture. The entire system will be coded using JavaScript as it is a dynamic, versatile language that has a lot of support. This also ensures that integration between the back-end and front-end system won’t cause any serious complications. Libraries and frameworks will also be used to adapt JavaScript to be able to run on a mobile environment.\newline\newline
 	Node.js will handle the server-side communication for the system as it handles real-time data transfer quickly and efficiently regardless of scalability. Express.js will be the primary web server framework to integrate with Node.js in order to handle the message-passing. Sails.js will be a fundamental framework implemented on both the front-end and back-end of the system as it offers a multitude of functionalities and primarily integrates with Node.js. The Angular.js framework will be used collaboratively with HTML5 and JavaScript to provide the required functionality. CSS3 and the Bootstrap framework will be used to handle the styling of the front-end. AJAX will potentially be used to handle the passing of any data that cannot be handled by the other abovementioned frameworks. The Google Maps JavaScript API Heatmap Layer will be incorporated into the system in order to generate the heatmap functionality that the system requires. PhoneGap and Ionic will be used together to adapt the Web interface code to run on an Android  and iOS platform.\newline\newline
 	Neo4j is the chosen database for the system as it offers the advantages of both a NoSQL database and a SQL database. It effectively handles scalability without sacrificing performance, whilst also having the ability to store relationships between data entries. Sails.js also provides a plugin that adapts our implementation to effectively integrate with Neo4j.
@@ -215,27 +247,7 @@
 
 \chapter{Technologies}
 
-	\section{Backend System}
-		\subsection{Programming Languages}
-		\subsection{Frameworks}
-		\subsection{Libraries}
-		\subsection{Database System}
-		\subsection{Operating System}
-		\subsection{Dependency Management and Build Tools}
-	\section{Web Interface}
-		\subsection{Programming Languages}
-		\subsection{Frameworks}
-		\subsection{Libraries}
-		\subsection{Database System}
-		\subsection{Operating System}
-		\subsection{Dependency Management and Build Tools}
-	\section{Android Client}
-		\subsection{Programming Languages}
-		\subsection{Frameworks}
-		\subsection{Libraries}
-		\subsection{Database System}
-		\subsection{Operating System}
-		\subsection{Dependency Management and Build Tools}
+	
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 8
@@ -246,6 +258,7 @@
 \chapter{Functional Requirements and App Design}
 
 	\section{Use Case Prioritization}
+		
 	\section{Use Cases}
 	
 	
