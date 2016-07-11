@@ -4,10 +4,12 @@
 		<title>Harvest Home Page</title>
 		<meta charset="UTF-8">		
 		<script type="text/javascript" src="./JS/maps.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" type="text/css" href="./CSS/style.css">	
 		<script type="text/javascript" src="./JS/angular.min.js"></script>
+		<script type="text/javascript" src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./JS/script.js"></script>
 	</head>
 	<body>
@@ -24,10 +26,54 @@
 			        </div>
 			        <div class="navbar-collapse collapse">
 			          	<ul class="nav navbar-nav">
-				            <li class="active"><a href="#">Your Farm</a></li>
-				            <li><a href="#" >Your Workers</a></li>
-				            <li><a href="#">Your Employees</a></li>            
-				            <li><a href="#">Reports</a></li>            
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Farm
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Farm Details</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">Orchard Blocks</a></li>
+							      <li><a href="#">Crop Types</a></li>
+						          <li><a href="#">Irrigation Types</a></li>
+						          <li><a href="#">Cultivation Frequencies</a></li>
+						          <li><a href="#">Yield Measurement Types</a></li>
+						          <li><a href="#">View Heat Map</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Workers
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Workers</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">View Worker-Foreman Assignments</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Foremen
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Foremen</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">View Foreman-Orchard Block Allocations</a></li>
+								  <li><a href="#">Manage Foremen Shifts</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>       
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Reports
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">Worker Performance</a></li>
+							      <li><a href="#">Crop Yield per Orchard</a></li>
+							      <li class="divider"></li>
+								  <li><a href="#">Seasonal Yield Revenue</a></li>
+								  <li><a href="#">Time Taken to Cultivate Specific Crops</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>            
 			          	</ul>
 			          	<ul class="nav navbar-nav navbar-right">
 			          		<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
