@@ -95,23 +95,23 @@
 									<br/>
 										<div>
 											<label for="shiftDate">Shift Start Time</label>
-											<input class="form-control" type="date" name="shiftDate" ng-model="user.date" required>
-											<span ng-show="frm.shiftDate.$dirty && frm.shiftDate.$error.required">Required!</span>
-											<span ng-show="frm.shiftDate.$dirty && frm.shiftDate.$error.date">Not a valid date!</span>
+											<input class="form-control" type="date" name="shiftDate" ng-model="shift.date" required>
+											<span ng-show="frmCreateForemanShift.shiftDate.$dirty && frmCreateForemanShift.shiftDate.$error.required">Required!</span>
+											<span ng-show="frmCreateForemanShift.shiftDate.$dirty && frmCreateForemanShift.shiftDate.$error.date">Not a valid date!</span>
 										</div>
 										<br/>
 										<div>
 											<label for="shiftStart">Shift Start Time</label>
-											<input class="form-control" type="time" name="shiftStart" ng-model="user.timeStart" required>
-											<span ng-show="frm.shiftStart.$dirty && frm.shiftStart.$error.required">Required!</span>
-											<span ng-show="frm.shiftStart.$dirty && frm.shiftStart.$error.time">Not a valid time!</span>
+											<input class="form-control" type="time" name="shiftStart" ng-model="shift.timeStart" required>
+											<span ng-show="frmCreateForemanShift.shiftStart.$dirty && frmCreateForemanShift.shiftStart.$error.required">Required!</span>
+											<span ng-show="frmCreateForemanShift.shiftStart.$dirty && frmCreateForemanShift.shiftStart.$error.time">Not a valid time!</span>
 										</div>
 										<br/>
 										<div>
 											<label for="shiftEnd">Shift End Time</label>
-											<input class="form-control" type="time" name="shiftEnd" ng-model="user.timeEnd" required>
-											<span ng-show="frm.shiftEnd.$dirty && frm.shiftEnd.$error.required">Required!</span>
-											<span ng-show="frm.shiftEnd.$dirty && frm.shiftEnd.$error.time">Not a valid time!</span>
+											<input class="form-control" type="time" name="shiftEnd" ng-model="shift.timeEnd" required>
+											<span ng-show="frmCreateForemanShift.shiftEnd.$dirty && frmCreateForemanShift.shiftEnd.$error.required">Required!</span>
+											<span ng-show="frmCreateForemanShift.shiftEnd.$dirty && frmCreateForemanShift.shiftEnd.$error.time">Not a valid time!</span>
 										</div>
 										<br/>
 										<button class="btn" ng-disabled="frmCreateForemanShift.$invalid">Create Foreman Shift</button>
