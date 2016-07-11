@@ -85,43 +85,38 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
 							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
+								<legend>Modify Foreman Shift</legend>
+									<form name="frmEditForemanShift">
+										<div ng-controller="selectForeman">
+											<label for="selectForeman">Select Foreman</label>
+											<select name="selectForeman" class="form-control" ng-model="selectForeman" ng-options="x for x in foremen"></select>
+										</div>
+										<br/>
+										<div>
+											<label for="shiftDate">Shift Date</label>
+											<input class="form-control" type="date" name="shiftDate" ng-model="shift.date" required>
+											<span ng-show="frmEditForemanShift.shiftDate.$dirty && frmEditForemanShift.shiftDate.$error.required">Required!</span>
+											<span ng-show="frmEditForemanShift.shiftDate.$dirty && frmEditForemanShift.shiftDate.$error.date">Not a valid date!</span>
+										</div>
+										<br/>
+										<div>
+											<label for="shiftStart">Shift Start Time</label>
+											<input class="form-control" type="time" name="shiftStart" ng-model="shift.timeStart" required>
+											<span ng-show="frmEditForemanShift.shiftStart.$dirty && frmEditForemanShift.shiftStart.$error.required">Required!</span>
+											<span ng-show="frmEditForemanShift.shiftStart.$dirty && frmEditForemanShift.shiftStart.$error.time">Not a valid time!</span>
+										</div>
+										<br/>
+										<div>
+											<label for="shiftEnd">Shift End Time</label>
+											<input class="form-control" type="time" name="shiftEnd" ng-model="shift.timeEnd" required>
+											<span ng-show="frmEditForemanShift.shiftEnd.$dirty && frmEditForemanShift.shiftEnd.$error.required">Required!</span>
+											<span ng-show="frmEditForemanShift.shiftEnd.$dirty && frmEditForemanShift.shiftEnd.$error.time">Not a valid time!</span>
+										</div>
+										<br/>
+										<button class="btn" ng-disabled="frmEditForemanShift.$invalid">Update Foreman Shift</button>
+									</form>
 							</fieldset>
-							-->
 						</div>
 					</div>
 				</div>
