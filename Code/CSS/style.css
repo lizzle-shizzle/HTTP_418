@@ -29,6 +29,7 @@ input.ng-invalid.ng-dirty{border:1px solid red;}
   padding-top: 0px;
   padding-bottom: 2px;
 }
+
 #logoText{
   color: #29A9E1;
   padding-top: 5%;
@@ -130,6 +131,15 @@ color: white;
 button:hover{
 background-color: #006600;
 color: white;
+}
+.logoText{
+  color: #29A9E1;
+  font-weight: bold;
+  text-align: center;
+  font-size: 450%;
+}
+#contactDetails {
+  font-size: 120%;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
