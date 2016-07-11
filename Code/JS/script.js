@@ -1,4 +1,5 @@
 var app = angular.module('Harvest', []);
-	app.controller('dummy', function($scope) {
-    $scope.dummy = ["Dummy1", "Dummy2", "Dummy3", "Dummy4"];
+app.controller('editFarmer', function($scope) {
+$scope.farmer = 
+	{"FirstName" : "Tony", "LastName" : "Stark", "DOB" : "1970-12-31", "Email" : "tony.stark@gmail.com", "Password" : "Hello123"};
 });
