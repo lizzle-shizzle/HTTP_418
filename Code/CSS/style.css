@@ -108,10 +108,13 @@ color: #fff !important;
 color: #fff !important;
 background-color: #4d2800 !important;
 }
-.navbar {
+.navbar, .dropdown-menu, .dropdown-submenu {
 background-color: #331a00;
 /*height: 65px;*//*mobile not working*/
 /*padding-top: 1%;*//*mobile not working*/
+}
+.dropdown-menu li a:hover {
+  background-color: black;
 }
 #brandSection{
 padding-top: 0%;

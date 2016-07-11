@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="Harvest">
 	<head>
-		<title>Harvest Home Page</title>
+		<title>Change Password Page</title>
 		<meta charset="UTF-8">		
 		<script type="text/javascript" src="./JS/maps.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<link href="./bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<script type="text/javascript" src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./CSS/style.css">	
 		<script type="text/javascript" src="./JS/angular.min.js"></script>
 		<script type="text/javascript" src="./JS/script.js"></script>
@@ -24,10 +26,54 @@
 			        </div>
 			        <div class="navbar-collapse collapse">
 			          	<ul class="nav navbar-nav">
-				            <li class="active"><a href="#">Your Farm</a></li>
-				            <li><a href="#" >Your Workers</a></li>
-				            <li><a href="#">Your Employees</a></li>            
-				            <li><a href="#">Reports</a></li>            
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Farm
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Farm Details</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">Orchard Blocks</a></li>
+							      <li><a href="#">Crop Types</a></li>
+						          <li><a href="#">Irrigation Types</a></li>
+						          <li><a href="#">Cultivation Frequencies</a></li>
+						          <li><a href="#">Yield Measurement Types</a></li>
+						          <li><a href="#">View Heat Map</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Workers
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Workers</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">View Worker-Foreman Assignments</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Foremen
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">View Foremen</a></li>
+							      <li class="divider"></li>
+							      <li><a href="#">View Foreman-Orchard Block Allocations</a></li>
+								  <li><a href="#">Manage Foremen Shifts</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>       
+				            <li class="dropdown">
+						        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Reports
+						        <span class="caret"></span></a>
+						        <ul class="dropdown-menu">
+						          <li><a href="#">Worker Performance</a></li>
+							      <li><a href="#">Crop Yield per Orchard</a></li>
+							      <li class="divider"></li>
+								  <li><a href="#">Seasonal Yield Revenue</a></li>
+								  <li><a href="#">Time Taken to Cultivate Specific Crops</a></li>
+						          <li class="divider"></li>
+						        </ul>
+						    </li>       
 			          	</ul>
 			          	<ul class="nav navbar-nav navbar-right">
 			          		<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
@@ -39,43 +85,27 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
-							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
-							</fieldset>
-							-->
+						<form name="frmChgPass">
+								<fieldset>
+									<legend>Change Your Password</legend>								
+									<!--label for="currPass">Current Password</label><br>
+									<input type="password" name="currPass" class="form-control" placeholder="*********" ng-minlength="5" ng-maxlength="10" ng-model="user.currPass" required>
+									<span class="errorText" ng-show="frmChgPass.currPass.$dirty && frmChgPass.currPass.$error.required">Required!</span>
+					                <span class="errorText" ng-show="frmChgPass.currPass.$dirty && frmChgPass.currPass.$error.minlength">Too Short!</span>
+					                <span class="errorText" ng-show="frmChgPass.currPass.$dirty && frmChgPass.currPass.$error.maxlength">Too Long!</span><br-->
+									<label for="newPass">New Password</label>
+									<input type="password" name="newPass" class="form-control" placeholder="*********" ng-minlength="5" ng-maxlength="10" ng-model="user.newPass" required>
+									<span class="errorText" ng-show="frmChgPass.newPass.$dirty && frmChgPass.newPass.$error.required">Required!</span>
+					                <span class="errorText" ng-show="frmChgPass.newPass.$dirty && frmChgPass.newPass.$error.minlength">Too Short!</span>
+					                <span class="errorText" ng-show="frmChgPass.newPass.$dirty && frmChgPass.newPass.$error.maxlength">Too Long!</span><br>
+									<label for="conPass">Confirm New Password</label>
+									<input type="password" name="conPass" class="form-control" placeholder="*********" ng-minlength="5" ng-maxlength="10" ng-model="user.conPass" required>
+									<span class="errorText" ng-show="frmChgPass.conPass.$dirty && frmChgPass.conPass.$error.required">Required!</span>
+					                <span class="errorText" ng-show="frmChgPass.conPass.$dirty && frmChgPass.conPass.$error.minlength">Too Short!</span>
+					                <span class="errorText" ng-show="frmChgPass.conPass.$dirty && frmChgPass.conPass.$error.maxlength">Too Long!</span><br>
+								</fieldset><br>
+								<button type="submit" class="btn" id="btnChgPass" ng-disabled="frmChgPass.$invalid">Change Password</button>
+							</form>
 						</div>
 					</div>
 				</div>
