@@ -20,6 +20,9 @@ input.ng-invalid.ng-dirty{border:1px solid red;}
 .alert{
   opacity: 0;
 }
+.recoverInfo{
+  text-align: center;
+}
 .errorText{
   opacity: 1;
   color: red;
