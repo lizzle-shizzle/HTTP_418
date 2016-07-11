@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="Harvest">
 	<head>
-		<title>Harvest Home Page</title>
+		<title>Import Census Data Page</title>
 		<meta charset="UTF-8">		
 		<script type="text/javascript" src="./JS/maps.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -85,43 +85,16 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
-							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
-							</fieldset>
-							-->
+						<form name="frmImport">
+								<fieldset>
+									<legend>Select Census File to Import</legend>
+									<label for="file">Census Data File</label>
+									<input type="file" name="file" placeholder="2016_Census_Data.dat" required>
+									<span class="errorText" ng-show="frmImport.file.$dirty && frmImport.file.$error.required">Required!</span><br>
+									<!-- Validate file size and display message regarding what is being done (i.e. extracting) and the time remaining -->
+								</fieldset><br>
+								<button type="submit" class="btn" id="btnImport" ng-disabled="frmImport.$invalid">Import Data</button><!-- button and input validation is not working -->
+							</form>
 						</div>
 					</div>
 				</div>
