@@ -33,7 +33,7 @@
 						          <li><a href="#">View Farm Details</a></li>
 							      <li class="divider"></li>
 							      <li><a href="#">Orchard Blocks</a></li>
-							      <li><a href="#">Crop Types</a></li>
+							      <li><a href="/viewCropType.html">Crop Types</a></li>
 						          <li><a href="#">Irrigation Types</a></li>
 						          <li><a href="#">Cultivation Frequencies</a></li>
 						          <li><a href="#">Yield Measurement Types</a></li>
@@ -85,62 +85,11 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-							<h1>Crop types</h1>
-							<hr />
-							<form>
-								<div class="input-group">
-									<input type="text" class="cropType form-control" value="ddf">
-									<span class="input-group-btn"><button class="btn btn-default remove"><span class="glyphicon glyphicon-remove"></span></button></span>									
-								</div>
-								<div class="input-group">
-									<input type="text" class="cropType form-control" value="mango">
-									<span class="input-group-btn"><button class="btn btn-default remove"><span class="glyphicon glyphicon-remove"></span></button></span>									
-								</div>
-								<div class="input-group">
-									<input type="text" class="cropType form-control" value="peanut">
-									<span class="input-group-btn"><button class="btn btn-default remove"><span class="glyphicon glyphicon-remove"></span></button></span>									
-								</div>
-							</form>
-							<hr />
-							<a id="btnAdd" class="btn btn-md btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
-							
-						<!--Page-Content
-							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
-							</fieldset>
-							-->
+							<div class="container">
+								<fieldset ng-view>
+										
+								</fieldset>
+							</div>
 						</div>
 					</div>
 				</div>
