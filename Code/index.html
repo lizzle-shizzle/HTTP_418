@@ -85,43 +85,56 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
 							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
+								<legend>Modify Orchard Block</legend>
+								<form name="frmEditOrchardBlock">
+									<div>
+										<label for="orchardBlockName">Name</label>
+										<input class="form-control" type="text" name="orchardBlockName" ng-model="user.orchardBlockName" placeholder="A5" required>
+										<span ng-show="frmEditOrchardBlock.orchardBlockName.$dirty && frmEditOrchardBlock.orchardBlockName.$error.required">Required!</span>
+										<span ng-show="frmEditOrchardBlock.orchardBlockName.$dirty && frmEditOrchardBlock.orchardBlockName.$error.text">Not a valid name!</span>
+									</div>
+									<br/>
+									<div>
+										<label for="orchardBlockHectares">Hectares</label>
+										<input class="form-control" type="text" name="orchardBlockHectares" ng-model="user.orchardBlockHectares" placeholder="20" required>
+										<span ng-show="frmEditOrchardBlock.orchardBlockHectares.$dirty && frmEditOrchardBlock.orchardBlockHectares.$error.required">Required!</span>
+										<span ng-show="frmEditOrchardBlock.orchardBlockHectares.$dirty && frmEditOrchardBlock.orchardBlockHectares.$error.text">Not a valid size!</span>
+									</div>
+									<br/>
+									<div ng-controller="selectIrrigation">
+										<label for="selectIrrigationType">Irrigation Type</label>
+										<select name="selectIrrigationType" class="form-control" ng-model="selectIrrigation" ng-options="x for x in irrigation"></select>
+									</div>
+									<br/>
+									<div ng-controller="selectCrop">
+										<label for="selectCropType">Crop Type</label>
+										<select name="selectCropType" class="form-control" ng-model="selectCrop" ng-options="x for x in crop"></select>
+									</div>
+									<br/>
+									<div ng-controller="selectCultivationFrequency">
+										<label for="selectCultivationFrequency">Cultivation Frequency</label>
+										<select name="selectCultivationFrequency" class="form-control" ng-model="selectCultivationFrequency" ng-options="x.Name for x in cultivationFrequency"></select>
+									</div>
+									<br/>
+									<div ng-controller="selectYieldMeasurement">
+										<label for="selectYieldMeasurement">Yield Measurement Type</label>
+										<select name="selectYieldMeasurement" class="form-control" ng-model="selectYieldMeasurement" ng-options="x for x in yieldMeasurement"></select>
+									</div>
+									<br/>
+									<div>
+										<label for="plantDate">Date Planted</label>
+										<input class="form-control" type="date" name="plantDate" ng-model="user.date" required>
+										<span ng-show="frmEditOrchardBlock.plantDate.$dirty && frmEditOrchardBlock.plantDate.$error.required">Required!</span>
+										<span ng-show="frmEditOrchardBlock.plantDate.$dirty && frmEditOrchardBlock.plantDate.$error.date">Not a valid date!</span>
+									</div>
+									<br/>
+									<label for="googleMap">Choose Co-ordinates</label>
+									<div name="googleMap" id="googleMap"></div>
+									<br/>
+									<button class="btn" ng-disabled="frmEditOrchardBlock.$invalid">Update Orchard Block</button>
+								</form>
 							</fieldset>
-							-->
 						</div>
 					</div>
 				</div>
