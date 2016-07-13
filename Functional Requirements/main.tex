@@ -15,7 +15,7 @@
 \documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
 
 \usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
-
+\usepackage{graphicx}
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{darkgreen}{RGB}{0, 153, 0} % Define the orange color used for highlighting throughout the book
 
@@ -128,6 +128,933 @@
 %----------------------------------------------------------------------------------------
 \chapterimage{macadamias.png}
 \chapter{Use Cases and Service Contracts}
+\section{Login User}
+\begin{itemize}
+	\item Description\\
+	This use case will be used by the users of the Web interface, Android interface and the iOS interface to initiate login via the back-end service.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The user has a registered account within the database.
+		\item The user’s account is not locked.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The user will be logged in and have access to the necessary functionality.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Login User}
+	\end{figure}
+\end{itemize}
+
+\section{Logout User}
+\begin{itemize}
+	\item Description\\
+	This use case will be used by the users of the Web interface, Android interface and the iOS interface to log a user out of the system.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The user is currently logged into the system.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The user will be logged out of the system and have no access to any functionality.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Logout User}
+	\end{figure}
+\end{itemize}
+
+\section{Change Password}
+\begin{itemize}
+	\item Description\\
+	This use case will be used by the users of the Web interface, Android interface and the iOS interface to change their password.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The user has a registered account within the database.
+		\item The user’s account is not locked.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The user’s password is updated in the database. 
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Change Password}
+	\end{figure}
+\end{itemize}
+
+\section{Recover Password}
+\begin{itemize}
+	\item Description\\
+	This use case will be used by the users of the Web interface, Android interface and the iOS interface to recover their forgotten password.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The user has a registered account within the database.
+		\item The user’s account is not locked.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The user will receive an email containing their password.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Recover Password}
+	\end{figure}
+\end{itemize}
+
+\section{Create Farmer}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create his superuser account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer doesn’t already exist in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farmer will have a superuser account registered in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Farmer}
+	\end{figure}
+\end{itemize}
+
+\section{View Farmer}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his superuser account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The farmer already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farmer’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Farmer}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Farmer}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his superuser account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The farmer already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farmer’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Farmer}
+	\end{figure}
+\end{itemize}
+
+\section{Create Farm}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to register his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The farm doesn’t already exist in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farm is registered in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Farm}
+	\end{figure}
+\end{itemize}
+
+\section{View Farm}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his farm’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The farm already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farm’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Farm}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Farm}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his farm’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The farm already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farm’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Farm}
+	\end{figure}
+\end{itemize}
+
+\section{Create Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to register his foremen individually on the system as general users via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman doesn’t already exist in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman will have a general user account registered in the database.
+		\item Login details are generated for the foreman.				
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Foreman}
+	\end{figure}
+\end{itemize}
+
+\section{View Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his foreman’s general user account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Foreman}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his foreman’s general user account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Foreman}
+	\end{figure}
+\end{itemize}
+
+\section{Create Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to add his workers individually onto the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker doesn’t already exist in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s details are in the database.			
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Worker}
+	\end{figure}
+\end{itemize}
+
+\section{View Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his worker’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Worker}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his worker’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Worker}
+	\end{figure}
+\end{itemize}
+
+\section{Create Orchard Block}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create the orchard block on his farm according to map coordinates and by entering the necessary details (crop dimensions, crop type, irrigation type, date planted, yields per hectare) via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The orchard block doesn't already exist.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The new orchard block’s details are stored in the database.		
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Orchard Block}
+	\end{figure}
+\end{itemize}
+
+\section{View Orchard Block}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the orchard block on his farm via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The orchard block already exists on the system.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The orchard block’s details are displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Orchard Block}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Orchard Block (i.e. crop type, irrigation type, re-demarcate coordinates, archive, etc.)}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit the orchard blocks on his farm via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The orchard block already exists on the system.				
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The orchard block’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Orchard Block}
+	\end{figure}
+\end{itemize}
+
+\section{Create Irrigation Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create an irrigation type used on his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The irrigation type doesn’t already exist in the database. 
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The irrigation type is added to the database.	
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Irrigation Type}
+	\end{figure}
+\end{itemize}
+
+\section{View Irrigation Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of an irrigation type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The irrigation type already exists in the database.				
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The irrigation type’s details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Irrigation Type}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Irrigation Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit an irrigation type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The irrigation type already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The irrigation type’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Irrigation Type}
+	\end{figure}
+\end{itemize}
+
+\section{Create Crop Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create a crop type planted on his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The crop type doesn’t already exist in the database. 
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The crop type is added to the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Crop Type}
+	\end{figure}
+\end{itemize}
+
+\section{View Crop Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of a crop type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The crop type already exists in the database.			
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The crop type’s details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Crop Type}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Crop Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit a crop type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The crop type already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The crop type’s details are updated in the database
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Crop Type}
+	\end{figure}
+\end{itemize}
+
+\section{View Worker Performance}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the foreman to view the current state of a specific worker’s performance details on the system via the Android or iOS interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The foreman is currently logged into the system.
+		\item The worker already exists in the database.				 
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s performance details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Worker Performance}
+	\end{figure}
+\end{itemize}
+
+\section{Update Worker Performance}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the foreman to update a specific worker’s performance by adjusting the yields collected by the worker on the system via the Android or iOS interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The foreman is currently logged into the system.
+		\item The worker already exists in the database.			
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s performance details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Update Worker Performance}
+	\end{figure}
+\end{itemize}
+
+\section{Create Yield Measurement Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create a yield measurement type used on his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The yield measurement type doesn’t already exist in the database. 				
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The yield measurement type is added to the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Yield Measurement Type}
+	\end{figure}
+\end{itemize}
+
+\section{View Yield Measurement Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of a yield measurement type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The yield measurement type already exists in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The yield measurement type’s details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Yield Measurement Type}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Yield Measurement Type}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit a yield measurement type’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The yield measurement type already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The yield measurement type’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Yield Measurement Type}
+	\end{figure}
+\end{itemize}
+
+\section{Create Cultivation Frequency}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to create a cultivation frequency used on his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The cultivation frequency doesn’t already exist in the database. 				
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The cultivation frequency is added to the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Cultivation Frequency}
+	\end{figure}
+\end{itemize}
+
+\section{View Cultivation Frequency}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of a cultivation frequency’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The cultivation frequency already exists in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The cultivation frequency’s details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Cultivation Frequency}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Cultivation Frequency}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit a cultivation frequency’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The cultivation frequency already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The cultivation frequency’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Cultivation Frequency}
+	\end{figure}
+\end{itemize}
+
+\section{Maintain Foreman-Orchard Block Allocations}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to allocate or deallocate a specific foreman to/from a specific orchard block or multiple orchard blocks on his farm on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database. 
+		\item The orchard block already exists in the database.
+		\item The foreman-orchard assignment already exists in the database. (For deallocation)					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman-orchard assignment is added to the database. (For allocation)
+		\item The foreman-orchard assignment is removed from the database. (For deallocation)
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Maintain Foreman-Orchard Block Allocations}
+	\end{figure}
+\end{itemize}
+
+\section{Maintain Worker-Foreman Assignments}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to assign/reassign a specific worker to a specific foreman on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker already exists in the database. 
+		\item The foreman already exists in the database.
+		\item The worker-foreman assignment already exists in the database. (For reassignment)				
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker-foreman assignment is added to the database. (For assignment)
+		\item The worker-foreman assignment is updated in the database. (For reassignment)		
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Maintain Worker-Foreman Assignments}
+	\end{figure}
+\end{itemize}
+
+\section{Import Census Data}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to import current census data onto the system via the Web interface to reduce the amount of data needed to be input manually.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The census data is valid and in the correct format.								
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The census data is added and successfully integrated into the system.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Import Census Data}
+	\end{figure}
+\end{itemize}
+
+\section{Generate Statistical Report of Worker Performance (according to time intervals)}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to generate a report showing the performance of his workers during certain time intervals for statistical purposes via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The data on the worker’s performance, required for the report, is present in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The workers performance report has been generated in a usable format.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Generate Statistical Report of Worker Performance (according to time intervals)}
+	\end{figure}
+\end{itemize}
+
+\section{Generate Statistical Report of Crop Yield per Orchard}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to generate a report showing the crop yield per orchard for statistical purposes via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The data on the crop yields for each orchard, required for the report, is present in the database.									
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The crop yield per orchard report has been generated in a usable format.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Generate Statistical Report of Crop Yield per Orchard}
+	\end{figure}
+\end{itemize}
+
+\section{View Heat Map}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the crop yields per orchard blocks according to a heat map via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The data on the crop yields for each orchard, required to generate the heat map, is present in the database.	
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The crop yield per orchard heat map is generated and displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{View Heat Map}
+	\end{figure}
+\end{itemize}
+
+\section{Create Foreman’s Shift}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to allocate a foreman to a specific shift on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database. 
+		\item The foreman-shift assignment doesn’t exist in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman-shift assignment is added to the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Create Foreman’s Shift}
+	\end{figure}
+\end{itemize}
+
+\section{View Foreman’s Shift}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of a foreman’s shift details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman-shift assignment already exists in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman-shift assignment details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+		\begin{figure}
+			\includegraphics[scale=0.5]{nameOfImage}
+			\caption{View Foreman’s Shift}
+		\end{figure}
+\end{itemize}
+
+\section{Edit Foreman’s Shift}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit a foreman’s shift details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman-shift assignment already exists in the database.	
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman-shift assignment details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Edit Foreman’s Shift}
+	\end{figure}
+\end{itemize}
+
+\section{Notify Farmer Regarding Foreman’s Locations (according to time intervals)}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated when a foreman leaves the demarcated area he has been allocated during his shift hours. When this occurs, a SMS or in-app notification will alert the farmer regarding this unusual occurrence via the Android or iOS interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system on his mobile device. (i.e. Super user logged in)
+		\item The foreman is logged into the system on his mobile device.
+		\item The data regarding the foreman’s shift, allocated orchard block and his current GPS location are available to initiate the notification.						
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farmer receives an SMS or an in-app notification regarding the foreman’s current location.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Notify Farmer Regarding Foreman’s Locations}
+	\end{figure}
+\end{itemize}
+
+\section{Notify Farmer of Foreman’s Activity History Every Half an Hour}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated every half an hour to notify the farmer on his moble device regarding the foreman’s activity history to prevent theft.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system on his mobile device. (i.e. Super user logged in)
+		\item The foreman is logged into the system on his mobile device.
+		\item The foreman’s activity history is present in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The farmer receives an SMS or an in-app notification every half an hour regarding the foreman’s activity history.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Notify Farmer of Foreman’s Activity History Every Half an Hour}
+		\end{figure}
+\end{itemize}
+
+\section{Generate Revenue Report Regarding Seasonal Yields}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to generate a report showing the revenue generated according to seasonal yields per orchard block for statistical purposes via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The data on the crop yields for each orchard and the related revenue, required for the report, is present in the database.	
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The revenue per orchard report has been generated in a usable format.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Generate Revenue Report Regarding Seasonal Yields}
+	\end{figure}
+\end{itemize}
+
+\section{Generate Statistical Report Regarding Time Taken to Yield Specific Crops}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to generate a report showing the amount of time it takes to yield certain crops for statistical purposes via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The data regarding the time it takes to yield specific crops is present in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The time taken to yield specific crops report has been generated in a usable format.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{nameOfImage}
+		\caption{Generate Statistical Report Regarding Time Taken to Yield Specific Crops}
+	\end{figure}
+\end{itemize}
 
 
 
@@ -136,7 +1063,8 @@
 %----------------------------------------------------------------------------------------
 
 \chapterimage{avocados.png}
-\chapter{Use Case Functionality}
+\chapter{Use Case Functionality} % Use case diagrams
+
 
 
 %----------------------------------------------------------------------------------------
@@ -145,14 +1073,21 @@
 
 \chapterimage{litchis.png} % Chapter heading image
 
-\chapter{Use Case Process Specifications}
+\chapter{Use Case Process Specifications} % Activity diagrams
 
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5
+%----------------------------------------------------------------------------------------
+
+\chapterimage{litchiTree.png} % Chapter heading image
+
+\chapter{Domain Model}
 
 
 	
 	
 %----------------------------------------------------------------------------------------
-%	CHAPTER 5
+%	CHAPTER 6
 %----------------------------------------------------------------------------------------
 
 \chapterimage{farmer.png} % Chapter heading image
