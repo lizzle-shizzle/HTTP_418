@@ -1,18 +1,67 @@
 <legend>New Crop Type</legend>
-<form name="frmCreateCropType">
-	<div n>
-		<label for="cropType">Crop Type</label>
-		<input class="form-control" type="text" name="orchardBlock" ng-model="user.cropType" placeholder="Mango" required>
-		<span ng-show="frmCreateCropType.orchardBlock.$dirty && frmCreateCropType.$error.required">Required!</span>
-		<span ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.text">Not a valid name!</span>
+<form name="frmCreateOrchardBlock">
+	<div>
+		<label for="orchardBlockName">Name</label>
+		<input class="form-control" type="text" name="orchardBlockName" ng-model="user.orchardBlockName" placeholder="Field 1" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.text">Not a valid name!</span>
 	</div>
 	<br/>
-	<!-- <div>
-	<label for="cultivationFrequencyDescription">Description</label>
-	<textarea class="form-control" type="text" rows="3" id="cultivationFrequencyDescription" name="cultivationFrequencyDescription" ng-model="user.cultivationFrequencyDescription" placeholder="Collect crop on a monthly basis." required></textarea>
-	<span ng-show="frm.cultivationFrequencyDescription.$dirty && frm.cultivationFrequencyDescription.$error.required">Required!</span>
-	<span ng-show="frm.cultivationFrequencyDescription.$dirty && frm.cultivationFrequencyDescription.$error.text">Not a valid description!</span>
+	<div>
+		<label for="orchardBlockCropYield">Crop Yield</label>
+		<input class="form-control" type="text" name="orchardBlockCropYield" ng-model="user.orchardBlockCropYield" placeholder="20" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCropYield.$dirty && frmCreateOrchardBlock.orchardBlockCropYield.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCropYield.$dirty && frmCreateOrchardBlock.orchardBlockCropYield.$error.text">Not a valid name!</span>
 	</div>
-	<br/> -->
-	<button class="btn" ng-disabled="frmCreateCropType.$invalid">Create Orchard Block</button>
+	<br/>
+	<div>
+		<label for="orchardBlockHectares">Hectares</label>
+		<input class="form-control" type="text" name="orchardBlockHecrares" ng-model="user.orchardBlockHectares" placeholder="21.5" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockDimentions">Block Dimentions</label>
+		<input class="form-control" type="text" name="orchardBlockDimentions" ng-model="user.orchardBlockDimentions" placeholder="12m X 16m" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockDimentions.$dirty && frmCreateOrchardBlock.orchardBlockDimentions.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockDimentions.$dirty && frmCreateOrchardBlock.orchardBlockDimentions.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockCropType">Crop Type</label>
+		<input class="form-control" type="text" name="orchardBlockCropType" ng-model="user.orchardBlockCropType" placeholder="Mango" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCropType.$dirty && frmCreateOrchardBlock.orchardBlockCropType.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCropType.$dirty && frmCreateOrchardBlock.orchardBlockCropType.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockIrrigationType">Irrigation Type</label>
+		<input class="form-control" type="text" name="orchardBlockIrrigationType" ng-model="user.orchardBlockIrrigationType" placeholder="Sprinkler" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockIrrigationType.$dirty && frmCreateOrchardBlock.orchardBlockIrrigationType.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockIrrigationType.$dirty && frmCreateOrchardBlock.orchardBlockIrrigationType.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockDate">Date Planted</label>
+		<input type="date" class="form-control" name="orchardBlockDate" ng-model="user.orchardBlockDate" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockDate.$dirty && frmCreateOrchardBlock.orchardBlockDate.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockDate.$dirty && frmCreateOrchardBlock.orchardBlockDate.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockCultivation">Cultivation Frequency</label>
+		<input class="form-control" type="text" name="orchardBlockCultivation" ng-model="user.orchardBlockCultivation" placeholder="Monthly" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCultivation.$dirty && frmCreateOrchardBlock.orchardBlockCultivation.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockCultivation.$dirty && frmCreateOrchardBlock.orchardBlockCultivation.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<div>
+		<label for="orchardBlockYield">Yield Measurement Type</label>
+		<input class="form-control" type="text" name="orchardBlockYield" ng-model="user.orchardBlockYield" placeholder="Basket" required>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockYield.$dirty && frmCreateOrchardBlock.orchardBlockYield.$error.required">Required!</span>
+		<span ng-show="frmCreateOrchardBlock.orchardBlockYield.$dirty && frmCreateOrchardBlock.orchardBlockYield.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<button class="btn" ng-disabled="frmCreateOrchardBlock.$invalid">Create Orchard Block</button>
 </form>
