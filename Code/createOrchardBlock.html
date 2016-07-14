@@ -1,9 +1,9 @@
 <legend>New Crop Type</legend>
 <form name="frmCreateCropType">
-	<div>
+	<div n>
 		<label for="cropType">Crop Type</label>
-		<input class="form-control" type="text" name="cropType" ng-model="user.cropType" placeholder="Mango" required>
-		<span ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.required">Required!</span>
+		<input class="form-control" type="text" name="orchardBlock" ng-model="user.cropType" placeholder="Mango" required>
+		<span ng-show="frmCreateCropType.orchardBlock.$dirty && frmCreateCropType.$error.required">Required!</span>
 		<span ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.text">Not a valid name!</span>
 	</div>
 	<br/>
@@ -14,5 +14,5 @@
 	<span ng-show="frm.cultivationFrequencyDescription.$dirty && frm.cultivationFrequencyDescription.$error.text">Not a valid description!</span>
 	</div>
 	<br/> -->
-	<button class="btn" ng-disabled="frmCreateCropType.$invalid">Create Crop Type</button>
+	<button class="btn" ng-disabled="frmCreateCropType.$invalid">Create Orchard Block</button>
 </form>

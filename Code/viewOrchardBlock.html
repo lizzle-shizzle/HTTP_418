@@ -1,0 +1,35 @@
+<legend>Orchard Block</legend>
+<div id="tableContainer">
+	<table class="table table-bordered">
+		<th>#</th>
+		<th>Name</th>
+		<th>Crop Yield</th>
+		<th>Hectares</th>
+		<th>Revenue Generated</th>
+		<th>Block Dimentions</th>
+		<th>Crop Type</th>
+		<th>Irrigation Type</th>
+		<th>Date Planted</th>
+		<th>Cultivation Frequency</th>
+		<th>Yield Measurement Type</th>
+		<th>GPS Co-ordinates</th>
+		<th>Edit</th>
+		<tr ng-repeat="x in orchardBlock">
+			<td>{{ $index + 1 }}.</td>
+			<th>{{x.Name}}</th>
+			<th>{{x.CropYield}}</th>
+			<th>{{x.Hectares}}</th>
+			<th>{{x.RevenueGenerated}}</th>
+			<th>{{x.BlockDimentions}}</th>
+			<th>{{x.CropType}}</th>
+			<th>{{x.IrrigationType}}</th>
+			<th>{{x.DatePlanted}}</th>
+			<th>{{x.CultivationFrequency}}</th>
+			<th>{{x.YieldMeasurementType}}</th>
+			<th>{{x.GPSCoordinates}}</th>
+			<td><a class="info" href="#/Edit"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+		</tr>
+	</table>
+</div>
+<br/>						
+<a class="btn" href="#/Create">Create Orchard Block</button>
