@@ -85,43 +85,31 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
 							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
+								<legend>Modify Irrigation Type</legend>
+								<form name="frmEditIrrigationType">
+									<div ng-controller="selectIrrigation">
+										<label for="selectIrrigation">Irrigation Type</label>
+										<select name="selectIrrigation" class="form-control" ng-model="selectIrrigation" ng-options="x for x in irrigation"></select>
+									</div>
+									<br/>
+									<div>
+										<label for="irrigationName">Name</label>
+										<input class="form-control" type="text" name="irrigationName" ng-model="user.irrigationName" placeholder="Surface" required>
+										<span ng-show="frmEditIrrigationType.irrigationName.$dirty && frmEditIrrigationType.irrigationName.$error.required">Required!</span>
+										<span ng-show="frmEditIrrigationType.irrigationName.$dirty && frmEditIrrigationType.irrigationName.$error.text">Not a valid name!</span>
+									</div>
+									<br/>
+									<div>
+										<label for="irrigationDescription">Description</label>
+										<textarea class="form-control" type="text" rows="3" id="irrigationDescription" name="irrigationDescription" ng-model="user.irrigationDescription" placeholder="Water the surface of the orchard." required></textarea>
+										<span ng-show="frmEditIrrigationType.irrigationDescription.$dirty && frmEditIrrigationType.irrigationDescription.$error.required">Required!</span>
+										<span ng-show="frmEditIrrigationType.irrigationDescription.$dirty && frmEditIrrigationType.irrigationDescription.$error.text">Not a valid description!</span>
+									</div>
+									<br/>
+									<button class="btn" ng-disabled="frmEditIrrigationType.$invalid">Update Irrigation Type</button>
+								</form>
 							</fieldset>
-							-->
 						</div>
 					</div>
 				</div>
