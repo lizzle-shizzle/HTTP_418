@@ -85,43 +85,25 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
-						<!--Page-Content
 							<fieldset>
-								<legend>Your Farm's Details</legend>
-								<label for="fname">Farmer's Name</label><br>
-								<label class="info">Tony Stark</label><br>
-
-								<label for="lname">Crop Type</label><br>
-								<label class="info">Macadamias</label><br>
-
-								<label for="username">Listed Orchards</label><br>
-								<ul class="info">
-									<li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-									<li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-								</ul>
-							</fieldset><br>
-
-							<fieldset>
-								<legend>Chosen Orchard's Details</legend>
-
-								<label for="fname">Orchard Block</label><br>
-								<label class="info">A</label><br>
-
-								<label for="lname">Irrigation Type</label><br>
-								<label class="info">Daily Sprinklers</label><br>
-
-								<label for="username">Crop Dimension</label><br>
-								<label class="info">400 x 600</label><br>
-
-								<label for="d">Date Planted</label><br>
-								<label class="info">09-06-2016</label><br>
-
-								<label for="h">Average Yields per Hectare</label><br>
-								<label class="info">40</label><br><br>
-
-								<button class="btn">Button</button>
-							</fieldset>
-							-->
+								<legend>Irrigation Type</legend>
+								<div ng-app="myApp" ng-controller="selectIrrigation" id="tableContainer">
+									<table class="table table-bordered">
+									<th>#</th>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Edit</th>
+									  <tr ng-repeat="x in irrigation">
+									    <td>{{ $index + 1 }}.</td>
+									    <td>{{ x.Name }}</td>
+									    <td>{{ x.Description }}</td>
+									    <td><a class="info" href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+									  </tr>
+									</table>
+								</div>
+								<br/>
+							</fieldset><br/>
+							<button class="btn">Create New Irrigation Type</button>
 						</div>
 					</div>
 				</div>
