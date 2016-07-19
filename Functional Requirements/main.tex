@@ -387,7 +387,65 @@
 	\end{figure}
 \end{itemize}
 
-%Worker CRUD
+\section{Create Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to add his workers individually onto the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker doesn’t already exist in the database.
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s details are in the database.			
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__CreateWorker.png}
+		\caption{Create Worker}
+	\end{figure}
+\end{itemize}
+
+\section{View Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his worker’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__ViewWorker.png}
+		\caption{View Worker}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Worker}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his worker’s details on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__EditWorker.png}
+		\caption{Edit Worker}
+	\end{figure}
+\end{itemize}
 
 \section{Create Orchard Block}
 \begin{itemize}
