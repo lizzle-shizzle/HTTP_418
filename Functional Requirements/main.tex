@@ -326,7 +326,66 @@
 	\end{figure}
 \end{itemize}
 
-%Foreman CRUD
+\section{Create Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to register his foremen individually on the system as general users via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman doesn’t already exist in the database.
+	\end{enumerate}A
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman will have a general user account registered in the database.
+		\item Login details are generated for the foreman.				
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__CreateForeman.png}
+		\caption{Create Foreman}
+	\end{figure}
+\end{itemize}
+
+\section{View Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current state of his foreman’s general user account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman’s account details will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__ViewForeman.png}
+		\caption{View Foreman}
+	\end{figure}
+\end{itemize}
+
+\section{Edit Foreman}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to edit his foreman’s general user account for the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman already exists in the database.					
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman’s details are updated in the database.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__EditForeman.png}
+		\caption{Edit Foreman}
+	\end{figure}
+\end{itemize}
 
 %Worker CRUD
 
