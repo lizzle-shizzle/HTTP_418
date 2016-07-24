@@ -41,195 +41,201 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.13}Edit Foreman}{16}{section.2.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.14}Create Worker}{16}{section.2.14}
+\contentsline {section}{\numberline {2.14}Create Worker}{17}{section.2.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.15}View Worker}{17}{section.2.15}
+\contentsline {section}{\numberline {2.15}View Worker}{18}{section.2.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.16}Edit Worker}{17}{section.2.16}
+\contentsline {section}{\numberline {2.16}Edit Worker}{18}{section.2.16}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.17}Create Orchard Block}{18}{section.2.17}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.18}View Orchard Block}{19}{section.2.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.19}Edit Orchard Block (i.e. crop type, irrigation type, re-demarcate coordinates, archive, etc.)}{19}{section.2.19}
+\contentsline {section}{\numberline {2.19}Edit Orchard Block (i.e. crop type, irrigation type, re-demarcate coordinates, archive, etc.)}{20}{section.2.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.20}Create Irrigation Type}{19}{section.2.20}
+\contentsline {section}{\numberline {2.20}Create Irrigation Type}{20}{section.2.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.21}View Irrigation Type}{20}{section.2.21}
+\contentsline {section}{\numberline {2.21}View Irrigation Type}{21}{section.2.21}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.22}Edit Irrigation Type}{21}{section.2.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.23}Create Crop Type}{21}{section.2.23}
+\contentsline {section}{\numberline {2.23}Create Crop Type}{22}{section.2.23}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.24}View Crop Type}{22}{section.2.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.25}Edit Crop Type}{22}{section.2.25}
+\contentsline {section}{\numberline {2.25}Edit Crop Type}{23}{section.2.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.26}View Worker Performance}{22}{section.2.26}
+\contentsline {section}{\numberline {2.26}View Worker Yield}{23}{section.2.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.27}Update Worker Performance}{23}{section.2.27}
+\contentsline {section}{\numberline {2.27}Update Worker Yield}{24}{section.2.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.28}Create Yield Measurement Type}{23}{section.2.28}
+\contentsline {section}{\numberline {2.28}Create Yield Measurement Type}{24}{section.2.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.29}View Yield Measurement Type}{24}{section.2.29}
+\contentsline {section}{\numberline {2.29}View Yield Measurement Type}{26}{section.2.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.30}Edit Yield Measurement Type}{24}{section.2.30}
+\contentsline {section}{\numberline {2.30}Edit Yield Measurement Type}{26}{section.2.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.31}Create Cultivation Frequency}{25}{section.2.31}
+\contentsline {section}{\numberline {2.31}Create Cultivation Frequency}{26}{section.2.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.32}View Cultivation Frequency}{26}{section.2.32}
+\contentsline {section}{\numberline {2.32}View Cultivation Frequency}{27}{section.2.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.33}Edit Cultivation Frequency}{26}{section.2.33}
+\contentsline {section}{\numberline {2.33}Edit Cultivation Frequency}{27}{section.2.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.34}Maintain Foreman-Orchard Block Allocations}{27}{section.2.34}
+\contentsline {section}{\numberline {2.34}Maintain Foreman-Orchard Block Allocations}{28}{section.2.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.35}Maintain Worker-Foreman Assignments}{27}{section.2.35}
+\contentsline {section}{\numberline {2.35}Maintain Worker-Foreman Assignments}{28}{section.2.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.36}Import Census Data}{28}{section.2.36}
+\contentsline {section}{\numberline {2.36}Import Census Data}{29}{section.2.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.37}Generate Statistical Report of Worker Performance (according to time intervals)}{28}{section.2.37}
+\contentsline {section}{\numberline {2.37}Generate Statistical Report of Worker Performance (according to time intervals)}{31}{section.2.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.38}Generate Statistical Report of Crop Yield per Orchard}{29}{section.2.38}
+\contentsline {section}{\numberline {2.38}Generate Statistical Report of Crop Yield per Orchard}{32}{section.2.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.39}View Heat Map}{29}{section.2.39}
+\contentsline {section}{\numberline {2.39}View Heat Map}{32}{section.2.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.40}Create Foreman’s Shift}{30}{section.2.40}
+\contentsline {section}{\numberline {2.40}Create Foreman’s Shift}{32}{section.2.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.41}View Foreman’s Shift}{31}{section.2.41}
+\contentsline {section}{\numberline {2.41}View Foreman’s Shift}{33}{section.2.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.42}Edit Foreman’s Shift}{31}{section.2.42}
+\contentsline {section}{\numberline {2.42}Edit Foreman’s Shift}{33}{section.2.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.43}Notify Farmer Regarding Foreman’s Locations (according to time intervals)}{32}{section.2.43}
+\contentsline {section}{\numberline {2.43}Notify Farmer Regarding Foreman’s Locations (according to time intervals)}{34}{section.2.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.44}Notify Farmer of Foreman’s Activity History Every Half an Hour}{32}{section.2.44}
+\contentsline {section}{\numberline {2.44}Notify Farmer of Foreman’s Activity History Every Half an Hour}{35}{section.2.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.45}Generate Revenue Report Regarding Seasonal Yields}{33}{section.2.45}
+\contentsline {section}{\numberline {2.45}Generate Revenue Report Regarding Seasonal Yields}{35}{section.2.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.46}Generate Statistical Report Regarding Time Taken to Yield Specific Crops}{34}{section.2.46}
+\contentsline {section}{\numberline {2.46}Generate Statistical Report Regarding Time Taken to Yield Specific Crops}{36}{section.2.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Use Case Functionality}{35}{chapter.3}
+\contentsline {chapter}{\numberline {3}Use Case Functionality}{38}{chapter.3}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Login User}{35}{section.3.1}
+\contentsline {section}{\numberline {3.1}Login User}{38}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Logout User}{35}{section.3.2}
+\contentsline {section}{\numberline {3.2}Logout User}{38}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Change Password}{35}{section.3.3}
+\contentsline {section}{\numberline {3.3}Change Password}{38}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Recover Password}{35}{section.3.4}
+\contentsline {section}{\numberline {3.4}Recover Password}{38}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Create Farmer}{35}{section.3.5}
+\contentsline {section}{\numberline {3.5}Create Farmer}{38}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}View Farmer}{35}{section.3.6}
+\contentsline {section}{\numberline {3.6}View Farmer}{38}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Edit Farmer}{35}{section.3.7}
+\contentsline {section}{\numberline {3.7}Edit Farmer}{38}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.8}Create Farm}{35}{section.3.8}
+\contentsline {section}{\numberline {3.8}Create Farm}{38}{section.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.9}View Farm}{35}{section.3.9}
+\contentsline {section}{\numberline {3.9}View Farm}{38}{section.3.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.10}Edit Farm}{35}{section.3.10}
+\contentsline {section}{\numberline {3.10}Edit Farm}{38}{section.3.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.11}Create Foreman}{35}{section.3.11}
+\contentsline {section}{\numberline {3.11}Create Foreman}{38}{section.3.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.12}View Foreman}{35}{section.3.12}
+\contentsline {section}{\numberline {3.12}View Foreman}{38}{section.3.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.13}Edit Foreman}{35}{section.3.13}
+\contentsline {section}{\numberline {3.13}Edit Foreman}{38}{section.3.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.14}Create Worker}{35}{section.3.14}
+\contentsline {section}{\numberline {3.14}Create Worker}{38}{section.3.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.15}View Worker}{35}{section.3.15}
+\contentsline {section}{\numberline {3.15}View Worker}{38}{section.3.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.16}Edit Worker}{35}{section.3.16}
+\contentsline {section}{\numberline {3.16}Edit Worker}{38}{section.3.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.17}Create Orchard Block}{35}{section.3.17}
+\contentsline {section}{\numberline {3.17}Create Orchard Block}{38}{section.3.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.18}View Orchard Block}{35}{section.3.18}
+\contentsline {section}{\numberline {3.18}View Orchard Block}{38}{section.3.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.19}Edit Orchard Block (i.e. crop type, irrigation type, re-demarcate coordinates, archive, etc.)}{49}{section.3.19}
+\contentsline {section}{\numberline {3.19}Edit Orchard Block (i.e. crop type, irrigation type, re-demarcate coordinates, archive, etc.)}{55}{section.3.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.20}Create Irrigation Type}{49}{section.3.20}
+\contentsline {section}{\numberline {3.20}Create Irrigation Type}{55}{section.3.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.21}View Irrigation Type}{49}{section.3.21}
+\contentsline {section}{\numberline {3.21}View Irrigation Type}{55}{section.3.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.22}Edit Irrigation Type}{49}{section.3.22}
+\contentsline {section}{\numberline {3.22}Edit Irrigation Type}{55}{section.3.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.23}Create Crop Type}{49}{section.3.23}
+\contentsline {section}{\numberline {3.23}Create Crop Type}{55}{section.3.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.24}View Crop Type}{49}{section.3.24}
+\contentsline {section}{\numberline {3.24}View Crop Type}{55}{section.3.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.25}Edit Crop Type}{49}{section.3.25}
+\contentsline {section}{\numberline {3.25}Edit Crop Type}{55}{section.3.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.26}View Worker Performance}{49}{section.3.26}
+\contentsline {section}{\numberline {3.26}View Worker Yield}{55}{section.3.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.27}Update Worker Performance}{49}{section.3.27}
+\contentsline {section}{\numberline {3.27}Update Worker Yield}{55}{section.3.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.28}Create Yield Measurement Type}{49}{section.3.28}
+\contentsline {section}{\numberline {3.28}Create Yield Measurement Type}{55}{section.3.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.29}View Yield Measurement Type}{49}{section.3.29}
+\contentsline {section}{\numberline {3.29}View Yield Measurement Type}{55}{section.3.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.30}Edit Yield Measurement Type}{49}{section.3.30}
+\contentsline {section}{\numberline {3.30}Edit Yield Measurement Type}{55}{section.3.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.31}Create Cultivation Frequency}{49}{section.3.31}
+\contentsline {section}{\numberline {3.31}Create Cultivation Frequency}{55}{section.3.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.32}View Cultivation Frequency}{49}{section.3.32}
+\contentsline {section}{\numberline {3.32}View Cultivation Frequency}{55}{section.3.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.33}Edit Cultivation Frequency}{49}{section.3.33}
+\contentsline {section}{\numberline {3.33}Edit Cultivation Frequency}{55}{section.3.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.34}Maintain Foreman-Orchard Block Allocations}{49}{section.3.34}
+\contentsline {section}{\numberline {3.34}Maintain Foreman-Orchard Block Allocations}{55}{section.3.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.35}Maintain Worker-Foreman Assignments}{49}{section.3.35}
+\contentsline {section}{\numberline {3.35}Maintain Worker-Foreman Assignments}{55}{section.3.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.36}Import Census Data}{49}{section.3.36}
+\contentsline {section}{\numberline {3.36}Import Census Data}{55}{section.3.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.37}Generate Statistical Report of Worker Performance (according to time intervals)}{49}{section.3.37}
+\contentsline {section}{\numberline {3.37}Generate Statistical Report of Worker Performance (according to time intervals)}{55}{section.3.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.38}Generate Statistical Report of Crop Yield per Orchard}{49}{section.3.38}
+\contentsline {section}{\numberline {3.38}Generate Statistical Report of Crop Yield per Orchard}{55}{section.3.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.39}View Heat Map}{49}{section.3.39}
+\contentsline {section}{\numberline {3.39}View Heat Map}{55}{section.3.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.40}Create Foreman’s Shift}{49}{section.3.40}
+\contentsline {section}{\numberline {3.40}Create Foreman’s Shift}{55}{section.3.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.41}View Foreman’s Shift}{49}{section.3.41}
+\contentsline {section}{\numberline {3.41}View Foreman’s Shift}{55}{section.3.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.42}Edit Foreman’s Shift}{49}{section.3.42}
+\contentsline {section}{\numberline {3.42}Edit Foreman’s Shift}{55}{section.3.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.43}Notify Farmer Regarding Foreman’s Locations (according to time intervals)}{49}{section.3.43}
+\contentsline {section}{\numberline {3.43}Notify Farmer Regarding Foreman’s Locations (according to time intervals)}{55}{section.3.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.44}Notify Farmer of Foreman’s Activity History Every Half an Hour}{49}{section.3.44}
+\contentsline {section}{\numberline {3.44}Notify Farmer of Foreman’s Activity History Every Half an Hour}{55}{section.3.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.45}Generate Revenue Report Regarding Seasonal Yields}{49}{section.3.45}
+\contentsline {section}{\numberline {3.45}Generate Revenue Report Regarding Seasonal Yields}{64}{section.3.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.46}Generate Statistical Report Regarding Time Taken to Yield Specific Crops}{49}{section.3.46}
+\contentsline {section}{\numberline {3.46}Generate Statistical Report Regarding Time Taken to Yield Specific Crops}{64}{section.3.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Use Case Process Specifications}{57}{chapter.4}
+\contentsline {chapter}{\numberline {4}Use Case Process Specifications}{66}{chapter.4}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Login User}{57}{section.4.1}
+\contentsline {section}{\numberline {4.1}Login User}{66}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Logout User}{57}{section.4.2}
+\contentsline {section}{\numberline {4.2}Logout User}{66}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Change Password}{57}{section.4.3}
+\contentsline {section}{\numberline {4.3}Change Password}{66}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Recover Password}{57}{section.4.4}
+\contentsline {section}{\numberline {4.4}Recover Password}{66}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Allocate Foreman To Orchard Block}{57}{section.4.5}
+\contentsline {section}{\numberline {4.5}Allocate Foreman To Orchard Block}{66}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Deallocate Foreman From Orchard Block}{57}{section.4.6}
+\contentsline {section}{\numberline {4.6}Deallocate Foreman From Orchard Block}{66}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Import Census Data}{57}{section.4.7}
+\contentsline {section}{\numberline {4.7}Assign Worker To Foreman}{66}{section.4.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.8}Generate Statistical Report of Worker Performance (according to time intervals)}{57}{section.4.8}
+\contentsline {section}{\numberline {4.8}Reassign Worker To Foreman}{66}{section.4.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Domain Model}{61}{chapter.5}
+\contentsline {section}{\numberline {4.9}Import Census Data}{66}{section.4.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.10}Generate Statistical Report of Worker Performance (according to time intervals)}{66}{section.4.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.11}Generate Statistical Report Regarding Time Taken To Yield Specific Crops}{66}{section.4.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Domain Model}{74}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Open Issues}{62}{chapter.6}
+\contentsline {chapter}{\numberline {6}Open Issues}{76}{chapter.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Database Issues}{62}{section.6.1}
+\contentsline {section}{\numberline {6.1}Database Issues}{76}{section.6.1}
 \contentsfinish 
