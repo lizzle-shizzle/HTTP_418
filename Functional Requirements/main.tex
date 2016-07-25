@@ -810,6 +810,26 @@
 	\end{figure}
 \end{itemize}
 
+\section{View Foreman-Orchard Block Allocations}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current foreman-orchard block allocations on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The foreman-orchard block allocation already exists in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The foreman-orchard block allocations will be displayed.
+	\end{enumerate}
+	\item Service Contract
+	\begin{figure}
+		\includegraphics[scale=0.5]{ServiceContracts/class__ViewForemanOrchardAllocation.jpg}
+		\caption{View Foreman-Orchard Block Allocations}
+	\end{figure}
+\end{itemize}
+
 \section{Maintain Worker-Foreman Assignments}
 \begin{itemize}
 	\item Description\\
@@ -835,11 +855,27 @@
 		\includegraphics[scale=0.5]{ServiceContracts/class__ReassignWorkerToForeman.png}
 		\caption{Reassign Worker to New Foreman}
 	\end{figure}
+\end{itemize}
+
+\section{View Worker-Foreman Assignments}
+\begin{itemize}
+	\item Description\\
+	This use case will be initiated by the farmer to view the current worker-foreman block assignments on the system via the Web interface.
+	\item Pre-Conditions
+	\begin{enumerate}
+		\item The farmer is currently logged into the system. (i.e. Super user logged in)
+		\item The worker-foreman block assignment already exists in the database.		
+	\end{enumerate}
+	\item Post-Conditions
+	\begin{enumerate}
+		\item The worker-foreman block assignments will be displayed.
+	\end{enumerate}
+	\item Service Contract
 	\begin{figure}
 		\includegraphics[scale=0.5]{ServiceContracts/class__ViewWorkerForemanAssignment.jpg}
-		\caption{Maintain Worker-Foreman Assignments}
+		\caption{View Worker-Foreman Assignments}
 	\end{figure}
-\end{itemize} 
+\end{itemize}
 
 \section{Import Census Data}
 \begin{itemize}
@@ -1279,18 +1315,26 @@
 		\caption{Maintain Foreman-Orchard Block Allocations}
 	\end{figure}
 	
-	\section{Maintain Worker-Foreman Assignments}
+	\section{View Foreman-Orchard Block Allocations}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ViewWorkerForemanAssignment.jpg}
-		\caption{Maintain Worker-Foreman Assignments}
+		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ViewForemanOrchardAllocation.jpg}
+		\caption{View Foreman-Orchard Block Allocations}
 	\end{figure}
+	
+	\section{Maintain Worker-Foreman Assignments}
 	\begin{figure}
 		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__AssignWorkerToForeman.png}
 		\caption{Assign a Worker to a Foreman}
 	\end{figure}
 	\begin{figure}
 		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ReassignWorkerToForeman.png}
-		\caption{Reassing a Worker to a Foreman}
+		\caption{Reassign a Worker to a Foreman}
+	\end{figure}
+	
+	\section{View Worker-Foreman Assignments}
+	\begin{figure}
+		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ViewWorkerForemanAssignment.jpg}
+		\caption{View Worker-Foreman Assignments}
 	\end{figure}
 	
 	\section{Import Census Data}
