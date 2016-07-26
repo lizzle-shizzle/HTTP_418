@@ -1,0 +1,208 @@
+/*
+======================================
+PAGE CONTENT
+======================================
+*/
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  height: 700px;
+  background-color: #006600;
+  /*background-image: url("../IMAGES/Background1.png");
+  background-size: 100% 100%;*/
+  background: url("/images/Carousel1.jpg") no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#frmLogin, #frmLoginli {
+  background-color: #331a00;
+  color: #FFF; 
+}
+#frmLoginli{
+   width: 150%;
+}
+#frmLogin{
+   margin-top: 0;
+   padding-top: 0;
+   margin-bottom: 0;
+   padding-bottom: 0; 
+}
+label {
+  color: #29A9E1;
+} 
+
+#remember {
+  color: #FFF;
+}
+input.ng-invalid.ng-dirty{border:1px solid red;}
+
+.alert{
+}
+.errorText{
+  color: red;
+}
+#logo{
+  height: 150%;
+  padding-top: 0px;
+  padding-bottom: 2px;
+}
+#logoText{
+  color: #29A9E1;
+  padding-top: 5%;
+  margin-top:0px;
+  padding-right: 10px;
+}
+h2{
+  font-weight: bold;
+}
+.info{
+  color: white;
+  padding-left: 2%;
+  font-weight: bold;
+}
+.btn:not(#btnRegister) {
+  color: #fff;
+  background-color: #006600;
+  /*border-color: #adcb34;*/
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.btn:hover:not(#btnRegister) {
+  background-color: #004d00;
+  border-color: #004d00;
+  color: #fff;
+}
+#btnRegister{
+  background-color: #29A9E1;
+    border-color: #29A9E1;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}      
+#btnRegister:hover {
+  background-color: #1985b3;          
+  border-color: #1985b3;  
+}
+label{
+  color: #29A9E1;
+}
+.jumbo{
+  margin-top: 7%;
+}
+.jumbotron{
+  background-color: rgba(26,13,0,0.8); // I don't know the .well color, so I used white as example
+  margin-top: 200px;
+  color: white;
+}
+/*
+======================================
+NAVBAR
+======================================
+*/
+.navbar-right {
+  padding-right: 1%;
+}
+.navbar-form{
+  padding-right: 2%;
+}
+.navbar-form .form-group {
+  padding-right: 5px;
+}
+.navbar-wrapper {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+z-index: 10;
+}
+.navbar a {
+color: #fff !important;
+}
+.navbar .active a {
+color: #fff !important;
+background-color: #4d2800 !important;
+}
+.navbar, .dropdown-menu, .dropdown-submenu {
+background-color: #331a00;
+/*height: 65px;*//*mobile not working*/
+/*padding-top: 1%;*//*mobile not working*/
+}
+.dropdown-menu li a:hover {
+  background-color: black;
+}
+#brandSection{
+padding-top: 0%;
+}
+legend{
+color: white;
+font-weight: bold;
+}
+button{
+background-color: #00cc00;
+color: white;
+}
+button:hover{
+background-color: #006600;
+color: white;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 650px;
+  background-color:#555;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+/*
+======================================
+RESPONSIVE CSS
+======================================
+*/
+@media (min-width: 768px) {
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .navbar-wrapper {
+    margin-top: 20px;
+    margin-bottom: -90px;
+  }
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+  .carousel .item {
+    height: 768px;
+  }
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 768px;
+  }
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+}
