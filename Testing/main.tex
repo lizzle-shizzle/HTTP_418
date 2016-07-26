@@ -1,0 +1,351 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  My documentation report
+%  Objetive: Explain what I did and how, so someone can continue with the investigation
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{darkgreen}{RGB}{0, 153, 0} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{frontcover}}} % Image background
+\centering
+\vspace*{5cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textbf{Harvest}\\
+{\LARGE Testing Documentation}\par % Book title
+\vspace*{0.5cm}
+{\Huge HTTP\_418}\par
+\centering
+\vspace*{0.5cm}
+\begin{itemize}[label={}, noitemsep]	
+		\Large
+		\item \begin{center} Christiaan Saaiman, 12059138 \end{center}
+		\item \begin{center} Michael Loosen, 14017254 \end{center}
+		\item \begin{center} Elizabeth Bode, 14310156 \end{center}
+		\item \begin{center} LC Meyers, 14024633 \end{center}	
+\end{itemize}
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{orchard.png} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{mangoes.png} % Chapter heading image
+
+\chapter{User Module}
+	\section{Functionality which is Correctly Implemented}
+		\begin{itemize}
+			\item\textbf{Creating a farmer account} -
+			Some description. 
+			
+			\item\textbf{Logging in} -
+			Some description.
+			
+			\item\textbf{Logging out} -
+			Some description.
+		\end{itemize}
+	\section{Short-comings of Implemented Functionality}
+		\begin{itemize}
+			\item\textbf{Creating a farmer account} -
+			Some description. 
+			
+			\item\textbf{Logging in} -
+			Some description.
+			
+			\item\textbf{Logging out} -
+			Some description.
+		\end{itemize}
+	\section{Missing Functionality}
+		\begin{itemize}
+			\item\textbf{Importing census data} -
+			Some description. 
+		\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+\chapterimage{macadamias.png}
+
+\chapter{Farm Module}
+	\section{Functionality which is Correctly Implemented}
+		\begin{itemize}
+			\item\textbf{Adding a farm} -
+			Some description. 
+			
+			\item\textbf{Viewing a farm} -
+			Some description.
+			
+			\item\textbf{Editing a farm} -
+			Some description.
+			
+			\item\textbf{Adding a orchard block} -
+			Some description. 
+			
+			\item\textbf{Viewing a orchard block} -
+			Some description.
+			
+			\item\textbf{Editing a orchard block} -
+			Some description.
+		\end{itemize}
+	\section{Short-comings of Implemented Functionality}
+		\begin{itemize}
+			\item\textbf{Adding a farm} -
+			Some description. 
+			
+			\item\textbf{Viewing a farm} -
+			Some description.
+			
+			\item\textbf{Editing a farm} -
+			Some description.
+			
+			\item\textbf{Adding a orchard block} -
+			Some description. 
+			
+			\item\textbf{Viewing a orchard block} -
+			Some description.
+			
+			\item\textbf{Editing a orchard block} -
+			Some description.
+		\end{itemize}
+	\section{Missing Functionality}
+		\begin{itemize}
+			\item\textbf{Viewing heat map} -
+			Some description.
+		\end{itemize}
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+\chapterimage{avocados.png}
+\chapter{Employee Module}
+	\section{Functionality which is Correctly Implemented}
+		\begin{itemize}
+			\item\textbf{Adding a foreman} -
+			Some description. 
+			
+			\item\textbf{Viewing a foreman} -
+			Some description.
+			
+			\item\textbf{Editing a foreman} -
+			Some description.
+		\end{itemize}
+	\section{Short-comings of Implemented Functionality}
+		\begin{itemize}
+			\item\textbf{Adding a foreman} -
+			Some description. 
+			
+			\item\textbf{Viewing a foreman} -
+			Some description.
+			
+			\item\textbf{Editing a foreman} -
+			Some description.
+		\end{itemize}
+	\section{Missing Functionality}
+		\begin{itemize}
+			\item\textbf{Maintaining worker-foreman assignments} -
+			Some description.
+			
+			\item\textbf{Viewing worker-foreman assignments} -
+			Some description.
+			
+			\item\textbf{Viewing foreman-orchard Block allocations} -
+			Some description.
+		\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 4
+%----------------------------------------------------------------------------------------
+
+\chapterimage{litchis.png} % Chapter heading image
+
+\chapter{Reporting Module}
+	\section{Functionality which is Correctly Implemented}
+		\begin{itemize}
+			\item\textbf{Nothing yet} -
+			The entire reporting module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on reporting. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
+		\end{itemize}
+	\section{Short-comings of Implemented Functionality}
+		\begin{itemize}
+			\item{Not applicable}
+		\end{itemize}
+	\section{Missing Functionality}
+		\begin{itemize}
+			\item\textbf{Generating a statistical report of worker performance} -
+			Some description.
+			
+			\item\textbf{Generating a statistical report regarding crop yield per orchard} -
+			Some description.
+			
+			\item\textbf{Generating a revenue report regarding seasonal yields} -
+			Some description.
+			
+			\item\textbf{Generating a statistical report regarding time taken to yield specific crops} -
+			Some description.
+		\end{itemize}
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5
+%----------------------------------------------------------------------------------------
+
+\chapterimage{farmer.png} % Chapter heading image
+
+\chapter{Notifications Module}
+	\section{Functionality which is Correctly Implemented}
+		\begin{itemize}
+			\item\textbf{Nothing yet} -
+			The entire notifications module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on notifications. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
+		\end{itemize}
+	\section{Short-comings of Implemented Functionality}
+		\begin{itemize}
+			\item{Not applicable}
+		\end{itemize}
+	\section{Missing Functionality}
+		\begin{itemize}
+			\item\textbf{Viewing notifications} -
+			Some description.
+			
+			\item\textbf{Deleting notifications} -
+			Some description.
+			
+			\item\textbf{Notifying farmer regarding foreman’s locations} -
+			Some description.
+			
+			\item\textbf{Notifying farmer of foreman’s activity history every half an hour} -
+			Some description.			
+		\end{itemize}
+	
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 6
+%----------------------------------------------------------------------------------------
+
+\chapterimage{mangoes2.png} % Chapter heading image
+
+\chapter{Architecture Compliance Analysis}
+
+	\section{Specifications to which the System Adhered}
+		\subsection{Web Interface}
+			\begin{itemize}
+				\item\textbf{HTML5} -
+				Some description.
+				
+				\item\textbf{CSS} -
+				Some description.
+				
+				\item\textbf{Google Maps JavaScript API Heatmap Layer} -
+				Some description.
+				
+				\item\textbf{Bootstrap} -
+				Some description.
+				
+				\item\textbf{AJAX} -
+				Some description.
+				
+				\item\textbf{HTML5 Local Storage} -
+				Some description.
+				
+				\item\textbf{Cookies} -
+				Some description.
+				
+				\item\textbf{Express.js} -
+				Some description.
+			\end{itemize}
+		\subsection{Android Interface}
+		The Android interface simply consists of six use cases, namely: login, logout, recover password, change password, view worker yield and update worker yield. Therefore, we have decided to implement the Android interface once the bulk of the Web interface's functionality is complete. This is due to the fact that the Android interface heavily relies on the Web interface. Thus, no implementation and testing has been done yet for the Android interface so an architecture compliance analysis can't be performed at this time. However, the technologies required for this interface have been listed below for convenience.
+			\begin{itemize}
+				\item{PhoneGap}				
+				\item{Ionic}
+			\end{itemize}
+		\subsection{Both Systems}
+			\begin{itemize}
+				\item\textbf{JavaScript} -
+				Some description.
+				
+				\item\textbf{AngluarJS} -
+				Some description.
+				
+				\item\textbf{Node.js} -
+				Some description.
+				
+				\item\textbf{Sails.js} -
+				Some description.
+				
+				\item\textbf{Neo4j} -
+				Some description.
+				
+				\item\textbf{Unit.js} -
+				Some description.
+				
+				\item\textbf{Dagger} -
+				Some description.
+				
+				\item\textbf{Express.js} -
+				Some description.
+				
+				\item\textbf{Google App Engine Server} -
+				Some description.			
+			\end{itemize}	
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 7
+%----------------------------------------------------------------------------------------
+
+\chapterimage{litchiTree.png} % Chapter heading image
+
+\chapter{Open Issues}
+
+\section{I am the first Open Issue}
+
+\end{document}
