@@ -37,6 +37,7 @@ var jsFilesToInject = [
   'js/public/signup/SignupModule.js',
   'js/private/dashboard/DashboardModule.js',
   'js/public/homepage/HomepageModule.js',
+  'js/private/irrigationType/IrrigationTypeModule.js',
   'js/**/*.js'
 ];
 

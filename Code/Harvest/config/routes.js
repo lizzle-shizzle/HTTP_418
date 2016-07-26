@@ -36,7 +36,8 @@ module.exports.routes = {
   // Server-rendered HTML webpages
   ////////////////////////////////////////////////////////////
 
-  'GET /signup': {view: 'signup'},
+  'GET /signup': {view: 'signup'},  
+  'GET /irrigationType': {view: 'irrigationType'},
   'GET /': 'PageController.showHomePage',
 
   ////////////////////////////////////////////////////////////

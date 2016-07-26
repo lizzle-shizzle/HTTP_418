@@ -1,15 +1,5 @@
 
-  <head>
-    <title>Harvest | Welcome back, <%= me.fname %> <%= me.lname %>!</title>
-    
-    <script type="text/javascript">
-    window.SAILS_LOCALS = {
-      _csrf: '<%= _csrf %>',
-      me: <%- JSON.stringify(me) %>
-    };
-    </script>
-  </head>
-  <body ng-app="DashboardModule" ng-cloak>
+  <body ng-app="IrrigationModule" ng-cloak>
 
     <div class="navbar-wrapper">
         <div class="container">
@@ -32,7 +22,7 @@
                     <li class="divider"></li>
                     <li><a href="#">Orchard Blocks</a></li>
                     <li><a href="#">Crop Types</a></li>
-                      <li><a href="/irrigationType">Irrigation Types</a></li>
+                      <li><a href="#">Irrigation Types</a></li>
                       <li><a href="#">Cultivation Frequencies</a></li>
                       <li><a href="#">Yield Measurement Types</a></li>
                       <li><a href="#">View Heat Map</a></li>
@@ -84,34 +74,28 @@
     </div><!-- /navbar wrapper -->
     <div class="container">
       <div class="row jumbo">
-        <div class="col-md-10 col-md-offset-1">
-          <div class="jumbotron">
-            <fieldset>
-              <legend>Your Farm's Details</legend>
-              <label for="fname">Farmer's Name</label><br>
-              <label class="info"><%= me.fname %> <%= me.lname %></label><br>
-
-              <label for="lname">Crop Type</label><br>
-              <label class="info">Macadamias</label><br>
-
-              <label for="username">Listed Orchards</label><br>
-                <div ng-controller="DashboardController" id="tableContainer">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">
+              <fieldset>
+                <legend>Irrigation Type</legend>
+                <div ng-controller="IrrigationController" id="tableContainer">
                   <table class="table table-bordered">
                   <th>#</th>
-                  <th>Orchard Block Name</th>
-                  <!-- <th>Soil Type</th> -->
+                  <th>Name</th>
+                  <th>Description</th>
                   <th>Edit</th>
-                    <tr ng-repeat="x in orchardBlock">
+                    <tr ng-repeat="x in irrigation">
                       <td>{{ $index + 1 }}.</td>
                       <td>{{ x.Name }}</td>
-                      <!-- <td>{{ x.Description }}</td> -->
+                      <td>{{ x.Description }}</td>
                       <td><a class="info" href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
                     </tr>
                   </table>
                 </div>
-                <br/>           
-                <button class="btn">Create New Orchard Block</button>
-              </fieldset>
+                <br/>
+              </fieldset><br/>
+              <button class="btn">Create New Irrigation Type</button>
+            </div>
           </div>
         </div>
       </div>
