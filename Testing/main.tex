@@ -86,29 +86,47 @@
 	\section{Functionality which is Correctly Implemented}
 		\begin{itemize}
 			\item\textbf{Creating a farmer account} -
-			Some description. 
+			The signup page for registering a farmer account contains input fields so that the user can input their necessary details. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. The First Name and Last Name fields ensure that the user doesn't enter more than 50 characters. The Date of Birth field makes use of a date picker to ensure incorrect data cannot be entered. The Email Address field makes use of an email input, which ensures that only a valid email address can be entered. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. The Create Account button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Create Account button is enabled. After submission of the form, if the email address entered is already taken, then an error message is displayed specifying that that email address already exists and then navigates back to the signup page. If submission is successful, the user will automatically be logged into the sysetm.
+			
+			\item\textbf{Viewing \& editing a farmer account} - 
+			The edit form contains input fields that are populated with the user's current information. The First Name and Last Name fields ensure that the user doesn't enter more than 50 characters. The Date of Birth field makes use of a date picker to ensure incorrect data cannot be entered. The Email Address field makes use of an email input, which ensures that only a valid email address can be entered. There is a Change Password button, which navigates to the change password form. This functionality is specified under Change Password. The Update Details button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Update Details button is enabled. After submission of the form, if the email address entered is already taken, then an error message is displayed specifying that that email address already exists and then navigates back to the edit profile page.
 			
 			\item\textbf{Logging in} -
-			Some description.
+			The Sign In form contains an inputs for the farmer's Email Address, Password and a Remember Me checkbox. There is also a link to recover your password. Both the email and password inputs are required and the Sign In button is disabled until these inputs have data entered into them. If the user has an account and enters in the correct details for this account then the user will be directed to their homepage. Otherwise, an error message will be displayed specifying that the email and password entered doesn't match any account on the system and they will remain on the landing page.
 			
 			\item\textbf{Logging out} -
+			The user can only view the Log Out button if they have been logged into the system. When the user clicks the Log Out button, the user's session is destroyed and their information is reset to null causing them to be logged out of the system. Upon logout, they will be redirected to the landing page.
+			
+			\item\textbf{Changing password} -
+			The user can only navigate to this form through the edit profile form, which is only accessible if the user is logged in. This ensures that the user does have an account present in the database, and eliminates the need to re-enter your current password. The Change Password form contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
+			
+			\item\textbf{Recovering password} -
 			Some description.
 		\end{itemize}
 	\section{Short-comings of Implemented Functionality}
 		\begin{itemize}
 			\item\textbf{Creating a farmer account} -
-			Some description. 
+			The Date of Birth field needs to ensure that a range of invalid dates is excluded, such as this year as the year of birth. This functionality still needs to be implemented. If submission of the form is unsuccessful, there is no error message displayed specifying that the signup failed. However, a redirect does return the user to the signup page. There is currently no functionality included to specify that this account has superuser rights.
+			
+			\item\textbf{Viewing \& editing a farmer account} - 
+			If the updating of the account is unsuccessful an error message should be dispayed and the user should be redirected to the edit profile page. If the update is successful, a message specifying this success should be displayed and the user should be redirected to their homepage.
 			
 			\item\textbf{Logging in} -
-			Some description.
+			There is currently no functionality specifying whether user account has been locked or not, such as if a foreman no longer works for a farmer then their details would need to be archived. The remember me functionality hasn't been implemented yet as it is a nice-to-have component of the system. The recovery password link's functionality is specified under the Recover Password use case.
 			
 			\item\textbf{Logging out} -
+			There are no short-comings with this functionality.
+			
+			\item\textbf{Changing password} -
+			If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred.
+			
+			\item\textbf{Recovering password} -
 			Some description.
 		\end{itemize}
 	\section{Missing Functionality}
 		\begin{itemize}
 			\item\textbf{Importing census data} -
-			Some description. 
+			This feature hasn't been implemented yet as it is considered  an important functionality and will implemented at a later stage.
 		\end{itemize}
 
 %----------------------------------------------------------------------------------------
