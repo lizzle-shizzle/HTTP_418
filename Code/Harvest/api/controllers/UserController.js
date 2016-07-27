@@ -139,5 +139,44 @@ module.exports = {
       return res.backToHomePage();
 
     });
+  },
+  show: function (req, res, next) {
+    User.findOne(param('id'), function foundUser (err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      res.view({
+        user: user
+      });
+    });
+  },
+  editFarmer: function(req, res, next) {
+    User.findOne(req.param('id'), function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      res.view({
+        user: user
+      });
+    });
+  },
+  update: function(req, res, next) {
+    User.update(req.param('id'), req.params.all(), function userUpdated (err) {
+      if (err) return res.redirect('/user/editFarmer' + req.param('id'));
+     // alert("Success");
+      /*toastr['success']('Invalid email/password combination.', 'Success', {
+          closeButton: true
+        });*/
+      //res.redirect('/user/show' + req.param('id'));
+      //return res.redirect('/user/editFarmer' + req.param('id'));
+      return res.view('signup');
+    });
   }
+/*
+  index: function(req, res, next) {
+    User.find(function foundUsers (err, users) {
+      if (err) return next(err);
+      res.view({
+        users: users
+      });
+    });
+  }*/
 };

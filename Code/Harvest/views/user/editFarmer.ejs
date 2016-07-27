@@ -1,0 +1,114 @@
+<head>
+	<title>Edit Profile Page</title>
+	<script type="text/javascript">
+    window.SAILS_LOCALS = {
+      _csrf: '<%= _csrf %>',
+      me: <%- JSON.stringify(me) %>
+    };
+    </script>
+</head>
+<body ng-app onload="editFarmerInfo()">
+	<div class="navbar-wrapper">
+  		<div class="container">
+		    <div class="navbar navbar-inverse navbar-fixed-top">
+		        <div class="navbar-header">
+				    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </a>
+		          	<a class="navbar-brand" href="#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="./IMAGES/Logo.png" alt="Harvest Logo"></a>
+		        </div>
+		        <div class="navbar-collapse collapse">
+		          	<ul class="nav navbar-nav">
+			            <li class="dropdown">
+					        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Farm
+					        <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="#">View Farm Details</a></li>
+						      <li class="divider"></li>
+						      <li><a href="#">Orchard Blocks</a></li>
+						      <li><a href="#">Crop Types</a></li>
+					          <li><a href="#">Irrigation Types</a></li>
+					          <li><a href="#">Cultivation Frequencies</a></li>
+					          <li><a href="#">Yield Measurement Types</a></li>
+					          <li><a href="#">View Heat Map</a></li>
+					          <li class="divider"></li>
+					        </ul>
+					    </li>
+			            <li class="dropdown">
+					        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Workers
+					        <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="#">View Workers</a></li>
+						      <li class="divider"></li>
+						      <li><a href="#">View Worker-Foreman Assignments</a></li>
+					          <li class="divider"></li>
+					        </ul>
+					    </li>
+			            <li class="dropdown">
+					        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Foremen
+					        <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="#">View Foremen</a></li>
+						      <li class="divider"></li>
+						      <li><a href="#">View Foreman-Orchard Block Allocations</a></li>
+							  <li><a href="#">Manage Foremen Shifts</a></li>
+					          <li class="divider"></li>
+					        </ul>
+					    </li>       
+			            <li class="dropdown">
+					        <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Reports
+					        <span class="caret"></span></a>
+					        <ul class="dropdown-menu">
+					          <li><a href="#">Worker Performance</a></li>
+						      <li><a href="#">Crop Yield per Orchard</a></li>
+						      <li class="divider"></li>
+							  <li><a href="#">Seasonal Yield Revenue</a></li>
+							  <li><a href="#">Time Taken to Cultivate Specific Crops</a></li>
+					          <li class="divider"></li>
+					        </ul>
+					    </li>            
+		          	</ul>
+		          	<ul class="nav navbar-nav navbar-right">
+		          		<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+			            <li class="active"><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+			            <li><a href="#" id="btnLogOut"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+		          	</ul>
+		        </div>
+		    </div>			    
+		    <div class="row jumbo">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="jumbotron">
+					<form name="frmEditProfile" action="/user/update/<%= me.id %>" method="POST">
+							<fieldset>
+								<legend>Edit Your Details</legend>
+								<label for="fname">First Name</label>
+								<input type="text" name="fname" class="form-control" placeholder="Tony" value="<%= me.fname %>" required>
+								<span class="errorText" ng-show="frmEditProfile.fname.$dirty && frmEditProfile.fname.$error.required">Required!</span><br>
+								<label for="lname">Last Name</label>
+								<input type="text" name="lname" class="form-control" placeholder="Stark" value="<%= me.lname %>" required>
+								<span class="errorText" ng-show="frmEditProfile.lname.$dirty && frmEditProfile.lname.$error.required">Required!</span><br>
+								<label for="birthdate">Date of Birth</label>
+								<input type="date" name="birthdate" class="form-control" value="<%= me.birthdate %>" required>
+								<span class="errorText" ng-show="frmEditProfile.birthdate.$dirty && frmEditProfile.birthdate.$error.required">Required!</span><br>
+								<label for="emailProfile">Email Address</label>
+								<input type="email" name="emailProfile" class="form-control" placeholder="tony.stark@gmail.com" value="<%= me.email %>" required>
+								<span class="errorText" ng-show="frmEditProfile.emailProfile.$dirty && frmEditProfile.emailProfile.$error.required">Required!</span>
+				              	<span class="errorText" ng-show="frmEditProfile.emailProfile.$dirty && frmEditProfile.emailProfile.$error.email">Not an email!</span><br>
+				              	<input type="hidden" class="hide" name="_csrf" value="<%= _csrf %>">
+							</fieldset><br>
+							<button type="submit" class="btn">Change Password</button><br><br><br>
+							<button type="submit" class="btn" id="btnEditProf" ng-disabled="frmEditProfile.$invalid">Update Details</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /navbar wrapper -->	
+	
+	<!-- FOOTER -->
+	<footer>
+		<p class="pull-right"><a href="#">Back to top</a></p>
+	</footer>
+</body>
