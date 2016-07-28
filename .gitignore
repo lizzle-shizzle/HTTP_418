@@ -112,6 +112,9 @@ _minted*
 # nomencl
 *.nlo
 
+# pdf files
+*.pdf
+
 # sagetex
 *.sagetex.sage
 *.sagetex.py
