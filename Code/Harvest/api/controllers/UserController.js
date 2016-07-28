@@ -167,7 +167,20 @@ module.exports = {
         });*/
       //res.redirect('/user/show' + req.param('id'));
       //return res.redirect('/user/editFarmer' + req.param('id'));
-      return res.view('signup');
+      /*if (req.param('email').rule !== 'unique') {
+        return res.emailAddressInUse();
+      }*/
+      return res.view('dashboard', {
+        me: {
+          id: req.param('id'),
+          fname: req.param('fname'),
+          lname: req.param('lname'),
+          birthdate: req.param('birthdate'),
+          email: req.param('email'),
+          isAdmin: !!req.param('admin'),
+          gravatarUrl: req.param('gravatarUrl')
+        }
+      });
     });
   }
 /*
