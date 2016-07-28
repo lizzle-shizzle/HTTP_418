@@ -109,6 +109,9 @@ _minted*
 # mylatexformat
 *.fmt
 
+# pdf files
+*.pdf
+
 # nomencl
 *.nlo
 
