@@ -80,6 +80,18 @@
 %	CHAPTER 1
 %----------------------------------------------------------------------------------------
 
+\chapterimage{avocados2.png} % Chapter heading image
+
+\chapter{Methodology Explained}
+We, as HTTP\_418, had a discussion after project allocations regarding how we were going to tackle our project. We came to the decision to first map out the system as a whole, so as to fully understand the scope and inner workings of the system. We did this through various meetings and then finally a determination of an adequate domain model. Once we had a better understanding of our system, we decided that understanding what was required for each functional part was important to know where to begin. So we planned on drafting a formulation of our functional requirements and then confirming this draft with our client to ensure we were on the right track. This involved mapping each functional part of our system into diagrams so we understood how each part of the system interacted with each other.\newline\newline
+Once this was completed, we realised the importance of a unified user interface that encompassed user-friendliness and an excellent user experience. As we were going to be split up during the holiday, this factor was extremely important as we didn’t want the design to suffer because of miscommunication. To solve this issue, we decided our next sprint would need to be a mock-up of the user interface for every use case so that we could agree as a whole that we were satisfied with what the outcome of the system would be. After this, we agreed that the focus should entirely be on the implementation and testing of the system now that we had an interface to work from, especially considering it is a mostly Web-based system which requires code to link to the interface mark-up. \newline\newline
+Thus, we believe that we have formed our own methodology, which is neither completely Agile nor Waterfall, which is more effective for Web development than choosing one type of methodology in its entirety. We feel that the importance of initially determining the functional and user interface requirements is crucial to a successful user-friendly website rather than needing to iron out all inconsistencies and design issues right at the end of development. Once these requirements are drafted, the implementation and testing should become of more importance with updates to all the documentation still occurring throughout the development process. To sum it up, this methodology is divided into 2 phases where the focus shifts from requirements definition and design to implementation and testing following a semi-Waterfall structure within each phase but an Agile structure overall.
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+
 \chapterimage{mangoes.png} % Chapter heading image
 
 \chapter{Use Case Prioritization}
@@ -124,7 +136,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 2
+%	CHAPTER 3
 %----------------------------------------------------------------------------------------
 \chapterimage{macadamias.png}
 \chapter{Use Cases and Service Contracts}
@@ -642,8 +654,8 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__ViewWorkerYield.png}
-		\caption{View Worker Performance}
+		\includegraphics[scale=0.4]{ServiceContracts/class__ViewWorkerYield.png}
+		\caption{View Worker Yield}
 	\end{figure}
 \end{itemize}
 
@@ -662,8 +674,8 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__updateWorkerYield.png}
-		\caption{Update Worker Performance}
+		\includegraphics[scale=0.4]{ServiceContracts/class__updateWorkerYield.png}
+		\caption{Update Worker Yield}
 	\end{figure}
 \end{itemize}
 
@@ -682,7 +694,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__CreateYieldMeasurementType.jpg}
+		\includegraphics[scale=0.45]{ServiceContracts/class__CreateYieldMeasurementType.jpg}
 		\caption{Create Yield Measurement Type}
 	\end{figure}
 \end{itemize}
@@ -702,7 +714,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__ViewYieldMeasurementType.jpg}
+		\includegraphics[scale=0.4]{ServiceContracts/class__ViewYieldMeasurementType.jpg}
 		\caption{View Yield Measurement Type}
 	\end{figure}
 \end{itemize}
@@ -722,7 +734,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__EditYieldMeasurementType.jpg}
+		\includegraphics[scale=0.4]{ServiceContracts/class__EditYieldMeasurementType.jpg}
 		\caption{Edit Yield Measurement Type}
 	\end{figure}
 \end{itemize}
@@ -805,7 +817,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__MaintainOrchardBlockAllocations.jpg}
+		\includegraphics[scale=0.35]{ServiceContracts/class__MaintainOrchardBlockAllocations.jpg}
 		\caption{Maintain Foreman-Orchard Block Allocations}
 	\end{figure}
 \end{itemize}
@@ -825,7 +837,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__ViewForemanOrchardAllocation.jpg}
+		\includegraphics[scale=0.4]{ServiceContracts/class__ViewForemanOrchardAllocation.jpg}
 		\caption{View Foreman-Orchard Block Allocations}
 	\end{figure}
 \end{itemize}
@@ -848,11 +860,11 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__AssignWorkerToForeman.png}
+		\includegraphics[scale=0.4]{ServiceContracts/class__AssignWorkerToForeman.png}
 		\caption{Assign Worker to Foreman}
 	\end{figure}
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__ReassignWorkerToForeman.png}
+		\includegraphics[scale=0.4]{ServiceContracts/class__ReassignWorkerToForeman.png}
 		\caption{Reassign Worker to New Foreman}
 	\end{figure}
 \end{itemize}
@@ -872,7 +884,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__ViewWorkerForemanAssignment.jpg}
+		\includegraphics[scale=0.4]{ServiceContracts/class__ViewWorkerForemanAssignment.jpg}
 		\caption{View Worker-Foreman Assignments}
 	\end{figure}
 \end{itemize}
@@ -932,7 +944,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__GenerateCropYieldPerOrchardBlockReport.jpg}
+		\includegraphics[scale=0.3]{ServiceContracts/class__GenerateCropYieldPerOrchardBlockReport.jpg}
 		\caption{Generate Statistical Report of Crop Yield per Orchard}
 	\end{figure}
 \end{itemize}
@@ -1075,7 +1087,7 @@
 	\end{enumerate}
 	\item Service Contract
 	\begin{figure}
-		\includegraphics[scale=0.5]{ServiceContracts/class__GenerateRevenueReportRegardingSeasonalYields.jpg}
+		\includegraphics[scale=0.3]{ServiceContracts/class__GenerateRevenueReportRegardingSeasonalYields.jpg}
 		\caption{Generate Revenue Report Regarding Seasonal Yields}
 	\end{figure}
 \end{itemize}
@@ -1103,7 +1115,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 3
+%	CHAPTER 4
 %----------------------------------------------------------------------------------------
 
 \chapterimage{avocados.png}
@@ -1262,14 +1274,14 @@
 	
 	\section{View Worker Yield}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ViewWorkerYield.png}
-		\caption{View Worker Performance}
+		\includegraphics[scale=0.45]{UseCaseDiagrams/uc__ViewWorkerYield.png}
+		\caption{View Worker Yield}
 	\end{figure}
 	
 	\section{Update Worker Yield}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__UpdateWorkerYield.png}
-		\caption{Update Worker Performance}
+		\includegraphics[scale=0.35]{UseCaseDiagrams/uc__UpdateWorkerYield.png}
+		\caption{Update Worker Yield}
 	\end{figure}
 	
 	\section{Create Yield Measurement Type}
@@ -1311,7 +1323,7 @@
 	
 	\section{Maintain Foreman-Orchard Block Allocations}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__MaintainForemanOrchardBlockAllocations.jpg}
+		\includegraphics[scale=0.45]{UseCaseDiagrams/uc__MaintainForemanOrchardBlockAllocations.jpg}
 		\caption{Maintain Foreman-Orchard Block Allocations}
 	\end{figure}
 	
@@ -1327,7 +1339,7 @@
 		\caption{Assign a Worker to a Foreman}
 	\end{figure}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__ReassignWorkerToForeman.png}
+		\includegraphics[scale=0.45]{UseCaseDiagrams/uc__ReassignWorkerToForeman.png}
 		\caption{Reassign a Worker to a Foreman}
 	\end{figure}
 	
@@ -1394,18 +1406,18 @@
 	\clearpage
 	\section{Generate Revenue Report Regarding Seasonal Yields}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__GenerateRevenueReportRegardingSeasonalYields.jpg}
+		\includegraphics[scale=0.4]{UseCaseDiagrams/uc__GenerateRevenueReportRegardingSeasonalYields.jpg}
 		\caption{Generate Revenue Report Regarding Seasonal Yields}
 	\end{figure}
 	
 	\section{Generate Statistical Report Regarding Time Taken to Yield Specific Crops}
 	\begin{figure}
-		\includegraphics[scale=0.5]{UseCaseDiagrams/uc__GenerateStatisticalReportRegardingTimeTakenToYieldSpecificCrops.png}
+		\includegraphics[scale=0.4]{UseCaseDiagrams/uc__GenerateStatisticalReportRegardingTimeTakenToYieldSpecificCrops.png}
 		\caption{Generate Statistical Report Regarding Time Taken to Yield Specific Crops}
 	\end{figure}
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 4
+%	CHAPTER 5
 %----------------------------------------------------------------------------------------
 
 \chapterimage{litchis.png} % Chapter heading image
@@ -1479,21 +1491,20 @@
 \end{figure}
 
 %----------------------------------------------------------------------------------------
-%	CHAPTER 5
+%	CHAPTER 6
 %----------------------------------------------------------------------------------------
 
-\chapterimage{litchiTree.png} % Chapter heading image
+\chapterimage{mangoes2.png} % Chapter heading image
 
 \chapter{Domain Model}
-
 \begin{figure}
-	\includegraphics[scale=0.5]{DomainModel/Domain_Model.jpg}
-	\caption{Domain Model for our system}
+	\includegraphics[scale=0.45]{DomainModel/Domain_Model.jpg}
+	\caption{Domain Model}
 \end{figure}
 	
 	
 %----------------------------------------------------------------------------------------
-%	CHAPTER 6
+%	CHAPTER 7
 %----------------------------------------------------------------------------------------
 
 \chapterimage{farmer.png} % Chapter heading image

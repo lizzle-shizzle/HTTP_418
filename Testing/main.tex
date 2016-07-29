@@ -328,7 +328,7 @@
 				Some description.
 				
 				\item\textbf{Express.js} -
-				Some description.
+				Express.js has not been used in our system as of the time being. However, it will be required for server interaction for handling the sending of password recovery emails so it will be incorporated into the system at a later stage.
 			\end{itemize}
 		\subsection{Android Interface}
 		The Android interface simply consists of six use cases, namely: login, logout, recover password, change password, view worker yield and update worker yield. Therefore, we have decided to implement the Android interface once the bulk of the Web interface's functionality is complete. This is due to the fact that the Android interface heavily relies on the Web interface. Thus, no implementation and testing has been done yet for the Android interface so an architecture compliance analysis can't be performed at this time. However, the technologies required for this interface have been listed below for convenience.
@@ -339,31 +339,31 @@
 		\subsection{Both Systems}
 			\begin{itemize}
 				\item\textbf{JavaScript} -
-				Some description.
-				
-				\item\textbf{AngluarJS} -
-				Some description.
-				
-				\item\textbf{Node.js} -
-				Some description.
+				JavaScript has been used for all aspects of the system, as was expected. We used JavaScript within all the frameworks we have used in implementation thus far, and we have also used external JavaScript files to handle any processing that we couldn't achieve with the frameworks.
 				
 				\item\textbf{Sails.js} -
 				Some description.
 				
-				\item\textbf{Neo4j} -
+				\item\textbf{AngluarJS} -
+				We have incorporated AngularJS into our HTML code and used it in conjunction with the Sails.js framework to create a user-friendly and dynamic Web interface.
+				
+				\item\textbf{Node.js} -
+				Sails.js handles all the Node.js functionality, such as the running of the server. So at this stage we have explictly incorporated Node.js, but it is implicitly being used within the Sails.js framework.				
+				
+				\item\textbf{MongoDB} -
 				Some description.
 				
 				\item\textbf{Unit.js} -
-				Some description.
+				We have yet to do unit tests on the functional components we have completed, but we are still considering this framework to assist us with them at a later stage.
 				
 				\item\textbf{Dagger} -
-				Some description.
+				We have yet to do unit tests on the functional components we have completed, but we are still considering this framework to assist us with them at a later stage.
 				
 				\item\textbf{Express.js} -
-				Some description.
+				As with Node.js, we have yet to explicitly incorporate this framework into our implementation. However, Sails.js does make use of it implicitly. It will also be required, in conjunction with Node.js, to handle the sending of password recovery emails to users.
 				
 				\item\textbf{Google App Engine Server} -
-				Some description.			
+				We are still waiting for our client's financial manager to get back to us regarding whether they are willing to fund us to use this server. At this stage, it seems more than likely that we will be using this as the server as it allows for easy installation and integration of all the NPM packages used for implementation.			
 			\end{itemize}	
 	
 %----------------------------------------------------------------------------------------
