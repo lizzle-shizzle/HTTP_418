@@ -442,16 +442,16 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 		\begin{itemize}
 			\item \textbf{Description}\\
-			Neo4j is a popular graph database that is an ACID compliant transactional database. The database management system uses Cypher Query Language or in short CQL
+			MongoDB is a popular NoSQL document-oriented database that is open-source and cross-platform. It stores data in JSON-like documents which are stored in binary form called BSON.
 			\item \textbf{Performance}\\
-			Because of the graph nature of  Neo4j there is no need to iteratively traverse a linear list of indexes to find an entry, this means read and write performance of Neo4j is very fast.
+			The structure of MongoDB provides high throughput and low latency meaning regardless of the amount of queries being executed simultaneously it performs timely and consistently.
 			\item \textbf{Scalability}\\
-			The so called index-free adjacency property of a graph means that the time it takes to get the relationships between entries stays constant as the database size increases as opposed to relational databases where the time takes longer as the database enlarges.
+			MongoDB can handle an increasing amount of users and queries due to its ability to scale up and scale-out by utilising automatic sharding without increased time frames. In contrast to relational databases, whereby the time takes longer as the database enlarges.
 			\item \textbf{Usability}\\
-			According to the developers of Neo4j it is very easy to learn and use.
+			The setting up of MongoDB is generally the only challenge. However, the querying syntax is simple and easy to learn.
 		\end{itemize}
 	\end{itemize}
 	\subsection{Operating System}
@@ -517,11 +517,11 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 		\item Cookies
 		\begin{itemize}
 			\item \textbf{Description}\\
-			Cookies are a temporary method of local storage mainly used to remember user logins or user preferences on websites
+			Cookies are a temporary method of local storage mainly used to remember user logins or user preferences on websites.
 		\end{itemize}
 		\item HTML5 Local Storage
 		\begin{itemize}
@@ -590,7 +590,7 @@
 	\subsection{Database System}
 	\begin{itemize}
 		\item HTML5 Local Storage
-		\item Neo4j
+		\item MongoDB
 	\end{itemize}
 	\subsection{Operating System}
 	\begin{itemize}
@@ -619,7 +619,7 @@
 	\section{Integration Channels}
 	The entire system will be implemented using a client-server architecture due to the dynamic message-passing nature of the application. However, the frameworks that we will be using to implement the required functionality are based on the Model-View-Controller architecture. Thus, it will be the effective integration of these frameworks MVC-based functionality working collaboratively as a client-server architecture. The entire system will be coded using JavaScript as it is a dynamic, versatile language that has a lot of support. This also ensures that integration between the back-end and front-end system won’t cause any serious complications. Libraries and frameworks will also be used to adapt JavaScript to be able to run on a mobile environment.\newline\newline
 	Node.js will handle the server-side communication for the system as it handles real-time data transfer quickly and efficiently regardless of scalability. Express.js will be the primary web server framework to integrate with Node.js in order to handle the message-passing. Sails.js will be a fundamental framework implemented on both the front-end and back-end of the system as it offers a multitude of functionalities and primarily integrates with Node.js. The Angular.js framework will be used collaboratively with HTML5 and JavaScript to provide the required functionality. CSS3 and the Bootstrap framework will be used to handle the styling of the front-end. AJAX will potentially be used to handle the passing of any data that cannot be handled by the other abovementioned frameworks. The Google Maps JavaScript API Heatmap Layer will be incorporated into the system in order to generate the heatmap functionality that the system requires. PhoneGap and Ionic will be used together to adapt the Web interface code to run on an Android  and iOS platform.\newline\newline
-	Neo4j is the chosen database for the system as it offers the advantages of both a NoSQL database and a SQL database. It effectively handles scalability without sacrificing performance, whilst also having the ability to store relationships between data entries. Sails.js also provides a plugin that adapts our implementation to effectively integrate with Neo4j.
+	MongoDB is the chosen database for the system as it offers the advantages of both a NoSQL database and a SQL database. It effectively handles scalability without sacrificing performance. Sails.js also provides a plugin that adapts our implementation to effectively integrate with MongoDB.
 	
 	
 	%----------------------------------------------------------------------------------------
@@ -731,8 +731,7 @@
 	
 	\section{Database Issues}
 	\begin{itemize}
-		\item We are not exactly sure how we are going to design our database and store data. We do not yet know if we need relationships or not
-		\item We have not yet decided on a proper local database that takes advantage of HTML5 Local Storage.
+		\item We recently changed our database system from Neo4j to MongoDB so we are currently moving our system over. This was due to the fact that we were having issues with getting Neo4j to work effectively and we wanted to push development rather than waste time trying to get it to work. It also wasn't the most ideal database for our system and we decided that MongoDB suits the system's capabilities.
 	\end{itemize}
 	
 \end{document}
