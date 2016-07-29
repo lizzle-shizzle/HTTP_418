@@ -112,9 +112,6 @@ _minted*
 # nomencl
 *.nlo
 
-# pdf files
-*.pdf
-
 # sagetex
 *.sagetex.sage
 *.sagetex.py
@@ -125,9 +122,15 @@ _minted*
 *.sympy
 sympy-plots-for-*.tex/
 
+# pdf files
+*.pdf
+
 # pdfcomment
 *.upa
 *.upb
+
+# ptc
+*.ptc
 
 #pythontex
 *.pytxcode
