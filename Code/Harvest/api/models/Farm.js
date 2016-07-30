@@ -8,7 +8,20 @@
 module.exports = {
 
   attributes: {
+  	//The farm size
+  	size: {
+  		type: 'float',
+  		required: true
+  	},
 
+  	name: {
+  		type: 'string',
+  		required: false,
+  	}
+
+  	/*farmer: {
+  		model: 'user'
+  	}*/
   }
 };
 
