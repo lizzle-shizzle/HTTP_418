@@ -7,7 +7,7 @@
 
 module.exports = {
 	'new': function(req, res) {
-		res.view({title: "Create new farm"});
+		res.view({layout: "signedInLayout", title: "Create new farm"});
 	}
 };
 
