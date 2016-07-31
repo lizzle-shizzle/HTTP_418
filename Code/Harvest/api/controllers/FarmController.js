@@ -7,7 +7,7 @@
 
 module.exports = {
 	'new': function(req, res) {
-		res.view();
+		res.view({title: "Create new farm"});
 	}
 };
 
