@@ -35,7 +35,9 @@ module.exports = {
           email: user.email,
           isAdmin: !!user.admin,
           gravatarUrl: user.gravatarUrl
-        }
+        },
+        layout: "signedInLayout",
+        title: "Harvest | Welcome back, " +user.fname + " " + user.lname + "!"
       });
 
     });
