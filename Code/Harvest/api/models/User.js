@@ -53,7 +53,7 @@ module.exports = {
 
     //A user who is a farmer can have many farms
     farms :{
-      collection: 'farm'
+      collection: 'farm',
       via: 'farmer'
     }
   }

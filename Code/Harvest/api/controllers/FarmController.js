@@ -21,14 +21,23 @@ module.exports = {
     // create farm form -> new.ejs
     Farm.create({
     	name: req.param("fname"),
-    	size: req.param("fsize")
+    	size: req.param("fsize"),
+    	farmer: req.session.me
     }, function farmCreated(err, farm) {
     	//If there is an error 
     	//return appropiate error message
     	if(err) return res.negotiate(err);
 
-    	//If sucessfull go back to dashboard
-    	return res.redirect("/");
+    	//If farm created sucessfully
+    	//Add to farmer
+    	User.find()
+    	.populate('farms')
+    	.exec(function farmLinked(err, user) {
+    		if(err) return res.negotiate(err);
+
+    		//If sucessfull go back to dashboard
+    		return res.redirect("/");
+    	});    	
     });
   }
 };
