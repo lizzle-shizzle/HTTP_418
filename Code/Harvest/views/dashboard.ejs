@@ -1,5 +1,5 @@
 
-  <head>
+ <!--  <head>
     <title>Harvest | Welcome back, <%= me.fname %> <%= me.lname %>!</title>
     
     <script type="text/javascript">
@@ -9,7 +9,7 @@
     };
     </script>
   </head>
-  <body ng-app="DashboardModule" ng-cloak>
+  <body ng-app="DashboardModule" ng-cloak> -->
 
     <!-- <div class="navbar-wrapper">
         <div class="container">
@@ -91,8 +91,10 @@
               <label for="fname">Farmer's Name</label><br>
               <label class="info"><%= me.fname %> <%= me.lname %></label><br>
 
-              <label for="lname">Crop Type</label><br>
-              <label class="info">Macadamias</label><br>
+              <%if (typeof me.farmName != "undefined") { %>
+                <label for="lname">Farm Name</label><br>
+                <label class="info">Macadamias</label><br>
+              <% } %>              
 
               <label for="username">Listed Orchards</label><br>
                 <div ng-controller="DashboardController" id="tableContainer">
@@ -111,6 +113,7 @@
                 </div>
                 <br/>           
                 <button class="btn">Create New Orchard Block</button>
+                <button class="btn" style="float:right">Edit Farm</button>
               </fieldset>
           </div>
         </div>
