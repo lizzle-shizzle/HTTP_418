@@ -1,138 +1,31 @@
-<div class="navbar-wrapper">
-        <div class="container">
-          <!--<div class="navbar navbar-inverse navbar-fixed-top">
-              <div class="navbar-header">
-              <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-                  <a class="navbar-brand" href="#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="/images/logo.png" alt="Harvest Logo"></a>
-              </div>
-              <div class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Farm
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">View Farm Details</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Orchard Blocks</a></li>
-                    <li><a href="#">Crop Types</a></li>
-                      <li><a href="#">Irrigation Types</a></li>
-                      <li><a href="#">Cultivation Frequencies</a></li>
-                      <li><a href="#">Yield Measurement Types</a></li>
-                      <li><a href="#">View Heat Map</a></li>
-                      <li class="divider"></li>
-                    </ul>
-                </li>
-                    <li class="dropdown">
-                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Workers
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">View Workers</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View Worker-Foreman Assignments</a></li>
-                      <li class="divider"></li>
-                    </ul>
-                </li>
-                    <li class="dropdown">
-                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Foremen
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">View Foremen</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View Foreman-Orchard Block Allocations</a></li>
-                  <li><a href="#">Manage Foremen Shifts</a></li>
-                      <li class="divider"></li>
-                    </ul>
-                </li>       
-                    <li class="dropdown">
-                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Reports
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Worker Performance</a></li>
-                    <li><a href="#">Crop Yield per Orchard</a></li>
-                    <li class="divider"></li>
-                  <li><a href="#">Seasonal Yield Revenue</a></li>
-                  <li><a href="#">Time Taken to Cultivate Specific Crops</a></li>
-                      <li class="divider"></li>
-                    </ul>
-                </li>            
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
-                    <li><a href="#" id="btnLogOut"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-                  </ul>
-              </div>
-          </div>-->          
-          <div class="row jumbo">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="jumbotron">
-              <div class="container">
-                <fieldset>
-                  <legend>Create Farm</legend>
-                  <form name="frmEditCropType" ng-controller="selectCropType">
-                    <div>
-                      <label for="cropType">Crop Type</label>
-                      <input class="form-control" type="text" name="cropType" id="cropType" ng-model="selectCultivationFrequency.Name" placeholder="Mango" required>
-                      <span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.required">Required!</span>
-                      <span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.text">Not a valid name!</span>
-                    </div>
-                    <br/>
-                    <!-- <div>
-                      <label for="cultivationFrequencyDescription">Description</label>
-                      <textarea class="form-control" type="text" rows="3" id="cultivationFrequencyDescription" name="cultivationFrequencyDescription" ng-model="selectCultivationFrequency.Description" placeholder="Collect crop on a monthly basis." required></textarea>
-                      <span ng-show="frmEditCropType.cultivationFrequencyDescription.$dirty && frmEditCropType.cultivationFrequencyDescription.$error.required">Required!</span>
-                      <span ng-show="frmEditCropType.cultivationFrequencyDescription.$dirty && frmEditCropType.cultivationFrequencyDescription.$error.text">Not a valid description!</span>
-                    </div>
-                    <br/> -->
-                    <button class="btn" ng-disabled="frmEditCropType.$invalid">Update Crop Type</button>
-                  </form> 
-                </fieldset>
-              </div>
-              
-              
-            <!--Page-Content
-              <fieldset>
-                <legend>Your Farm's Details</legend>
-                <label for="fname">Farmer's Name</label><br>
-                <label class="info">Tony Stark</label><br>
+<div class="container" ng-app="" >
+  <div class="row jumbo">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">
+        <!-- SIGNUP FORM --> 
+        <form action="/farm/create" method="post" name="frmCreateFarm" id="frmCreateFarm">
+          <fieldset>
+            <legend>Create Farm</legend>
 
-                <label for="lname">Crop Type</label><br>
-                <label class="info">Macadamias</label><br>
+            <label for="fname">Farm Name (Optional)</label>
+            <input type="text" name="fname" class="form-control" placeholder="Macadamia Mania" ng-model="createFarmFrm.fname" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmCreateFarm.fname.$error.maxlength">The first name cannot be more than 50 characters.</span><br>
 
-                <label for="username">Listed Orchards</label><br>
-                <ul class="info">
-                  <li>Block A<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-                  <li>Block B<a class="pull-right info"><span class="glyphicon glyphicon-edit"></span> Edit</a><a class="pull-right info"><span class="glyphicon glyphicon-info-sign"></span> View</a></li>
-                </ul>
-              </fieldset><br>
+            <label for="lname">Farm Size (In Hectares)</label>
+            <input type="number" name="fsize" class="form-control" placeholder="19.2" ng-model="createFarmFrm.fsize"  step="any">
+            <span class="errorText" ng-show="frmCreateFarm.fsize.$dirty && frmCreateFarm.fsize.$error.required">Required!</span>
+            <span class="errorText" ng-show="frmCreateFarm.fsize.$error.number">This is not a number</span><br>
 
-              <fieldset>
-                <legend>Chosen Orchard's Details</legend>
+          <!-- Disable signup button until the form has no errors -->
+          <button type="submit" class="btn" id="btnCreateFarm" ng-disabled="frmCreateFarm.$invalid">
+            <span ng-show="!createFarmFrm.loading">Create Farm</span>
+            <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+            <span ng-show="createProfileFrm.loading">Creating Your Farm...</span>
+          </button>
 
-                <label for="fname">Orchard Block</label><br>
-                <label class="info">A</label><br>
-
-                <label for="lname">Irrigation Type</label><br>
-                <label class="info">Daily Sprinklers</label><br>
-
-                <label for="username">Crop Dimension</label><br>
-                <label class="info">400 x 600</label><br>
-
-                <label for="d">Date Planted</label><br>
-                <label class="info">09-06-2016</label><br>
-
-                <label for="h">Average Yields per Hectare</label><br>
-                <label class="info">40</label><br><br>
-
-                <button class="btn">Button</button>
-              </fieldset>
-              -->
-            </div>
-          </div>
-        </div>
-      </div><!-- /container -->
-    </div><!-- /navbar wrapper -->
+          <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
