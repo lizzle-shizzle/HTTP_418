@@ -16,7 +16,9 @@ module.exports = {
 
     // Otherwise, look up the logged-in user and show the logged-in view,
     // bootstrapping basic user data in the HTML sent from the server
-    User.findOne(req.session.me, function (err, user){
+    User.findOne({id: req.session.me})
+    .populate("farms")
+    .exec(function (err, user){
       if (err) {
         return res.negotiate(err);
       }
@@ -34,7 +36,8 @@ module.exports = {
           birthdate: user.birthdate,
           email: user.email,
           isAdmin: !!user.admin,
-          gravatarUrl: user.gravatarUrl
+          gravatarUrl: user.gravatarUrl,
+          farm: user.farms[0]
         },
         layout: "signedInLayout",
         title: "Harvest | Welcome back, " +user.fname + " " + user.lname + "!"
@@ -43,4 +46,7 @@ module.exports = {
     });
   },
 
+  soon: function (req, res) {    
+    res.view('MeetBarry', {layout: "signedInLayout", title: "Coming Soon"});
+  }
 };
