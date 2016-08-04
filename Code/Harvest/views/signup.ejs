@@ -1,0 +1,143 @@
+
+  <head>
+    <title>Harvest Sign Up Page</title>
+
+    <script type="text/javascript">
+    window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
+    </script>
+
+  </head>
+
+  <body ng-app="SignupModule" ng-controller="SignupController" ng-cloak>
+    <div class="navbar-wrapper">
+      <div class="container">
+      <!-- Creates the navbar -->
+        <div class="navbar navbar-static-top navbar-inverse">
+          <div class="navbar-header">
+          <!-- This creates the mechanism for collapse button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+              <!-- This controls the number of lines in the image when the nav collapse -->
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="/images/logo.png"></a>
+          </div>
+
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>            
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login">Sign in <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-lr" role="menu"  id="frmLoginli">
+                    <div class="col-lg-12 col-md-12" id="frmLoginli">
+                        <div class="text-center"><h3>Sign In</h3></div>
+                        <form ng-submit="submitLoginForm()" name="frmLogin" id="frmLogin" role="form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input ng-model="loginForm.email" type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="tony.stark@gmail.com" value="" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.email.$dirty && frmLogin.email.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input ng-model="loginForm.password" type="password" name="password" tabindex="2" class="form-control" placeholder="******" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.password.$dirty && frmLogin.password.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-7">
+                                      <input type="checkbox" tabindex="3" name="remember" id="remember">
+                                      <label for="remember"> &nbsp;Remember Me</label>
+                                    </div>
+                                    <div class="col-xs-5 pull-right">
+                                      <button type="submit" class="btn form-control" tabindex="4" id="btnSignIn" ng-disabled="frmLogin.$invalid">
+                                        <span ng-show="!loginForm.loading">Sign in</span>
+                                        <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                                        <span ng-show="loginForm.loading">Signing in...</span>
+                                      </button>
+                                    </div>
+                                    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                        </form>
+                    </div>
+                </ul>
+              </li>     
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="jumbotron">
+      <!-- SIGNUP FORM --> 
+            <form ng-submit="submitSignupForm()" name="frmCreateProfile" id="frmCreateProfile">
+              <fieldset>
+                <legend>Enter Your Details</legend>
+
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" class="form-control" placeholder="Tony" ng-model="createProfileFrm.fname" ng-maxlength="50" required>
+                <span class="errorText" ng-show="frmCreateProfile.fname.$dirty && frmCreateProfile.fname.$error.required">Required!</span>
+                <span class="errorText" ng-show="frmCreateProfile.fname.$error.maxlength">The first name cannot be more than 50 characters.</span><br>
+
+                <label for="lname">Last Name</label>
+                <input type="text" name="lname" class="form-control" placeholder="Stark" ng-model="createProfileFrm.lname" ng-maxlength="50" required>
+                <span class="errorText" ng-show="frmCreateProfile.lname.$dirty && frmCreateProfile.lname.$error.required">Required!</span>
+                <span class="errorText" ng-show="frmCreateProfile.lname.$error.maxlength">The last name cannot be more than 50 characters.</span><br>
+
+                <label for="birthdate">Date of Birth</label>
+                <input type="date" name="birthdate" class="form-control" ng-model="createProfileFrm.birthdate" required>
+                <span class="errorText" ng-show="frmCreateProfile.birthdate.$dirty && frmCreateProfile.birthdate.$error.required">Required!</span><br>
+
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="tony.stark@gmail.com" ng-model="createProfileFrm.email" required>
+                <span class="errorText" ng-show="frmCreateProfile.email.$dirty && frmCreateProfile.email.$error.required">Required!</span>
+                <span class="errorText" ng-show="frmCreateProfile.email.$dirty && frmCreateProfile.email.$error.email">Not a valid email address!</span><br>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Must be at least 5 characters" ng-minlength="5" ng-maxlength="10" ng-model="createProfileFrm.password" compare-to="createProfileFrm.conPass" required>
+                <span class="errorText" ng-show="frmCreateProfile.password.$dirty && frmCreateProfile.password.$error.required">Required!</span>
+                <span class="errorText" ng-show="frmCreateProfile.password.$dirty && frmCreateProfile.password.$error.minlength">Password must be at least 5 characters!</span>
+                <span class="errorText" ng-show="frmCreateProfile.password.$dirty && frmCreateProfile.password.$error.maxlength">Password can't be longer than 10 characters!</span><br>
+
+                <label for="conPass">Confirm Password</label>
+                <input type="password" name="conPass" class="form-control" placeholder="*********" ng-model="createProfileFrm.conPass" required>
+                <span class="errorText" ng-show="frmCreateProfile.conPass.$dirty && frmCreateProfile.conPass.$error.required">Required!</span>
+                <span class="errorText" ng-show="frmCreateProfile.password.$error.compareTo">Password must match!</span>
+              </fieldset>
+              <br/>
+
+              <!-- Disable signup button until the form has no errors -->
+              <button type="submit" class="btn" id="btnCreateProf" ng-disabled="frmCreateProfile.$invalid">
+                <span ng-show="!createProfileFrm.loading">Create Account</span>
+                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+                <span ng-show="createProfileFrm.loading">Creating Your Account...</span>
+              </button>
+
+              <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+
+
