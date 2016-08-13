@@ -1,0 +1,31 @@
+<div class="container" ng-app="" >
+  <div class="row jumbo">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">
+        <!-- SIGNUP FORM --> 
+        <form action="/farm/create" method="post" name="frmCreateFarm" id="frmCreateFarm">
+          <fieldset>
+            <legend>Create Farm</legend>
+
+            <label for="fname">Farm Name (Optional)</label>
+            <input type="text" name="fname" class="form-control" placeholder="Macadamia Mania" ng-model="createFarmFrm.fname" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmCreateFarm.fname.$error.maxlength">The first name cannot be more than 50 characters.</span><br>
+
+            <label for="lname">Farm Size (In Hectares)</label>
+            <input type="number" name="fsize" class="form-control" placeholder="19.2" ng-model="createFarmFrm.fsize"  step="any">
+            <span class="errorText" ng-show="frmCreateFarm.fsize.$dirty && frmCreateFarm.fsize.$error.required">Required!</span>
+            <span class="errorText" ng-show="frmCreateFarm.fsize.$error.number">This is not a number</span><br>
+
+          <!-- Disable signup button until the form has no errors -->
+          <button type="submit" class="btn" id="btnCreateFarm" ng-disabled="frmCreateFarm.$invalid">
+            <span ng-show="!createFarmFrm.loading">Create Farm</span>
+            <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+            <span ng-show="createProfileFrm.loading">Creating Your Farm...</span>
+          </button>
+
+          <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
