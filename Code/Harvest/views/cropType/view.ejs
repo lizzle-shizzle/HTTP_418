@@ -8,19 +8,17 @@
 						<div ng-app="myApp" ng-controller="selectCropType" id="tableContainer">
 							<table class="table table-bordered">
 								<th>#</th>
-								<th>Crop type</th>
-								<!-- <th>Soil Type</th> -->
+								<th>Crop type</th>							
 								<th>Edit</th>
-								<tr ng-repeat="x in cropType">
+								<!--<tr ng-repeat="x in cropType">
 									<td>{{ $index + 1 }}.</td>
-									<td>{{ x.Type }}</td>
-									<!-- <td>{{ x.Description }}</td> -->
+									<td>{{ x.Type }}</td>									
 									<td><a class="info" href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-								</tr>
+								</tr>-->
 							</table>
 						</div>
-						<br/>						
-						<button class="btn">Create New Crop Type</button>
+						<br/>
+						<a href="/cropType/new" class="btn">Add Crop Type</a>											
 					</fieldset>
 				</div>
 			</div>
