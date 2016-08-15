@@ -2,37 +2,35 @@
     <div class="row jumbo">
         <div class="col-md-10 col-md-offset-1">
             <div class="jumbotron">                
-                    <form action="/cropType/create" method="post" name="frmCreateCropType" ID="frmCreateCropType">                        
+                    <form action="{{urlToPost}}" method="post" name="frmCreateCropType" id="frmCreateCropType">                        
                         <fieldset>  
-                            <legend>New Crop Type</legend>
-
-                            <!--<label for="cropType">Crop Type</label>
-                            <input class="form-control" type="text" name="cropType" ng-model="user.cropType" placeholder="Mango" required>
-                            <span class="errorText" ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.required">Required!</span>
-                            <span class="errorText" ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.text">Not a valid name!</span>                            
-                            <br/>-->
+                            <legend>New Crop Type</legend>                        
 
                             <label for="cropType">Crop Type</label>
-                            <select class="form-control" name="cropType" ng-model="user.cropType" placeholder="Mango" required>
+                            <select class="form-control" name="cropType" id="cropType" ng-change="indexChanged()" ng-model="createCropTypeFrm.cropType" required>
                                 <option value="" disabled>Select Crop Type</option>
-                                <option ng-repeat="x in cropTypes" value="{{ x.Type }}">{{ x.Type }}</option>
+                                <!--<option ng-repeat="x in cropTypes" value="{{ x.Type }}">{{ x.Type }}</option>-->
+                                <% _.each(function(type) { %>
+                                    <option value="<%= type %>"><%= type %></option> 
+                                <% });%>
                                 <option value="New">Create New Crop Type</option>
                             </select>
-                            <span class="errorText" ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.required">Required!</span>
-                            <span class="errorText" ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.text">Not a valid name!</span>                            
+                            <span class="errorText" ng-show="frmCreateCropType.cropType.$dirty && frmCreateCropType.cropType.$error.required">Required!</span>                                                        
                             <br/>
 
-                            <!--<tr >
-									<td>{{ $index + 1 }}.</td>
-									<td></td>									
-									<td><a class="info" href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-								</tr>-->											
+                            <!-- Only show this input when a new crop type needs to be added -->
+                            <div ng-show="createNew">
+                                <label for="newCropType">New Crop Type</label>
+                                <input class="form-control" type="text" name="newCropType" id="newCropType" ng-model="createCropTypeFrm.newCropType" placeholder="Mango" required>
+                                <span class="errorText" ng-show="frmCreateCropType.newCropType.$dirty && frmCreateCropType.newCropType.$error.required">Required!</span>                                                         
+                                <br/>
+                            </div>                           											
 
                             <!-- Disable signup button until the form has no errors -->
                             <button ng-click="clicked()" type="submit" class="btn" ng-disabled="frmCreateCropType.$invalid">
-                                <span ng-show="!frmCreateCropType.loading">Add Crop Type</span>
-                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="frmCreateCropType.loading"></span>
-                                <span ng-show="frmCreateCropType.loading">Adding Your Crop Type...</span>
+                                <span ng-show="!createCropTypeFrm.loading">Add Crop Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createCropTypeFrm.loading"></span>
+                                <span ng-show="createCropTypeFrm.loading">Adding Your Crop Type...</span>
                             </button>
 
                             <input type="hidden" name="_csrf" value="<%= _csrf %>" />

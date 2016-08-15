@@ -1,22 +1,35 @@
 angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$http', function($scope, $http){
     
+    $scope.createNew = false;
+    $scope.urlToPost = "/cropType/add";
+    
 	// set-up loading state
-	$scope.frmCreateCropType = {
+	$scope.createCropTypeFrm = {
 		loading: false
 	};
 
     $scope.clicked = function() {        
-        $scope.frmCreateCropType = {
+        $scope.createCropTypeFrm = {
             loading: true
         };
+    }
+
+    $scope.indexChanged = function() {
+        //$scope.frmCreateCropType.$invalid = true;
+        //$scope.frmCreateCropType.newCropType.$setValidity("required", true);
+        $scope.createCropTypeFrm.newCropType = "some value";
+        if($scope.createCropTypeFrm.cropType == 'New') {
+            $scope.createNew = true;  
+            $scope.createCropTypeFrm.newCropType = "";
+            $scope.urlToPost = "/cropType/create";
+        }
     }
 
     $scope.cropTypes = [
         {"Type": "Macadamia"},
         {"Type": "Mango"},
         {"Type": "Avocado"}
-    ];
-
+    ];    
 	/*$scope.submitSignupForm = function(){
 
 		// Set the loading state (i.e. show loading spinner)

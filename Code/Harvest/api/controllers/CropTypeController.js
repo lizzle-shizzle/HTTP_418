@@ -11,7 +11,11 @@ module.exports = {
 	      return res.view('homepage');
 	    }
 
-        res.view({layout: "signedInLayout", title: "Crop Types"});
+        res.view({layout: "signedInLayout", title: "Crop Types"/*, types: [
+            "Macadamia",
+            "Mango",
+            "Avocado"
+        ]*/});
     },
 
     new: function(req, res) {
