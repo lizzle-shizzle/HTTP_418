@@ -8,7 +8,16 @@
 module.exports = {
 
   attributes: {
+    name: {
+      type: 'string',
+      required: true
+    },
 
+    //A crop type can be linked to many farms
+    farms: {
+      collection: 'farm',
+      via: 'cropTypes'
+    }
   }
 };
 

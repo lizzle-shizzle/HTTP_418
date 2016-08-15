@@ -22,7 +22,14 @@ module.exports = {
 
   	farmer: {
   		model: 'user'
-  	}
+  	},
+
+    //A farm can have many crop types
+    cropTypes: {
+      collection: 'cropType',
+      via: 'farms',
+      dominant: true
+    }
   }
 };
 

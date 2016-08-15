@@ -14,6 +14,48 @@ module.exports = {
         res.view({layout: "signedInLayout", title: "Crop Types"});
     },
 
+    new: function(req, res) {
+		//return to homepage if not logged in
+		//cannot create farm if not logged in
+		/*if (!req.session.me) {
+	      return res.view('homepage');
+	    }*/
+		res.view({layout: "signedInLayout", title: "Create crop type"});
+	},
+
+    create: function (req, res) {
+	    // Create farm from pramaters sent from
+	    // create farm form -> new.ejs
+	    /*Farm.create({
+	    	name: req.param("fname"),
+	    	size: req.param("fsize"),
+	    	farmer: req.session.me
+	    }, function farmCreated(err, farm) {
+	    	//If there is an error 
+	    	//return appropiate error message
+	    	if(err) return res.negotiate(err);
+
+	    	//If farm created sucessfully
+	    	//Add to farmer
+	    	User.find()
+	    	.populate('farms')
+	    	.exec(function farmLinked(err, user) {
+	    		if(err) return res.negotiate(err);
+
+	    		//If sucessfull go back to dashboard
+	    		return res.redirect("/");
+	    	});    	
+	    });*/
+
+        /*CropType.find({name: 'mac'}, function(err, crop) {            
+            if(crop == undefined) 
+                console.log(crop.length);
+        });*/
+        CropType.create({name: req.param("cropType")}, function(err, crop) {
+            console.log("sucess");
+        });
+	},
+
 	/*edit: function(req, res) {
 		if (!req.session.me) {
 	      return res.view('homepage');

@@ -14,6 +14,15 @@
 							</div>
 							<br/>										
 							<button class="btn" ng-disabled="frmEditCropType.$invalid">Update Crop Type</button>
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" id="btnCreateFarm" ng-disabled="frmUpdateFarm.$invalid">
+                                <span ng-show="!createFarmFrm.loading">Update Farm</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+                                <span ng-show="createProfileFrm.loading">Updating Your Farm...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
 						</form>	
 					</fieldset>
 				</div>						
