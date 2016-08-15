@@ -2,17 +2,17 @@
     <div class="row jumbo">
         <div class="col-md-10 col-md-offset-1">
             <div class="jumbotron">                
-                    <form action="{{urlToPost}}" method="post" name="frmCreateCropType" id="frmCreateCropType">                        
+                    <form ng-submit="submitNew()" name="frmCreateCropType" id="frmCreateCropType">                        
                         <fieldset>  
                             <legend>New Crop Type</legend>                        
 
                             <label for="cropType">Crop Type</label>
-                            <select class="form-control" name="cropType" id="cropType" ng-change="indexChanged()" ng-model="createCropTypeFrm.cropType" required>
+                            <select class="form-control" name="cropType" id="cropType" ng-change="indexChanged()" ng-model="createCropTypeFrm.cropType">
                                 <option value="" disabled>Select Crop Type</option>
                                 <!--<option ng-repeat="x in cropTypes" value="{{ x.Type }}">{{ x.Type }}</option>-->
-                                <% _.each(function(type) { %>
-                                    <option value="<%= type %>"><%= type %></option> 
-                                <% });%>
+                                <% _.each(data, function(stuff) { %>
+                                    <option value="<%= stuff %>"><%= stuff %></option> 
+                                <% }) %>
                                 <option value="New">Create New Crop Type</option>
                             </select>
                             <span class="errorText" ng-show="frmCreateCropType.cropType.$dirty && frmCreateCropType.cropType.$error.required">Required!</span>                                                        

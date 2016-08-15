@@ -11,11 +11,7 @@ module.exports = {
 	      return res.view('homepage');
 	    }
 
-        res.view({layout: "signedInLayout", title: "Crop Types"/*, types: [
-            "Macadamia",
-            "Mango",
-            "Avocado"
-        ]*/});
+        res.view({layout: "signedInLayout", title: "Crop Types"});
     },
 
     new: function(req, res) {
@@ -24,7 +20,7 @@ module.exports = {
 		/*if (!req.session.me) {
 	      return res.view('homepage');
 	    }*/
-		res.view({layout: "signedInLayout", title: "Create crop type"});
+		res.view({data: [], layout: "signedInLayout", title: "Create crop type"});
 	},
 
     create: function (req, res) {
@@ -55,8 +51,21 @@ module.exports = {
             if(crop == undefined) 
                 console.log(crop.length);
         });*/
-        CropType.create({name: req.param("cropType")}, function(err, crop) {
-            console.log("sucess");
+        CropType.create({name: req.param("newCropType")}, function(err, crop) {
+            //If there is an error 
+	    	//return appropiate error message
+	    	if(err) return res.negotiate(err);
+
+	    	//If farm created sucessfully
+	    	//Add to farmer
+	    	/*User.find()
+	    	.populate('farms')
+	    	.exec(function farmLinked(err, user) {
+	    		if(err) return res.negotiate(err);*/
+
+	    		//If sucessfull go back to dashboard
+	    		return res.ok();
+	    	//});
         });
 	},
 

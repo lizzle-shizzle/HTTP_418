@@ -10,7 +10,9 @@ module.exports = {
   attributes: {
     name: {
       type: 'string',
-      required: true
+      required: true,
+      //Unique crop type name, links will be used to add cro type to farms
+      unique: true
     },
 
     //A crop type can be linked to many farms

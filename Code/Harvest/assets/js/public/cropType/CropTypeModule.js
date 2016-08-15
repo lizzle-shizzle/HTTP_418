@@ -1,1 +1,1 @@
-angular.module('CropTypeModule', []);
+angular.module('CropTypeModule', ['toastr']);

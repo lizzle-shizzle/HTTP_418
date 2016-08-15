@@ -1,27 +1,65 @@
-angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$http', function($scope, $http){
+angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$http', 'toastr', function($scope, $http, toastr){
     
-    $scope.createNew = false;
-    $scope.urlToPost = "/cropType/add";
+    $scope.createNew = false;    
     
 	// set-up loading state
 	$scope.createCropTypeFrm = {
 		loading: false
 	};
 
-    $scope.clicked = function() {        
-        $scope.createCropTypeFrm = {
-            loading: true
-        };
+    $scope.submitNew = function() {        
+        // Set the loading state (i.e. show loading spinner)
+        $scope.createCropTypeFrm.loading = true;
+
+        // Submit request to Sails.
+        if(!$scope.createNew) {
+            $http.post('/cropType/add', {			
+                cropTypeID: $scope.createCropTypeFrm.cropType
+            }).then(function onSuccess(sailsResponse){
+                //window.location = '/farm/new';
+
+            }).catch(function onError(sailsResponse){
+
+            // Handle known error type(s).
+            // If using sails-disk adpater -- Handle Duplicate Key
+            //var emailAddressAlreadyInUse = sailsResponse.status == 409;
+
+            //if (emailAddressAlreadyInUse) {
+                toastr.error('Something went wrong with adding a crop type to your farm, please try again.\nThe error is:' + sailsResponse, 'Error');
+                return;
+            //}
+
+            });
+        } else {
+            $http.post('/cropType/create', {			
+                newCropType: $scope.createCropTypeFrm.newCropType
+            }).then(function onSuccess(sailsResponse){
+                window.location = '/cropType';
+
+            }).catch(function onError(sailsResponse){
+
+            // Handle known error type(s).
+            // If using sails-disk adpater -- Handle Duplicate Key
+            //var emailAddressAlreadyInUse = sailsResponse.status == 409;
+
+            //if (emailAddressAlreadyInUse) {
+                toastr.error('Something went wrong with adding a crop type to your farm, please try again.\nThe error is: ' + sailsResponse.data.message, 'Error');
+                /*for(val in sailsResponse.data) {
+                    console.log(val);
+                }*/
+                return;
+            //}
+
+            });
+        }
     }
 
     $scope.indexChanged = function() {
-        //$scope.frmCreateCropType.$invalid = true;
-        //$scope.frmCreateCropType.newCropType.$setValidity("required", true);
+        //Force a valid form by adding junk data to newCropType input, or make the inout visible to enable creating a new crop type
         $scope.createCropTypeFrm.newCropType = "some value";
         if($scope.createCropTypeFrm.cropType == 'New') {
             $scope.createNew = true;  
-            $scope.createCropTypeFrm.newCropType = "";
-            $scope.urlToPost = "/cropType/create";
+            $scope.createCropTypeFrm.newCropType = "";            
         }
     }
 
@@ -31,8 +69,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
         {"Type": "Avocado"}
     ];    
 	/*$scope.submitSignupForm = function(){
-
-		// Set the loading state (i.e. show loading spinner)
+		
 		$scope.createProfileFrm.loading = true;
 
 		// Submit request to Sails.
