@@ -6,6 +6,9 @@
  */
 
 module.exports = {
+  name: {
+    type: 'string'
+  }
   //And orchid block can only have one crop type
   attributes: {
     cropTypes: {
