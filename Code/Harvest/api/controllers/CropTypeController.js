@@ -17,18 +17,18 @@ module.exports = {
     new: function(req, res) {
 		//return to homepage if not logged in
 		//cannot create crop type if not logged in
-		/*if (!req.session.me) {
+		if (!req.session.me) {
 	      return res.view('homepage');
-	    }*/
-		//User.findOne({id: req.session.me})
-		//.populate("farms")
-		//.exec(function (err, user) {
+	    }
+		User.findOne({id: req.session.me})
+		.populate("farms")
+		.exec(function (err, user) {
 			//If there is an error 
 	    	//return appropiate error message
-			//if(err) return res.negotiate(err);
+			if(err) return res.negotiate(err);
 
 			//get farm linked to user and fetch all orchidblocks
-			Farm.findOne({id: "579e08fa8e4ee6742064cf23"})//user.farms[0].id ------------------------- TODO ----------------------------
+			Farm.findOne({id: user.farms[0].id})
 			.populateAll()
 			.exec(function(err, farm) {
 				if(err) return res.negotiate(err);
@@ -43,7 +43,7 @@ module.exports = {
 					layout: "signedInLayout", title: "Create crop type"});
 				});				
 			});
-		//});				
+		});				
 	},
 
     create: function (req, res) {

@@ -19,7 +19,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
                 cropTypeID: $scope.createCropTypeFrm.cropType,
                 orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
-                window.location = '/cropType';
+                window.location = '/cropType/view';
             }).catch(function onError(sailsResponse){
                 // Handle known error type(s).
             
@@ -31,7 +31,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
                 newCropType: $scope.createCropTypeFrm.newCropType,
                 orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
-                window.location = '/cropType';
+                window.location = '/cropType/view';
             }).catch(function onError(sailsResponse){
                 // Handle known error type(s)
 
