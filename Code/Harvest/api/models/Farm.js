@@ -24,11 +24,10 @@ module.exports = {
   		model: 'user'
   	},
 
-    //A farm can have many crop types
-    cropTypes: {
-      collection: 'cropType',
-      via: 'farms',
-      dominant: true
+    //A farm can have many orchid blocks
+    orchids: {
+      collection: 'orchidBlock',
+      via: 'farm',      
     }
   }
 };

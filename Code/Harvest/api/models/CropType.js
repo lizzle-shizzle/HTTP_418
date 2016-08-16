@@ -16,8 +16,8 @@ module.exports = {
     },
 
     //A crop type can be linked to many farms
-    farms: {
-      collection: 'farm',
+    orchidBlocks: {
+      collection: 'orchidBlock',
       via: 'cropTypes'
     }
   }
