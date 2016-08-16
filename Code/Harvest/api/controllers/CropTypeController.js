@@ -16,16 +16,38 @@ module.exports = {
 
     new: function(req, res) {
 		//return to homepage if not logged in
-		//cannot create farm if not logged in
+		//cannot create crop type if not logged in
 		/*if (!req.session.me) {
 	      return res.view('homepage');
 	    }*/
-		res.view({data: [], layout: "signedInLayout", title: "Create crop type"});
+		//User.findOne({id: req.session.me})
+		//.populate("farms")
+		//.exec(function (err, user) {
+			//If there is an error 
+	    	//return appropiate error message
+			//if(err) return res.negotiate(err);
+
+			//get farm linked to user and fetch all orchidblocks
+			Farm.findOne({id: "579e08fa8e4ee6742064cf23"})//user.farms[0].id ------------------------- TODO ----------------------------
+			.populateAll()
+			.exec(function(err, farm) {
+				if(err) return res.negotiate(err);
+
+				//now find all croptypes
+				CropType.find().exec(function(err, cropType) {
+					if(err) return res.negotiate(err);
+
+					//send all orchid blocks linked to farm and croptypes that exist
+					res.view({data: {orchid: farm.orchids,
+						type: cropType}, 
+					layout: "signedInLayout", title: "Create crop type"});
+				});				
+			});
+		//});				
 	},
 
     create: function (req, res) {
-	    // Create farm from pramaters sent from
-	    // create farm form -> new.ejs
+	    // Create crop type from pramaters sent from -> new.ejs	    
 	    /*Farm.create({
 	    	name: req.param("fname"),
 	    	size: req.param("fsize"),
@@ -51,21 +73,24 @@ module.exports = {
             if(crop == undefined) 
                 console.log(crop.length);
         });*/
+
+		//Create new crop type, get crop type id and add to orchidblock
         CropType.create({name: req.param("newCropType")}, function(err, crop) {
             //If there is an error 
 	    	//return appropiate error message
 	    	if(err) return res.negotiate(err);
+			
+			//if created sucessfully, update orchid block to link crop type
+			OrchidBlock.update({id: req.param("orchidID")}, {
+				cropTypes: crop.id
+			}, function (err) {
+				//If there is an error 
+				//return appropiate error message
+				if(err) return res.negotiate(err);
 
-	    	//If farm created sucessfully
-	    	//Add to farmer
-	    	/*User.find()
-	    	.populate('farms')
-	    	.exec(function farmLinked(err, user) {
-	    		if(err) return res.negotiate(err);*/
-
-	    		//If sucessfull go back to dashboard
-	    		return res.ok();
-	    	//});
+				//if successfull send 200 response
+				return res.ok();
+			});	    	
         });
 	},
 

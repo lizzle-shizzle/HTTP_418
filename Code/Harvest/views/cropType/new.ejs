@@ -6,12 +6,21 @@
                         <fieldset>  
                             <legend>New Crop Type</legend>                        
 
+                            <label for="cropType">Orchid Block</label>
+                            <select class="form-control" name="orchid" id="orchid" ng-model="createCropTypeFrm.orchid">
+                                <option value="" disabled>Select Crop Type</option>                                
+                                <% _.each(data.orchid, function(orchid) { %>
+                                    <option value="<%= orchid.id %>"><%= orchid.name %></option> 
+                                <% }) %>                                
+                            </select>
+                            <span class="errorText" ng-show="frmCreateCropType.cropType.$dirty && frmCreateCropType.cropType.$error.required">Required!</span>                                                        
+                            <br/>
+
                             <label for="cropType">Crop Type</label>
                             <select class="form-control" name="cropType" id="cropType" ng-change="indexChanged()" ng-model="createCropTypeFrm.cropType">
-                                <option value="" disabled>Select Crop Type</option>
-                                <!--<option ng-repeat="x in cropTypes" value="{{ x.Type }}">{{ x.Type }}</option>-->
-                                <% _.each(data, function(stuff) { %>
-                                    <option value="<%= stuff %>"><%= stuff %></option> 
+                                <option value="" disabled>Select Crop Type</option>                                
+                                <% _.each(data.type, function(type) { %>
+                                    <option value="<%= type.id %>"><%= type.name %></option> 
                                 <% }) %>
                                 <option value="New">Create New Crop Type</option>
                             </select>

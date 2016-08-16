@@ -6,16 +6,17 @@
  */
 
 module.exports = {
-  name: {
-    type: 'string'
-  }
-  //And orchid block can only have one crop type
   attributes: {
+    name: {
+      type: 'string'
+    },
+    
+    //An orchid block can only have one crop type
     cropTypes: {
       model: 'cropType'
     },
 
-    //And orchid clock can only belong to one farm
+    //An orchid clock can only belong to one farm
     farm: {
       model: 'farm'
     }

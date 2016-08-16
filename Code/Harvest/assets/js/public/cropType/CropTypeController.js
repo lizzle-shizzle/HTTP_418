@@ -7,14 +7,17 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
 		loading: false
 	};
 
-    $scope.submitNew = function() {        
+    $scope.submitNew = function(item) {        
         // Set the loading state (i.e. show loading spinner)
         $scope.createCropTypeFrm.loading = true;
+
+        //get farm id in custom data attribute
 
         // Submit request to Sails.
         if(!$scope.createNew) {
             $http.post('/cropType/add', {			
-                cropTypeID: $scope.createCropTypeFrm.cropType
+                cropTypeID: $scope.createCropTypeFrm.cropType,
+                orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
                 //window.location = '/farm/new';
 
@@ -32,7 +35,8 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
             });
         } else {
             $http.post('/cropType/create', {			
-                newCropType: $scope.createCropTypeFrm.newCropType
+                newCropType: $scope.createCropTypeFrm.newCropType,
+                orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
                 window.location = '/cropType';
 
@@ -54,7 +58,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
         }
     }
 
-    $scope.indexChanged = function() {
+    $scope.indexChanged = function() {        
         //Force a valid form by adding junk data to newCropType input, or make the inout visible to enable creating a new crop type
         $scope.createCropTypeFrm.newCropType = "some value";
         if($scope.createCropTypeFrm.cropType == 'New') {

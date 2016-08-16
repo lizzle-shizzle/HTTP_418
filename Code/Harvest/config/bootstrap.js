@@ -15,14 +15,16 @@ module.exports.bootstrap = function(cb) {
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
 
   var mockOrchid = [
-    {'name':'Field 1'},
-    {'name':'Field 2'}
+    {'name':'Field 1',
+      'farm': '579e08fa8e4ee6742064cf23'},
+    {'name':'Field 2',
+      'farm': '579e08fa8e4ee6742064cf23'}
   ];
 
   OrchidBlock.count().exec(function(err, count) {
     //Count orchid block to see if data already exist
     if(err) {
-      sails.log.error(error.data.message);
+      sails.log.error("An error occured creating mock data: " + error.data.message);
       return cb(error);
     }
 
@@ -30,5 +32,5 @@ module.exports.bootstrap = function(cb) {
 
     OrchidBlock.create(mockOrchid).exec(cb);
   });
-  cb();
+  //cb();
 };
