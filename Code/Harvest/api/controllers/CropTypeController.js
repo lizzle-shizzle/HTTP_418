@@ -48,32 +48,6 @@ module.exports = {
 
     create: function (req, res) {
 	    // Create crop type from pramaters sent from -> new.ejs	    
-	    /*Farm.create({
-	    	name: req.param("fname"),
-	    	size: req.param("fsize"),
-	    	farmer: req.session.me
-	    }, function farmCreated(err, farm) {
-	    	//If there is an error 
-	    	//return appropiate error message
-	    	if(err) return res.negotiate(err);
-
-	    	//If farm created sucessfully
-	    	//Add to farmer
-	    	User.find()
-	    	.populate('farms')
-	    	.exec(function farmLinked(err, user) {
-	    		if(err) return res.negotiate(err);
-
-	    		//If sucessfull go back to dashboard
-	    		return res.redirect("/");
-	    	});    	
-	    });*/
-
-        /*CropType.find({name: 'mac'}, function(err, crop) {            
-            if(crop == undefined) 
-                console.log(crop.length);
-        });*/
-
 		//Create new crop type, get crop type id and add to orchidblock
         CropType.create({name: req.param("newCropType")}, function(err, crop) {
             //If there is an error 
@@ -92,6 +66,20 @@ module.exports = {
 				return res.ok();
 			});	    	
         });
+	},
+	
+	add: function (req, res) {	    
+		//Add existing crop type to OrchidBlock selected in -> new.ejs
+		OrchidBlock.update({id: req.param("orchidID")}, {
+			cropTypes: req.param('cropTypeID')
+		}, function (err) {
+			//If there is an error 
+			//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//if successfull send 200 response
+			return res.ok();
+		});	    	
 	},
 
 	/*edit: function(req, res) {

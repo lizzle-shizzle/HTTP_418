@@ -19,19 +19,12 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
                 cropTypeID: $scope.createCropTypeFrm.cropType,
                 orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
-                //window.location = '/farm/new';
-
+                window.location = '/cropType';
             }).catch(function onError(sailsResponse){
-
-            // Handle known error type(s).
-            // If using sails-disk adpater -- Handle Duplicate Key
-            //var emailAddressAlreadyInUse = sailsResponse.status == 409;
-
-            //if (emailAddressAlreadyInUse) {
+                // Handle known error type(s).
+            
                 toastr.error('Something went wrong with adding a crop type to your farm, please try again.\nThe error is:' + sailsResponse, 'Error');
                 return;
-            //}
-
             });
         } else {
             $http.post('/cropType/create', {			
@@ -39,21 +32,11 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
                 orchidID: $scope.createCropTypeFrm.orchid
             }).then(function onSuccess(sailsResponse){
                 window.location = '/cropType';
-
             }).catch(function onError(sailsResponse){
+                // Handle known error type(s)
 
-            // Handle known error type(s).
-            // If using sails-disk adpater -- Handle Duplicate Key
-            //var emailAddressAlreadyInUse = sailsResponse.status == 409;
-
-            //if (emailAddressAlreadyInUse) {
-                toastr.error('Something went wrong with adding a crop type to your farm, please try again.\nThe error is: ' + sailsResponse.data.message, 'Error');
-                /*for(val in sailsResponse.data) {
-                    console.log(val);
-                }*/
+                toastr.error('Something went wrong with adding a crop type to your farm, please try again.\nThe error is: ' + sailsResponse.data.message, 'Error');                
                 return;
-            //}
-
             });
         }
     }
