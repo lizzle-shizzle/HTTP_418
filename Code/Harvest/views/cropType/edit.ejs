@@ -1,31 +1,41 @@
-<div class="container">
+<div class="container" ng-app="CropTypeModule" ng-controller="CropTypeController">
     <div class="row jumbo">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="jumbotron">
-				<div class="container">
-					<fieldset>
-						<legend>Edit Crop Type</legend>
-						<form name="frmEditCropType" ng-controller="selectCropType">
-							<div>
-								<label for="cropType">Crop Type</label>
-								<input class="form-control" type="text" name="cropType" id="cropType" ng-model="selectCultivationFrequency.Name" placeholder="Mango" required>
-								<span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.required">Required!</span>
-								<span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.text">Not a valid name!</span>
-							</div>
-							<br/>										
-							<button class="btn" ng-disabled="frmEditCropType.$invalid">Update Crop Type</button>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form ng-submit="submitEdit()" name="frmEditCropType" id="frmEditCropType">                        
+                        <fieldset>  
+                            <legend>Edit Crop Type</legend>                        						
+
+                            <label for="orchid">Change Orchid Block linked to Crop Type <br />
+							<span style="color: red">(changing this will remove any exsisting crop type linked to the selected orchid block)</span></label>
+                            <select class="form-control" name="orchid" id="orchid" ng-init="editCropTypeFrm.orchid='<%= data.orchID %>'" ng-model="editCropTypeFrm.orchid">                                                              
+                                <% _.each(data.orchid, function(orchid) { %>                                    										
+									<option value="<%= orchid.id %>"><%= orchid.name %></option> 									
+                                <% }) %>  								                            
+                            </select>
+                            <span class="errorText" ng-show="frmEditCropType.orchid.$dirty && frmEditCropType.orchid.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="cropType">Change Crop Type</label>
+                            <select class="form-control" name="cropType" id="cropType" ng-init="editCropTypeFrm.cropType='<%= data.reqID %>'" ng-model="editCropTypeFrm.cropType">                                                             
+                                <% _.each(data.type, function(crop) { %>									
+									<option value="<%= crop.id %>"><%= crop.name %></option> 									
+                                <% }) %>                            
+                            </select>
+                            <span class="errorText" ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.required">Required!</span>                                                        
+                            <br/>                                                       											
 
                             <!-- Disable signup button until the form has no errors -->
-                            <button type="submit" class="btn" id="btnCreateFarm" ng-disabled="frmUpdateFarm.$invalid">
-                                <span ng-show="!createFarmFrm.loading">Update Farm</span>
-                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
-                                <span ng-show="createProfileFrm.loading">Updating Your Farm...</span>
+                            <button type="submit" class="btn" ng-disabled="frmEditCropType.$invalid">
+                                <span ng-show="!editCropTypeFrm.loading">Edit Crop Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editCropTypeFrm.loading"></span>
+                                <span ng-show="editCropTypeFrm.loading">Updating Your Crop Type...</span>
                             </button>
 
                             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-						</form>	
-					</fieldset>
-				</div>						
+						</fieldset>
+					</form>
+				</div>																		
 			</div>
 		</div>
 	</div>

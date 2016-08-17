@@ -20,7 +20,7 @@ module.exports = {
       required: true
     },
 
-    //A famr can only belong to one farmer
+    //A farm can only belong to one farmer
   	farmer: {
   		model: 'user'
   	},

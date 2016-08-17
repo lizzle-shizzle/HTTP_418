@@ -97,22 +97,77 @@ module.exports = {
 		});	    	
 	},
 
-	edit: function(req, res) {
+	edit: function(req, res) {		
+		//return to homepage if not logged in
+		//cannot edit crop type if not logged in
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
-
-	    //Get farm linked to logged in farmer
-	    //send farm as json
-		CropType.findOne({id: req.session.me})
+		User.findOne({id: req.session.me}) 
 		.populate("farms")
 		.exec(function (err, user) {
 			//If there is an error 
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			res.view({layout: "signedInLayout", title: "Edit farm", farm: user.farms[0]});
+			//get farm linked to user and fetch all orchidblocks
+			OrchidBlock.find({farm: user.farms[0].id})			
+			.exec(function(err, orchidblock) {
+				if(err) return res.negotiate(err);
+
+				var orchidBlockID = 0;
+				OrchidBlock.findOne({cropType: req.param("id")}, function(err, block) {
+					if(err) return res.negotiate(err);
+					orchidBlockID = block.id;
+				});
+				//now find all croptypes
+				CropType.find().exec(function(err, cropType) {
+					if(err) return res.negotiate(err);
+
+					
+					//send all orchid blocks linked to farm and croptypes that exist
+					res.view({data: {orchid: orchidblock,
+						type: cropType,
+						reqID: req.param("id"),
+						orchID: orchidBlockID}, 
+					layout: "signedInLayout", title: "Create crop type"});
+				});				
+			});
 		});
 	},
+
+	update: function(req, res) {		
+		//return to homepage if not logged in
+		//cannot edit crop type if not logged in
+		if (!req.session.me) {
+	      return res.view('homepage');
+	    }
+		//edit OrchidBlock selected in -> edit.ejs
+		OrchidBlock.update({id: req.param("orchidID")}, {
+			cropType: req.param('cropTypeID')
+		}, function (err) {
+			//If there is an error 
+			//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			CropType.findOne({id: req.param("cropTypeID")}).exec(function(err, crop) {
+				//If there is an error 
+				//return appropiate error message
+				if(err) return res.negotiate(err);
+
+				//Remove orchid block that was linked to this crop type
+				crop.orchidBlocks.remove({id: req.param("orchidID")});
+				//Save the changes
+				crop.save(function(err) {
+					//If there is an error 
+					//return appropiate error message
+					if(err) return res.negotiate(err);
+
+					//if successfull send 200 response
+					return res.ok();
+				});
+			});			
+		});	
+	}
 };
 
