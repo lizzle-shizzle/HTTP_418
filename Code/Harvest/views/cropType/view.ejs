@@ -10,12 +10,15 @@
 								<th>#</th>
 								<th>Crop type</th>							
 								<th>Edit</th>
+								<!-- fetch croptypes from sent orchid blocks -->
 								<% _.each(type, function(crop, index) { %>
-									<tr>
-										<td><%= index + 1 %>.</td>
-										<td><%= crop.name %></td>
-										<td><a class="info" href="/croptype/edit/<%= crop.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-									</tr>
+									<% if (typeof crop.cropType != "undefined" ) { %>
+										<tr>
+											<td><%= index + 1 %>.</td>
+											<td><%= crop.cropType.name %></td>
+											<td><a class="info" href="/croptype/edit/<%= crop.cropType.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+										</tr>
+									<% } %>
                                 <% }) %>
 								<!--<tr ng-repeat="x in cropTypes">
 									<td>{{ $index + 1 }}.</td>

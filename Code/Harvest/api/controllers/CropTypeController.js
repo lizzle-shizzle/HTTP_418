@@ -22,16 +22,10 @@ module.exports = {
 			OrchidBlock.find({farm: user.farms[0].id})
 			.populateAll()
 			.exec(function(err, orchid) {
-				if(err) return res.negotiate(err);
-
-				//now find all croptypes
-				//CropType.find().exec(function(err, cropType) {
-					if(err) return res.negotiate(err);
-
-					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({type: orchid.cropType, 
-					layout: "signedInLayout", title: "Create crop type"});
-				//});				
+				if(err) return res.negotiate(err);				
+				//send all orchid blocks linked to farm
+				res.view({type: orchid, 
+				layout: "signedInLayout", title: "Create crop type"});				
 			});
 		});        
     },
@@ -51,7 +45,7 @@ module.exports = {
 
 			//get farm linked to user and fetch all orchidblocks
 			OrchidBlock.find({farm: user.farms[0].id, cropType: null})			
-			.exec(function(err, farm) {
+			.exec(function(err, orchidblock) {
 				if(err) return res.negotiate(err);
 
 				//now find all croptypes
@@ -59,7 +53,7 @@ module.exports = {
 					if(err) return res.negotiate(err);
 
 					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({data: {orchid: farm,
+					res.view({data: {orchid: orchidblock,
 						type: cropType}, 
 					layout: "signedInLayout", title: "Create crop type"});
 				});				
