@@ -10,6 +10,13 @@
 								<th>#</th>
 								<th>Crop type</th>							
 								<th>Edit</th>
+								<% _.each(type, function(crop, index) { %>
+									<tr>
+										<td><%= index + 1 %>.</td>
+										<td><%= crop.name %></td>
+										<td><a class="info" href="/croptype/edit/<%= crop.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+									</tr>
+                                <% }) %>
 								<!--<tr ng-repeat="x in cropTypes">
 									<td>{{ $index + 1 }}.</td>
 									<td>{{ x.Type }}</td>									

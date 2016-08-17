@@ -11,7 +11,29 @@ module.exports = {
 	      return res.view('homepage');
 	    }
 
-        res.view({layout: "signedInLayout", title: "Crop Types"});
+		User.findOne({id: req.session.me})
+		.populate("farms")
+		.exec(function (err, user) {
+			//If there is an error 
+	    	//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//get farm linked to user and fetch all orchidblocks
+			Farm.findOne({id: user.farms[0].id})
+			.populateAll()
+			.exec(function(err, farm) {
+				if(err) return res.negotiate(err);
+
+				//now find all croptypes
+				CropType.find().exec(function(err, cropType) {
+					if(err) return res.negotiate(err);
+
+					//send all orchid blocks linked to farm and croptypes that exist
+					res.view({type: cropType, 
+					layout: "signedInLayout", title: "Create crop type"});
+				});				
+			});
+		});        
     },
 
     new: function(req, res) {
