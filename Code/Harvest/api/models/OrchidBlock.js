@@ -12,7 +12,7 @@ module.exports = {
     },
     
     //An orchid block can only have one crop type
-    cropTypes: {
+    cropType: {
       model: 'cropType'
     },
 
