@@ -6,8 +6,7 @@
                         <fieldset>  
                             <legend>Edit Crop Type</legend>                        						
 
-                            <label for="orchid">Change Orchid Block linked to Crop Type <br />
-							<span style="color: red">(changing this will remove any exsisting crop type linked to the selected orchid block)</span></label>
+                            <label for="orchid">Change Orchid Block linked to Crop Type <br />							
                             <select class="form-control" name="orchid" id="orchid" ng-init="editCropTypeFrm.orchid='<%= data.orchID %>'" ng-model="editCropTypeFrm.orchid">                                                              
                                 <% _.each(data.orchid, function(orchid) { %>                                    										
 									<option value="<%= orchid.id %>"><%= orchid.name %></option> 									

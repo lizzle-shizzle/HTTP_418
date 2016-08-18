@@ -150,23 +150,8 @@ module.exports = {
 			//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			CropType.findOne({id: req.param("cropTypeID")}).exec(function(err, crop) {
-				//If there is an error 
-				//return appropiate error message
-				if(err) return res.negotiate(err);
-
-				//Remove orchid block that was linked to this crop type
-				crop.orchidBlocks.remove({id: req.param("orchidID")});
-				//Save the changes
-				crop.save(function(err) {
-					//If there is an error 
-					//return appropiate error message
-					if(err) return res.negotiate(err);
-
-					//if successfull send 200 response
-					return res.ok();
-				});
-			});			
+			//if successfull send 200 response
+			return res.ok();						
 		});	
 	}
 };

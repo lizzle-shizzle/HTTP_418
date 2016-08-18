@@ -13,13 +13,7 @@ module.exports = {
       required: true,
       //Unique crop type name, links will be used to add cro type to farms
       unique: true
-    },
-
-    //A crop type can be linked to many farms
-    orchidBlocks: {
-      collection: 'orchidBlock',
-      via: 'cropType'
-    }
+    },    
   }
 };
 
