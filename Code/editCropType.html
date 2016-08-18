@@ -1,0 +1,18 @@
+<legend>Edit Crop Type</legend>
+<form name="frmEditCropType" ng-controller="selectCropType">
+	<div>
+		<label for="cropType">Crop Type</label>
+		<input class="form-control" type="text" name="cropType" id="cropType" ng-model="selectCultivationFrequency.Name" placeholder="Mango" required>
+		<span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.required">Required!</span>
+		<span ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<!-- <div>
+	<label for="cultivationFrequencyDescription">Description</label>
+	<textarea class="form-control" type="text" rows="3" id="cultivationFrequencyDescription" name="cultivationFrequencyDescription" ng-model="selectCultivationFrequency.Description" placeholder="Collect crop on a monthly basis." required></textarea>
+	<span ng-show="frmEditCropType.cultivationFrequencyDescription.$dirty && frmEditCropType.cultivationFrequencyDescription.$error.required">Required!</span>
+	<span ng-show="frmEditCropType.cultivationFrequencyDescription.$dirty && frmEditCropType.cultivationFrequencyDescription.$error.text">Not a valid description!</span>
+	</div>
+	<br/> -->
+	<button class="btn" ng-disabled="frmEditCropType.$invalid">Update Crop Type</button>
+</form>

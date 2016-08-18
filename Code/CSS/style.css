@@ -1,7 +1,7 @@
 /*
-======================================
+
 PAGE CONTENT
-======================================
+
 */
 body {
   /*padding-bottom: 40px;*/
@@ -82,9 +82,7 @@ label{
   color: white;
 }
 /*
-======================================
 NAVBAR
-======================================
 */
 .navbar-right {
   padding-right: 1%;
@@ -173,9 +171,7 @@ color: white;
   font-size: 40pt;
 }
 /*
-======================================
 RESPONSIVE CSS
-======================================
 */
 @media (min-width: 768px) {
   .marketing {
@@ -203,4 +199,25 @@ RESPONSIVE CSS
     font-size: 21px;
     line-height: 1.4;
   }
+}
+
+/* -- remove --*/
+.cropType {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.cropType:focus {
+  box-shadow: 0 0 5px 1px white;
+  border-color: white;
+}
+
+#btnAdd {
+  float: right;
+}
+
+.remove {
+  background: transparent !important;
+  border: none;
 }
