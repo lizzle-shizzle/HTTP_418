@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<div class="container">
+					<fieldset>
+						<legend>Crop Types</legend>
+						<div ng-app="myApp" ng-controller="selectCropType" id="tableContainer">
+							<table class="table table-bordered">
+								<th>#</th>
+								<th>Crop type</th>							
+								<th>Edit</th>
+								<!-- fetch croptypes from sent orchid blocks -->
+								<% _.each(type, function(crop, index) { %>
+									<% if (typeof crop.cropType != "undefined" ) { %>
+										<tr>
+											<td><%= index + 1 %>.</td>
+											<td><%= crop.cropType.name %></td>
+											<td><a class="info" href="/croptype/edit/<%= crop.cropType.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+										</tr>
+									<% } %>
+                                <% }) %>								
+							</table>
+						</div>
+						<br/>
+						<a href="/cropType/new" class="btn">Add Crop Type</a>											
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

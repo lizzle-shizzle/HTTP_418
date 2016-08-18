@@ -20,9 +20,16 @@ module.exports = {
       required: true
     },
 
+    //A farm can only belong to one farmer
   	farmer: {
   		model: 'user'
-  	}
+  	},
+
+    //A farm can have many orchid blocks
+    orchids: {
+      collection: 'orchidBlock',
+      via: 'farm',      
+    }
   }
 };
 

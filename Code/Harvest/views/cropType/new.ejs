@@ -1,0 +1,52 @@
+<div class="container" ng-app="CropTypeModule" ng-controller="CropTypeController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form ng-submit="submitNew()" name="frmCreateCropType" id="frmCreateCropType">                        
+                        <fieldset>  
+                            <legend>New Crop Type</legend>                        
+
+                            <label for="orchid">Orchid Block linked to Crop Type</label>
+                            <select class="form-control" name="orchid" id="orchid" ng-model="createCropTypeFrm.orchid">
+                                <option value="" disabled>Select Orchid Block</option>                                
+                                <% _.each(data.orchid, function(orchid) { %>
+                                    <option value="<%= orchid.id %>"><%= orchid.name %></option> 
+                                <% }) %>                                
+                            </select>
+                            <span class="errorText" ng-show="frmCreateCropType.orchid.$dirty && frmCreateCropType.orchid.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="cropType">Crop Type</label>
+                            <select class="form-control" name="cropType" id="cropType" ng-change="indexChanged()" ng-model="createCropTypeFrm.cropType">
+                                <option value="" disabled>Select Crop Type</option>                                
+                                <% _.each(data.type, function(type) { %>
+                                    <option value="<%= type.id %>"><%= type.name %></option> 
+                                <% }) %>
+                                <option value="New">Create New Crop Type</option>
+                            </select>
+                            <span class="errorText" ng-show="frmCreateCropType.cropType.$dirty && frmCreateCropType.cropType.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <!-- Only show this input when a new crop type needs to be added -->
+                            <div ng-show="createNew">
+                                <label for="newCropType">New Crop Type</label>
+                                <input class="form-control" type="text" name="newCropType" id="newCropType" ng-model="createCropTypeFrm.newCropType" placeholder="Mango" required>
+                                <span class="errorText" ng-show="frmCreateCropType.newCropType.$dirty && frmCreateCropType.newCropType.$error.required">Required!</span>                                                         
+                                <br/>
+                            </div>                           											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-disabled="frmCreateCropType.$invalid">
+                                <span ng-show="!createCropTypeFrm.loading">Add Crop Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createCropTypeFrm.loading"></span>
+                                <span ng-show="createCropTypeFrm.loading">Adding Your Crop Type...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>
