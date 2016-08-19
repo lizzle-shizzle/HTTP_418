@@ -19,6 +19,11 @@ module.exports = {
     //An orchid clock can only belong to one farm
     farm: {
       model: 'farm'
+    },
+
+    //An orchid block can have one yield measurement type
+    yieldMeasurement: {
+      model: 'yieldmeasurementtype'
     }
   }
 };
