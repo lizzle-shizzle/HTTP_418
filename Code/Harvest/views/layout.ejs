@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=typeof title == 'undefined' ? 'Harvest' : title%></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/angular-toastr.css">
+    <link rel="stylesheet" href="/styles/bootstrap.3.1.1.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+  <!--div class="navbar navbar-inverse navbar-fixed-top">
+              <div class="navbar-header">
+              <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+                  <a class="navbar-brand" href="#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="/images/Logo.png" alt="Harvest Logo"></a>
+              </div>
+              <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Farm
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">View Farm Details</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Orchard Blocks</a></li>
+                    <li><a href="#">Crop Types</a></li>
+                      <li><a href="#">Irrigation Types</a></li>
+                      <li><a href="#">Cultivation Frequencies</a></li>
+                      <li><a href="#">Yield Measurement Types</a></li>
+                      <li><a href="#">View Heat Map</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                </li>
+                    <li class="dropdown">
+                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Workers
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">View Workers</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">View Worker-Foreman Assignments</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                </li>
+                    <li class="dropdown">
+                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Your Foremen
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">View Foremen</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">View Foreman-Orchard Block Allocations</a></li>
+                  <li><a href="#">Manage Foremen Shifts</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                </li>       
+                    <li class="dropdown">
+                    <a class="active dropdown-toggle" data-toggle="dropdown" href="#">Reports
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Worker Performance</a></li>
+                    <li><a href="#">Crop Yield per Orchard</a></li>
+                    <li class="divider"></li>
+                  <li><a href="#">Seasonal Yield Revenue</a></li>
+                  <li><a href="#">Time Taken to Cultivate Specific Crops</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                </li>            
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                    <li><a href="/logout" id="btnLogOut"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                  </ul>
+              </div>
+          </div--> 
+    <%- body %>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/angular.1.3.js"></script>
+    <script src="/js/dependencies/jquery.min.js"></script>
+    <script src="/js/dependencies/script.js"></script>
+    <script src="/js/dependencies/angular-toastr.js"></script>
+    <script src="/js/dependencies/bootstrap.min.js"></script>
+    <script src="/js/dependencies/compareTo.module.js"></script>
+    <script src="/js/public/signup/SignupModule.js"></script>
+    <script src="/js/private/dashboard/DashboardModule.js"></script>
+    <script src="/js/public/homepage/HomepageModule.js"></script>
+    <script src="/js/public/MainModule.js"></script>
+    <script src="/js/public/cropType/CropTypeModule.js"></script>
+    <script src="/js/private/dashboard/DashboardController.js"></script>
+    <script src="/js/public/MainController.js"></script>
+    <script src="/js/public/cropType/CropTypeController.js"></script>
+    <script src="/js/public/homepage/HomepageController.js"></script>
+    <script src="/js/public/signup/SignupController.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>
