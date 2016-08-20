@@ -4,26 +4,26 @@
 			<div class="jumbotron">
 				<div class="container">
 					<fieldset>
-						<legend>Crop Types</legend>
-						<div ng-app="myApp" ng-controller="selectCropType" id="tableContainer">
+						<legend>Yield Measuement Types</legend>
+						<div ng-app="YieldTypeModule" ng-controller="YieldType" id="tableContainer">
 							<table class="table table-bordered">
 								<th>#</th>
 								<th>Crop type</th>							
 								<th>Edit</th>
-								<!-- fetch croptypes from sent orchid blocks -->
-								<% _.each(type, function(crop, index) { %>
-									<% if (typeof crop.cropType != "undefined" ) { %>
+								<!-- fetch yieldtypes from sent orchid blocks -->
+								<% _.each(type, function(yield, index) { %>
+									<% if (typeof yield.yieldMeasurement != "undefined" ) { %>
 										<tr>
 											<td><%= index + 1 %>.</td>
-											<td><%= crop.cropType.name %></td>
-											<td><a class="info" href="/croptype/edit/<%= crop.cropType.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+											<td><%= yield.yieldMeasurement.name %></td>
+											<td><a class="info" href="/yieldmeasurementtype/edit/<%= yield.yieldMeasurement.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
 										</tr>
 									<% } %>
                                 <% }) %>								
 							</table>
 						</div>
 						<br/>
-						<a href="/cropType/new" class="btn">Add Crop Type</a>											
+						<a href="/yieldmeasurementtype/new" class="btn">Add Yield Measurement Type</a>											
 					</fieldset>
 				</div>
 			</div>
