@@ -48,7 +48,9 @@ module.exports.routes = {
   'PUT /login': 'UserController.login',
   'GET /logout': 'UserController.logout',
   'GET /editFarmer': {view: 'user/editFarmer'},
-  'GET /editFarmer': 'PageController.editFarmerInfo'
+  'GET /editFarmer': 'PageController.editFarmerInfo',
+  'GET /changePassword': {view: 'user/changePassword'},
+  'GET /changePassword': 'PageController.changePasswordInfo'
 
   // '/': {
   //   view: 'homepage'
