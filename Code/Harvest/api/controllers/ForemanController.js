@@ -6,9 +6,6 @@
  */
 
 module.exports = {
-<<<<<<< HEAD
-	
-=======
 	//load page to create foreman
 	new: function(req, res){
 		//if no one is logged in, return homepage
@@ -27,7 +24,5 @@ module.exports = {
 			encryptedPassword: req.param('password')
 		})
 	}
-
->>>>>>> 7703f8db65cd828eca4b337bb94abeddb70c6364
 };
 
