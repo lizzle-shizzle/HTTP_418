@@ -22,7 +22,39 @@ module.exports = {
 			lname: req.param('lname'),
 			email: req.param('email'),
 			encryptedPassword: req.param('password')
-		})
+		}, function foremanCreated(err, foreman){
+			//Should it err, return correct message
+			if(err){
+				return res.negotiate(err);
+			}
+			//else if foreman creation == successful
+			User.find().populate('foremen').exec(function (err, user){
+				if(err){
+					return res.negotiate(err);
+				}
+				//Upon success return to dashboard
+				return res.redirect('/');
+			});
+		});
+	},
+
+	edit: function(req, res){
+		//if no one is logged in, return homepage
+		if(!req.session.me){
+			return res.view('homepage');
+		}
+
+		//retrieve foreman associated to email
+		User.findOne({id: req.param('email')}).populate('foremen').exec(function (err, user){
+			if(err){
+				return res.negotiate(err);
+			}
+			res.view({layout: 'signedInLayout', title: 'Edit Foreman', foreman: user.foremen[0]});
+		});
+	},
+
+	update: function(req, res){
+		
 	}
 };
 
