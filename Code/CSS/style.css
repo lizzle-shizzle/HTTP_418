@@ -204,3 +204,24 @@ RESPONSIVE CSS
     line-height: 1.4;
   }
 }
+
+/* -- remove --*/
+.cropType {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.cropType:focus {
+  box-shadow: 0 0 5px 1px white;
+  border-color: white;
+}
+
+#btnAdd {
+  float: right;
+}
+
+.remove {
+  background: transparent !important;
+  border: none;
+}

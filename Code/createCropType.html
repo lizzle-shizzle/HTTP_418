@@ -1,0 +1,18 @@
+<legend>New Crop Type</legend>
+<form name="frmCreateCropType">
+	<div>
+		<label for="cropType">Crop Type</label>
+		<input class="form-control" type="text" name="cropType" ng-model="user.cropType" placeholder="Mango" required>
+		<span ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.required">Required!</span>
+		<span ng-show="frmCreateCropType.$dirty && frmCreateCropType.$error.text">Not a valid name!</span>
+	</div>
+	<br/>
+	<!-- <div>
+	<label for="cultivationFrequencyDescription">Description</label>
+	<textarea class="form-control" type="text" rows="3" id="cultivationFrequencyDescription" name="cultivationFrequencyDescription" ng-model="user.cultivationFrequencyDescription" placeholder="Collect crop on a monthly basis." required></textarea>
+	<span ng-show="frm.cultivationFrequencyDescription.$dirty && frm.cultivationFrequencyDescription.$error.required">Required!</span>
+	<span ng-show="frm.cultivationFrequencyDescription.$dirty && frm.cultivationFrequencyDescription.$error.text">Not a valid description!</span>
+	</div>
+	<br/> -->
+	<button class="btn" ng-disabled="frmCreateCropType.$invalid">Create Crop Type</button>
+</form>
