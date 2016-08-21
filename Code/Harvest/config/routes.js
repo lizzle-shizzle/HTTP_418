@@ -47,6 +47,12 @@ module.exports.routes = {
   'POST /signup': 'UserController.signup',
   'PUT /login': 'UserController.login',
   'GET /logout': 'UserController.logout',
+  'GET /recoverPassword': {view: 'user/recoverPassword'},
+  'POST /recoverPassword': 'UserController.recoverPassword',
+  'GET /resetPassword/:token': 'PageController.resetPasswordInfo',
+  'POST /resetPassword/:token': 'UserController.resetPassword',
+
+
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',
   'GET /changePassword': {view: 'user/changePassword'},

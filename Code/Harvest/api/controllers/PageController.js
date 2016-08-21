@@ -105,6 +105,26 @@ module.exports = {
       });
 
     });
-  }
+  },
+  resetPasswordInfo: function (req, res) {
+
+    var flash = require('express-flash');
+    User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+      if (!user) {
+        req.flash('error', 'Password reset token is invalid or has expired.');//change flash
+        return res.redirect('/recoverPassword');
+      }
+      return res.view('user/resetPassword', {
+        me: {
+              id: user.id,
+              fname: user.fname,
+              lname: user.lname,
+              birthdate: user.birthdate,
+              email: user.email,
+              isAdmin: !!user.admin,
+              gravatarUrl: user.gravatarUrl
+            }});
+    });
+}
 
 };
