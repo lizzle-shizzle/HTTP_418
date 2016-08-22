@@ -54,7 +54,18 @@ module.exports = {
 	},
 
 	update: function(req, res){
-		
+		Foreman.update({email: req.param('email')}, {
+			fname: req.param('fname'),
+			lname: req.param('lname'),
+			encryptedPassword: req.param('password')
+		}, function foremanUpdated(err, user){
+			//In case of error, return message
+			if(err){
+				return res.negotiate(err);
+			}
+			//else go back to dashboard
+			return res.redirect('/');
+		});
 	}
 };
 
