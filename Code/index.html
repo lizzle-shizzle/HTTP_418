@@ -8,9 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="./bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link rel="stylesheet" type="text/css" href="./CSS/style.css">	
-		<script type="text/javascript" src="./JS/angular.min.js"></script>
-		<script type="text/javascript" src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="./JS/script.js"></script>
+		<script type="text/javascript" src="./JS/angular.min.js"></script>		
 	</head>
 	<body>
 		<div class="navbar-wrapper">
@@ -33,7 +31,7 @@
 						          <li><a href="#">View Farm Details</a></li>
 							      <li class="divider"></li>
 							      <li><a href="#">Orchard Blocks</a></li>
-							      <li><a href="#">Crop Types</a></li>
+							      <li><a href="#/CropType">Crop Types</a></li>
 						          <li><a href="#">Irrigation Types</a></li>
 						          <li><a href="#">Cultivation Frequencies</a></li>
 						          <li><a href="#">Yield Measurement Types</a></li>
@@ -77,7 +75,11 @@
 			          	</ul>
 			          	<ul class="nav navbar-nav navbar-right">
 			          		<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+
 				            <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+
+				            <li class="active"><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+
 				            <li><a href="#" id="btnLogOut"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
 			          	</ul>
 			        </div>
@@ -85,6 +87,7 @@
 			    <div class="row jumbo">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="jumbotron">
+
 						<!--Page-Content
 							<fieldset>
 								<legend>Your Farm's Details</legend>
@@ -122,6 +125,32 @@
 								<button class="btn">Button</button>
 							</fieldset>
 							-->
+
+						<!--form name="frmEditProfile" ng-controller="editFarmer">
+								<fieldset>
+									<legend>Edit Your Details</legend>
+									<label for="fname">First Name</label>
+									<input type="text" name="fname" class="form-control" placeholder="Tony" ng-model="farmer.FirstName" required>
+									<span class="errorText" ng-show="frmEditProfile.fname.$dirty && frmEditProfile.fname.$error.required">Required!</span><br>
+									<label for="lname">Last Name</label>
+									<input type="text" name="lname" class="form-control" placeholder="Stark" ng-model="farmer.LastName" required>
+									<span class="errorText" ng-show="frmEditProfile.lname.$dirty && frmEditProfile.lname.$error.required">Required!</span><br>
+									<label for="birthdate">Date of Birth</label>
+									<input type="date" name="birthdate" class="form-control" ng-model="farmer.DOB" required>
+									<span class="errorText" ng-show="frmEditProfile.birthdate.$dirty && frmEditProfile.birthdate.$error.required">Required!</span><br>
+									<label for="emailProfile">Email Address</label>
+									<input type="email" name="emailProfile" class="form-control" placeholder="tony.stark@gmail.com" ng-model="farmer.Email" required>
+									<span class="errorText" ng-show="frmEditProfile.emailProfile.$dirty && frmEditProfile.emailProfile.$error.required">Required!</span>
+					              	<span class="errorText" ng-show="frmEditProfile.emailProfile.$dirty && frmEditProfile.emailProfile.$error.email">Not an email!</span><br>
+								</fieldset><br>
+								<button type="submit" class="btn">Change Password</button><br><br><br>
+								<button type="submit" class="btn" id="btnEditProf" ng-disabled="frmEditProfile.$invalid">Update Details</button>
+							</form-->
+							<div class="container">
+								<fieldset ng-view>
+										
+								</fieldset>
+							</div>
 						</div>
 					</div>
 				</div>

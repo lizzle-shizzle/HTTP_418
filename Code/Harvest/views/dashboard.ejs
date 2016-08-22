@@ -1,5 +1,5 @@
 
-  <head>
+ <!--  <head>
     <title>Harvest | Welcome back, <%= me.fname %> <%= me.lname %>!</title>
     
     <script type="text/javascript">
@@ -9,9 +9,9 @@
     };
     </script>
   </head>
-  <body ng-app="DashboardModule" ng-cloak>
+  <body ng-app="DashboardModule" ng-cloak> -->
 
-    <div class="navbar-wrapper">
+    <!-- <div class="navbar-wrapper">
         <div class="container">
           <div class="navbar navbar-inverse navbar-fixed-top">
               <div class="navbar-header">
@@ -75,13 +75,13 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
+                    <li><a href="/editFarmer"><span class="glyphicon glyphicon-edit"></span> Edit Profile</a></li>
                     <li><a href="/logout" id="btnLogOut"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                   </ul>
               </div>
           </div>                    
       </div><!-- /container -->
-    </div><!-- /navbar wrapper -->
+    </div> --><!-- /navbar wrapper -->
     <div class="container">
       <div class="row jumbo">
         <div class="col-md-10 col-md-offset-1">
@@ -91,26 +91,38 @@
               <label for="fname">Farmer's Name</label><br>
               <label class="info"><%= me.fname %> <%= me.lname %></label><br>
 
-              <label for="lname">Crop Type</label><br>
-              <label class="info">Macadamias</label><br>
+              <% if (typeof me.farm.name != "undefined") { %>
+                <label for="lname">Farm Name</label><br>
+                <label class="info"><%= me.farm.name %></label><br>
+              <% } %>  
+
+              <% if (typeof me.farm.cropType != "undefined") { %>
+                  <%if (me.farm.cropType.length == 1) { %>
+                    <label for="lname">Crop Type</label><br> 
+                  <% } else { %>
+                    <label for="lname">Crop Types</label><br>
+                  <% } %>
+                <label class="info">Coming Soon</label><br>
+              <% } %>          
 
               <label for="username">Listed Orchards</label><br>
                 <div ng-controller="DashboardController" id="tableContainer">
                   <table class="table table-bordered">
                   <th>#</th>
                   <th>Orchard Block Name</th>
-                  <!-- <th>Soil Type</th> -->
-                  <th>Edit</th>
-                    <tr ng-repeat="x in orchardBlock">
+                  <!-- <th>Soil Type</th> -->                  
+                    <!--<tr ng-repeat="x in orchardBlock">
                       <td>{{ $index + 1 }}.</td>
-                      <td>{{ x.Name }}</td>
-                      <!-- <td>{{ x.Description }}</td> -->
-                      <td><a class="info" href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+                      <td>{{ x.Name }}</td>-->
+                    <tr>
+                      <td colspan="2">Coming Soon</td>
+                      <!-- <td>{{ x.Description }}</td> -->                      
                     </tr>
                   </table>
                 </div>
                 <br/>           
-                <button class="btn">Create New Orchard Block</button>
+                <!--<button class="btn">Create New Orchard Block</button>-->
+                <a href="/farm/edit" class="btn">Edit Farm</a>
               </fieldset>
           </div>
         </div>

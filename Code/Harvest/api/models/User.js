@@ -49,6 +49,12 @@ module.exports = {
     // url for gravatar
     gravatarUrl: {
       type: 'string'
+    },
+
+    //A user who is a farmer can have many farms
+    farms :{
+      collection: 'farm',
+      via: 'farmer'
     }
   }
 };
