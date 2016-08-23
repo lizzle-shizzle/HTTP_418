@@ -38,7 +38,7 @@ module.exports.routes = {
 
   'GET /signup': {view: 'signup'},
   'GET /': 'PageController.showHomePage',
-  'GET /soon': 'PageController.soon',
+  'GET /soon': 'PageController.soon',  
 
   ////////////////////////////////////////////////////////////
   // JSON API
