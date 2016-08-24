@@ -66,13 +66,18 @@ module.exports.connections = {
   //   database: 'your_mongo_db_name_here' //optional
   // },
   */
-  MongodbServer: {
+  /*MongodbServer: {
     adapter: 'sails-mongo',
     host: '127.0.0.1',
     port: 27017,
     user: '', //optional
     password: '', //optional
     database: 'Harvest' //optional
+  },*/
+  MongodbServer: {
+    adapter: 'sails-mongo',
+    url: "mongodb://admin:123@ds013926.mlab.com:13926/heroku_ppm3pg56",
+    schema: true
   },
 
   /***************************************************************************
