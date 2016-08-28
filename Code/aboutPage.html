@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>About Harvest</title>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="./JS/angular.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./CSS/style.css">
+
+	</head>
+	<body>
+		<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top">
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="./IMAGES/logo.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./landingPage.html">Home</a></li>
+            <li class="active"><a href="./aboutPage.html" target="ext">About</a></li>
+            <li><a href="./contactPage.html">Contact</a></li>            
+          </ul>
+          <form class="navbar-form navbar-right" role="search" name="frm">
+            
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" placeholder="Email Address" ng-model="user.email" required>
+              <span class="errorText" ng-show="frm.email.$dirty && frm.email.$error.required">Required!</span>
+              <span class="errorText" ng-show="frm.email.$dirty && frm.email.$error.email">Not an email!</span>              
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" name="password" ng-minlength="5" ng-maxlength="10" placeholder="Password" ng-model="user.password" required>
+              <span class="errorText" ng-show="frm.password.$dirty && frm.password.$error.required">Required!</span>
+              <span class="errorText" ng-show="frm.password.$dirty && frm.password.$error.minlength">Too Short!</span>
+              <span class="errorText" ng-show="frm.password.$dirty && frm.password.$error.maxlength">Too Long!</span>
+            </div>
+            <button type="submit" class="btn" id="btnSignIn" ng-disabled="frm.$invalid">Sign In</button>
+          </form>
+        </div>
+
+    </div>
+    <div class="row jumbo">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+        <h2 class="logoText">About Harvest</h2>
+        <hr>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <span>
+                <img src="http://fruit.co.za/wp-content/uploads/2015/11/Subtrop-logo-500x193.jpg" class="pull-left" style="height: 100px; margin-top: 3%;">
+                <img src="./IMAGES/logoWithText.png" class="pull-right" style="height: 150px;">
+              </span>
+            </div>
+          </div>
+          <paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus at odio vitae aliquam. Aliquam egestas dapibus quam, id accumsan felis placerat porttitor. Vestibulum eu blandit tortor, vitae ultricies ligula. Morbi nec blandit ipsum, non luctus nisl. Duis non mi mattis, tristique ligula et, porta urna. Nunc lobortis enim nec nisi porttitor, interdum vestibulum ex vulputate. Aliquam felis leo, feugiat sit amet mollis et, dictum sit amet nunc. Fusce nunc risus, feugiat non rutrum et, bibendum consectetur nibh. Mauris sit amet ultrices velit. Ut molestie tortor ex, a aliquam dolor tincidunt in. Sed nec commodo magna. Curabitur non luctus nibh. Praesent et metus vitae dui fringilla convallis quis id tortor.</paragraph><br><br>
+
+          <paragraph>Maecenas eget ex vel nisi vestibulum eleifend. Duis nec eros neque. Mauris scelerisque dui sit amet accumsan vulputate. Proin tincidunt ornare magna sit amet pulvinar. Etiam accumsan at risus a bibendum. In rhoncus pellentesque efficitur. Etiam vestibulum dolor vel posuere fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.</paragraph><br><br>
+
+          <paragraph>Donec a tempor tellus, in maximus urna. Phasellus consectetur ipsum libero, sit amet varius velit tempor ac. Ut ut tempor eros, in rutrum est. Mauris ac leo ac quam tempor vestibulum ut ut arcu. Aenean consequat ligula ac sollicitudin aliquam. Curabitur lobortis nisl et ante mattis vestibulum. Pellentesque sed massa ligula. Nulla facilisi. Aenean enim ipsum, ultricies eget lobortis nec, pharetra at purus. Maecenas fermentum ex vel mi porta dictum.</paragraph>
+        </div>
+      </div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+  
+</div>
+	</body>
+</html>
