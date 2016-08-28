@@ -281,24 +281,41 @@ module.exports = {
   var crypto = require('crypto');
   var flash = require('express-flash');
   async.waterfall([
-    function(done) {
-      crypto.randomBytes(20, function(err, buf) {
-            var token = buf.toString('hex');
-            done(err, token);
+        function(done) {
+          crypto.randomBytes(20, function(err, buf) {
+                var token = buf.toString('hex');
+                console.log("Gen: " + token);
+                done(err, token);
+              });
+        },
+        function(token, done) {
+          User.findOne({ email: req.param('email')}, function(err, user) {
+            if (!user) {            
+              req.flash('error', 'No account with that email address exists.');//fix error handling
+              return res.redirect('/recoverPassword');
+            }
           });
-    },
-    function(token, done) {
-        User.findOne({ email: req.param('email')}, function(err, user) {
-          if (!user) {            
-            req.flash('error', 'No account with that email address exists.');//fix error handling
-            return res.redirect('/recoverPassword');
-          }
-
-          user.resetPasswordToken = token;
-          user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-
-          user.save(function(err) {
-            done(err, token, user);
+          var userID = "";
+          var userObj;
+          User.findOne({email: req.param('email')}, function foundUser(err, user) {
+            if (err) return next(err);
+            if (!user) return res.redirect('/');
+            userID = user.id;
+            userObj = user;
+            console.log(userID);
+          });
+          var expDate = Date.now() + 3600000;
+          console.log("expDate: " + expDate);
+          User.update({id: userID}, {resetPasswordToken: token, resetPasswordExpires: expDate}, function userUpdated (err) {
+            if (err) return res.redirect('/user/recoverPassword');
+            done(err, token, userObj);
+          });
+          User.findOne({email: req.param('email')}, function foundUser(err, user) {
+            console.log(user.resetPasswordToken);
+            console.log(user.resetPasswordExpires);
+            console.log(token);
+            console.log("userID: " + userID);
+            //done(err, token, userObj);
           });
           /*sails.log.verbose(user);
           User.find({ email: req.param('email')}).exec(function (err, records) {
@@ -308,7 +325,6 @@ module.exports = {
             }
             sails.log.verbose(rectext);
           });*/
-        });
       },
       function(token, user, done) {
         var smtpTransport = nodemailer.createTransport('SMTP', {
@@ -344,23 +360,47 @@ resetPassword: function(req, res) {
   var async = require('async');
   var crypto = require('crypto');
   var flash = require('express-flash');
+
   async.waterfall([
     function(done) {
-      User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+      /*User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+        if (err) return res.redirect('/');
         if (!user) {
           req.flash('error', 'Password reset token is invalid or has expired.');//add proper message handling
           return res.redirect('/');
-        }
-
-        user.password = req.body.password;
+        }*/
+        Passwords.encryptPassword({
+          password: req.param('password'),
+          difficulty: 10,
+        }).exec({
+          // An unexpected error occurred.
+          error: function(err) {
+            return res.negotiate(err);
+          },
+          // OK.
+          success: function(encryptedPassword) {
+            var userID = "";
+            var userObj;
+            User.findOne({resetPasswordToken: req.params.token}, function foundUser(err, user) {
+              if (err) return next(err);
+              if (!user) return res.redirect('/');
+              req.session.me = user.id;
+              userID = user.id;
+              userObj = user;
+            });
+            User.update({resetPasswordToken: req.params.token}, {encryptedPassword: encryptedPassword, resetPasswordToken: null, resetPasswordExpires: null}, function userUpdated (err) {
+              if (err) return res.redirect('/');
+              done(err, userObj);
+            });
+          }
+        /*user.password = req.body.password;
         user.resetPasswordToken = undefined;
         user.resetPasswordExpires = undefined;
-
         user.save(function(err) {
           req.logIn(user, function(err) {
             done(err, user);
           });
-        });
+        });*/
       });
     },
     function(user, done) {

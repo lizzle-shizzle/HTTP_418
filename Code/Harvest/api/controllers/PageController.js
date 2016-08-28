@@ -109,10 +109,32 @@ module.exports = {
   resetPasswordInfo: function (req, res) {
 
     var flash = require('express-flash');
-    User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+    //var query_string = {};
+    //var query = req.window.location.href.substring(1);
+    //var vars = query.split("/");
+    //alert(vars[2]);
+    //exit;
+    /*for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+          // If first entry with this name
+      if (typeof query_string[pair[0]] === "undefined") {
+        query_string[pair[0]] = decodeURIComponent(pair[1]);
+          // If second entry with this name
+      } else if (typeof query_string[pair[0]] === "string") {
+        var arr = [ query_string[pair[0]],decodeURIComponent(pair[1]) ];
+        query_string[pair[0]] = arr;
+          // If third or later entry with this name
+      } else {
+        query_string[pair[0]].push(decodeURIComponent(pair[1]));
+      }
+    }*/
+    User.findOne({ resetPasswordToken: req.param('token'), resetPasswordExpires: { $lt: Date.now() } }, function(err, user) {
       if (!user) {
-        sails.log.verbose(user.resetPasswordToken);
-        req.flash('error', 'Password reset token is invalid or has expired.');//change flash
+        //if (String(req.param('token')) == "") return res.redirect('/recoverPassword');
+        //console.log(String(req.param('token')));
+        //req.flash('error', 'Password reset token is invalid or has expired.');//change flash
+        //var string = String(req.param('token'));
+        //console.log(string);
         return res.redirect('/recoverPassword');
       }
       return res.view('user/resetPassword', {

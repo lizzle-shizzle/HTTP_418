@@ -49,7 +49,8 @@ module.exports.routes = {
   'GET /logout': 'UserController.logout',
   'GET /recoverPassword': {view: 'user/recoverPassword'},
   'POST /recoverPassword': 'UserController.recoverPassword',
-  'GET /resetPassword/:token': 'PageController.resetPasswordInfo',
+  //'GET /resetPassword/:token': {view: 'user/resetPassword'},
+  'GET /resetPassword/:token': {controller: 'PageController', action: 'resetPasswordInfo', skipAssets: true},
   'POST /resetPassword/:token': 'UserController.resetPassword',
 
 
