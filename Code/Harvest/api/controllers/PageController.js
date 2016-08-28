@@ -111,6 +111,7 @@ module.exports = {
     var flash = require('express-flash');
     User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
       if (!user) {
+        sails.log.verbose(user.resetPasswordToken);
         req.flash('error', 'Password reset token is invalid or has expired.');//change flash
         return res.redirect('/recoverPassword');
       }
