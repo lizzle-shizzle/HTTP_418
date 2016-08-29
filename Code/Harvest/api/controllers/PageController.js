@@ -115,12 +115,9 @@ module.exports = {
     var flash = require('express-flash');
     User.findOne({ resetPasswordToken: req.param('token'), resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
       if (!user) {
-        console.log("Token in PC: " + String(req.param('token')));
-        console.log("Token param in PC: " + req.param('token'));
         User.findOne({ resetPasswordToken: req.param('token')}, function(err, user) {
           if (user) 
           {
-            console.log("User found token: " + user.resetPasswordToken);
             req.session.me = user.id;
             return res.view('user/resetPassword', {
             me: {

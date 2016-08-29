@@ -161,16 +161,6 @@ module.exports = {
   updateFarmer: function(req, res, next) {
     User.update(req.param('id'), req.params.all(), function userUpdated (err) {
       if (err) return res.redirect('/user/editFarmer' + req.param('id'));
-     // alert("Success");
-      /*toastr['success']('Invalid email/password combination.', 'Success', {
-          closeButton: true
-        });*/
-      //res.redirect('/user/show' + req.param('id'));
-      //return res.redirect('/user/editFarmer' + req.param('id'));
-      /*if (req.param('email').rule !== 'unique') {
-        return res.emailAddressInUse();
-      }*/
-      //Fetch farm linked to user after successfull update of datails
       User.findOne({id: req.param('id')})
         .populate("farms")
         .exec(function (err, user){
@@ -219,17 +209,7 @@ module.exports = {
       // OK.
       success: function(encryptedPassword) {
         User.update({id: req.param("id")}, {encryptedPassword: encryptedPassword}, function userUpdated (err) {
-          if (err) return res.redirect('/user/changePassword' + req.param('id'));
-         // alert("Success");
-          /*toastr['success']('Invalid email/password combination.', 'Success', {
-              closeButton: true
-            });*/
-          //res.redirect('/user/show' + req.param('id'));
-          //return res.redirect('/user/editFarmer' + req.param('id'));
-          /*if (req.param('email').rule !== 'unique') {
-            return res.emailAddressInUse();
-          }*/
-        
+          if (err) return res.redirect('/user/changePassword' + req.param('id'));   
           
         });
         User.findOne(req.param('id'), function foundUser(err, user) {
@@ -244,104 +224,11 @@ module.exports = {
               email: user.email,
               isAdmin: !!user.admin,
               gravatarUrl: user.gravatarUrl
-            }});/*
-          res.view({
-            user: user
-          });*/
+            }});
         });
-      //return res.redirect('/user/editFarmer' + req.param('id'));
-      /*return res.view('dashboard', {
-        me: {
-          id: req.param('id'),
-          fname: req.param('fname'),
-          lname: req.param('lname'),
-          birthdate: req.param('birthdate'),
-          email: req.param('email'),
-          encryptedPassword: encryptedPassword,
-          isAdmin: !!req.param('admin'),
-          gravatarUrl: req.param('gravatarUrl')
-        }});*//*
-        require('machinepack-gravatar').getImageUrl({
-          emailAddress: req.session.me.email//req.param('email')
-        }).exec({
-          error: function(err) {
-            return res.negotiate(err);
-          },
-          success: function(gravatarUrl) {
-            return res.view('editFarmer', {
-              me: {
-                id: req.param('id'),
-                fname: req.param('fname'),
-                lname: req.param('lname'),
-                birthdate: req.param('birthdate'),
-                email: req.param('email'),
-                encryptedPassword: encryptedPassword,
-                gravatarUrl: gravatarUrl
-              }
-            });
-          }
-        });
-      }*/
     }});
     
-  },/*
-  recoverPassword: function(req, res, next) {
-    var mongoose = require('mongoose');
-    var ObjectID = require('sails-mongo/node_modules/mongodb').ObjectID;
-    var nodemailer = require('nodemailer');
-    var bcrypt = require('bcryptjs');
-    var async = require('async');
-    var crypto = require('crypto');
-    var flash = require('express-flash');
-
-    var token;
-    crypto.randomBytes(20, function(err, buf) {
-      token = buf.toString('hex');
-      console.log("Gen: " + token);
-      //done(err, token);
-    }); 
-
-    User.findOne({ email: req.param('email')}, function(err, user) {
-      if (!user) {            
-        req.flash('error', 'No account with that email address exists.');//fix error handling
-        return res.redirect('user/recoverPassword');
-      }
-      user.resetPasswordToken = token;
-      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-
-      user.save(function(err) {
-        //done(err, token, user);
-      });
-    });*/
-    /*var userID = "";
-    var userObj;
-    User.findOne({email: req.param('email')}, function foundUser(err, user) {
-      if (err) return next(err);
-      if (!user) return res.redirect('/');
-      userID = user.id;
-      userObj = user;
-      console.log(userID);
-    });*/
-    //var expDate = Date.now() + 3600000;
-    //console.log("expDate: " + expDate + " token: " + token);
-    /*User.native(function (err, collection) {
-      collection.update({id: userID}, {$push:{resetPasswordToken: token, resetPasswordExpires: expDate}}, function userUpdated (err) {
-        if (err) return res.redirect('/recoverPassword');
-        done(err, token, userObj);
-      });
-    });*/
-    //User.update({email: req.param('email')}, {resetPasswordToken: token, resetPasswordExpires: expDate}, function userUpdated (err) {
-      /*if (err) return res.redirect('/recoverPassword');
-      done(err, token, userObj);*/
-    //});
-    /*User.findOne({email: req.param('email')}, function foundUser(err, user) {
-      console.log("User in db resetPasswordToken: " + user.resetPasswordToken);
-      console.log("User in db resetPasswordExpires: " + user.resetPasswordExpires);
-      console.log("Token after update " + token);
-     // console.log("userID: " + userID);
-      //done(err, token, userObj);
-    });
-  },*/
+  },
   recoverPassword: function(req, res, next) {
   var mongoose = require('mongoose');
   var ObjectID = require('sails-mongo/node_modules/mongodb').ObjectID;
@@ -368,29 +255,11 @@ module.exports = {
             user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
             user.save(function(err) {
-              
-              console.log("User in save: " + JSON.stringify(user));
               done(err, token, user);
-              //userObj = user;
-              //User.update({email: req.param('email')}, {resetPasswordToken: token, resetPasswordExpires: user.resetPasswordExpires}, function userUpdated (err) {
-
-              //});
             });
-          });/*
-          User.findOne({email: req.param('email')}, function foundUser(err, user) {
-            if (err) return next(err);
-            if (!user) return res.redirect('/');
-            console.log("User in db resetPasswordToken: " + user.resetPasswordToken);
-            console.log("User in db resetPasswordExpires: " + user.resetPasswordExpires);
-            console.log("Token after update: " + token);
-            console.log("userID: " + user.id);
-            done(err, token, user);
-          });*/
-          
-          
+          });     
       },
       function(token, user, done) {
-        console.log("Mail function");
         var smtpTransport = nodemailer.createTransport('SMTP', {
           service: 'Gmail',
           auth: {
@@ -427,12 +296,6 @@ resetPassword: function(req, res) {
 
   async.waterfall([
     function(done) {
-      /*User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-        if (err) return res.redirect('/');
-        if (!user) {
-          req.flash('error', 'Password reset token is invalid or has expired.');//add proper message handling
-          return res.redirect('/');
-        }*/
         Passwords.encryptPassword({
           password: req.param('password'),
           difficulty: 10,
@@ -457,14 +320,6 @@ resetPassword: function(req, res) {
               done(err, userObj);
             });
           }
-        /*user.password = req.body.password;
-        user.resetPasswordToken = undefined;
-        user.resetPasswordExpires = undefined;
-        user.save(function(err) {
-          req.logIn(user, function(err) {
-            done(err, user);
-          });
-        });*/
       });
     },
     function(user, done) {
