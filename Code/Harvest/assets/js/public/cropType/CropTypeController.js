@@ -32,7 +32,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
         if(!$scope.createNew) {
             $http.post('/cropType/add', {			
                 cropTypeID: $scope.createCropTypeFrm.cropType,
-                orchidID: $scope.createCropTypeFrm.orchid
+                orchardID: $scope.createCropTypeFrm.orchard
             }).then(function onSuccess(sailsResponse){
                 window.location = '/cropType/view';
             }).catch(function onError(sailsResponse){
@@ -44,7 +44,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
         } else {
             $http.post('/cropType/create', {			
                 newCropType: $scope.createCropTypeFrm.newCropType,
-                orchidID: $scope.createCropTypeFrm.orchid
+                orchardID: $scope.createCropTypeFrm.orchard
             }).then(function onSuccess(sailsResponse){
                 window.location = '/cropType/view';
             }).catch(function onError(sailsResponse){
@@ -64,7 +64,7 @@ angular.module('CropTypeModule').controller('CropTypeController', ['$scope', '$h
         if(!$scope.createNew) {
             $http.post('/cropType/update', {			
                 cropTypeID: $scope.editCropTypeFrm.cropType,
-                orchidID: $scope.editCropTypeFrm.orchid
+                orchardID: $scope.editCropTypeFrm.orchard
             }).then(function onSuccess(sailsResponse){
                 window.location = '/cropType/view';
             }).catch(function onError(sailsResponse){

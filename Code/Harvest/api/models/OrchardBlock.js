@@ -11,12 +11,12 @@ module.exports = {
       type: 'string'
     },
     
-    //An orchid block can only have one crop type
+    //An orchard block can only have one crop type
     cropType: {
       model: 'cropType'
     },
 
-    //An orchid clock can only belong to one farm
+    //An orchard clock can only belong to one farm
     farm: {
       model: 'farm'
     }

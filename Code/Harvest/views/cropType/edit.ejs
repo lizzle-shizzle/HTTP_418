@@ -6,13 +6,13 @@
                         <fieldset>  
                             <legend>Edit Crop Type</legend>                        						
 
-                            <label for="orchid">Change Orchid Block linked to Crop Type <br />							
-                            <select class="form-control" name="orchid" id="orchid" ng-init="editCropTypeFrm.orchid='<%= data.orchID %>'" ng-model="editCropTypeFrm.orchid">                                                              
-                                <% _.each(data.orchid, function(orchid) { %>                                    										
-									<option value="<%= orchid.id %>"><%= orchid.name %></option> 									
+                            <label for="orchard">Change Orchard Block linked to Crop Type <br />							
+                            <select class="form-control" name="orchard" id="orchard" ng-init="editCropTypeFrm.orchard='<%= data.orchID %>'" ng-model="editCropTypeFrm.orchard">                                                              
+                                <% _.each(data.orchard, function(orchard) { %>                                    										
+									<option value="<%= orchard.id %>"><%= orchard.name %></option> 									
                                 <% }) %>  								                            
                             </select>
-                            <span class="errorText" ng-show="frmEditCropType.orchid.$dirty && frmEditCropType.orchid.$error.required">Required!</span>                                                        
+                            <span class="errorText" ng-show="frmEditCropType.orchard.$dirty && frmEditCropType.orchard.$error.required">Required!</span>                                                        
                             <br/>
 
                             <label for="cropType">Change Crop Type</label>

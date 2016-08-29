@@ -18,13 +18,13 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id})
+			//get farm linked to user and fetch all orchardblocks
+			OrchardBlock.find({farm: user.farms[0].id})
 			.populateAll()
-			.exec(function(err, orchid) {
+			.exec(function(err, orchard) {
 				if(err) return res.negotiate(err);				
-				//send all orchid blocks linked to farm
-				res.view({type: orchid, 
+				//send all orchard blocks linked to farm
+				res.view({type: orchard, 
 				layout: "signedInLayout", title: "Create crop type"});				
 			});
 		});        
@@ -43,17 +43,17 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id, cropType: null})			
-			.exec(function(err, orchidblock) {
+			//get farm linked to user and fetch all orchardblocks
+			OrchardBlock.find({farm: user.farms[0].id, cropType: null})			
+			.exec(function(err, orchardblock) {
 				if(err) return res.negotiate(err);
 
 				//now find all croptypes
 				CropType.find().exec(function(err, cropType) {
 					if(err) return res.negotiate(err);
-
-					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({data: {orchid: orchidblock,
+					
+					//send all orchard blocks linked to farm and croptypes that exist
+					res.view({data: {orchard: orchardblock,
 						type: cropType}, 
 					layout: "signedInLayout", title: "Create crop type"});
 				});				
@@ -63,14 +63,14 @@ module.exports = {
 
     create: function (req, res) {
 	    // Create crop type from pramaters sent from -> new.ejs	    
-		//Create new crop type, get crop type id and add to orchidblock
+		//Create new crop type, get crop type id and add to orchardblock
         CropType.create({name: req.param("newCropType")}, function(err, crop) {
             //If there is an error 
 	    	//return appropiate error message
 	    	if(err) return res.negotiate(err);
 			
-			//if created sucessfully, update orchid block to link crop type
-			OrchidBlock.update({id: req.param("orchidID")}, {
+			//if created sucessfully, update orchard block to link crop type
+			OrchardBlock.update({id: req.param("orchardID")}, {
 				cropType: crop.id
 			}, function (err) {
 				//If there is an error 
@@ -84,8 +84,8 @@ module.exports = {
 	},
 	
 	add: function (req, res) {	    
-		//Add existing crop type to OrchidBlock selected in -> new.ejs
-		OrchidBlock.update({id: req.param("orchidID")}, {
+		//Add existing crop type to OrchardBlock selected in -> new.ejs
+		OrchardBlock.update({id: req.param("orchardID")}, {
 			cropType: req.param('cropTypeID')
 		}, function (err) {
 			//If there is an error 
@@ -110,26 +110,26 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id})			
-			.exec(function(err, orchidblock) {
+			//get farm linked to user and fetch all orchardblocks
+			OrchardBlock.find({farm: user.farms[0].id})			
+			.exec(function(err, orchardblock) {
 				if(err) return res.negotiate(err);
 
-				var orchidBlockID = 0;
-				OrchidBlock.findOne({cropType: req.param("id")}, function(err, block) {
+				var orchardBlockID = 0;
+				OrchardBlock.findOne({cropType: req.param("id")}, function(err, block) {
 					if(err) return res.negotiate(err);
-					orchidBlockID = block.id;
+					orchardBlockID = block.id;
 				});
 				//now find all croptypes
 				CropType.find().exec(function(err, cropType) {
 					if(err) return res.negotiate(err);
 
 					
-					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({data: {orchid: orchidblock,
+					//send all orchard blocks linked to farm and croptypes that exist
+					res.view({data: {orchard: orchardblock,
 						type: cropType,
 						reqID: req.param("id"),
-						orchID: orchidBlockID}, 
+						orchID: orchardBlockID}, 
 					layout: "signedInLayout", title: "Create crop type"});
 				});				
 			});
@@ -142,8 +142,8 @@ module.exports = {
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
-		//edit OrchidBlock selected in -> edit.ejs
-		OrchidBlock.update({id: req.param("orchidID")}, {
+		//edit OrchardBlock selected in -> edit.ejs
+		OrchardBlock.update({id: req.param("orchardID")}, {
 			cropType: req.param('cropTypeID')
 		}, function (err) {
 			//If there is an error 

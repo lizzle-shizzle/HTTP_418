@@ -25,9 +25,9 @@ module.exports = {
   		model: 'user'
   	},
 
-    //A farm can have many orchid blocks
-    orchids: {
-      collection: 'orchidBlock',
+    //A farm can have many orchard blocks
+    orchards: {
+      collection: 'orchardBlock',
       via: 'farm',      
     }
   }
