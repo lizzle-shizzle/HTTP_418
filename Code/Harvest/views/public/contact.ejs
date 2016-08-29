@@ -1,19 +1,10 @@
-  <head>
-    <title>Harvest Home Page</title>
-
-    <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
-    <script type="text/javascript">
-    window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
-    </script>
-
-  </head>
-
-  <body ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
-
-    <div class="navbar-wrapper">
-      <div class="container">
-      <!-- Creates the navbar -->
-        <div class="navbar navbar-static-top navbar-inverse">
+<head>
+	<title>Contact Harvest</title>
+</head>
+<body>
+<div class="navbar-wrapper">
+  		<div class="container">
+		    <div class="navbar navbar-static-top navbar-inverse">
           <div class="navbar-header">
           <!-- This creates the mechanism for collapse button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
@@ -27,9 +18,9 @@
 
           <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>       
+              <li class="active"><a href="/contact">Contact</a></li>       
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
@@ -83,68 +74,44 @@
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-      </ol>
-      <div class="carousel-inner">
-
-        <div class="item active">
-
-          <img src="/images/Carousel1.jpg" style="width:100%" class="img-responsive">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Register your farm today!</h1>
-              <p></p>
-              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
+		</div><!-- /container -->
+	</div><!-- /navbar wrapper -->
+	<div class="container">
+	    <div class="row jumbo">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+        <h2 class="logoText">Contact Harvest</h2>
+        <hr>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1" id="contactDetails">
+              <span>
+              <table>
+                <tr>
+                  <td class="col-md-5 col-md-offset-1">
+                    <img src="/images/subtrop.jpg" class="pull-left" style="height: 100px; margin-top: 3%;">
+                  </td>
+                  <td class="col-md-5 col-md-offset-1">
+                    <img src="/images/logoWithText.png" class="pull-right" style="height: 150px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Fax </label><br><label class="info">+27 (15) 307 6792</label><br>
+                    <label>Tel </label><br><label class="info">+27 (15) 307 3676/7 or +27 15 306 6240</label><br>
+                    <label>Email </label><br><label class="info">example text</label><br>
+                  </td>
+                  <td>
+                    <label>Fax </label><br><label class="info">example text</label><br>
+                    <label>Tel </label><br><label class="info">example text</label><br>
+                    <label>Email </label><br><label class="info">example text</label><br>
+                  </td>
+                </tr>
+              </table>
+              </span>
             </div>
           </div>
         </div>
-        <div class="item">
-          <img src="/images/Carousel2.jpg" style="width:100%" class="img-responsive">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Register your farm today!</h1>
-              <p></p>
-              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="/images/Carousel3.jpg" class="img-responsive">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Register your farm today!</h1>
-              <p></p>
-              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
-            </div>
-          </div>
-        </div>  
-        <div class="item">
-            <img src="/images/Carousel4.jpg" style="width:100%" class="img-responsive">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Register your farm today!</h1>
-                <p></p>
-                <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
-              </div>
-            </div>
-          </div>
       </div>
-      <!-- Controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="icon-prev"></span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="icon-next"></span>
-      </a>  
     </div>
-  </body>
+    </div>
+</body>
