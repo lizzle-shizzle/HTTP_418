@@ -170,16 +170,27 @@ module.exports = {
       /*if (req.param('email').rule !== 'unique') {
         return res.emailAddressInUse();
       }*/
-      return res.view('dashboard', {
-        me: {
-          id: req.param('id'),
-          fname: req.param('fname'),
-          lname: req.param('lname'),
-          birthdate: req.param('birthdate'),
-          email: req.param('email'),
-          isAdmin: !!req.param('admin'),
-          gravatarUrl: req.param('gravatarUrl')
-        }
+      User.findOne({id: req.param('id')})
+        .populate("farms")
+        .exec(function (err, user){
+          if (err) {
+            return res.negotiate(err);
+          }
+
+          return res.view('dashboard', {
+            me: {
+              id: req.param('id'),
+              fname: req.param('fname'),
+              lname: req.param('lname'),
+              birthdate: req.param('birthdate'),
+              email: req.param('email'),
+              isAdmin: !!req.param('admin'),
+              gravatarUrl: req.param('gravatarUrl'),
+              farm: user.farms[0]
+            },
+            layout: "signedInLayout",
+        title: "Harvest | Welcome back, " +user.fname + " " + user.lname + "!"
+          });
       });
     });
   }
