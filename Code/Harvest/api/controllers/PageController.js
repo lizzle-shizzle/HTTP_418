@@ -44,7 +44,7 @@ module.exports = {
 
     // If not logged in, show the public view.
     if (!req.session.me) {
-      return res.view('homepage');
+      return res.redirect('/');
     }
 
     // Otherwise, look up the logged-in user and show the logged-in view,
@@ -56,7 +56,7 @@ module.exports = {
 
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
-        return res.view('homepage');
+        return res.redirect('/');
       }
 
       return res.view('user/editFarmer', {
@@ -77,7 +77,7 @@ module.exports = {
 
     // If not logged in, show the public view.
     if (!req.session.me) {
-      return res.view('homepage');
+      return res.redirect('/');
     }
 
     // Otherwise, look up the logged-in user and show the logged-in view,
@@ -89,7 +89,7 @@ module.exports = {
 
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
-        return res.view('homepage');
+        return res.redirect('/');
       }
 
       return res.view('user/changePassword', {
@@ -128,17 +128,22 @@ module.exports = {
         query_string[pair[0]].push(decodeURIComponent(pair[1]));
       }
     }*/
-    User.findOne({ resetPasswordToken: req.param('token'), resetPasswordExpires: { $lt: Date.now() } }, function(err, user) {
+    User.findOne({ resetPasswordToken: req.param('token'), resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
       if (!user) {
         //if (String(req.param('token')) == "") return res.redirect('/recoverPassword');
-        //console.log(String(req.param('token')));
+        console.log("Token in PC: " + String(req.param('token')));
+        console.log("Token param in PC: " + req.param('token'));
+        //console.log("User's expDate in PC: " + user.resetPasswordExpires);
         //req.flash('error', 'Password reset token is invalid or has expired.');//change flash
         //var string = String(req.param('token'));
         //console.log(string);
-        return res.redirect('/recoverPassword');
-      }
-      return res.view('user/resetPassword', {
-        me: {
+        User.findOne({ resetPasswordToken: req.param('token')}, function(err, user) {
+          if (user) 
+          {
+            console.log("User found token: " + user.resetPasswordToken);
+            req.session.me = user.id;
+            return res.view('user/resetPassword', {
+            me: {
               id: user.id,
               fname: user.fname,
               lname: user.lname,
@@ -147,6 +152,15 @@ module.exports = {
               isAdmin: !!user.admin,
               gravatarUrl: user.gravatarUrl
             }});
+            return;
+          }
+          else
+          {
+            console.log("No user found");
+            return res.redirect('/recoverPassword');
+          }
+        });
+      }
     });
 }
 

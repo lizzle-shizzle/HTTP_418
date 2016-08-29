@@ -56,7 +56,7 @@ module.exports = {
     }, 
 
     resetPasswordExpires: {
-      type: 'date'
+      type: 'int'
     }
   }
 };

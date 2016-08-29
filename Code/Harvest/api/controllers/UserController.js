@@ -272,9 +272,67 @@ module.exports = {
       }*/
     }});
     
-  },
+  },/*
+  recoverPassword: function(req, res, next) {
+    var mongoose = require('mongoose');
+    var ObjectID = require('sails-mongo/node_modules/mongodb').ObjectID;
+    var nodemailer = require('nodemailer');
+    var bcrypt = require('bcryptjs');
+    var async = require('async');
+    var crypto = require('crypto');
+    var flash = require('express-flash');
+
+    var token;
+    crypto.randomBytes(20, function(err, buf) {
+      token = buf.toString('hex');
+      console.log("Gen: " + token);
+      //done(err, token);
+    }); 
+
+    User.findOne({ email: req.param('email')}, function(err, user) {
+      if (!user) {            
+        req.flash('error', 'No account with that email address exists.');//fix error handling
+        return res.redirect('user/recoverPassword');
+      }
+      user.resetPasswordToken = token;
+      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+      user.save(function(err) {
+        //done(err, token, user);
+      });
+    });*/
+    /*var userID = "";
+    var userObj;
+    User.findOne({email: req.param('email')}, function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return res.redirect('/');
+      userID = user.id;
+      userObj = user;
+      console.log(userID);
+    });*/
+    //var expDate = Date.now() + 3600000;
+    //console.log("expDate: " + expDate + " token: " + token);
+    /*User.native(function (err, collection) {
+      collection.update({id: userID}, {$push:{resetPasswordToken: token, resetPasswordExpires: expDate}}, function userUpdated (err) {
+        if (err) return res.redirect('/recoverPassword');
+        done(err, token, userObj);
+      });
+    });*/
+    //User.update({email: req.param('email')}, {resetPasswordToken: token, resetPasswordExpires: expDate}, function userUpdated (err) {
+      /*if (err) return res.redirect('/recoverPassword');
+      done(err, token, userObj);*/
+    //});
+    /*User.findOne({email: req.param('email')}, function foundUser(err, user) {
+      console.log("User in db resetPasswordToken: " + user.resetPasswordToken);
+      console.log("User in db resetPasswordExpires: " + user.resetPasswordExpires);
+      console.log("Token after update " + token);
+     // console.log("userID: " + userID);
+      //done(err, token, userObj);
+    });
+  },*/
   recoverPassword: function(req, res, next) {
   var mongoose = require('mongoose');
+  var ObjectID = require('sails-mongo/node_modules/mongodb').ObjectID;
   var nodemailer = require('nodemailer');
   var bcrypt = require('bcryptjs');
   var async = require('async');
@@ -283,50 +341,44 @@ module.exports = {
   async.waterfall([
         function(done) {
           crypto.randomBytes(20, function(err, buf) {
-                var token = buf.toString('hex');
-                console.log("Gen: " + token);
+                var token = buf.toString('hex');                
                 done(err, token);
               });
         },
         function(token, done) {
+          var userObj;
           User.findOne({ email: req.param('email')}, function(err, user) {
             if (!user) {            
               req.flash('error', 'No account with that email address exists.');//fix error handling
-              return res.redirect('user/recoverPassword');
+              return res.redirect('/recoverPassword');
             }
-          });
-          var userID = "";
-          var userObj;
+            user.resetPasswordToken = token;
+            user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+            user.save(function(err) {
+              
+              console.log("User in save: " + JSON.stringify(user));
+              done(err, token, user);
+              //userObj = user;
+              //User.update({email: req.param('email')}, {resetPasswordToken: token, resetPasswordExpires: user.resetPasswordExpires}, function userUpdated (err) {
+
+              //});
+            });
+          });/*
           User.findOne({email: req.param('email')}, function foundUser(err, user) {
             if (err) return next(err);
             if (!user) return res.redirect('/');
-            userID = user.id;
-            userObj = user;
-            console.log(userID);
-          });
-          var expDate = Date.now() + 3600000;
-          console.log("expDate: " + expDate);
-          User.update({id: userID}, {resetPasswordToken: token, resetPasswordExpires: expDate}, function userUpdated (err) {
-            if (err) return res.redirect('/user/recoverPassword');
-            done(err, token, userObj);
-          });
-          User.findOne({email: req.param('email')}, function foundUser(err, user) {
-            console.log(user.resetPasswordToken);
-            console.log(user.resetPasswordExpires);
-            console.log(token);
-            console.log("userID: " + userID);
-            //done(err, token, userObj);
-          });
-          /*sails.log.verbose(user);
-          User.find({ email: req.param('email')}).exec(function (err, records) {
-            var rectext = "";
-            for (i = 0; i < records.length; i++) { 
-                rectext += records[i] + "<br>";
-            }
-            sails.log.verbose(rectext);
+            console.log("User in db resetPasswordToken: " + user.resetPasswordToken);
+            console.log("User in db resetPasswordExpires: " + user.resetPasswordExpires);
+            console.log("Token after update: " + token);
+            console.log("userID: " + user.id);
+            done(err, token, user);
           });*/
+          
+          
       },
       function(token, user, done) {
+        console.log("Mail function");
         var smtpTransport = nodemailer.createTransport('SMTP', {
           service: 'Gmail',
           auth: {
@@ -340,7 +392,7 @@ module.exports = {
           subject: 'Node.js Password Reset',
           text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-            'http://' + req.headers.host + '/resetPassword/' + token + '\n\n' +
+            'http://' + req.headers.host + '/resetPassword/' + user.resetPasswordToken + '\n\n' +
             'If you did not request this, please ignore this email and your password will remain unchanged.\n'
         };
         smtpTransport.sendMail(mailOptions, function(err) {
@@ -356,10 +408,10 @@ module.exports = {
 resetPassword: function(req, res) {
   var mongoose = require('mongoose');
   var nodemailer = require('nodemailer');
-  var bcrypt = require('bcryptjs');
   var async = require('async');
   var crypto = require('crypto');
   var flash = require('express-flash');
+  var Passwords = require('machinepack-passwords');
 
   async.waterfall([
     function(done) {

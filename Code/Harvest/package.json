@@ -23,6 +23,7 @@
     "include-all": "~0.1.6",
     "machinepack-gravatar": "^1.2.0",
     "machinepack-passwords": "^2.3.0",
+    "mongodb": "^2.2.8",
     "nodemailer": "^0.7.1",
     "rc": "1.0.1",
     "sails": "~0.12.3",
