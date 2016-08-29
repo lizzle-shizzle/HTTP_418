@@ -292,7 +292,7 @@ module.exports = {
           User.findOne({ email: req.param('email')}, function(err, user) {
             if (!user) {            
               req.flash('error', 'No account with that email address exists.');//fix error handling
-              return res.redirect('/recoverPassword');
+              return res.redirect('user/recoverPassword');
             }
           });
           var userID = "";

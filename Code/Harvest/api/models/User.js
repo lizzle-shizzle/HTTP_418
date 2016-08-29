@@ -49,6 +49,14 @@ module.exports = {
     // url for gravatar
     gravatarUrl: {
       type: 'string'
+    },
+
+    resetPasswordToken: {
+      type: 'string'
+    }, 
+
+    resetPasswordExpires: {
+      type: 'date'
     }
   }
 };
