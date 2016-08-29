@@ -64,5 +64,5 @@ module.exports = {
     resetPasswordExpires: {
       type: 'int'
     }
-  
+  }
 };
