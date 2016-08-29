@@ -158,7 +158,7 @@ module.exports = {
       });
     });
   },
-  update: function(req, res, next) {
+  updateFarmer: function(req, res, next) {
     User.update(req.param('id'), req.params.all(), function userUpdated (err) {
       if (err) return res.redirect('/user/editFarmer' + req.param('id'));
      // alert("Success");
@@ -194,6 +194,96 @@ module.exports = {
           });
       });
     });
+  },
+  changePassword: function(req, res, next) {
+    User.findOne(req.param('id'), function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return next();
+      res.view({
+        user: user
+      });
+    });
+  },
+  updatePassword: function(req, res, next) {
+    var Passwords = require('machinepack-passwords');
+
+    // Encrypt a string using the BCrypt algorithm.
+    Passwords.encryptPassword({
+      password: req.param('password'),
+      difficulty: 10,
+    }).exec({
+      // An unexpected error occurred.
+      error: function(err) {
+        return res.negotiate(err);
+      },
+      // OK.
+      success: function(encryptedPassword) {
+        User.update({id: req.param("id")}, {encryptedPassword: encryptedPassword}, function userUpdated (err) {
+          if (err) return res.redirect('/user/changePassword' + req.param('id'));
+         // alert("Success");
+          /*toastr['success']('Invalid email/password combination.', 'Success', {
+              closeButton: true
+            });*/
+          //res.redirect('/user/show' + req.param('id'));
+          //return res.redirect('/user/editFarmer' + req.param('id'));
+          /*if (req.param('email').rule !== 'unique') {
+            return res.emailAddressInUse();
+          }*/
+        
+          
+        });
+        User.findOne(req.param('id'), function foundUser(err, user) {
+          if (err) return next(err);
+          if (!user) return next();
+          return res.view('user/editFarmer', {
+            me: {
+              id: user.id,
+              fname: user.fname,
+              lname: user.lname,
+              birthdate: user.birthdate,
+              email: user.email,
+              isAdmin: !!user.admin,
+              gravatarUrl: user.gravatarUrl
+            }});/*
+          res.view({
+            user: user
+          });*/
+        });
+      //return res.redirect('/user/editFarmer' + req.param('id'));
+      /*return res.view('dashboard', {
+        me: {
+          id: req.param('id'),
+          fname: req.param('fname'),
+          lname: req.param('lname'),
+          birthdate: req.param('birthdate'),
+          email: req.param('email'),
+          encryptedPassword: encryptedPassword,
+          isAdmin: !!req.param('admin'),
+          gravatarUrl: req.param('gravatarUrl')
+        }});*//*
+        require('machinepack-gravatar').getImageUrl({
+          emailAddress: req.session.me.email//req.param('email')
+        }).exec({
+          error: function(err) {
+            return res.negotiate(err);
+          },
+          success: function(gravatarUrl) {
+            return res.view('editFarmer', {
+              me: {
+                id: req.param('id'),
+                fname: req.param('fname'),
+                lname: req.param('lname'),
+                birthdate: req.param('birthdate'),
+                email: req.param('email'),
+                encryptedPassword: encryptedPassword,
+                gravatarUrl: gravatarUrl
+              }
+            });
+          }
+        });
+      }*/
+    }});
+    
   }
 /*
   index: function(req, res, next) {
