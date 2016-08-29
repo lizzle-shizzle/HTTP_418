@@ -1,0 +1,117 @@
+<head>
+	<title>Contact Harvest</title>
+</head>
+<body>
+<div class="navbar-wrapper">
+  		<div class="container">
+		    <div class="navbar navbar-static-top navbar-inverse">
+          <div class="navbar-header">
+          <!-- This creates the mechanism for collapse button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+              <!-- This controls the number of lines in the image when the nav collapse -->
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="/images/logo.png"></a>
+          </div>
+
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+            <ul class="nav navbar-nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li class="active"><a href="/contact">Contact</a></li>       
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login">Sign in <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-lr" role="menu"  id="frmLoginli">
+                    <div class="col-lg-12 col-md-12 col-xs-6" id="frmLoginli">
+                        <div class="text-center"><h3>Sign In</h3></div>
+                        <form ng-submit="submitLoginForm()" name="frmLogin" id="frmLogin" role="form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input ng-model="loginForm.email" type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="tony.stark@gmail.com" value="" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.email.$dirty && frmLogin.email.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input ng-model="loginForm.password" type="password" name="password" tabindex="2" class="form-control" placeholder="******" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.password.$dirty && frmLogin.password.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                  <div class="col-xs-4 col-md-8 col-lg-10">
+                                    <input type="checkbox" tabindex="3" name="remember" id="remember"> &nbsp; Remember Me
+                                  </div> 
+                                </div>
+                                <br>
+                                <div class="row">
+                                  <div class="col-xs-5 pull-left">
+                                    <button type="submit" class="btn" tabindex="4" id="btnSignIn" ng-disabled="frmLogin.$invalid">
+                                      <span ng-show="!loginForm.loading">Sign in</span>
+                                      <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                                      <span ng-show="loginForm.loading">Signing in...</span>
+                                    </button>
+                                  </div>
+                                  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                        </form>
+                    </div>
+                </ul>
+              </li>     
+            </ul>
+          </div>
+        </div>
+		</div><!-- /container -->
+	</div><!-- /navbar wrapper -->
+	<div class="container">
+	    <div class="row jumbo">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+        <h2 class="logoText">Contact Harvest</h2>
+        <hr>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1" id="contactDetails">
+              <span>
+              <table>
+                <tr>
+                  <td class="col-md-5 col-md-offset-1">
+                    <img src="/images/subtrop.jpg" class="pull-left" style="height: 100px; margin-top: 3%;">
+                  </td>
+                  <td class="col-md-5 col-md-offset-1">
+                    <img src="/images/logoWithText.png" class="pull-right" style="height: 150px;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Fax </label><br><label class="info">+27 (15) 307 6792</label><br>
+                    <label>Tel </label><br><label class="info">+27 (15) 307 3676/7 or +27 15 306 6240</label><br>
+                    <label>Email </label><br><label class="info">example text</label><br>
+                  </td>
+                  <td>
+                    <label>Fax </label><br><label class="info">example text</label><br>
+                    <label>Tel </label><br><label class="info">example text</label><br>
+                    <label>Email </label><br><label class="info">example text</label><br>
+                  </td>
+                </tr>
+              </table>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</body>

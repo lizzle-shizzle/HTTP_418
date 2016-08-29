@@ -55,6 +55,14 @@ module.exports = {
     farms :{
       collection: 'farm',
       via: 'farmer'
+    },
+
+    resetPasswordToken: {
+      type: 'string'
+    }, 
+
+    resetPasswordExpires: {
+      type: 'int'
     }
-  }
+  
 };
