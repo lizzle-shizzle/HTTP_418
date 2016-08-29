@@ -170,6 +170,7 @@ module.exports = {
       /*if (req.param('email').rule !== 'unique') {
         return res.emailAddressInUse();
       }*/
+      //Fetch farm linked to user after successfull update of datails
       User.findOne({id: req.param('id')})
         .populate("farms")
         .exec(function (err, user){
