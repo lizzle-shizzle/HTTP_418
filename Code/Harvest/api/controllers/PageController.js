@@ -21,12 +21,15 @@ module.exports = {
     .exec(function (err, user){
       if (err) {
         return res.negotiate(err);
-      }
+      }      
 
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
         return res.view('homepage');
       }
+
+      if(user.farms[0] == null)
+        return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
 
       return res.view('dashboard', {
         me: {
@@ -129,7 +132,7 @@ module.exports = {
               isAdmin: !!user.admin,
               gravatarUrl: user.gravatarUrl
             }});
-            return;
+            //return;
           }
           else
           {
