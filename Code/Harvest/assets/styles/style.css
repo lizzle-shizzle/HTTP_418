@@ -94,7 +94,7 @@ label{
 }
 .jumbotron{
   background-color: rgba(26,13,0,0.8); /* I don't know the .well color, so I used white as example*/
-  margin-top: 200px;
+  /*margin-top: 200px;*/
   color: white;
 }
 /*
