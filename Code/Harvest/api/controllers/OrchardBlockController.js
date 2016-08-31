@@ -6,6 +6,21 @@
  */
 
 module.exports = {
-	
-};
+	viewOrchardBlock: function(req, res, next) {
+    	User.find()
+       	.populate("farms")
+        .exec(function (err, user){
+        	if (err) {
+            	return res.negotiate(err);
+          	}
 
+          	return res.view('viewOrchardBlock', {
+	            orchardBlocks: {
+	              
+	            },
+	            layout: "signedInLayout",
+	        	title: "Harvest | View Orchard Block"
+          	});
+      	});
+    });
+};

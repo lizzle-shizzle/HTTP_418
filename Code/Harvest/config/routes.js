@@ -56,6 +56,8 @@ module.exports.routes = {
   'GET /resetPassword/:token': {controller: 'PageController', action: 'resetPasswordInfo', skipAssets: true},
   'POST /resetPassword/:token': 'UserController.resetPassword',
 
+  'GET /viewOrchardBlock': {view: 'orchardBlock/viewOrchardBlock'},
+
 
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',
