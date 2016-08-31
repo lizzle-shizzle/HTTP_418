@@ -22,5 +22,5 @@ module.exports = {
 	        	title: "Harvest | View Orchard Block"
           	});
       	});
-    });
+    }
 };
