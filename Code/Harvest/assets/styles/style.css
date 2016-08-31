@@ -184,6 +184,10 @@ color: white;
   left: 0;
   min-height: 400px;
 }
+
+.carousel .item {    
+    height: 100vh;
+  }
 /*
 RESPONSIVE CSS
 */
@@ -198,9 +202,6 @@ RESPONSIVE CSS
   }
   .navbar-wrapper .navbar {
     border-radius: 4px;
-  }
-  .carousel .item {
-    height: 768px;
   }
   .carousel img {
     position: absolute;
