@@ -4,9 +4,9 @@ PAGE CONTENT
 ======================================
 */
 body {
-  padding-bottom: 40px;
+  /*padding-bottom: 40px;*/
   color: #5a5a5a;
-  height: 700px;
+  /*height: 700px;*/
   background-color: #006600;
   /*background-image: url("../IMAGES/Background1.png");
   background-size: 100% 100%;*/
@@ -20,6 +20,9 @@ input.ng-invalid.ng-dirty{border:1px solid red;}
 .alert{
   opacity: 0;
 }
+.recoverInfo{
+  text-align: center;
+}
 .errorText{
   opacity: 1;
   color: red;
@@ -29,6 +32,7 @@ input.ng-invalid.ng-dirty{border:1px solid red;}
   padding-top: 0px;
   padding-bottom: 2px;
 }
+
 #logoText{
   color: #29A9E1;
   padding-top: 5%;
@@ -131,20 +135,29 @@ button:hover{
 background-color: #006600;
 color: white;
 }
+.logoText{
+  color: #29A9E1;
+  font-weight: bold;
+  text-align: center;
+  font-size: 450%;
+}
+#contactDetails {
+  font-size: 120%;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-
+/*Edit -------- charl, may uncomment if you want, added js to fix img positioning -------------   */
 /* Carousel base class */
-.carousel {
+/*.carousel {
   margin-bottom: 60px;
-}
+}*/
 /* Since positioning the image, we need to help out the caption */
-.carousel-caption {
+/*.carousel-caption {
   z-index: 1;
-}
+}*/
 
 /* Declare heights because of positioning of img element */
-.carousel .item {
+/*.carousel .item {
   height: 650px;
   background-color:#555;
 }
@@ -153,6 +166,14 @@ color: white;
   top: 0;
   left: 0;
   min-height: 400px;
+}*/
+
+.carousel-control .icon-next {
+  font-size: 40pt;
+}
+
+.carousel-control .icon-prev {
+  font-size: 40pt;
 }
 /*
 ======================================
