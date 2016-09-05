@@ -14,8 +14,10 @@
 					<legend>Orchard Block Details</legend>
 					<form name="frmViewOrchardBlock">
 						<div ng-controller="selectOrchardBlock">
-							<label for="selectOrchardBlock">Orchard Block</label>
+							<label for="selectOrchardBlock">Orchard Block</label>	
 							<select name="selectOrchardBlock" class="form-control" ng-model="selectOrchard" ng-options="x for x in orchard"></select>
+							<br/>
+							<a class="btn" href="/editOrchardBlock">Edit</a>							
 						</div>
 						<br/>
 						<div>
@@ -58,7 +60,7 @@
 							<label class="info"><!--%= orchard.coOrdinates %--></label>
 						</div>
 						<br/>
-						<button class="btn" ng-disabled="frmViewOrchardBlock.$invalid">Create Orchard Block</button>
+						<a class="btn" ng-disabled="frmViewOrchardBlock.$invalid" href="/createOrchardBlock">Create Orchard Block</a>
 					</form>
 				</fieldset>
 			</div>
