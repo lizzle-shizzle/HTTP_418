@@ -22,5 +22,22 @@ module.exports = {
 	        	title: "Harvest | View Orchard Block"
           	});
       	});
+    },
+    editOrchardBlock: function(req, res, next) {
+      User.find()
+        .populate("farms")
+        .exec(function (err, user){
+          if (err) {
+              return res.negotiate(err);
+            }
+
+            return res.view('editOrchardBlock', {
+              orchardBlocks: {
+                
+              },
+              layout: "signedInLayout",
+            title: "Harvest | Edit Orchard Block"
+            });
+        });
     }
 };
