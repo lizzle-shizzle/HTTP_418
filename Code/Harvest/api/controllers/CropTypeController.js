@@ -18,6 +18,9 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
+			if(user.farms[0] == null)
+        		return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
+				
 			//get farm linked to user and fetch all orchardblocks
 			OrchardBlock.find({farm: user.farms[0].id})
 			.populateAll()
