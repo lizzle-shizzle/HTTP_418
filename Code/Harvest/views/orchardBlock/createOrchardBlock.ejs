@@ -6,3 +6,61 @@
 		};
 	</script>
 </head>
+<div class="container" ng-app onload="showCreateOrchardBlock()">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<fieldset>
+					<legend>New Orchard Block</legend>
+					<form name="frmCreateOrchardBlock">
+						<div>
+							<label for="orchardBlockName">Name</label>
+							<input class="form-control" type="text" name="orchardBlockName" ng-model="createOrchardBlockFrm.orchardBlockName" placeholder="A5" required>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.text">Not a valid name!</span>
+						</div>
+						<br/>
+						<div>
+							<label for="orchardBlockHectares">Hectares</label>
+							<input class="form-control" type="text" name="orchardBlockHectares" ng-model="createOrchardBlockFrm.orchardBlockHectares" placeholder="20" required>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.text">Not a valid size!</span>
+						</div>
+						<br/>
+						<div ng-controller="selectIrrigation">
+							<label for="selectIrrigationType">Irrigation Type</label>
+							<select name="selectIrrigationType" class="form-control" ng-model="selectIrrigation" ng-options="x for x in irrigation"></select>
+						</div>
+						<br/>
+						<div ng-controller="selectCrop">
+							<label for="selectCropType">Crop Type</label>
+							<select name="selectCropType" class="form-control" ng-model="selectCrop" ng-options="x for x in crop"></select>
+						</div>
+						<br/>
+						<div ng-controller="selectCultivationFrequency">
+							<label for="selectCultivationFrequency">Cultivation Frequency</label>
+							<select name="selectCultivationFrequency" class="form-control" ng-model="selectCultivationFrequency" ng-options="x.Name for x in cultivationFrequency"></select>
+						</div>
+						<br/>
+						<div ng-controller="selectYieldMeasurement">
+							<label for="selectYieldMeasurement">Yield Measurement Type</label>
+							<select name="selectYieldMeasurement" class="form-control" ng-model="selectYieldMeasurement" ng-options="x for x in yieldMeasurement"></select>
+						</div>
+						<br/>
+						<div>
+							<label for="plantDate">Date Planted</label>
+							<input class="form-control" type="date" name="plantDate" ng-model="createOrchardBlockFrm.date" required>
+							<span ng-show="frmCreateOrchardBlock.plantDate.$dirty && frmCreateOrchardBlock.plantDate.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.plantDate.$dirty && frmCreateOrchardBlock.plantDate.$error.date">Not a valid date!</span>
+						</div>
+						<br/>
+						<label for="googleMap">Choose Co-ordinates</label>
+						<div name="googleMap" id="googleMap"></div>
+						<br/>
+						<button class="btn" ng-disabled="frmCreateOrchardBlock.$invalid">Create Orchard Block</button>
+					</form>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>
