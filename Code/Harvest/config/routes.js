@@ -57,6 +57,8 @@ module.exports.routes = {
   'POST /resetPassword/:token': 'UserController.resetPassword',
 
   'GET /viewOrchardBlock': {view: 'orchardBlock/viewOrchardBlock'},
+  'GET /editOrchardBlock': {view: 'orchardBlock/editOrchardBlock'},
+  'GET /createOrchardBlock': {view: 'orchardBlock/createOrchardBlock'},
 
 
   'GET /editFarmer': {view: 'user/editFarmer'},

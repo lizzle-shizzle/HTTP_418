@@ -39,5 +39,22 @@ module.exports = {
             title: "Harvest | Edit Orchard Block"
             });
         });
+    },
+    createOrchardBlock: function(req, res, next) {
+      User.find()
+        .populate("farms")
+        .exec(function (err, user){
+          if (err) {
+              return res.negotiate(err);
+            }
+
+            return res.view('createOrchardBlock', {
+              orchardBlocks: {
+                
+              },
+              layout: "signedInLayout",
+            title: "Harvest | Create Orchard Block"
+            });
+        });
     }
 };
