@@ -18,21 +18,31 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id})
+			if(user.farms[0] == null)
+        		return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
+
+			//get farm linked to user and fetch all Orchardblocks
+			/*OrchardBlock.find({farm: user.farms[0].id})
 			.populateAll()
-			.exec(function(err, orchid) {
+			.exec(function(err, orchard) {
 				if(err) return res.negotiate(err);				
-				//send all orchid blocks linked to farm
-				res.view({type: orchid, 
-				layout: "signedInLayout", title: "Create yield measurement type"});				
+				//send all orchard blocks linked to farm
+				res.view({type: orchard, 
+				layout: "signedInLayout"});				
+			});*/
+			YieldMeasurementType.find()
+			.exec(function(err, yieldType) {
+				if(err) return res.negotiate(err);				
+				//send all orchard blocks linked to farm
+				res.view({type: yieldType, 
+				layout: "signedInLayout"});
 			});
 		});        
     },
 
     new: function(req, res) {
 		//return to homepage if not logged in
-		//cannot create crop type if not logged in
+		//cannot create yield type if not logged in
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
@@ -42,60 +52,26 @@ module.exports = {
 			//If there is an error 
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
-
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id, cropType: null})			
-			.exec(function(err, orchidblock) {
-				if(err) return res.negotiate(err);
-
-				//now find all croptypes
-				CropType.find().exec(function(err, cropType) {
-					if(err) return res.negotiate(err);
-
-					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({data: {orchid: orchidblock,
-						type: cropType}, 
-					layout: "signedInLayout", title: "Create crop type"});
-				});				
-			});
+			
+			res.view({layout: "signedInLayout", title: "Create yield measurement type"});				
 		});				
 	},
 
     create: function (req, res) {
+		//redirect to homepage if user not logged in
+		if (!req.session.me) {
+	      return res.view('homepage');
+	    }
 	    // Create crop type from pramaters sent from -> new.ejs	    
-		//Create new crop type, get crop type id and add to orchidblock
-        CropType.create({name: req.param("newCropType")}, function(err, crop) {
+		//Create new crop type, get crop type id and add to orchardblock
+        YieldMeasurementType.create({name: req.param("newYieldType")}, function(err, crop) {
             //If there is an error 
 	    	//return appropiate error message
 	    	if(err) return res.negotiate(err);
-			
-			//if created sucessfully, update orchid block to link crop type
-			OrchidBlock.update({id: req.param("orchidID")}, {
-				cropType: crop.id
-			}, function (err) {
-				//If there is an error 
-				//return appropiate error message
-				if(err) return res.negotiate(err);
-
-				//if successfull send 200 response
-				return res.ok();
-			});	    	
+						
+			return res.redirect("/yieldMeasurementType/view");		    	
         });
-	},
-	
-	add: function (req, res) {	    
-		//Add existing crop type to OrchidBlock selected in -> new.ejs
-		OrchidBlock.update({id: req.param("orchidID")}, {
-			cropType: req.param('cropTypeID')
-		}, function (err) {
-			//If there is an error 
-			//return appropiate error message
-			if(err) return res.negotiate(err);
-
-			//if successfull send 200 response
-			return res.ok();
-		});	    	
-	},
+	},	
 
 	edit: function(req, res) {		
 		//return to homepage if not logged in
@@ -109,30 +85,18 @@ module.exports = {
 			//If there is an error 
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
-
-			//get farm linked to user and fetch all orchidblocks
-			OrchidBlock.find({farm: user.farms[0].id})			
-			.exec(function(err, orchidblock) {
+			
+			// find all yield types
+			YieldMeasurementType.findOne({id: req.param("id")}).exec(function(err, yieldType) {
 				if(err) return res.negotiate(err);
 
-				var orchidBlockID = 0;
-				OrchidBlock.findOne({cropType: req.param("id")}, function(err, block) {
-					if(err) return res.negotiate(err);
-					orchidBlockID = block.id;
-				});
-				//now find all croptypes
-				CropType.find().exec(function(err, cropType) {
-					if(err) return res.negotiate(err);
-
-					
-					//send all orchid blocks linked to farm and croptypes that exist
-					res.view({data: {orchid: orchidblock,
-						type: cropType,
-						reqID: req.param("id"),
-						orchID: orchidBlockID}, 
-					layout: "signedInLayout", title: "Create crop type"});
-				});				
-			});
+				
+				//send all orchard blocks linked to farm and croptypes that exist
+				res.view({data: {
+					type: yieldType,
+					id: req.param("id")},					
+				layout: "signedInLayout", title: "Edit yield measurement type"});
+			});							
 		});
 	},
 
@@ -142,8 +106,8 @@ module.exports = {
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
-		//edit OrchidBlock selected in -> edit.ejs
-		OrchidBlock.update({id: req.param("orchidID")}, {
+		//edit orchardBlock selected in -> edit.ejs
+		/*OrchardBlock.update({id: req.param("orchardID")}, {
 			cropType: req.param('cropTypeID')
 		}, function (err) {
 			//If there is an error 
@@ -152,7 +116,16 @@ module.exports = {
 
 			//if successfull send 200 response
 			return res.ok();						
-		});	
+		});	*/
+		YieldMeasurementType.update({id: req.param("id")}, {name: req.param("yieldType")},
+		function(err) {
+			//If there is an error 
+			//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//if successfull send 200 response
+			return res.redirect("/yieldMeasurementType/view");
+		});
 	}
 };
 

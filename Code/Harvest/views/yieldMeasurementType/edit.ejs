@@ -1,34 +1,20 @@
-<div class="container" ng-app="YieldTypeModule" ng-controller="YieldTypeController">
+<div class="container" ng-app="MainModule" ng-controller="MainController">
     <div class="row jumbo">
         <div class="col-md-10 col-md-offset-1">
             <div class="jumbotron">                
-                    <form ng-submit="submitEdit()" name="frmEditYieldType" id="frmEditYieldType">                        
+                    <form action="/yieldMeasurementType/update/<%= data.id %>" method="post" name="frmEditYieldType" id="frmEditYieldType">                        
                         <fieldset>  
-                            <legend>Edit Yield Measurement Type</legend>                        						
-
-                            <label for="orchid">Change Orchid Block linked to Yield Measurement Type <br />							
-                            <select class="form-control" name="orchid" id="orchid" ng-init="editYieldTypeFrm.orchid='<%= data.orchID %>'" ng-model="editYieldTypeFrm.orchid">                                                              
-                                <% _.each(data.orchid, function(orchid) { %>                                    										
-									<option value="<%= orchid.id %>"><%= orchid.name %></option> 									
-                                <% }) %>  								                            
-                            </select>
-                            <span class="errorText" ng-show="frmEditYieldType.orchid.$dirty && frmEditYieldType.orchid.$error.required">Required!</span>                                                        
-                            <br/>
-
+                            <legend>Edit Yield Measurement Type</legend>
                             <label for="yieldType">Change Yield Measurement Type</label>
-                            <select class="form-control" name="yieldType" id="yieldType" ng-init="editYieldTypeFrm.yieldType='<%= data.reqID %>'" ng-model="editYieldTypeFrm.yieldType">                                                             
-                                <% _.each(data.type, function(yield) { %>									
-									<option value="<%= yield.id %>"><%= yield.name %></option> 									
-                                <% }) %>                            
-                            </select>
+                            <input type="text" class="form-control" name="yieldType" id="yieldType" ng-init="editYieldTypeFrm.yieldType='<%= data.type.name %>'" ng-model="editYieldTypeFrm.yieldType" required>
                             <span class="errorText" ng-show="frmEditYieldType.yieldType.$dirty && frmEditYieldType.yieldType.$error.required">Required!</span>                                                        
                             <br/>                                                       											
 
                             <!-- Disable signup button until the form has no errors -->
-                            <button type="submit" class="btn" ng-disabled="frmEditYieldType.$invalid">
-                                <span ng-show="!editYieldTypeFrm.loading">Edit Yield Measurement Type</span>
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditYieldType.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Yield Measurement Type</span>
                                 <span class="overlord-loading-spinner fa fa-spinner" ng-show="editYieldTypeFrm.loading"></span>
-                                <span ng-show="editYieldTypeFrm.loading">Updating Your Yield Measurement Type...</span>
+                                <span ng-show="editFrm.loading">Updating Your Yield Measurement Type...</span>
                             </button>
 
                             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
