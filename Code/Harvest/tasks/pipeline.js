@@ -39,6 +39,7 @@ var jsFilesToInject = [
   'js/public/homepage/HomepageModule.js',
   'js/private/MainModule.js',
   'js/public/cropType/CropTypeModule.js',
+  'js/public/yieldType/yieldTypeController.js',
   'js/**/*.js'
 ];
 
