@@ -31,7 +31,7 @@ module.exports = {
               return res.negotiate(err);
             }
 
-            return res.view('editOrchardBlock', {
+            return res.view({
               orchardBlocks: {
                 
               },
@@ -48,7 +48,7 @@ module.exports = {
               return res.negotiate(err);
             }
 
-            return res.view('createOrchardBlock', {
+            return res.view({
               orchardBlocks: {
                 
               },
