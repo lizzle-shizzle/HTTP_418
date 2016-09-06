@@ -14,7 +14,7 @@ module.exports = {
             	return res.negotiate(err);
           	}
 
-          	return res.view('viewOrchardBlock', {
+          	return res.view({
 	            orchardBlocks: {
 	              
 	            },
