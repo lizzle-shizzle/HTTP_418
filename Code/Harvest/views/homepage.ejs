@@ -1,0 +1,150 @@
+  <head>
+    <title>Harvest Home Page</title>
+
+    <!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
+    <script type="text/javascript">
+    window.SAILS_LOCALS = { _csrf: "<%= _csrf %>" };
+    </script>
+
+  </head>
+
+  <body ng-app="HomepageModule" ng-controller="HomepageController" ng-cloak>
+
+    <div class="navbar-wrapper">
+      <div class="container">
+      <!-- Creates the navbar -->
+        <div class="navbar navbar-static-top navbar-inverse">
+          <div class="navbar-header">
+          <!-- This creates the mechanism for collapse button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+              <!-- This controls the number of lines in the image when the nav collapse -->
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/#" id="brandSection"><h2 id="logoText" class="pull-left">Harvest</h2><img id="logo" class="pull-right" src="/images/logo.png"></a>
+          </div>
+
+          <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>       
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login">Sign in <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-lr" role="menu"  id="frmLoginli">
+                    <div class="col-lg-12 col-md-12 col-xs-6" id="frmLoginli">
+                        <div class="text-center"><h3>Sign In</h3></div>
+                        <form ng-submit="submitLoginForm()" name="frmLogin" id="frmLogin" role="form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input ng-model="loginForm.email" type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="tony.stark@gmail.com" value="" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.email.$dirty && frmLogin.email.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input ng-model="loginForm.password" type="password" name="password" tabindex="2" class="form-control" placeholder="******" autocomplete="off" required>
+                                <span class="errorText" ng-show="frmLogin.password.$dirty && frmLogin.password.$error.required">Required!</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                  <div class="col-xs-4 col-md-8 col-lg-10">
+                                    <input type="checkbox" tabindex="3" name="remember" id="remember"> &nbsp; Remember Me
+                                  </div> 
+                                </div>
+                                <br>
+                                <div class="row">
+                                  <div class="col-xs-5 pull-left">
+                                    <button type="submit" class="btn" tabindex="4" id="btnSignIn" ng-disabled="frmLogin.$invalid">
+                                      <span ng-show="!loginForm.loading">Sign in</span>
+                                      <span ng-show="loginForm.loading" class="fa fa-spinner"></span>
+                                      <span ng-show="loginForm.loading">Signing in...</span>
+                                    </button>
+                                  </div>
+                                  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="text-center">
+                                            <a href="/recoverPassword" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" class="hide" name="token" id="token" value="a465a2791ae0bae853cf4bf485dbe1b6">
+                        </form>
+                    </div>
+                </ul>
+              </li>     
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+
+        <div class="item active">
+
+          <img src="/images/Carousel1.jpg" style="width:100%" class="img-responsive">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Register your farm today!</h1>
+              <p></p>
+              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/images/Carousel2.jpg" style="width:100%" class="img-responsive">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Register your farm today!</h1>
+              <p></p>
+              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="/images/Carousel3.jpg" class="img-responsive">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Register your farm today!</h1>
+              <p></p>
+              <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
+            </div>
+          </div>
+        </div>  
+        <div class="item">
+            <img src="/images/Carousel4.jpg" style="width:100%" class="img-responsive">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Register your farm today!</h1>
+                <p></p>
+                <p><a id="btnRegister" href="/signup" class="btn btn-lg btn-primary">Register Here</a></p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+      </a>  
+    </div>
+  </body>

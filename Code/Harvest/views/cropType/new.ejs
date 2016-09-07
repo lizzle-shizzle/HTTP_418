@@ -1,0 +1,31 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/croptype/create" method="post" name="frmCreateCropType" id="frmCreateCropType">                        
+                        <fieldset>  
+                            <legend>New Crop Type</legend>                                                    
+
+                            <!-- Only show this input when a new crop type needs to be added -->
+                            <div>
+                                <label for="newCropType">New Crop Type</label>
+                                <input class="form-control" type="text" name="newCropType" id="newCropType" ng-model="createCropTypeFrm.newCropType" placeholder="Mango" required>
+                                <span class="errorText" ng-show="frmCreateCropType.newCropType.$dirty && frmCreateCropType.newCropType.$error.required">Required!</span>                                                         
+                                <br/>
+                            </div>                           											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmCreateCropType.$invalid">
+                                <span ng-show="!createFrm.loading">Add Crop Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createCropTypeFrm.loading"></span>
+                                <span ng-show="createFrm.loading">Adding Your Crop Type...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

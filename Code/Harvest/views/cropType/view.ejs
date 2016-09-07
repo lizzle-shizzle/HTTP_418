@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<div class="container">
+					<fieldset>
+						<legend>Crop Types</legend>
+						<div ng-app="CropTypeModule" ng-controller="CropTypeController" id="tableContainer">
+							<table class="table table-bordered">
+								<th>#</th>
+								<th>Crop type</th>							
+								<th>Edit</th>
+								<!-- fetch croptypes from sent orchard blocks -->
+								<!--<# _.each(type, function(crop, index) { >
+									<# if (typeof crop.cropType != "undefined" ) { >
+										<tr>
+											<td><# index + 1 >.</td>
+											<td><# crop.cropType.name ></td>
+											<td><a class="info" href="/croptype/edit/<# crop.cropType.id >"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+										</tr>
+									<# } >
+                                <# }) >-->
+								<% if(type.length == 0) { %>
+									<tr>
+											<td colspan="3">There are no crop types linked to your farm yet <br />
+											Create a new crop type or <a href="/createOrchardBlock">link an existing crop type to an orchard block</a>
+											</td>
+										</tr>
+								<% } else { %>
+									<% _.each(type, function(crop, index) { %>
+										<% if (typeof crop != "undefined" ) { %>
+											<tr>
+												<td><%= index + 1 %>.</td>
+												<td><%= crop.name %></td>
+												<td><a class="info" href="/croptype/edit/<%= crop.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+											</tr>																			
+										<% } %>
+									<% }) %>
+								<% } %>							
+							</table>
+						</div>
+						<br/>
+						<a href="/cropType/new" class="btn">Add Crop Type</a>											
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

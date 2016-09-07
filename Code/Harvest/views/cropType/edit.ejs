@@ -1,0 +1,28 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/croptype/update/<%= data.id %>" method="post" name="frmEditCropType" id="frmEditCropType">                        
+                        <fieldset>  
+                            <legend>Edit Crop Type</legend>                        						                            
+
+                            <label for="cropType">Change Crop Type</label>
+                            <input type="text" class="form-control" name="cropType" id="cropType" ng-init="editCropTypeFrm.cropType='<%= data.type.name %>'" ng-model="editCropTypeFrm.cropType" required>                                    
+                            <span class="errorText" ng-show="frmEditCropType.cropType.$dirty && frmEditCropType.cropType.$error.required">Required!</span>                                                        
+                            <br/>                                                       											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditCropType.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Crop Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editCropTypeFrm.loading"></span>
+                                <span ng-show="editFrm.loading">Updating Your Crop Type...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>
