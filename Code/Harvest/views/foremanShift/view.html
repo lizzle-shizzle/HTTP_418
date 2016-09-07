@@ -1,0 +1,38 @@
+<div class="row jumbo">
+<div class="col-md-10 col-md-offset-1">
+	<div class="jumbotron">
+		<div class="container">
+			<fieldset>
+				<legend>Foremen Shift</legend>
+				<div ng-controller="selectForeman" id="tableContainer">
+					<table class="table table-bordered">
+					<th>#</th>
+					<th>Name</th>
+					<th>StartTime</th>
+					<th>EndTime</th>
+					<th>Edit</th>
+						<% if(data.length == 0) {%>
+							<tr>
+								<td colspan="5">
+									No forman shifts has been created
+								</td>
+							</tr>
+						<% } else { %>
+							<% _each(data, function(shift, index) { %>
+								<tr ng-repeat="x in foremen">
+									<td><%= index + 1 %>.</td>
+									<td> </td>
+									<td><% shift.StartTime %></td>
+									<td><% shift.EndTime %></td>
+									<td><a class="info" href="foremanShift/edit/<%= shift.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+								</tr>
+							<% }) %>
+						<% } %>						
+					</table>
+				</div>
+				<br/>
+			</fieldset><br/>
+			<button class="btn">Create New Cultivation Frequency</button>
+		</div>
+	</div>
+</div>
