@@ -2,7 +2,8 @@
 	<title>View Orchard Block</title>
 	<script type="text/javascript">
 	    window.SAILS_LOCALS = {
-	      _csrf: '<%= _csrf %>'
+	      _csrf: '<%= _csrf %>',
+      		me: <%- JSON.stringify(me) %>
 	    };
     </script>
 </head>
@@ -15,7 +16,7 @@
 					<form name="frmViewOrchardBlock">
 						<div ng-controller="selectOrchardBlock">
 							<label for="selectOrchardBlock">Orchard Block</label>	
-							<select name="selectOrchardBlock" class="form-control" ng-model="selectOrchard">
+							<select name="selectOrchardBlock" class="form-control" ng-change="changeOrchardBlock()">
 							<% _.each(type, function(orchardBlock, index) { %>
 								<option value="<%= orchardBlock.id %>"><%= orchardBlock.name %></option>
 							<% }) %>
