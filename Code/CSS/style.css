@@ -1,7 +1,7 @@
 /*
-======================================
+
 PAGE CONTENT
-======================================
+
 */
 body {
   /*padding-bottom: 40px;*/
@@ -19,6 +19,9 @@ body {
 input.ng-invalid.ng-dirty{border:1px solid red;}
 .alert{
   opacity: 0;
+}
+.recoverInfo{
+  text-align: center;
 }
 .errorText{
   opacity: 1;
@@ -82,9 +85,7 @@ label{
   color: white;
 }
 /*
-======================================
 NAVBAR
-======================================
 */
 .navbar-right {
   padding-right: 1%;
@@ -173,9 +174,7 @@ color: white;
   font-size: 40pt;
 }
 /*
-======================================
 RESPONSIVE CSS
-======================================
 */
 @media (min-width: 768px) {
   .marketing {
