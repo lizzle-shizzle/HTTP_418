@@ -7,21 +7,24 @@
 
 module.exports = {
 	viewOrchardBlock: function(req, res, next) {
-    	User.find()
+      if (!req.session.me) {
+          return res.view('homepage');
+      }
+    	User.findOne({id: req.session.me})
        	.populate("farms")
-        .exec(function (err, user){
-        	if (err) {
-            	return res.negotiate(err);
-          	}
+        .exec(function (err, user) {
+          if(err) return res.negotiate(err);
 
-          	return res.view({
-	            orchardBlocks: {
-	              
-	            },
-	            layout: "signedInLayout",
-	        	title: "Harvest | View Orchard Block"
-          	});
-      	});
+          if(user.farms[0] == null)
+                return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
+          OrchardBlock.find()    
+          .exec(function(err, orchardBlocks) {
+            if(err) return res.negotiate(err);     
+
+            res.view({type: orchardBlocks, 
+            layout: "signedInLayout"});
+          });
+        });
     },
     editOrchardBlock: function(req, res, next) {
       User.find()
