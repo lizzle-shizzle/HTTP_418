@@ -15,14 +15,18 @@
 					<form name="frmViewOrchardBlock">
 						<div ng-controller="selectOrchardBlock">
 							<label for="selectOrchardBlock">Orchard Block</label>	
-							<select name="selectOrchardBlock" class="form-control" ng-model="selectOrchard" ng-options="x for x in orchard"></select>
+							<select name="selectOrchardBlock" class="form-control" ng-model="selectOrchard">
+							<% _.each(type, function(orchardBlock, index) { %>
+								<option value="<%= orchardBlock.id %>"><%= orchardBlock.name %></option>
+							<% }) %>
+							</select>
 							<br/>
 							<a class="btn" href="/editOrchardBlock">Edit</a>							
 						</div>
 						<br/>
 						<div>
 							<label>Name</label>
-							<label class="info"><!--%= orchard.name %--></label>
+							<label class="info"><!--%= orchardBlock.name %--></label>
 						</div>
 						<br/>
 						<div>
