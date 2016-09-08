@@ -142,13 +142,13 @@
 	\section{Functionality which is Correctly Implemented}
 		\begin{itemize}
 			\item\textbf{Adding a farm} -
-			Some description. 
+			The create page for farm contains input fields that the user uses to input the required data. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. Farm Name, Registered Farm Name and Company Name requires the user to enter no more than 120 characters. Farm Name is optional. Farm Size is optional and requires the user to enter numerical data. Province uses a drop down list to limit the user to only the 9 provinces we have in our country. Region, Farming Region and Portion Number require the user to enter no more than 50 characters. Region and portion Number are optional. Error messages are displayed is any incorrect data is entered or no data is entered where required. the Create Farm button is disabled of any of the inputs are invalid. This ensures that the user does not enter any invalid data. If submition is successfull the user is taken to the main page where the details of the farm are displayed.
 			
-			\item\textbf{Viewing a farm} -
-			Some description.
+			%\item\textbf{Viewing a farm} -
+			%Some description.
 			
 			\item\textbf{Editing a farm} -
-			Some description.
+			Editing a farm contains the same inputs and validation as when creating a farm. This ensures that no invalid data is stored when updating a farm. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the main page where the updated farm details are reflected.
 			
 			\item\textbf{Adding a orchard block} -
 			Some description. 
@@ -162,13 +162,13 @@
 	\section{Short-comings of Implemented Functionality}
 		\begin{itemize}
 			\item\textbf{Adding a farm} -
-			Some description. 
+			There is no way to pass any gracefull error messages to the user if submition fails.
 			
 			\item\textbf{Viewing a farm} -
-			Some description.
+			The user cannot select between different farms.
 			
 			\item\textbf{Editing a farm} -
-			Some description.
+			There is no way to pass any gracefull error messages to the user if submition fails.
 			
 			\item\textbf{Adding a orchard block} -
 			Some description. 
