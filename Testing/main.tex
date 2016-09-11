@@ -98,11 +98,12 @@
 			The user can only view the Log Out button if they have been logged into the system. When the user clicks the Log Out button, the user's session is destroyed and their information is reset to null causing them to be logged out of the system. Upon logout, they will be redirected to the landing page.
 			
 			\item\textbf{Changing password} -
-			Some description.
-			%-The user can only navigate to this form through the edit profile form, which is only accessible if the user is logged in. This ensures that the user does have an account present in the database, and eliminates the need to re-enter your current password. The Change Password form contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
+			The user can only navigate to this form through the edit profile form, which is only accessible if the user is logged in. This ensures that the user does have an account present in the database, and eliminates the need to re-enter your current password. The Change Password form contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. 
+			-%The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. 
+			The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
 			
 			\item\textbf{Recovering password} -
-			Some description.
+			The user can navigate to this form without being logged into the system. The user is requested to enter the email address they used to sign up their account. The form only submits successfully if the email address entered is in fact linked with an existing account. Once the user submits this form, an email is sent with a link with a token, which provides them access to the change password page. This token expires one hour after the email was sent. The user is then navigated to the homepage. After the link has been selected, the change password form displays and contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
 		\end{itemize}
 	\section{Short-comings of Implemented Functionality}
 		\begin{itemize}
@@ -119,11 +120,10 @@
 			There are no short-comings with this functionality.
 			
 			\item\textbf{Changing password} -
-			Some description.
-			%-If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred.
+			The error handling for invalid data and the Password and Confirm Password aren't currently working. If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred. Once the password has been changed, a message should display to indicate success.
 			
 			\item\textbf{Recovering password} -
-			Some description.
+			The success message to indicate that the email has successfully been sent currently doesn't display. The error handling for invalid data and the Password and Confirm Password aren't currently working. If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred. Once the password has been changed, a message should display to indicate success.
 		\end{itemize}
 	\section{Missing Functionality}
 		\begin{itemize}
