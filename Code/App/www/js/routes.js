@@ -37,7 +37,7 @@ angular.module('app.routes', [])
   })
 
   .state('splashScreen', {
-    url: '/page6',
+    url: '/start',
     templateUrl: 'templates/splashScreen.html',
     controller: 'splashScreenCtrl'
   })
@@ -54,7 +54,7 @@ angular.module('app.routes', [])
     controller: 'aboutCtrl'
   })
 
-$urlRouterProvider.otherwise('/page6')
+$urlRouterProvider.otherwise('/start')
 
   
 
