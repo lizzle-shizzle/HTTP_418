@@ -20,14 +20,10 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('tabsController.cropYield', {
+  .state('cropYield', {
     url: '/page3',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/cropYield.html',
-        controller: 'cropYieldCtrl'
-      }
-    }
+    templateUrl: 'templates/cropYield.html',
+    controller: 'cropYieldCtrl'      
   })
 
   .state('tabsController', {
