@@ -1,29 +1,72 @@
 <ion-view title="Crop Yield" id="page3">
-    <ion-content padding="true" class="has-header">
-        <!--<div class="item item-body" id="cropYield-list-item-container9">-->
-            <form id="cropYield-form8" class="list">
-                <label class="item item-select" id="cropYield-select4">
-                    <span class="input-label">Orchard Block</span>
-                    <select>
-                        <option>BA20</option>
-                        <option>BA32</option>
-                        <option>BA12</option>
-                    </select>
-                </label>
-                <div class="spacer" style="width: 716px; height: 19px;"></div>
-                <label class="item item-select" id="cropYield-select1">
-                    <span class="input-label">Worker</span>
-                    <select>
-                        <option>Fielie</option>
-                        <option></option>
-                    </select>
-                </label>
-                <div class="spacer" style="width: 716px; height: 18px;"></div>
-                <label class="item item-input" id="cropYield-input6">
-                    <span class="input-label">Yields collected</span>
-                    <input type="number" placeholder="">
-                </label>
-            </form>
-        <!--</div>-->
+    <ion-content padding="true" style="background: #d9d9d9" class="has-header">
+        <div class="spacer" style="width: 300px; height: 40px;"></div>
+        <form id="cropYield-form8" class="list">
+            <label class="item item-select" id="cropYield-select4">
+                <span class="input-label">Orchard Block</span>
+                <select>
+                    <option>BA20</option>
+                    <option>BA32</option>
+                    <option>BA12</option>
+                </select>
+            </label>
+            <div class="spacer" style="width: 716px; height: 19px;"></div>
+            <label class="item item-select" id="cropYield-select1">
+                <span class="input-label">Worker</span>
+                <select>
+                    <option>Fielie</option>
+                    <option></option>
+                </select>
+            </label>
+            <div class="spacer" style="width: 716px; height: 18px;"></div>
+            <label class="item item-input" id="cropYield-input6">
+                <span class="input-label">Yields collected</span>
+                <input type="number" placeholder="">
+            </label>
+        </form>
+        <style>
+            @media only screen and (min-width: 768px) {
+                /*.button.button-block {
+                    width: 350px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }*/
+
+                .item.item-input {
+                    width: 550px;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                .item.item-select {
+                    width: 550px;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                /*#loginForm {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                } */
+            } 
+
+            /*@media only screen and (max-width: 767px) {
+                #loginForm {
+                    top: 25vh;
+                }
+            }*/
+
+            .item.item-input {
+                /*border-radius: 10px !important;*/
+                box-shadow: 5px 5px 5px darkgray;
+            }      
+
+            .item.item-select {
+                /*border-radius: 10px !important;*/
+                box-shadow: 5px 5px 5px darkgray;
+            }            
+        </style>
     </ion-content>
 </ion-view>
