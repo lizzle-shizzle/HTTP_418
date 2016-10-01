@@ -5,8 +5,8 @@
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "icon.png",
+    "src": "icon.psd",
     "sizes": "512x512",
-    "type": "image/png"
+    "type": "image/psd"
   }]
 }
