@@ -20,6 +20,12 @@ angular.module('app.routes', [])
     controller: 'splashScreenCtrl'
   })
 
+  .state('help', {
+    url: '/help',
+    templateUrl: 'templates/help.html',
+    controller: 'helpCtrl'
+  })
+
 $urlRouterProvider.otherwise('/start')
 
   

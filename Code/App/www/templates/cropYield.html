@@ -1,38 +1,43 @@
-<ion-view title="Collected Crop Yields" id="page3">
+<ion-view title="Collected Crop Yields" id="cropYield">
     <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear button-calm ion-help-circled"></button>
+        <button class="button button-icon button-clear button-calm ion-help-circled" ng-click="goHelp()"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <button class="button button-clear button-assertive" ng-click="logout()">Log out</button>
     </ion-nav-buttons>
     <ion-content padding="true" style="background: #d9d9d9" class="has-header">
-        <div class="spacer" style="width: 300px; height: 40px;"></div>
+        <div class="spacer" style="width: 300px; height: 20px;"></div>
         <form id="cropYield-form8" class="list">
-            <label class="item item-select" id="cropYield-select4">
-                <span class="input-label">Orchard Block</span>
-                <select>
-                    <option>BA20</option>
-                    <option>BA32</option>
-                    <option>BA12</option>
-                </select>
-            </label>
-            <div class="spacer" style="width: 716px; height: 19px;"></div>
-            <label class="item item-select" id="cropYield-select1">
-                <span class="input-label">Worker</span>
-                <select>
-                    <option>Fielie</option>
-                    <option>Moses</option>
-                    <option>Sadie</option>
-                    <option>Visser</option>
-                </select>
-            </label>
-            <div class="spacer" style="width: 716px; height: 18px;"></div>
-            <label class="item item-input" id="cropYield-input6" style="padding-right: 16px;">
-                <span class="input-label">Yields collected</span>
-                <input type="number" placeholder="">
-                <button class="button button-clear button-icon ion-plus" style="position: absolute; right: 34px"></button>
-                <button class="button button-clear button-icon ion-minus" style="position: absolute; right: 8px; padding-top: 2px"></button>
-            </label>
+            <ul>
+                <li class="item item-checkbox">
+                    Fielie
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>                    
+                </li>
+                <div class="spacer" style="width: 716px; height: 12px;"></div>
+                <li class="item item-checkbox">
+                    Moses
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>                    
+                </li>
+                <div class="spacer" style="width: 716px; height: 12px;"></div>
+                <li class="item item-checkbox">
+                    Sadie
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>                    
+                </li>
+                <div class="spacer" style="width: 716px; height: 12px;"></div>
+                <li class="item item-checkbox">
+                    Visser
+                    <label class="checkbox">
+                        <input type="checkbox">
+                    </label>                    
+                </li>
+                <!--<div class="spacer" style="width: 716px; height: 10px;"></div>-->
+            </ul>            
         </form>
         <style>
             @media only screen and (min-width: 768px) {
@@ -42,13 +47,7 @@
                     margin-right: auto;
                 }*/
 
-                .item.item-input {
-                    width: 550px;
-                    margin-left: auto !important;
-                    margin-right: auto !important;
-                }
-
-                .item.item-select {
+                .item.item-checkbox {
                     width: 550px;
                     margin-left: auto !important;
                     margin-right: auto !important;
@@ -68,15 +67,10 @@
                 }
             }*/
 
-            .item.item-input {
+            .item.item-checkbox {
                 /*border-radius: 10px !important;*/
                 box-shadow: 5px 5px 5px darkgray;
-            }      
-
-            .item.item-select {
-                /*border-radius: 10px !important;*/
-                box-shadow: 5px 5px 5px darkgray;
-            }            
+            }                      
         </style>
     </ion-content>
 </ion-view>

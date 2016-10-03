@@ -25,11 +25,14 @@ function ($scope, $stateParams, $state, $ionicHistory) {
     $scope.logout = function() {
         $state.go('splashScreen');
 
-        $ionicHistory.nextViewOptions({
+        return $ionicHistory.nextViewOptions({
             disableBack: true
         });
     }
 
+    $scope.goHelp = function() {
+        $state.go('help');
+    }
 }])
       
 // .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -51,6 +54,11 @@ function ($scope, $stateParams, $ionicHistory, $state) {
     return $ionicHistory.nextViewOptions({
         disableBack: true
     });
+}])
+
+.controller('helpCtrl', ['$scope', 
+function($scope) {
+
 }])
    
 // .controller('loginCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
