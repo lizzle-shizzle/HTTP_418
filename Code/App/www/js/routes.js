@@ -9,7 +9,7 @@ angular.module('app.routes', [])
   $stateProvider
 
   .state('cropYield', {
-    url: '/page3',
+    url: '/collectedYields',
     templateUrl: 'templates/cropYield.html',
     controller: 'cropYieldCtrl'      
   })

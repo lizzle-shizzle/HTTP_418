@@ -1,4 +1,10 @@
-<ion-view title="Crop Yield" id="page3">
+<ion-view title="Collected Crop Yields" id="page3">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear button-calm ion-help-circled"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-assertive" ng-click="logout()">Log out</button>
+    </ion-nav-buttons>
     <ion-content padding="true" style="background: #d9d9d9" class="has-header">
         <div class="spacer" style="width: 300px; height: 40px;"></div>
         <form id="cropYield-form8" class="list">
@@ -24,8 +30,8 @@
             <label class="item item-input" id="cropYield-input6" style="padding-right: 16px;">
                 <span class="input-label">Yields collected</span>
                 <input type="number" placeholder="">
-                <button class="button button-clear button-icon ion-plus"></button>
-                <button class="button button-clear button-icon ion-minus"></button>
+                <button class="button button-clear button-icon ion-plus" style="position: absolute; right: 34px"></button>
+                <button class="button button-clear button-icon ion-minus" style="position: absolute; right: 8px; padding-top: 2px"></button>
             </label>
         </form>
         <style>
