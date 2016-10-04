@@ -22,6 +22,12 @@ module.exports = {
 	    Farm.create({
 	    	name: req.param("fname"),
 	    	size: req.param("fsize"),
+			province: req.param("province"),
+			region: req.param("region"),
+			farmingRegion: req.param("fRegion"),
+			registeredFarmName: req.param("regFname"),
+			portionNumber: req.param("num"),
+			companyName: req.param("cname"),
 	    	farmer: req.session.me
 	    }, function farmCreated(err, farm) {
 	    	//If there is an error 
@@ -63,7 +69,13 @@ module.exports = {
 	update: function(req, res) {
 		Farm.update({id: req.param("id")}, {
 			name: req.param("fname"),
-			size: req.param("fsize")
+			size: req.param("fsize"),
+			province: req.param("province"),
+			region: req.param("region"),
+			farmingRegion: req.param("fRegion"),
+			registeredFarmName: req.param("regFname"),
+			portionNumber: req.param("num"),
+			companyName: req.param("cname"),
 		}, function farmUpdated(err) {
 			//If there is an error 
 	    	//return appropiate error message

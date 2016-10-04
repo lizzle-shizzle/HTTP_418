@@ -1,4 +1,4 @@
-<div class="container" ng-app="MainModule" ng-controller="MainController" >
+<div class="container" ng-app="FarmModule" ng-controller="FarmController" >
   <div class="row jumbo">
     <div class="col-md-10 col-md-offset-1">
       <div class="jumbotron">        
@@ -7,20 +7,48 @@
             <legend>Create Farm</legend>
 
             <label for="fname">Farm Name (Optional)</label>
-            <input type="text" name="fname" class="form-control" placeholder="Macadamia Mania" ng-model="createFarmFrm.fname" ng-maxlength="50">          
-            <span class="errorText" ng-show="frmCreateFarm.fname.$error.maxlength">The farm name cannot be more than 50 characters.</span><br>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="Macadamia Valley" ng-model="createFarmFrm.fname" ng-maxlength="120">          
+            <span class="errorText" ng-show="frmCreateFarm.fname.$error.maxlength">The farm name cannot be more than 120 characters.</span><br>
 
-            <label for="lname">Farm Size (In Hectares)</label>
-            <input type="number" name="fsize" class="form-control" placeholder="19.2" ng-model="createFarmFrm.fsize" step="any">
-            <span class="errorText" ng-show="frmCreateFarm.fsize.$dirty && frmCreateFarm.fsize.$error.required">Required!</span>
+            <label for="regFname">Registered Farm Name</label>
+            <input type="text" name="regFname" id="regFname" class="form-control" placeholder="Macadamia Valley" ng-model="createFarmFrm.regFname" ng-maxlength="120" required>
+            <span class="errorText" ng-show="frmCreateFarm.regFname.$dirty && frmCreateFarm.regFname.$error.required">Required!</span>        
+            <span class="errorText" ng-show="frmCreateFarm.regFname.$error.maxlength">The registered farm name cannot be more than 120 characters.</span><br>
+
+            <label for="cname">Company Name (Optional)</label>
+            <input type="text" name="cname" id="cname" class="form-control" placeholder="Macadamia Mania" ng-model="createFarmFrm.cname" ng-maxlength="120">          
+            <span class="errorText" ng-show="frmCreateFarm.cname.$error.maxlength">The company name cannot be more than 120 characters.</span><br>
+
+            <label for="fsize">Farm Size (In Hectares, Optional)</label>
+            <input type="number" name="fsize" id="fsize" class="form-control" placeholder="19.2" ng-model="createFarmFrm.fsize" step="any">            
             <span class="errorText" ng-show="frmCreateFarm.fsize.$error.number">This is not a number</span><br>
 
-          <!-- Disable signup button until the form has no errors -->
-          <button type="submit" class="btn" id="btnCreateFarm" ng-click="click()" ng-disabled="frmCreateFarm.$invalid">
-            <span ng-show="!createFrm.loading">Create Farm</span>
-            <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
-            <span ng-show="createFrm.loading">Creating Your Farm...</span>
-          </button>
+            <label for="province">Province</label>
+            <select type="text" name="province" id="province" class="form-control" placeholder="Mpungalange" ng-model="createFarmFrm.province" required>
+              <option value="" disabled>Pick a province</option>
+              <option ng-repeat="x in Provinces" value="{{x}}">{{x}}</option>
+            </select>
+            <span class="errorText" ng-show="frmCreateFarm.province.$dirty && frmCreateFarm.province.$error.required">Required!</span><br>                    
+
+            <label for="region">Region (Optional)</label>
+            <input type="text" name="region" id="region" class="form-control" placeholder="Nelspruit" ng-model="createFarmFrm.region" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmCreateFarm.region.$error.maxlength">The region name cannot be more than 50 characters.</span><br>
+
+            <label for="fRegion">Farming Region</label>
+            <input type="text" name="fRegion" id="fRegion" class="form-control" placeholder="Alkmaar" ng-model="createFarmFrm.fRegion" ng-maxlength="50" required>
+            <span class="errorText" ng-show="frmCreateFarm.fRegion.$dirty && frmCreateFarm.fRegion.$error.required">Required!</span>          
+            <span class="errorText" ng-show="frmCreateFarm.fRegion.$error.maxlength">The farming region name cannot be more than 50 characters.</span><br>
+
+            <label for="num">Portion Number (Optional)</label>
+            <input type="text" name="num" id="num" class="form-control" placeholder="Macadamia Mania" ng-model="createFarmFrm.num" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmCreateFarm.num.$error.maxlength">The portion number cannot be more than 50 characters.</span><br>            
+
+            <!-- Disable signup button until the form has no errors -->
+            <button type="submit" class="btn" id="btnCreateFarm" ng-click="click()" ng-disabled="frmCreateFarm.$invalid">
+              <span ng-show="!createFrm.loading">Create Farm</span>
+              <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+              <span ng-show="createFrm.loading">Creating Your Farm...</span>
+            </button>
 
             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
           </fieldset>
