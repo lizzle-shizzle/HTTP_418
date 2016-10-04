@@ -18,13 +18,13 @@ module.exports = {
   	startTime: {
   		time: 'datetime',
   		required: true
-  	}
+  	},
 
   	//The time the shift ends
   	endTime: {
   		time: 'datetime',
   		required: true
-  	}
+  	},
 
   	//The shift belonging to a foreman
   	shift: {

@@ -24,7 +24,7 @@ module.exports = {
   	//The foreman's email address
   	//e.g. adolf@nazi.com
   	email: {
-  		type: 'email'//'string',
+  		type: 'email',//'string',
   		email: true,
   		required: true,
   		unique: true
@@ -35,7 +35,7 @@ module.exports = {
   	encryptedPassword: {
   		type: 'string',
   		required: true
-  	}
+  	},
 
   	//The foreman's multiple shifts
   	shifts: {
