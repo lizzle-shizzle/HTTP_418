@@ -85,7 +85,13 @@
 							<legend>Maintain Foreman-Orchard Block Allocations</legend>
 							<div ng-controller="selectForeman">
 								<label for="selectForeman">Select Foreman</label>
-								<select name="selectForeman" class="form-control" ng-model="selectForeman" ng-options="x for x in foremen" required></select>
+
+								<select class="form-control" name="selectForeman" id="selectForeman" ng-model="maintainFOAllocFrm.foreman">
+	                                <option value="" disabled>Select Foreman</option>                                
+	                                <% _.each(data.foreman, function(foreman) { %>
+	                                    <option value="<%= foreman.id %>"><%= foreman.name %></option> 
+	                                <% }) %>                                
+	                            </select>
 								<span class="errorText" ng-show="frmForOrchAlloc.selectForeman.$dirty && frmForOrchAlloc.selectForeman.$error.required">Required!</span>
 							</div><br>
 							<div ng-controller="ForemanController.checkOrch">
