@@ -1,0 +1,130 @@
+<ion-view title="Collected Crop Yields" id="cropYield">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear button-calm ion-help-circled" ng-click="goHelp()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-assertive" ng-click="logout()">Log out</button>
+    </ion-nav-buttons>
+    <ion-content padding="true" style="background: #d9d9d9" class="has-header">        
+        <div class="spacer" style="width: 300px; height: 20px;"></div>
+        <form id="cropYield-form8" class="list">
+            <label class="item item-select">
+                <div class="input-label">
+                Crop type
+                </div>
+                <select>
+                <option>Avocado</option>
+                <option selected>Mango</option>
+                <option>Litchi</option>
+                </select>
+            </label>
+            <div class="spacer" style="width: 716px; height: 20px;"></div>
+
+            <div class="row" style="flex-wrap: wrap;">
+                <div class="col list" style="margin-bottom: 0px;">
+                    <div class="item foreman">
+                        <button class="button button-clear button-dark" onclick="alert('hi')">Fielie</button>
+                        <label class="right-group">
+                            <span class="label">5</span>
+                            <button class="button button-clear button-icon ion-minus" onclick="alert('minus')"></button>
+                        </label>
+
+                    </div>
+                    <div class="item foreman last">
+                        <button class="button button-clear button-dark">Piet</button>
+                        <label class="right-group">
+                            <span class="label">4</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
+                        </label>
+                    </div>
+                </div>
+                <div class="col list" style="margin-bottom: 0px;">
+                    <div class="item foreman">
+                        <button class="button button-clear button-dark">Jan</button>
+                        <label class="right-group">
+                            <span class="label">6</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
+                        </label>
+                    </div>
+                    <div class="item foreman last">
+                        <button class="button button-clear button-dark">Johan</button>
+                        <label class="right-group">
+                            <span class="label">6</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <style>
+            @media only screen and (min-width: 768px) {
+                /*.button.button-block {
+                    width: 350px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }*/
+
+                /*.item.item-checkbox {
+                    width: 550px;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }*/
+
+                .item.item-select{
+                    width: 550px;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                .label {
+                    right: 10% !important;
+                }
+
+                /*.button-clear.button-dark {
+                    width: 80% !important;
+                }*/
+            }
+
+            @media only screen and (max-width: 767px) {
+                .col {
+                    flex-basis: 100%;
+                }
+            }
+
+            .button-clear.button-dark {
+                width: 85%;                
+            }
+
+            .label {
+                position: absolute;
+                top: 30%;
+                right: 15%;
+            }
+
+            .item.foreman {
+                /*border-radius: 10px !important;*/
+                margin-bottom: 10px;
+                box-shadow: 5px 5px 5px darkgray;
+            }
+
+            .item.last {
+                margin-bottom: 0px;
+            }
+
+            .item.item-select {
+                /*border-radius: 10px !important;*/
+                box-shadow: 5px 5px 5px darkgray;
+            }
+
+            /*.ion-minus {
+                margin: 0px 10px;
+            }*/
+
+            .right-group {
+                float: right;
+                font-size: 16pt;
+            }
+        </style>
+    </ion-content>
+</ion-view>
