@@ -63,6 +63,11 @@ module.exports = {
 
     resetPasswordExpires: {
       type: 'int'
+    },
+
+    foremen: {
+      collection: 'Foreman',
+      via : 'farmer'
     }
   }
 };

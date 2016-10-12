@@ -40,7 +40,11 @@ module.exports = {
   	shifts: {
   		collection: 'foremanshift',
   		via: 'shift'
-  	}
+  	},
+
+	farmer: {
+		model: 'User'
+	}
   }
 };
 

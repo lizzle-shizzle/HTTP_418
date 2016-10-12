@@ -7,15 +7,12 @@
 
 module.exports = {
 	//load page to create foreman
-	new: function(req, res){
+	createForeman: function(req, res){
 		//if no one is logged in, return homepage
 		if(!req.session.me){
 			return res.view('homepage');
 		}
-		res.view({layout: 'signedInLayout', title: 'Create new Foreman'});
-	},
 
-	create: function(req, res){
 		//Create foreman from parameters sent by newFore.ejs
 		Foreman.create({
 			fname: req.param('fname'),
@@ -38,7 +35,7 @@ module.exports = {
 		});
 	},
 
-	edit: function(req, res){
+	editForeman: function(req, res){
 		//if no one is logged in, return homepage
 		if(!req.session.me){
 			return res.view('homepage');
@@ -53,7 +50,7 @@ module.exports = {
 		});
 	},
 
-	update: function(req, res){
+	updateForeman: function(req, res){
 		Foreman.update({email: req.param('uname')}, {
 			fname: req.param('fname'),
 			lname: req.param('lname'),
@@ -68,28 +65,28 @@ module.exports = {
 		});
 	},
 
-	view: function(req, res){
+	viewForeman: function(req, res){
 		//if no one is logged in, return homepage
 		if(!req.session.me){
 			return res.view('homepage');
 		}
-		Foreman.findOne({id: req.session.me})
-		.populate("foremen")
+		User.findOne({id: req.session.me})
+		.populate("farms")
 		.exec(function(err, user){
 			//If there is an error 
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 
 			//If there is no farm, create a new one
-			if(user.foremen[0] == null)
-        		return res.view('foreman/new', {layout: "signedInLayout", title: "Create new farm"});
+			if(user.farms[0] == null)
+        		return res.view('foreman/createForeman', {layout: "signedInLayout", title: "Create new Foreman"});
 		});
 
-		Foreman.findOne()
+		Foreman.findOne({id: req.session.me})
 		.exec(function(err, foreman){
 			if(err) return res.negotiate(err);
 			//send all foremen linked to a farm
-			res.view({
+			return res.view({
 				type: foreman,
 				layout: "signedInLayout"
 			});
