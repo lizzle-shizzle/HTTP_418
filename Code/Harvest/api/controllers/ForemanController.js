@@ -66,6 +66,34 @@ module.exports = {
 			//else go back to dashboard
 			return res.redirect('/');
 		});
+	},
+
+	view: function(req, res){
+		//if no one is logged in, return homepage
+		if(!req.session.me){
+			return res.view('homepage');
+		}
+		Foreman.findOne({id: req.session.me})
+		.populate("foremen")
+		.exec(function(err, user){
+			//If there is an error 
+	    	//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//If there is no farm, create a new one
+			if(user.foremen[0] == null)
+        		return res.view('foreman/new', {layout: "signedInLayout", title: "Create new farm"});
+		});
+
+		Foreman.findOne()
+		.exec(function(err, foreman){
+			if(err) return res.negotiate(err);
+			//send all foremen linked to a farm
+			res.view({
+				type: foreman,
+				layout: "signedInLayout"
+			});
+		});
 	}
 };
 
