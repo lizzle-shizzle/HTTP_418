@@ -20,7 +20,7 @@ module.exports = {
 		Foreman.create({
 			fname: req.param('fname'),
 			lname: req.param('lname'),
-			email: req.param('email'),
+			email: req.param('uname'),
 			encryptedPassword: req.param('password')
 		}, function foremanCreated(err, foreman){
 			//Should it err, return correct message
@@ -45,7 +45,7 @@ module.exports = {
 		}
 
 		//retrieve foreman associated to email
-		User.findOne({id: req.param('email')}).populate('foremen').exec(function (err, user){
+		User.findOne({id: req.param('uname')}).populate('foremen').exec(function (err, user){
 			if(err){
 				return res.negotiate(err);
 			}
@@ -54,7 +54,7 @@ module.exports = {
 	},
 
 	update: function(req, res){
-		Foreman.update({email: req.param('email')}, {
+		Foreman.update({email: req.param('uname')}, {
 			fname: req.param('fname'),
 			lname: req.param('lname'),
 			encryptedPassword: req.param('password')

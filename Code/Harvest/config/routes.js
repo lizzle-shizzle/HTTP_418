@@ -60,6 +60,7 @@ module.exports.routes = {
   'GET /editOrchardBlock': 'orchardBlockController.editOrchardBlock',
   'GET /createOrchardBlock': 'orchardBlockController.createOrchardBlock',
 
+  'GET /createForeman': 'ForemanController.create',
 
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',

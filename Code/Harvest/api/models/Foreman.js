@@ -21,8 +21,8 @@ module.exports = {
   		required: true
   	},
 
-  	//The foreman's email address
-  	//e.g. adolf@nazi.com
+  	//The foreman's username
+  	//e.g. DerFührer
   	uname: {
   		type: 'string',
   		required: true,
