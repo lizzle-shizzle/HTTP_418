@@ -57,7 +57,9 @@ module.exports.routes = {
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',
   'GET /changePassword': {view: 'user/changePassword'},
-  'GET /changePassword': 'PageController.changePasswordInfo'
+  'GET /changePassword': 'PageController.changePasswordInfo',
+  'GET /generateCropYieldReport': {view: 'report/generateCropYieldReport'},
+  'GET /generateCropYieldReport': 'PageController.showGenerateCropYieldReport'
 
   // '/': {
   //   view: 'homepage'
