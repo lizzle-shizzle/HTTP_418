@@ -7,7 +7,16 @@
 
 module.exports = {
 	//load page to create foreman
-	createForeman: function(req, res){
+	newForeman: function(req, res){
+		//if no one is logged in, return homepage
+		if(!req.session.me){
+			return res.view('homepage');
+		}
+
+		return res.view('foreman/createForeman', {layout: "signedInLayout", title: "Create new Foreman"});
+	},
+
+	create: function(req, res){
 		//if no one is logged in, return homepage
 		if(!req.session.me){
 			return res.view('homepage');
@@ -17,8 +26,9 @@ module.exports = {
 		Foreman.create({
 			fname: req.param('fname'),
 			lname: req.param('lname'),
-			email: req.param('uname'),
-			encryptedPassword: req.param('password')
+			uname: req.param('uname'),
+			encryptedPassword: req.param('pword'),
+			farmer: req.session.me
 		}, function foremanCreated(err, foreman){
 			//Should it err, return correct message
 			if(err){
@@ -30,7 +40,7 @@ module.exports = {
 					return res.negotiate(err);
 				}
 				//Upon success return to dashboard
-				return res.redirect('/');
+				return res.redirect('/foreman/viewForeman');
 			});
 		});
 	},
@@ -42,11 +52,12 @@ module.exports = {
 		}
 
 		//retrieve foreman associated to email
-		User.findOne({id: req.param('uname')}).populate('foremen').exec(function (err, user){
+		Foreman.findOne({uname: req.param('uname')})
+		.exec(function (err, foreman){
 			if(err){
 				return res.negotiate(err);
 			}
-			res.view({layout: 'signedInLayout', title: 'Edit Foreman', foreman: user.foremen[0]});
+			res.view({layout: 'signedInLayout', title: 'Edit Foreman', foreman: foremen});
 		});
 	},
 
@@ -54,7 +65,7 @@ module.exports = {
 		Foreman.update({email: req.param('uname')}, {
 			fname: req.param('fname'),
 			lname: req.param('lname'),
-			encryptedPassword: req.param('password')
+			encryptedPassword: req.param('pword')
 		}, function foremanUpdated(err, user){
 			//In case of error, return message
 			if(err){
@@ -82,7 +93,7 @@ module.exports = {
         		return res.view('foreman/createForeman', {layout: "signedInLayout", title: "Create new Foreman"});
 		});
 
-		Foreman.findOne({id: req.session.me})
+		Foreman.find()
 		.exec(function(err, foreman){
 			if(err) return res.negotiate(err);
 			//send all foremen linked to a farm

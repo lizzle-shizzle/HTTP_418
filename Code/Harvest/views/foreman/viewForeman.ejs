@@ -8,29 +8,35 @@
 						<div ng-app="ForemanModule" ng-controller="ForemanController" id="tableContainer">
 							<table class="table table-bordered">
 								<th>#</th>
-								<th>Foreman</th>							
+								<th>Foreman</th>
+								<th>Foreman Username</th>
 								<th>Edit</th>
-								<% if(type.length == 0) { %>
+								<% if(typeof type == "undefined") { %>
 									<tr>
-											<td colspan="3">There are no foremen linked to you yet <br />
-											Create a new foreman or link and existing one with your profile.
-											</td>
-										</tr>
-								<% } else { %>
-									<% _.each(type, function(foreman, index) { %>
-										<% if (typeof crop != "undefined" ) { %>
-											<tr>
-												<td><%= index + 1 %>.</td>
-												<td><%= crop.name %></td>
-												<td><a class="info" href="/foreman/editForeman/<%= foreman.uname %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
-											</tr>																			
-										<% } %>
-									<% }) %>
-								<% } %>							
+										<td colspan="3">There are no foremen linked to you yet <br /> Create a new foreman or link and existing one with your profile.
+										</td>
+									</tr>
+									<% } else { %>
+										<% _.each(type, function(foreman, index) { %>
+											<% if (typeof foreman != "undefined" ) { %>
+												<tr>
+													<td>
+														<%= index + 1 %>.</td>
+													<td>
+														<%= foreman.fname + ' ' + foreman.lname %>
+													</td>
+													<td>
+														<%= foreman.uname %>
+													</td>
+													<td><a class="info" href="/foreman/editForeman/<%= foreman.uname %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+												</tr>
+											<% } %>
+										<% }) %>
+									<% } %>
 							</table>
 						</div>
 						<br/>
-						<a href="/foreman/createForeman" class="btn">Add Foreman</a>											
+						<a href="/foreman/newForeman" class="btn">Add Foreman</a>
 					</fieldset>
 				</div>
 			</div>

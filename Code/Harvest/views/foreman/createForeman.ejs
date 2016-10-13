@@ -1,8 +1,8 @@
-<div class="container" ng-app="FarmModule" ng-controller="FarmController" >
+<div class="container" ng-app="MainModule" ng-controller="MainController" >
   <div class="row jumbo">
     <div class="col-md-10 col-md-offset-1">
       <div class="jumbotron">        
-        <form action="/foreman/create" method="post" name="frmCreateForeman" id="frmCreateForeman">
+        <form action="/foreman/create" method="post" name="frmCreateForeman" id="frmCreateForeman" autocomplete="off">
           <fieldset>
             <legend>Create Foreman</legend>
 
@@ -21,7 +21,7 @@
             <span class="errorText" ng-show="frmCreateForeman.uname.$error.maxlength">The Foreman's username cannot be more than 120 characters.</span><br>
 
             <label for="pword">Foreman Password</label>
-            <input type="text" name="pword" id="pword" class="form-control" placeholder="*********" ng-model="createForemanFrm.pword" ng-maxlength="120" required>
+            <input type="password" name="pword" id="pword" class="form-control" placeholder="*********" ng-model="createForemanFrm.pword" ng-maxlength="120" required>
             <span class="errorText" ng-show="frmCreateForeman.pword.$dirty && frmCreateForeman.pword.$error.required">Required!</span>
             <span class="errorText" ng-show="frmCreateForeman.pword.$error.maxlength">The Foreman's password cannot be more than 120 characters.</span><br>           
 
