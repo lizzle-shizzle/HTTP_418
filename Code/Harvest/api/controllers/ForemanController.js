@@ -72,7 +72,7 @@ module.exports = {
 				return res.negotiate(err);
 			}
 			//else go back to dashboard
-			return res.redirect('/');
+			return res.redirect('foreman/viewForeman');
 		});
 	},
 

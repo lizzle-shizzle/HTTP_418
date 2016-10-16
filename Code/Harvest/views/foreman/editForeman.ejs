@@ -22,7 +22,7 @@
                             <br/>
 
                             <label for="pword">New Foreman Password</label>
-                            <input type="text" class="form-control" name="pword" id="pword" ng-init="editForemanFrm.pword='<%= data.type.name %>'" ng-model="editForemanFrm.pword" required>                                    
+                            <input type="password" class="form-control" name="pword" id="pword" ng-init="editForemanFrm.pword='<%= data.type.name %>'" ng-model="editForemanFrm.pword" required>                                    
                             <span class="errorText" ng-show="frmEditForeman.foreman.$dirty && frmEditForeman.foreman.$error.required">Required!</span>                                                        
                             <br/>
 
