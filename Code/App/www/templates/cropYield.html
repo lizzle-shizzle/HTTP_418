@@ -23,34 +23,34 @@
             <div class="row" style="flex-wrap: wrap;">
                 <div class="col list" style="margin-bottom: 0px;">
                     <div class="item foreman">
-                        <button class="button button-clear button-dark" onclick="alert('hi')">Fielie</button>
+                        <button class="button button-clear button-dark" ng-click="addOne(2016)">Fielie</button>
                         <label class="right-group">
-                            <span class="label">5</span>
-                            <button class="button button-clear button-icon ion-minus" onclick="alert('minus')"></button>
+                            <span class="label">{{yieldAmount[2016]}}</span>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne(2016)"></button>
                         </label>
 
                     </div>
                     <div class="item foreman last">
-                        <button class="button button-clear button-dark">Piet</button>
+                        <button class="button button-clear button-dark" ng-click="addOne(2018)">Piet</button>
                         <label class="right-group">
-                            <span class="label">4</span>
-                            <button class="button button-clear button-icon ion-minus"></button>
+                            <span class="label">{{yieldAmount[2018]}}</span>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne(2018)"></button>
                         </label>
                     </div>
                 </div>
                 <div class="col list" style="margin-bottom: 0px;">
                     <div class="item foreman">
-                        <button class="button button-clear button-dark">Jan</button>
+                        <button class="button button-clear button-dark" ng-click="addOne(2017)">Jan</button>
                         <label class="right-group">
-                            <span class="label">6</span>
-                            <button class="button button-clear button-icon ion-minus"></button>
+                            <span class="label">{{yieldAmount[2017]}}</span>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne(2017)"></button>
                         </label>
                     </div>
                     <div class="item foreman last">
-                        <button class="button button-clear button-dark">Johan</button>
+                        <button class="button button-clear button-dark" ng-click="addOne(2019)">Johan</button>
                         <label class="right-group">
-                            <span class="label">6</span>
-                            <button class="button button-clear button-icon ion-minus"></button>
+                            <span class="label">{{yieldAmount[2019]}}</span>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne(2019)"></button>
                         </label>
                     </div>
                 </div>
