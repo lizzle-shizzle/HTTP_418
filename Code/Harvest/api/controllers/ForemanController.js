@@ -52,17 +52,18 @@ module.exports = {
 		}
 
 		//retrieve foreman associated to email
-		Foreman.findOne({uname: req.param('uname')})
+		Foreman.findOne({uname: req.param('id')})
 		.exec(function (err, foreman){
 			if(err){
 				return res.negotiate(err);
 			}
-			res.view({layout: 'signedInLayout', title: 'Edit Foreman', foreman: foremen});
+			res.view({layout: 'signedInLayout', title: 'Edit Foreman', foreman: foreman});
 		});
 	},
 
 	updateForeman: function(req, res){
-		Foreman.update({email: req.param('uname')}, {
+		Foreman.update({uname: req.param('id')}, {
+			uname: req.param('uname'),
 			fname: req.param('fname'),
 			lname: req.param('lname'),
 			encryptedPassword: req.param('pword')
