@@ -66,26 +66,15 @@ function ($scope, $stateParams, $state, $ionicHistory) {
     //         $scope.col2.push(data[i]);     
     // }
 
-    function find(id, col) {
+    function find(id) {
         //Finds the foreman in the selected column and returns the index of the found foreman
-        var index = -1;
-        if(col == 1) {
-            for(i in $scope.col1) {
-                if($scope.col1[i].id == id) {
-                    index = i;
-                    break;
-                }
+        var index = -1;              
+        for(i in $scope.data) {
+            if($scope.data[i].id == id) {
+                index = i;
+                break;
             }
-        }
-
-        if(col == 2) {
-            for(i in $scope.col2) {
-                if($scope.col2[i].id == id) {
-                    index = i;
-                    break;
-                }
-            }
-        }
+        }        
 
         return index;
     }
@@ -104,33 +93,20 @@ function ($scope, $stateParams, $state, $ionicHistory) {
         $state.go('help');
     }
 
-    $scope.addOne = function(id, col) {
-        var index = find(id, col);
-        if(index >= 0) {
-            if(col == 1) {
-                $scope.col1[index].amount += 1;
-            }
-
-            if(col == 2) {
-                $scope.col2[index].amount += 1;
-            }
+    $scope.addOne = function(id) {
+        var index = find(id);
+        if(index >= 0) {                        
+            $scope.data[index].amount += 1;            
         } else alert("Cannot find foreman");
     }
 
-    $scope.removeOne = function(id, col) {
-        var index = find(id, col);
-        if(index >= 0) {
-            if(col == 1) {
-                if($scope.col1[index].amount > 0)
-                    $scope.col1[index].amount -= 1;
-                else $scope.col1[index].amount = 0;
-            }
-
-            if(col == 2) {
-                if($scope.col2[index].amount > 0)
-                    $scope.col2[index].amount -= 1;
-                else $scope.col2[index].amount = 0;
-            }
+    $scope.removeOne = function(id) {
+        var index = find(id);
+        if(index >= 0) {            
+            if($scope.data[index].amount > 0)
+                $scope.data[index].amount -= 1;
+            else $scope.data[index].amount = 0;
+            
         } else alert("Cannot find foreman");
     }
 }])

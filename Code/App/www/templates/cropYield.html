@@ -21,10 +21,10 @@
             <div class="row" style="flex-wrap: wrap;">
                 <div class="col list" style="margin-bottom: 0px;">            
                     <div ng-repeat="item in data | filter : {cropType: yieldForm.selectedCrop} | limitTo: middle" ng-class="$last ? 'item foreman last': 'item foreman'">
-                        <button class="button button-clear button-dark" ng-click="addOne({{item.id}}, 1)">{{item.name}}</button>
+                        <button class="button button-clear button-dark" ng-click="addOne({{item.id}})">{{item.name}}</button>
                         <label class="right-group">
                             <span class="label">{{item.amount}}</span>
-                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}}, 1)"></button>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}})"></button>
                         </label>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                         <button class="button button-clear button-dark" ng-click="addOne({{item.id}}, 2)">{{item.name}}</button>
                         <label class="right-group">
                             <span class="label">{{item.amount}}</span>
-                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}}, 2)"></button>
+                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}})"></button>
                         </label>
                     </div>
                 </div>
