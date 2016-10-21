@@ -1,0 +1,31 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/irrigationType/create" method="post" name="frmCreateIrrigationType" id="frmCreateIrrigationType">                        
+                        <fieldset>  
+                            <legend>New Irrigation Type</legend>                                                    
+
+                            <!-- Only show this input when a new irrigation type needs to be added -->
+                            <div>
+                                <label for="newIrrigationType">New Irrigation Type</label>
+                                <input class="form-control" type="text" name="newIrrigationType" id="newIrrigationType" ng-model="createIrrigationTypeFrm.newIrrigationType" placeholder="Sprinkler" required>
+                                <span class="errorText" ng-show="frmCreateIrrigationType.newIrrigationType.$dirty && frmCreateIrrigationType.newIrrigationType.$error.required">Required!</span>                                                         
+                                <br/>
+                            </div>                           											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmCreateIrrigationType.$invalid">
+                                <span ng-show="!createFrm.loading">Add Irrigation Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createIrrigationTypeFrm.loading"></span>
+                                <span ng-show="createFrm.loading">Adding Your Irrigation Type...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

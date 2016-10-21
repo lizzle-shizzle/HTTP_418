@@ -2,60 +2,86 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}
 \ttl@starttoc {default@1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}About Harvest}{4}{section.1.1}
+\contentsline {section}{\numberline {1.1}About Harvest}{5}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Installing Harvest}{4}{section.1.2}
+\contentsline {section}{\numberline {1.2}Installing Harvest}{5}{section.1.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Creating an Account on Harvest}{5}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Using Harvest on your Farm}{6}{chapter.2}
+\contentsline {subsection}{\numberline {1.3.1}Creating an Account on the Website}{5}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Creating an Account on the Mobile Application}{6}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Using Harvest on your Farm}{7}{chapter.2}
 \ttl@stoptoc {default@1}
 \ttl@starttoc {default@2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}What do you Need to Know as a Farmer?}{6}{section.2.1}
+\contentsline {section}{\numberline {2.1}What do you Need to Know as a Farmer?}{7}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Using Harverst on your Computer}{7}{section.2.2}
+\contentsline {section}{\numberline {2.2}Using Harverst on your Computer}{8}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}General Navigation}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}General Navigation - What do these buttons do?}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Using Harvest to Manage your Staff}{8}{section.2.3}
+\contentsline {subsection}{\numberline {2.2.2}Mananging Your User Account}{9}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Troubleshooting}{9}{chapter.3}
+\contentsline {subsubsection}{Signing in}{9}{section*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Editing Your Details}{9}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Changing Your Password}{9}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Recovering Your Password}{9}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Mananging Your Farm}{9}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Adding Your Farm}{9}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Editing Your Farm Details}{9}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Viewing Your Farm}{9}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Adding a Croptype}{9}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Editing a Croptype}{10}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Using Harvest to Manage your Staff}{10}{section.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Troubleshooting}{11}{chapter.3}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}When my App won't connect?}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}When my App won't connect?}{11}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}When my Profile won't display?}{9}{section.3.2}
+\contentsline {section}{\numberline {3.2}When my Profile won't display?}{11}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}When my Reports don't generate?}{9}{section.3.3}
+\contentsline {section}{\numberline {3.3}When my Reports don't generate?}{11}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Frequently Asked Questions[FAQ]}{10}{chapter.4}
+\contentsline {chapter}{\numberline {4}Frequently Asked Questions[FAQ]}{13}{chapter.4}
 \ttl@stoptoc {default@3}
 \ttl@starttoc {default@4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}App Related}{10}{section.4.1}
+\contentsline {section}{\numberline {4.1}App Related}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Computer Related}{10}{section.4.2}
+\contentsline {section}{\numberline {4.2}Computer Related}{13}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Profile Related}{10}{section.4.3}
+\contentsline {section}{\numberline {4.3}Profile Related}{13}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Still having Problems?}{11}{chapter.5}
+\contentsline {chapter}{\numberline {5}Still having Problems?}{15}{chapter.5}
 \ttl@stoptoc {default@4}
 \ttl@starttoc {default@5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Telephone}{11}{section.5.1}
+\contentsline {section}{\numberline {5.1}Telephone}{15}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Email}{11}{section.5.2}
+\contentsline {section}{\numberline {5.2}Email}{15}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Website}{11}{section.5.3}
+\contentsline {section}{\numberline {5.3}Website}{15}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Glossary of Terms}{12}{chapter.6}
+\contentsline {chapter}{\numberline {6}Glossary of Terms}{17}{chapter.6}
 \ttl@stoptoc {default@5}
 \ttl@starttoc {default@6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}I am a glossary, short and stout...}{12}{section.6.1}
+\contentsline {section}{\numberline {6.1}Difficult Terms, Phrases and Other Lingo}{17}{section.6.1}
 \contentsfinish 

@@ -14,7 +14,7 @@ module.exports.bootstrap = function(cb) {
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
 
-  var mockOrchard = [
+  /*var mockOrchard = [
     {'name':'Field 1',
       'farm': '57c5628a468beb781d602c00'},
     {'name':'Field 2',
@@ -31,6 +31,6 @@ module.exports.bootstrap = function(cb) {
     if(count > 0) return cb();
 
     OrchardBlock.create(mockOrchard).exec(cb);
-  });
-  //cb();
+  });*/
+  cb();
 };

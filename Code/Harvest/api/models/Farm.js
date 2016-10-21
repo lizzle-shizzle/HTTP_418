@@ -10,14 +10,39 @@ module.exports = {
   attributes: {
     //The farm name
   	name: {
-  		type: 'string',
-  		required: false,
+  		type: 'string',  		
   	},
 
     //The farm size
     size: {
-      type: 'float',
+      type: 'float',      
+    },
+
+    province: {
+      type: 'string',
       required: true
+    },
+
+    region: {
+      type: 'string'
+    },
+
+    farmingRegion: {
+      type: 'string',
+      required: true
+    },
+
+    registeredFarmName: {
+      type: 'string',
+      required: true
+    },
+
+    portionNumber: {
+      type: 'string'
+    },
+
+    companyName: {
+      type: 'string',      
     },
 
     //A farm can only belong to one farmer

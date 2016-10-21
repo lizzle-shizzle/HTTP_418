@@ -91,19 +91,48 @@
               <label for="fname">Farmer's Name</label><br>
               <label class="info"><%= me.fname %> <%= me.lname %></label><br>
 
-              <% if (typeof me.farm.name != "undefined") { %>
+              <% if (typeof me.farm.name != "undefined" && me.farm.name != "") { %>
                 <label for="lname">Farm Name</label><br>
                 <label class="info"><%= me.farm.name %></label><br>
               <% } %>  
+              
+              <label for="lname">Registered Farm Name</label><br>
+              <label class="info"><%= me.farm.registeredFarmName %></label><br>
 
-              <% if (typeof me.farm.cropType != "undefined") { %>
+              <% if (typeof me.farm.companyName != "undefined" && me.farm.companyName != "") { %>
+                <label for="lname">Company Name</label><br>
+                <label class="info"><%= me.farm.companyName %></label><br>              
+              <% } %>           
+
+              <% if (typeof me.farm.size != "undefined" && me.farm.size != 0) { %>
+                <label for="lname">Farm Size</label><br>
+                <label class="info"><%= me.farm.size %></label><br>
+              <% } %>
+              
+              <label for="lname">Province</label><br>
+              <label class="info"><%= me.farm.province %></label><br>              
+
+              <% if (typeof me.farm.region != "undefined" && me.farm.region != "") { %>
+                <label for="lname">Region</label><br>
+                <label class="info"><%= me.farm.region %></label><br>
+              <% } %>
+              
+              <label for="lname">Farming Region</label><br>
+              <label class="info"><%= me.farm.farmingRegion %></label><br>                          
+
+              <% if (typeof me.farm.portionNumber != "undefined" && me.farm.portionNumber != "") { %>
+                <label for="lname">Portion Number</label><br>
+                <label class="info"><%= me.farm.portionNumber %></label><br>
+              <% } %>                          
+
+              <!--<% if (typeof me.farm.cropType != "undefined") { %>
                   <%if (me.farm.cropType.length == 1) { %>
                     <label for="lname">Crop Type</label><br> 
                   <% } else { %>
                     <label for="lname">Crop Types</label><br>
                   <% } %>
                 <label class="info">Coming Soon</label><br>
-              <% } %>          
+              <% } %>  -->        
 
               <label for="username">Listed Orchards</label><br>
                 <div ng-controller="DashboardController" id="tableContainer">
