@@ -12,28 +12,45 @@
                 <div class="input-label">
                 Crop type
                 </div>
-                <select ng-model="yieldForm.selectedCrop" ng-change="calculateMiddle()" ng-options="item for item in cropTypes">
-                    <!--<option ng-repeat="crop in cropTypes" value="{{crop}}">{{crop}}</option>                -->
+                <select>
+                <option>Avocado</option>
+                <option selected>Mango</option>
+                <option>Litchi</option>
                 </select>
             </label>
             <div class="spacer" style="width: 716px; height: 20px;"></div>
 
             <div class="row" style="flex-wrap: wrap;">
-                <div class="col list" style="margin-bottom: 0px;">            
-                    <div ng-repeat="item in data | filter : {cropType: yieldForm.selectedCrop} | limitTo: middle" ng-class="$last ? 'item foreman last': 'item foreman'">
-                        <button class="button button-clear button-dark" ng-click="addOne({{item.id}})">{{item.name}}</button>
+                <div class="col list" style="margin-bottom: 0px;">
+                    <div class="item foreman">
+                        <button class="button button-clear button-dark" onclick="alert('hi')">Fielie</button>
                         <label class="right-group">
-                            <span class="label">{{item.amount}}</span>
-                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}})"></button>
+                            <span class="label">5</span>
+                            <button class="button button-clear button-icon ion-minus" onclick="alert('minus')"></button>
+                        </label>
+
+                    </div>
+                    <div class="item foreman last">
+                        <button class="button button-clear button-dark">Piet</button>
+                        <label class="right-group">
+                            <span class="label">4</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
                         </label>
                     </div>
                 </div>
-                <div class="col list" style="margin-bottom: 0px;">                    
-                    <div ng-repeat="item in data | filter : {cropType: yieldForm.selectedCrop}" ng-if="$index >= middle" ng-class="$last ? 'item foreman last': 'item foreman'">
-                        <button class="button button-clear button-dark" ng-click="addOne({{item.id}}, 2)">{{item.name}}</button>
+                <div class="col list" style="margin-bottom: 0px;">
+                    <div class="item foreman">
+                        <button class="button button-clear button-dark">Jan</button>
                         <label class="right-group">
-                            <span class="label">{{item.amount}}</span>
-                            <button class="button button-clear button-icon ion-minus" ng-click="removeOne({{item.id}})"></button>
+                            <span class="label">6</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
+                        </label>
+                    </div>
+                    <div class="item foreman last">
+                        <button class="button button-clear button-dark">Johan</button>
+                        <label class="right-group">
+                            <span class="label">6</span>
+                            <button class="button button-clear button-icon ion-minus"></button>
                         </label>
                     </div>
                 </div>
