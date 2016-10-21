@@ -1,0 +1,41 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController" >
+  <div class="row jumbo">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">        
+        <form action="/foreman/create" method="post" name="frmCreateForeman" id="frmCreateForeman" autocomplete="off">
+          <fieldset>
+            <legend>Create Foreman</legend>
+
+            <label for="fname">Foreman Name</label>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="Johannes" ng-model="createForemanFrm.fname" ng-maxlength="120" required>          
+            <span class="errorText" ng-show="frmCreateForeman.fname.$error.maxlength">The Foreman's name cannot be more than 120 characters.</span><br>
+
+            <label for="lname">Foreman Surname</label>
+            <input type="text" name="lname" id="lname" class="form-control" placeholder="Pieterse" ng-model="createForemanFrm.lname" ng-maxlength="120" required>
+            <span class="errorText" ng-show="frmCreateForeman.lname.$dirty && frmCreateForeman.lname.$error.required">Required!</span>        
+            <span class="errorText" ng-show="frmCreateForeman.lname.$error.maxlength">The Foreman's surname cannot be more than 120 characters.</span><br>
+
+            <label for="uname">Foreman Username</label>
+            <input type="text" name="uname" id="uname" class="form-control" placeholder="JPieterse" ng-model="createForemanFrm.uname" ng-maxlength="120" required>   
+            <span class="errorText" ng-show="frmCreateForeman.uname.$dirty && frmCreateForeman.uname.$error.required">Required!</span>         
+            <span class="errorText" ng-show="frmCreateForeman.uname.$error.maxlength">The Foreman's username cannot be more than 120 characters.</span><br>
+
+            <label for="pword">Foreman Password</label>
+            <input type="password" name="pword" id="pword" class="form-control" placeholder="*********" ng-model="createForemanFrm.pword" ng-maxlength="120" required>
+            <span class="errorText" ng-show="frmCreateForeman.pword.$dirty && frmCreateForeman.pword.$error.required">Required!</span>
+            <span class="errorText" ng-show="frmCreateForeman.pword.$error.maxlength">The Foreman's password cannot be more than 120 characters.</span><br>           
+
+            <!-- Disable signup button until the form has no errors -->
+            <button type="submit" class="btn" id="btnCreateForeman" ng-click="click()" ng-disabled="frmCreateForeman.$invalid">
+              <span ng-show="!createFrm.loading">Create Foreman</span>
+              <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+              <span ng-show="createFrm.loading">Creating Your Foreman...</span>
+            </button>
+
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
