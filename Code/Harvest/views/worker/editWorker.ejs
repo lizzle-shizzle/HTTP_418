@@ -28,13 +28,13 @@
                                     <option value="<%= foreman.id %>"><%= foreman.fname %> <%= foreman.lname%></option> 
                                 <% }) %>
                             </select>
-                            </br>
+                            <br/>
 
                             <!-- Disable signup button until the form has no errors -->
                             <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditWorker.$invalid">
-                                <span ng-show="!editFrm.loading">Edit Foreman</span>
+                                <span ng-show="!editFrm.loading">Edit Worker</span>
                                 <span class="overlord-loading-spinner fa fa-spinner" ng-show="editWorkerFrm.loading"></span>
-                                <span ng-show="editFrm.loading">Updating Your Foreman...</span>
+                                <span ng-show="editFrm.loading">Updating Your Worker...</span>
                             </button>
 
                             <input type="hidden" name="_csrf" value="<%= _csrf %>" />

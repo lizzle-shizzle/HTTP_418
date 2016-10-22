@@ -15,7 +15,6 @@ module.exports = {
 	    }
 
 		User.findOne({id: req.session.me})
-		.populate("farms")
 		.exec(function (err, user) {
 			//If there is an error 
 	    	//return appropiate error message
@@ -55,23 +54,30 @@ module.exports = {
 	},
 
 	editWorker: function(req, res){
-		//if no one is logged in, return homepage
-		if(!req.session.me){
-			return res.view('homepage');
-		}
+		//return to homepage if not logged in
+		if (!req.session.me) {
+	      return res.view('homepage');
+	    }
 
-		//retrieve foreman associated to email
-		Foreman.findOne({nname: req.param('id')})
-		.exec(function (err, worker){
-			if(err){
-				return res.negotiate(err);
-			}
-			res.view({layout: 'signedInLayout', title: 'Edit Worker', worker: worker});
-		});
+		Worker.findOne({nname: req.param('id')})
+		.exec(function (err, worker) {
+			//If there is an error 
+	    	//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//get foreman linked to user and fetch all
+			Foreman.find({farmer: req.session.me})			
+			.exec(function(err, foremen) {
+				if(err) return res.negotiate(err);
+
+                //send all foremen linked to user to the createWorker thingy
+                return res.view('worker/editWorker', {data: {foremen}, layout: "signedInLayout", title: "Edit a Worker", worker: worker});
+            });				
+        });			
 	},
 
 	updateWorker: function(req, res){
-		Foreman.update({nname: req.param('id')}, {
+		Worker.update({nname: req.param('id')}, {
 			fname: req.param('fname'),
 			lname: req.param('lname'),
             nname: req.param('nname'),
