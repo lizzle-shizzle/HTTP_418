@@ -41,6 +41,10 @@ module.exports.routes = {
   'GET /soon': 'PageController.soon',
   'GET /about': {view: 'public/about'},
   'GET /contact': {view: 'public/contact'},
+  'GET /heatmap': {view: 'heatmap', locals: {
+    layout: false,
+    dd: "fdfd"
+  }},
 
   ////////////////////////////////////////////////////////////
   // JSON API

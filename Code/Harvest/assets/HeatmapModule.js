@@ -1,5 +1,5 @@
 var myApp = angular.module("myApp", []);
-	myApp.directive("myMaps", function (){
+	myApp.directive("myMaps", function ($http){
 		return{
 			restrict:'E',
 			template:'<div></div>',
@@ -19,12 +19,16 @@ var myApp = angular.module("myApp", []);
 				});
 				marker.setMap(map);
 
-// https://doc-0o-1g-docs.googleusercontent.com/docs/securesc/quqsb65qrsl7tsl6ucr6qs323fgu2ss3/4r99mkbok08me64eqp3bk8hugplhtugh/1475762400000/09896779027837834603/09896779027837834603/0B4N9k6WQY-GmRXgyaS0wTDdjNkk?e=download&gd=true&access_token=ya29.Ci90A9sYRU_XQ3raTTJxr8R3xvq_X5uxAee_PyYCtzB0_ZRwstg4bbDkveEfefa3mg
-				/*var ctaLayer = new google.maps.KmlLayer({
-					url: 'https://drive.google.com/open?id=0B4N9k6WQY-GmRXgyaS0wTDdjNkk',
-					polygon: true,
-					map: map
-				});*/
+				$http.get('/farm/heatData')
+				.then(function onSuccess(sailsResponse){
+					alert(sailsResponse);
+					var data = JSON.parse(sailsResponse);
+					var max = Math.min;
+					for(i in data) {
+						if(data[i].yield > max)
+							max = data[i].yield;
+					}
+				});
 
 				var dataPoints = [										
 					new google.maps.LatLng(-25.3566361, 30.871541666666666),
