@@ -44,7 +44,12 @@ module.exports = {
 
 	farmer: {
 		model: 'User'
-	}
+	},
+	
+    workers: {
+      collection: 'Worker',
+      via : 'foreman'
+    }
   }
 };
 
