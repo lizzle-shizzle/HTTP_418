@@ -17,18 +17,18 @@
 										</td>
 									</tr>
 									<% } else { %>
-										<% _.each(type, function(foreman, index) { %>
-											<% if (typeof foreman != "undefined" ) { %>
+										<% _.each(type, function(worker, index) { %>
+											<% if (typeof worker != "undefined" ) { %>
 												<tr>
 													<td>
 														<%= index + 1 %>.</td>
 													<td>
-														<%= foreman.fname + ' ' + foreman.lname %>
+														<%= worker.fname + ' ' + worker.lname %>
 													</td>
 													<td>
-														<%= foreman.uname %>
+														<%= worker.nname %>
 													</td>
-													<td><a class="info" href="/foreman/editForeman/<%= foreman.uname %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+													<td><a class="info" href="/worker/editWorker/<%= worker.nname %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
 												</tr>
 											<% } %>
 										<% }) %>
@@ -36,7 +36,7 @@
 							</table>
 						</div>
 						<br/>
-						<a href="/foreman/newForeman" class="btn">Add Foreman</a>
+						<a href="/worker/newWorker" class="btn">Add Worker</a>
 					</fieldset>
 				</div>
 			</div>

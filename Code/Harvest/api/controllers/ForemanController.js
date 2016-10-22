@@ -16,7 +16,7 @@ module.exports = {
 		return res.view('foreman/createForeman', {layout: "signedInLayout", title: "Create new Foreman"});
 	},
 
-	create: function(req, res){
+	createForeman: function(req, res){
 		//if no one is logged in, return homepage
 		if(!req.session.me){
 			return res.view('homepage');

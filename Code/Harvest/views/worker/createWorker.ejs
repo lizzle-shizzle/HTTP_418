@@ -1,0 +1,45 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController" >
+  <div class="row jumbo">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">        
+        <form action="/worker/createWorker" method="post" name="frmCreateWorker" id="frmCreateWorker" autocomplete="off">
+          <fieldset>
+            <legend>Create Foreman</legend>
+
+            <label for="fname">Worker Name</label>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="Johannes" ng-model="createForemanFrm.fname" ng-maxlength="120" required>          
+            <span class="errorText" ng-show="frmCreatfrmCreateWorkereForeman.fname.$error.maxlength">The Worker's name cannot be more than 120 characters.</span><br>
+
+            <label for="lname">Worker Surname</label>
+            <input type="text" name="lname" id="lname" class="form-control" placeholder="Pieterse" ng-model="createForemanFrm.lname" ng-maxlength="120" required>
+            <span class="errorText" ng-show="frmCreateWorker.lname.$dirty && frmCreateWorker.lname.$error.required">Required!</span>        
+            <span class="errorText" ng-show="frmCreateWorker.lname.$error.maxlength">The Worker's surname cannot be more than 120 characters.</span><br>
+
+            <label for="nname">Worker Nickname</label>
+            <input type="text" name="nname" id="nname" class="form-control" placeholder="JPieterse" ng-model="createForemanFrm.nname" ng-maxlength="120" required>   
+            <span class="errorText" ng-show="frmCreateWorker.nname.$dirty && frmCreateWorker.nname.$error.required">Required!</span>         
+            <span class="errorText" ng-show="frmCreateWorker.nname.$error.maxlength">The Worker's username cannot be more than 120 characters.</span><br>
+
+            <label for="wfass">Worker-Foreman Assignment</label>
+            <select class="form-control" name="wfass" id="wfass" ng-model="frmCreateWorker.worker">
+                <option value="" disabled>Select Foreman</option>                              
+                <% _.each(data.foremen, function(foreman) { %>
+                    <option value="<%= foreman.id %>"><%= foreman.fname %> <%= foreman.lname%></option> 
+                <% }) %>
+            </select>
+            </br>
+
+            <!-- Disable signup button until the form has no errors -->
+            <button type="submit" class="btn" id="btnCreateWorker" ng-click="click()" ng-disabled="frmCreateWorker.$invalid">
+              <span ng-show="!createFrm.loading">Create Worker</span>
+              <span class="overlord-loading-spinner fa fa-spinner" ng-show="createProfileFrm.loading"></span>
+              <span ng-show="createFrm.loading">Creating Your Worker...</span>
+            </button>
+
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
