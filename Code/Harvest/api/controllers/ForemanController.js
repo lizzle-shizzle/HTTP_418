@@ -6,6 +6,28 @@
  */
 
 module.exports = {
+	maintainForemanAllocations: function(req, res, next) {
+		if (!req.session.me) {
+	      return res.view('homepage');
+	    }
+
+		User.findOne({id: req.session.me})
+		.populate("farms")
+		.exec(function (err, user) {
+			//If there is an error 
+	    	//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//get foreman linked to user and fetch all
+			Foreman.find({farmer: req.session.me})			
+			.exec(function(err, foremen) {
+				if(err) return res.negotiate(err);
+
+                //send all foremen linked to user to the createWorker thingy
+                return res.view('foreman/maintainForemanOrchardAllocation', {data: {foremen}});
+            });				
+        });
+	},
 	editAllocation: function(req, res, next) {
 	    User.findOne(req.param('id'), function foundUser(err, user) {
 	      if (err) return next(err);
