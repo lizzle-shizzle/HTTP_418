@@ -44,7 +44,7 @@ module.exports = {
 				return res.negotiate(err);
 			}
 			//else if foreman creation == successful
-			User.find().populate('worker').exec(function (err, user){
+			User.find().exec(function (err, user){
 				if(err){
 					return res.negotiate(err);
 				}
