@@ -1,0 +1,43 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/foreman/updateForeman/<%= foreman.uname %>" method="post" name="frmEditForeman" id="frmEditForeman" autocomplete="off">                        
+                        <fieldset>  
+                            <legend>Edit Foreman</legend>                        						                            
+
+                            <label for="fname">New Foreman Name</label>
+                            <input type="text" class="form-control" name="fname" id="fname" ng-init="editForemanFrm.fname='<%= foreman.fname %>'" ng-model="editForemanFrm.fname" required>                                    
+                            <span class="errorText" ng-show="frmEditForeman.foreman.$dirty && frmEditForeman.foreman.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="lname">New Foreman Surname</label>
+                            <input type="text" class="form-control" name="lname" id="lname" ng-init="editForemanFrm.lname='<%= foreman.lname %>'" ng-model="editForemanFrm.lname" required>                                    
+                            <span class="errorText" ng-show="frmEditForeman.foreman.$dirty && frmEditForeman.foreman.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="uname">New Foreman Username</label>
+                            <input type="text" class="form-control" name="uname" id="uname" ng-init="editForemanFrm.uname='<%= foreman.uname %>'" ng-model="editForemanFrm.uname" required>                                    
+                            <span class="errorText" ng-show="frmEditForeman.foreman.$dirty && frmEditForeman.foreman.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="pword">New Foreman Password</label>
+                            <input type="password" class="form-control" name="pword" id="pword" ng-init="editForemanFrm.pword='<%= foreman.pword %>'" ng-model="editForemanFrm.pword" required>                                    
+                            <span class="errorText" ng-show="frmEditForeman.foreman.$dirty && frmEditForeman.foreman.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditForeman.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Foreman</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editForemanFrm.loading"></span>
+                                <span ng-show="editFrm.loading">Updating Your Foreman...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>
