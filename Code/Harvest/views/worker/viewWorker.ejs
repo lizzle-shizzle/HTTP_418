@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<div class="container">
+					<fieldset>
+						<legend>Foremen</legend>
+						<div ng-app="MainModule" ng-controller="MainController" id="tableContainer">
+							<table class="table table-bordered">
+								<th>#</th>
+								<th>Worker</th>
+								<th>Worker Nickname</th>
+								<th>Edit</th>
+								<% if(typeof type == "undefined") { %>
+									<tr>
+										<td colspan="3">There are no workers linked to you yet <br /> Create a new worker or link and existing one with your profile.
+										</td>
+									</tr>
+									<% } else { %>
+										<% _.each(type, function(foreman, index) { %>
+											<% if (typeof foreman != "undefined" ) { %>
+												<tr>
+													<td>
+														<%= index + 1 %>.</td>
+													<td>
+														<%= foreman.fname + ' ' + foreman.lname %>
+													</td>
+													<td>
+														<%= foreman.uname %>
+													</td>
+													<td><a class="info" href="/foreman/editForeman/<%= foreman.uname %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+												</tr>
+											<% } %>
+										<% }) %>
+									<% } %>
+							</table>
+						</div>
+						<br/>
+						<a href="/foreman/newForeman" class="btn">Add Foreman</a>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
