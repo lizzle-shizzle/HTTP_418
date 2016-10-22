@@ -90,8 +90,8 @@ module.exports = {
 			if(err) return res.negotiate(err);
 
 			//If there is no farm, create a new one
-			if(user.farms[0] == null)
-        		return res.view('foreman/createForeman', {layout: "signedInLayout", title: "Create new Foreman"});
+			// if(user.farms[0] == null)
+        	// 	return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
 		});
 
 		Foreman.find()
