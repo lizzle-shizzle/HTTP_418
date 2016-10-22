@@ -12,17 +12,17 @@
 								<th>Edit</th>
 								<% if(type.length == 0) { %>
 									<tr>
-											<td colspan="3">There are no irrigation types linked to your farm yet <br />
-											Create a new irrigation type or link an existing irrigation type to an orchard block
-											</td>
-										</tr>
+										<td colspan="3">There are no irrigation types linked to your farm yet <br />
+										Create a new irrigation type
+										</td>
+									</tr>
 								<% } else { %>
 									<% _.each(type, function(irrigation, index) { %>
 										<% if (typeof irrigation != "undefined" ) { %>
 											<tr>
 												<td><%= index + 1 %>.</td>
 												<td><%= irrigation.name %></td>
-												<td><a class="info" href="/editIrrigationType/<%= irrigation.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+												<td><a class="info" href="/irrigationType/edit/<%= irrigation.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
 											</tr>																			
 										<% } %>
 									<% }) %>
@@ -30,7 +30,7 @@
 							</table>
 						</div>
 						<br/>
-						<a href="/createIrrigationType" class="btn">Add Irrigation Type</a>											
+						<a href="/irrigationType/new" class="btn">Add Irrigation Type</a>											
 					</fieldset>
 				</div>
 			</div>
