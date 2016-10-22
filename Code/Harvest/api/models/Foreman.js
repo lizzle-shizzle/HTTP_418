@@ -8,7 +8,48 @@
 module.exports = {
 
   attributes: {
+  	//The foreman's full name
+  	//e.g. Adolf Hitler
 
+  	fname: {
+  		type: 'string',
+  		required: true
+  	},
+
+  	lname: {
+  		type: 'string',
+  		required: true
+  	},
+
+  	//The foreman's username
+  	//e.g. DerFührer
+  	uname: {
+  		type: 'string',
+  		required: true,
+  		unique: true
+  	},
+
+  	//The foreman's password encrypted
+  	//e.g. asdgh8a249321e9dhgaslcbqn2913051#T(@GHASDGA
+  	encryptedPassword: {
+  		type: 'string',
+  		required: true
+  	},
+
+  	//The foreman's multiple shifts
+  	shifts: {
+  		collection: 'foremanshift',
+  		via: 'shift'
+  	},
+
+  	farmer: {
+  		model: 'User'
+  	},
+	
+    workers: {
+      collection: 'Worker',
+      via : 'foreman'
+    }
   }
 };
 

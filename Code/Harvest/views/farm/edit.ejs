@@ -1,0 +1,59 @@
+<div class="container" ng-app="FarmModule" ng-controller="FarmController">
+  <div class="row jumbo">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="jumbotron">        
+        <form action="/farm/update/<%= farm.id %>" method="post" name="frmUpdateFarm" id="frmUpdateFarm">
+          <fieldset>
+            <legend>Edit Farm</legend>
+
+            <label for="fname">Farm Name (Optional)</label>
+            <input type="text" name="fname" id="fname" class="form-control" ng-init="updateFarmFrm.fname='<%= (typeof farm.name != 'undefined') ? farm.name : '' %>'" placeholder="Macadamia Valley" ng-model="updateFarmFrm.fname" ng-maxlength="120">          
+            <span class="errorText" ng-show="frmUpdateFarm.fname.$error.maxlength">The farm name cannot be more than 120 characters.</span><br>
+
+            <label for="regFname">Registered Farm Name</label>
+            <input type="text" name="regFname" id="regFname" class="form-control" ng-init="updateFarmFrm.regFname='<%= farm.registeredFarmName %>'" placeholder="Macadamia Valley" ng-model="updateFarmFrm.regFname" ng-maxlength="120" required>
+            <span class="errorText" ng-show="frmUpdateFarm.regFname.$dirty && frmUpdateFarm.regFname.$error.required">Required!</span>        
+            <span class="errorText" ng-show="frmUpdateFarm.regFname.$error.maxlength">The registered farm name cannot be more than 120 characters.</span><br>
+
+            <label for="cname">Company Name (Optional)</label>
+            <input type="text" name="cname" id="cname" class="form-control" ng-init="updateFarmFrm.cname='<%= (typeof farm.companyName != 'undefined') ? farm.companyName : '' %>'" placeholder="Macadamia Mania" ng-model="updateFarmFrm.cname" ng-maxlength="120">          
+            <span class="errorText" ng-show="frmUpdateFarm.cname.$error.maxlength">The company name cannot be more than 120 characters.</span><br>
+
+            <label for="fsize">Farm Size (In Hectares, Optional)</label>
+            <input type="number" name="fsize" id="fsize" class="form-control" ng-init="updateFarmFrm.fsize=<%= (typeof farm.size != 'undefined') ? farm.size : '' %>" placeholder="19.2" ng-model="updateFarmFrm.fsize" step="any">            
+            <span class="errorText" ng-show="frmUpdateFarm.fsize.$error.number">This is not a number</span><br>
+
+            <label for="province">Province</label>
+            <select type="text" name="province" id="province" class="form-control" ng-init="updateFarmFrm.province='<%= farm.province %>'" placeholder="Mpungalange" ng-model="updateFarmFrm.province" required>
+              <option value="" disabled>Pick a province</option>
+              <option ng-repeat="x in Provinces" value="{{x}}">{{x}}</option>
+            </select>
+            <span class="errorText" ng-show="frmUpdateFarm.province.$dirty && frmUpdateFarm.province.$error.required">Required!</span><br>                    
+
+            <label for="region">Region (Optional)</label>
+            <input type="text" name="region" id="region" class="form-control" ng-init="updateFarmFrm.region='<%= (typeof farm.region != 'undefined') ? farm.region : '' %>'" placeholder="Nelspruit" ng-model="updateFarmFrm.region" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmUpdateFarm.region.$error.maxlength">The region name cannot be more than 50 characters.</span><br>
+
+            <label for="fRegion">Farming Region</label>
+            <input type="text" name="fRegion" id="fRegion" class="form-control" ng-init="updateFarmFrm.fRegion='<%= farm.farmingRegion %>'" placeholder="Alkmaar" ng-model="updateFarmFrm.fRegion" ng-maxlength="50" required>
+            <span class="errorText" ng-show="frmUpdateFarm.fRegion.$dirty && frmUpdateFarm.fRegion.$error.required">Required!</span>          
+            <span class="errorText" ng-show="frmUpdateFarm.fRegion.$error.maxlength">The farming region name cannot be more than 50 characters.</span><br>
+
+            <label for="num">Portion Number (Optional)</label>
+            <input type="text" name="num" id="num" class="form-control" ng-init="updateFarmFrm.num='<%= (typeof farm.portionNumber != 'undefined') ? farm.portionNumber : '' %>'" placeholder="Macadamia Mania" ng-model="updateFarmFrm.num" ng-maxlength="50">          
+            <span class="errorText" ng-show="frmUpdateFarm.num.$error.maxlength">The portion number cannot be more than 50 characters.</span><br>  
+
+          <!-- Disable signup button until the form has no errors -->
+          <button type="submit" class="btn" id="btnCreateFarm" ng-click="click()" ng-disabled="frmUpdateFarm.$invalid">
+            <span ng-show="!editFrm.loading">Update Farm</span>
+            <span class="overlord-loading-spinner fa fa-spinner" ng-show="editFrm.loading"></span>
+            <span ng-show="editFrm.loading">Updating Your Farm...</span>
+          </button>
+
+            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+          </form>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>

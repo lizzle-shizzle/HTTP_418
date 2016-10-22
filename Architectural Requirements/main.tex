@@ -119,7 +119,7 @@
 	\section{Architectural Scope}
 		We at HTTP\_418 have taken a philosophy of quality work. Therefore we have decided to create an application that is centralised around a few core ideas. This ideology will drive us to create an application for Subtrop as best as we can.\newline
 		We will work in a persistence framework because we recognise our client’s need to have accurate, reliable data on hand when necessary. Our framework relies on databases, with integration for any database, meaning that if we wish to switch from a SQL to a NoSQL database, we will be able to do so. Alongside this, our design will incorporate security with regards to accessing the data stored. We will also be making use of techniques and technologies that will allow us to persistently add and remove data with concurrent accesses to the database.\newline
-		Our system will also feature a reporting aspect that will be characterised as central, independant, consistent & accurate as well as timely & reliable. The independence is a key feature such that a report can still be generated in the event that the rest of the system is experiencing problems.\newline
+		Our system will also feature a reporting aspect that will be characterised as central, independant, consistent \& accurate as well as timely \& reliable. The independence is a key feature such that a report can still be generated in the event that the rest of the system is experiencing problems.\newline
 		Our system will be accessible on the client-side via a desktop web client as well as an application on Android Mobile. The web client will have greater functionality than the Android application as it will serve as an admin/control interface where the user is able to manage the system, update details and view statistics. The Android Application will merely provide basic functionality for data input and throughput.\newline
 		The system will also require real-time updates. As the gatherers hand in their pickings and the foreman enters them on the application, the farmer must be able to view/track the changes from his web client.\newline
 		Our system is also be required to produce heat maps. These are graphical representations of the yield that a certain area delivers. They are created using the data stored in our database.\newline
@@ -171,7 +171,7 @@
 				\end{itemize}
 		\subsection{Security}
 			\subsubsection{Description}
-				Security in terms of software applications is referred to authentication, authorization, data security & accounting. Authentication is the ability of our application to identify a user using the application. Authorization is the level of authority that an authenticated user has to execute commands. Data security has to do with our application’s data only being accessible through secure channels and accounting refers to the fact that a user’s actions and effects on the system can be traced and accounted to them.
+				Security in terms of software applications is referred to authentication, authorization, data security \& accounting. Authentication is the ability of our application to identify a user using the application. Authorization is the level of authority that an authenticated user has to execute commands. Data security has to do with our application’s data only being accessible through secure channels and accounting refers to the fact that a user’s actions and effects on the system can be traced and accounted to them.
 			\subsubsection{Justification}
 				Security is one of the most important features in today’s age, the Information Age. Information is power. We are concerned about the user’s data integrity, availability, confidentiality and accountability.\newline
 				Our reason for our worry about data integrity is because the user will be using the data he gathers to determine how to proceed further with his/her business. Real time data analysis and viewing will be a key aspect of our application, so we need to make sure that the integrity of that data is to be trusted.\newline
@@ -442,16 +442,16 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 		\begin{itemize}
 			\item \textbf{Description}\\
-			Neo4j is a popular graph database that is an ACID compliant transactional database. The database management system uses Cypher Query Language or in short CQL
+			MongoDB is a popular NoSQL document-oriented database that is open-source and cross-platform. It stores data in JSON-like documents which are stored in binary form called BSON.
 			\item \textbf{Performance}\\
-			Because of the graph nature of  Neo4j there is no need to iteratively traverse a linear list of indexes to find an entry, this means read and write performance of Neo4j is very fast.
+			The structure of MongoDB provides high throughput and low latency meaning regardless of the amount of queries being executed simultaneously it performs timely and consistently.
 			\item \textbf{Scalability}\\
-			The so called index-free adjacency property of a graph means that the time it takes to get the relationships between entries stays constant as the database size increases as opposed to relational databases where the time takes longer as the database enlarges.
+			MongoDB can handle an increasing amount of users and queries due to its ability to scale up and scale-out by utilising automatic sharding without increased time frames. In contrast to relational databases, whereby the time takes longer as the database enlarges.
 			\item \textbf{Usability}\\
-			According to the developers of Neo4j it is very easy to learn and use.
+			The setting up of MongoDB is generally the only challenge. However, the querying syntax is simple and easy to learn.
 		\end{itemize}
 	\end{itemize}
 	\subsection{Operating System}
@@ -517,11 +517,11 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 		\item Cookies
 		\begin{itemize}
 			\item \textbf{Description}\\
-			Cookies are a temporary method of local storage mainly used to remember user logins or user preferences on websites
+			Cookies are a temporary method of local storage mainly used to remember user logins or user preferences on websites.
 		\end{itemize}
 		\item HTML5 Local Storage
 		\begin{itemize}
@@ -590,7 +590,7 @@
 	\subsection{Database System}
 	\begin{itemize}
 		\item HTML5 Local Storage
-		\item Neo4j
+		\item MongoDB
 	\end{itemize}
 	\subsection{Operating System}
 	\begin{itemize}
@@ -619,7 +619,7 @@
 	\section{Integration Channels}
 	The entire system will be implemented using a client-server architecture due to the dynamic message-passing nature of the application. However, the frameworks that we will be using to implement the required functionality are based on the Model-View-Controller architecture. Thus, it will be the effective integration of these frameworks MVC-based functionality working collaboratively as a client-server architecture. The entire system will be coded using JavaScript as it is a dynamic, versatile language that has a lot of support. This also ensures that integration between the back-end and front-end system won’t cause any serious complications. Libraries and frameworks will also be used to adapt JavaScript to be able to run on a mobile environment.\newline\newline
 	Node.js will handle the server-side communication for the system as it handles real-time data transfer quickly and efficiently regardless of scalability. Express.js will be the primary web server framework to integrate with Node.js in order to handle the message-passing. Sails.js will be a fundamental framework implemented on both the front-end and back-end of the system as it offers a multitude of functionalities and primarily integrates with Node.js. The Angular.js framework will be used collaboratively with HTML5 and JavaScript to provide the required functionality. CSS3 and the Bootstrap framework will be used to handle the styling of the front-end. AJAX will potentially be used to handle the passing of any data that cannot be handled by the other abovementioned frameworks. The Google Maps JavaScript API Heatmap Layer will be incorporated into the system in order to generate the heatmap functionality that the system requires. PhoneGap and Ionic will be used together to adapt the Web interface code to run on an Android  and iOS platform.\newline\newline
-	Neo4j is the chosen database for the system as it offers the advantages of both a NoSQL database and a SQL database. It effectively handles scalability without sacrificing performance, whilst also having the ability to store relationships between data entries. Sails.js also provides a plugin that adapts our implementation to effectively integrate with Neo4j.
+	MongoDB is the chosen database for the system as it offers the advantages of both a NoSQL database and a SQL database. It effectively handles scalability without sacrificing performance. Sails.js also provides a plugin that adapts our implementation to effectively integrate with MongoDB.
 	
 	
 	%----------------------------------------------------------------------------------------
@@ -646,11 +646,11 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 	\end{itemize}
 	\subsection{Server}
 	\begin{itemize}
-		\item Cloud-based
+		\item Google Compute Engine
 	\end{itemize}
 	\subsection{Dependency Management and Test Tools}
 	\begin{itemize}
@@ -670,13 +670,22 @@
 		\item Angular.js
 		\item Google Maps JavaScript API Heatmap Layer
 		\item Bootstrap
-		\item AJAX					
+		\item AJAX
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 		\item HTML5 Local Storage
 		\item Cookies				
+	\end{itemize}
+	\subsection{Servers}
+	\subsubsection{Reporting Server}
+	\begin{itemize}
+		\item jsreport				
+	\end{itemize}
+	\subsubsection{Web Server}
+	\begin{itemize}
+		\item Nginx				
 	\end{itemize}
 	\subsection{Browser Compatibility}
 	\begin{itemize}
@@ -708,7 +717,7 @@
 	\end{itemize}
 	\subsection{Database System}
 	\begin{itemize}
-		\item Neo4j
+		\item MongoDB
 	\end{itemize}
 	\subsection{Operating System}
 	\begin{itemize}
@@ -725,817 +734,13 @@
 	%	CHAPTER 8
 	%----------------------------------------------------------------------------------------
 	
-	\chapterimage{avocados2.png} % Chapter heading image
-	
-	\chapter{Functional Requirements}
-	
-	\section{Use Case Prioritization}
-	\subsection{Critical}
-	\begin{itemize}
-		\item Login/Logout user
-		\item Change Password
-		\item Recover Password
-		\item View/Edit/Create Farmer – Web interface
-		\item View/Edit/Create Farm – Web interface
-		\item View/Edit/Create Foreman (by farmer) – Web interface
-		\item View/Edit/Create Worker (by farmer) – Web interface
-		\item View/Create/Edit Orchard Details (crop dimensions, crop type, irrigation type, date planted, yields per hectare) – Web interface
-		\item View/Create/Edit Irrigation Type (by farmer) – Web interface
-		\item View/Create/Edit Crop Type – Web interface
-		\item View/Update Worker Performance (yields collected per worker)
-		\item View/Create/Edit Yield Measurement Type (by farmer, eg. kg, bag, g, etc.) – Web interface
-		\item View/Create/Edit Cultivation Method – Web interface
-		\item Allocate/Deallocate Foreman to Orchard Blocks – Web interface
-		\item Assign/Reassign Cultivation Method to Specific Orchard Blocks – Web interface
-		\item Assign/Reassign Workers to Foreman (by farmer) – Web interface
-		
-	\end{itemize}
-	
-	\subsection{Important}
-	\begin{itemize}
-		\item Import Census Data– Web interface
-		\item Generate Statistical Report of Worker Performance (time intervals) – Web interface
-		\item Generate Statistical Report Crop Yield per Orchard (potentially linked to heatmap generation) – Web interface				
-	\end{itemize}		
-	
-	\subsection{Nice to have}
-	\begin{itemize}
-		\item View Heat Map – Web interface
-		\item View/Create/Edit Foreman’s Shift (potentially linked to location tracking)  – Web interface
-		\item Notify Farmer Regarding Foreman’s Locations (according to time intervals)
-		\item Notify Farmer of Foreman’s Activity History Every Half an Hour
-		\item Generate Revenue Report Regarding Seasonal Yields (to plan paying workers, operational costs, etc.) – Web interface
-		\item Generate Statistical Report Regarding Time Taken to Yield Specific Crops– Web interface
-		
-	\end{itemize}
-	\section{Use Cases}
-	\subsection{Login User}
-	\begin{itemize}
-		\item Description\\
-		This use case will be used by the users of the Web interface, Android interface and the iOS interface to initiate login via the back-end service.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The user has a registered account within the database.
-			\item The user’s account is not locked.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The user will be logged in and have access to the necessary functionality.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Logout User}
-	\begin{itemize}
-		\item Description\\
-		This use case will be used by the users of the Web interface, Android interface and the iOS interface to log a user out of the system.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The user is currently logged into the system.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The user will be logged out of the system and have no access to any functionality.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Change Password}
-	\begin{itemize}
-		\item Description\\
-		This use case will be used by the users of the Web interface, Android interface and the iOS interface to change their password.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The user has a registered account within the database.
-			\item The user’s account is not locked.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The user’s password is updated in the database. 
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Recover Password}
-	\begin{itemize}
-		\item Description\\
-		This use case will be used by the users of the Web interface, Android interface and the iOS interface to recover their forgotten password.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The user has a registered account within the database.
-			\item The user’s account is not locked.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The user will receive an email containing their password.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Farmer}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to create his super user account for the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer doesn’t already exist in the database.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farmer will have a super user account registered in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Farmer}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of his super user account for the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The farmer already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farmer’s account details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Farmer}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit his super user account for the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The farmer already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farmer’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Farm}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to register his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The farm doesn’t already exist in the database.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farm is registered in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Farm}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of his farm’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The farm already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farm’s account details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Farm}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit his farm’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The farm already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farm’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Foreman}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to register his foremen individually on the system as general users via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman doesn’t already exist in the database.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman will have a general user account registered in the database.
-			\item Login details are generated for the foreman.				
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Foreman}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of his foreman’s general user account for the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman’s account details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Foreman}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit his foreman’s general user account for the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Worker}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to add his workers individually onto the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The worker doesn’t already exist in the database.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker’s details are in the database.			
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Worker}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of his worker’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The worker already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker’s account details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Worker}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit his worker’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The worker already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Demarcate Orchard Blocks using Coordinates}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to demarcate the orchard blocks on his farm according to map coordinates via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The orchard block hasn’t already been demarcated.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The orchard block’s demarcated area is stored in the database.		
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Demarcated Orchard Blocks}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the demarcated orchard blocks on his farm via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The orchard block has already been demarcated.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The demarcated orchard block’s details are displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Demarcated Orchard Blocks }
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit the demarcated orchard blocks on his farm via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The orchard block has already been demarcated.				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The demarcated orchard block’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Irrigation Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to create an irrigation type used on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The irrigation type doesn’t already exist in the database. 
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The irrigation type is added to the database.	
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Irrigation Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of an irrigation type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The irrigation type already exists in the database.				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The irrigation type’s details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Irrigation Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit an irrigation type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The irrigation type already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The irrigation type’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Crop Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to create a crop type planted on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The crop type doesn’t already exist in the database. 
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The crop type is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Crop Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of a crop type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The crop type already exists in the database.			
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The crop type’s details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Crop Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit a crop type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The crop type already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The crop type’s details are updated in the database
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Worker Performance}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the foreman to view the current state of a specific worker’s performance details on the system via the Android or iOS interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The foreman is currently logged into the system.
-			\item The worker already exists in the database.				 
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker’s performance details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Update Worker Performance}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the foreman to update a specific worker’s performance by adjusting the yields collected by the worker on the system via the Android or iOS interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The foreman is currently logged into the system.
-			\item The worker already exists in the database.			
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker’s performance details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Yield Measurement Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to create a yield measurement type used on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The yield measurement type doesn’t already exist in the database. 				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The yield measurement type is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Yield Measurement Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of a yield measurement type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The yield measurement type already exists in the database.		
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The yield measurement type’s details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Yield Measurement Type}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit a yield measurement type’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The yield measurement type already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The yield measurement type’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Cultivation Method}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to create a cultivation method used on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The cultivation method doesn’t already exist in the database. 				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The cultivation method is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Cultivation Method}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of a cultivation method’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The cultivation method already exists in the database.		
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The cultivation method’s details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Cultivation Method}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit a cultivation method’s details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The cultivation method already exists in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The cultivation method’s details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Allocate Foreman to Orchard Block}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to allocate a specific foreman to a specific orchard block on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman already exists in the database. 
-			\item The orchard block already exists in the database. 								
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman-orchard assignment is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Deallocate Foreman from Orchard Block}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to deallocate a specific foreman from a specific orchard block on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman-orchard assignment already exists in the database.		
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman-orchard assignment is removed from the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Assign Cultivation Method to Orchard Block}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to assign a specific cultivation method to a specific orchard block on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The cultivation method already exists in the database. 
-			\item The orchard block already exists in the database. 									
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The cultivation-orchard assignment is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Reassign Cultivation Method to Orchard Block}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to reassign a different cultivation method to a specific orchard block on his farm on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The cultivation-orchard assignment already exists in the database.				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The cultivation-orchard assignment is updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Assign Workers to Foreman}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to assign a specific worker to a specific foreman on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The worker already exists in the database. 
-			\item The foreman already exists in the database. 					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker-foreman assignment is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Reassign Workers to Foreman}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to reassign a specific worker to a different foreman on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The worker-foreman assignment already exists in the database.				
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The worker-foreman assignment is updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Import Census Data}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to import current census data onto the system via the Web interface to reduce the amount of data needed to be input manually.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The census data is valid and in the correct format.								
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The census data is added and successfully integrated into the system.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Generate Statistical Report of Worker Performance (according to time intervals)}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to generate a report showing the performance of his workers during certain time intervals for statistical purposes via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The data on the worker’s performance, required for the report, is present in the database.		
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The workers performance report has been generated in a usable format.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Generate Statistical Report of Crop Yield per Orchard}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to generate a report showing the crop yield per orchard for statistical purposes via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The data on the crop yields for each orchard, required for the report, is present in the database.									
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The crop yield per orchard report has been generated in a usable format.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Heat Map}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the crop yields per orchard blocks according to a heat map via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The data on the crop yields for each orchard, required to generate the heat map, is present in the database.	
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The crop yield per orchard heat map is generated and displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Create Foreman’s Shift}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to allocate a foreman to a specific shift on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman already exists in the database. 
-			\item The foreman-shift assignment doesn’t exist in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman-shift assignment is added to the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{View Foreman’s Shift}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to view the current state of a foreman’s shift details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman-shift assignment already exists in the database.		
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman-shift assignment details will be displayed.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Edit Foreman’s Shift}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to edit a foreman’s shift details on the system via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The foreman-shift assignment already exists in the database.	
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The foreman-shift assignment details are updated in the database.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Notify Farmer Regarding Foreman’s Locations (according to time intervals)}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated when a foreman leaves the demarcated area he has been allocated during his shift hours. When this occurs, a SMS or in-app notification will alert the farmer regarding this unusual occurrence via the Android or iOS interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system on his mobile device. (i.e. Super user logged in)
-			\item The foreman is logged into the system on his mobile device.
-			\item The data regarding the foreman’s shift, allocated orchard block and his current GPS location are available to initiate the notification.						
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farmer receives an SMS or an in-app notification regarding the foreman’s current location.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Notify Farmer of Foreman’s Activity History Every Half an Hour}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated every half an hour to notify the farmer on his moble device regarding the foreman’s activity history to prevent theft.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system on his mobile device. (i.e. Super user logged in)
-			\item The foreman is logged into the system on his mobile device.
-			\item The foreman’s activity history is present in the database.					
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The farmer receives an SMS or an in-app notification every half an hour regarding the foreman’s activity history.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Generate Revenue Report Regarding Seasonal Yields}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to generate a report showing the revenue generated according to seasonal yields per orchard block for statistical purposes via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The data on the crop yields for each orchard and the related revenue, required for the report, is present in the database.	
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The revenue per orchard report has been generated in a usable format.
-		\end{enumerate}
-	\end{itemize}
-	
-	\subsection{Generate Statistical Report Regarding Time Taken to Yield Specific Crops}
-	\begin{itemize}
-		\item Description\\
-		This use case will be initiated by the farmer to generate a report showing the amount of time it takes to yield certain crops for statistical purposes via the Web interface.
-		\item Pre-Conditions
-		\begin{enumerate}
-			\item The farmer is currently logged into the system. (i.e. Super user logged in)
-			\item The data regarding the time it takes to yield specific crops is present in the database.
-		\end{enumerate}
-		\item Post-Conditions
-		\begin{enumerate}
-			\item The time taken to yield specific crops report has been generated in a usable format.
-		\end{enumerate}
-	\end{itemize}
-	
-	%----------------------------------------------------------------------------------------
-	%	CHAPTER 9
-	%----------------------------------------------------------------------------------------
-	
 	\chapterimage{litchiTree.png} % Chapter heading image
 	
 	\chapter{Open Issues}
 	
 	\section{Database Issues}
 	\begin{itemize}
-		\item We are not exactly sure how we are going to design our database and store data. We do not yet know if we need relationships or not
-		\item We have not yet decided on a proper local database that takes advantage of HTML5 Local Storage.
+		\item We recently changed our database system from Neo4j to MongoDB so we are currently moving our system over. This was due to the fact that we were having issues with getting Neo4j to work effectively and we wanted to push development rather than waste time trying to get it to work. It also wasn't the most ideal database for our system and we decided that MongoDB suits the system's capabilities.
 	\end{itemize}
 	
 \end{document}

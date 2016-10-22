@@ -1,0 +1,28 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/irrigationType/update/<%= data.id %>" method="post" name="frmEditCropType" id="frmEditCropType">                        
+                        <fieldset>  
+                            <legend>Edit Irrigation Type</legend>                        						                            
+
+                            <label for="irrigationType">Change Irrigation Type</label>
+                            <input type="text" class="form-control" name="irrigationType" id="irrigationType" ng-init="editIrrigationTypeFrm.irrigationType='<%= data.type.name %>'" ng-model="editIrrigationTypeFrm.irrigationType" required>                                    
+                            <span class="errorText" ng-show="frmEditIrrigationType.irrigationType.$dirty && frmEditIrrigationType.irrigationType.$error.required">Required!</span>                                                        
+                            <br/>                                                       											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditIrrigationType.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Irrigation Type</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editIrrigationTypeFrm.loading"></span>
+                                <span ng-show="editFrm.loading">Updating Your Irrigation Type...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

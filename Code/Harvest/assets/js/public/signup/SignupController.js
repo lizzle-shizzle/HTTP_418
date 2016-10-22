@@ -19,7 +19,7 @@ angular.module('SignupModule').controller('SignupController', ['$scope', '$http'
 			password: $scope.createProfileFrm.password
 		})
 		.then(function onSuccess(sailsResponse){
-			window.location = '/';
+			window.location = '/farm/new';
 
 		})
 		.catch(function onError(sailsResponse){

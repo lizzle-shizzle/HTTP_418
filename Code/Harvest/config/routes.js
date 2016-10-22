@@ -38,6 +38,9 @@ module.exports.routes = {
 
   'GET /signup': {view: 'signup'},
   'GET /': 'PageController.showHomePage',
+  'GET /soon': 'PageController.soon',
+  'GET /about': {view: 'public/about'},
+  'GET /contact': {view: 'public/contact'},
 
   ////////////////////////////////////////////////////////////
   // JSON API
@@ -47,6 +50,16 @@ module.exports.routes = {
   'POST /signup': 'UserController.signup',
   'PUT /login': 'UserController.login',
   'GET /logout': 'UserController.logout',
+  'GET /recoverPassword': {view: 'user/recoverPassword'},
+  'POST /recoverPassword': 'UserController.recoverPassword',
+  //'GET /resetPassword/:token': {view: 'user/resetPassword'},
+  'GET /resetPassword/:token': {controller: 'PageController', action: 'resetPasswordInfo', skipAssets: true},
+  'POST /resetPassword/:token': 'UserController.resetPassword',
+
+  'GET /viewOrchardBlock': 'orchardBlockController.viewOrchardBlock',
+  'GET /editOrchardBlock': 'orchardBlockController.editOrchardBlock',
+  'GET /createOrchardBlock': 'orchardBlockController.createOrchardBlock',
+
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',
   'GET /changePassword': {view: 'user/changePassword'},

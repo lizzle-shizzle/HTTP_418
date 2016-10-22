@@ -49,6 +49,25 @@ module.exports = {
     // url for gravatar
     gravatarUrl: {
       type: 'string'
+    },
+
+    //A user who is a farmer can have many farms
+    farms :{
+      collection: 'farm',
+      via: 'farmer'
+    },
+
+    resetPasswordToken: {
+      type: 'string'
+    }, 
+
+    resetPasswordExpires: {
+      type: 'int'
+    },
+
+    foremen: {
+      collection: 'Foreman',
+      via : 'farmer'
     }
   }
 };

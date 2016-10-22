@@ -1,0 +1,366 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  My documentation report
+%  Objetive: Explain what I did and how, so someone can continue with the investigation
+%
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+\usepackage[top=3cm,bottom=3cm,left=3.2cm,right=3.2cm,headsep=10pt,letterpaper]{geometry} % Page margins
+
+\usepackage{xcolor} % Required for specifying colors by name
+\definecolor{darkgreen}{RGB}{0, 153, 0} % Define the orange color used for highlighting throughout the book
+
+% Font Settings
+\usepackage{avant} % Use the Avantgarde font for headings
+%\usepackage{times} % Use the Times font for headings
+\usepackage{mathptmx} % Use the Adobe Times Roman as the default text font together with math symbols from the Sym­bol, Chancery and Com­puter Modern fonts
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+
+% Bibliography
+\usepackage[style=alphabetic,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
+\addbibresource{bibliography.bib} % BibTeX bibliography file
+\defbibheading{bibempty}{}
+
+\input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{frontcover}}} % Image background
+\centering
+\vspace*{5cm}
+\par\normalfont\fontsize{35}{35}\sffamily\selectfont
+\textbf{Harvest}\\
+{\LARGE Testing Documentation}\par % Book title
+\vspace*{0.5cm}
+{\Huge HTTP\_418}\par
+\centering
+\vspace*{0.5cm}
+\begin{itemize}[label={}, noitemsep]	
+		\Large
+		\item \begin{center} Christiaan Saaiman, 12059138 \end{center}
+		\item \begin{center} Michael Loosen, 14017254 \end{center}
+		\item \begin{center} Elizabeth Bode, 14310156 \end{center}
+		\item \begin{center} LC Meyers, 14024633 \end{center}	
+\end{itemize}
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\chapterimage{orchard.png} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+\tableofcontents % Print the table of contents itself
+
+%\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+%----------------------------------------------------------------------------------------
+
+\chapterimage{mangoes.png} % Chapter heading image
+
+\chapter{Introduction}
+	\paragraph{}
+		Harvest is unique in it's own being. Harvest is an IT driven produce and workforce management solution that enables farmers to seamlessly monitor their farm’s performance.
+		
+		This document is to lay out what tests we have performed in order to make sure our programme works as it is intended to. Hopefully as you read this you will find our testing satisfactory.
+	\section{Purpose}
+		\paragraph{}
+			The purpose of Harvest is to make farm yield and workforce management an effortless task for the farmer so that he may concentrate upon other matters.
+			
+			Harvest is to be used on the web and using an Android application. The application is used by foremen in the field to gather data where the farmer can enjoy real-time data reports on his farm's yield and his worker's performance.
+			
+			This document has it's purpose as to make it easy for the user of this system or other programmers easy to understand why we place our faith in the correct workings of this programme. It will lay out what tests we have done in order to validate our programme.
+	\section{Scope}
+		\paragraph{}
+			The modules tested are covered in Chapter 2 whereas the tested functional feautures can be found in Chapter 3. Chapter 4 covers the Test Cases that we ran and to review the test pass/fail criteria have a look at Chapter 5. All things related to the test can be seen on Chapter 6 and there is a detailed explanation in Chapter 7 of the tests. Chapter 8 covers all other related aspects and we end the document with our conclutions and recommendations in Chapter 9.
+	\section{Test Environment}
+		\paragraph{}
+			This is the environment that we ran the tests in and the particulars associated with it:
+			\begin{itemize}
+				\item Programming Languages: HTML5, CSS, JavaScript, AngularJS, Bootstrap
+				\item Testing Frameworks: mocha, Sailsjs
+				\item Coding Environments: Sailsjs, GoogleMaps API, NodeJS
+				\item Operating System: Windows 8.1/10, Ubuntu on Google App Engine Server
+				\item Internet Browsers: Chrome, Firefox, Edge, Mobile
+			\end{itemize}
+	\section{Assumptions and Depenencies}
+		\paragraph{}
+			At the time of testing we assumed that all our basic CRUD(Creation, Review, Update and Delete) functions were working as is expected of them and that our connection to the database, which is handled by Sailsjs, works as expected as well.
+			
+			The functionality is only dependant on the CRUD operations of the different modules and of the storage and retrieval of data in the database.
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 2
+%----------------------------------------------------------------------------------------
+\chapterimage{macadamias.png}
+
+\chapter{Test Items}
+	\section{User Module}
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Creating a farmer account} -
+				The signup page for registering a farmer account contains input fields so that the user can input their necessary details. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. The First Name and Last Name fields ensure that the user doesn't enter more than 50 characters. The Date of Birth field makes use of a date picker to ensure incorrect data cannot be entered. The Email Address field makes use of an email input, which ensures that only a valid email address can be entered. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. The Create Account button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Create Account button is enabled. After submission of the form, if the email address entered is already taken, then an error message is displayed specifying that that email address already exists and then navigates back to the signup page. If submission is successful, the user will automatically be logged into the sysetm.
+				
+				\item\textbf{Viewing \& editing a farmer account} - 
+				The edit form contains input fields that are populated with the user's current information. The First Name and Last Name fields ensure that the user doesn't enter more than 50 characters. The Date of Birth field makes use of a date picker to ensure incorrect data cannot be entered. The Email Address field makes use of an email input, which ensures that only a valid email address can be entered. There is a Change Password button, which navigates to the change password form. This functionality is specified under Change Password. The Update Details button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Update Details button is enabled. After submission of the form, if the email address entered is already taken, then an error message is displayed specifying that that email address already exists and then navigates back to the edit profile page.
+				
+				\item\textbf{Logging in} -
+				The Sign In form contains an inputs for the farmer's Email Address, Password and a Remember Me checkbox. There is also a link to recover your password. Both the email and password inputs are required and the Sign In button is disabled until these inputs have data entered into them. If the user has an account and enters in the correct details for this account then the user will be directed to their homepage. Otherwise, an error message will be displayed specifying that the email and password entered doesn't match any account on the system and they will remain on the landing page.
+				
+				\item\textbf{Logging out} -
+				The user can only view the Log Out button if they have been logged into the system. When the user clicks the Log Out button, the user's session is destroyed and their information is reset to null causing them to be logged out of the system. Upon logout, they will be redirected to the landing page.
+				
+				\item\textbf{Changing password} -
+				The user can only navigate to this form through the edit profile form, which is only accessible if the user is logged in. This ensures that the user does have an account present in the database, and eliminates the need to re-enter your current password. The Change Password form contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. 
+				-%The Confirm Password field ensures that the data entered into the Password field and the Confirm Password field match. Appropriate error messages are displayed if any incorrect or no data is entered. 
+				The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
+				
+				\item\textbf{Recovering password} -
+				The user can navigate to this form without being logged into the system. The user is requested to enter the email address they used to sign up their account. The form only submits successfully if the email address entered is in fact linked with an existing account. Once the user submits this form, an email is sent with a link with a token, which provides them access to the change password page. This token expires one hour after the email was sent. The user is then navigated to the homepage. After the link has been selected, the change password form displays and contains inputs for New Password and Confirm New Password. The Password and Confirm Password field only allow passwords of a minimum of 5 characters and maximum of 10 characters to be entered. The Change Password button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Upon submission of the form, the user is returned to the edit profile page.
+			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item\textbf{Creating a farmer account} -
+				The Date of Birth field needs to ensure that a range of invalid dates is excluded, such as this year as the year of birth. This functionality still needs to be implemented. If submission of the form is unsuccessful, there is no error message displayed specifying that the signup failed. However, a redirect does return the user to the signup page. There is currently no functionality included to specify that this account has superuser rights.
+				
+				\item\textbf{Viewing \& editing a farmer account} - 
+				If the updating of the account is unsuccessful an error message should be dispayed and the user should be redirected to the edit profile page. If the update is successful, a message specifying this success should be displayed and the user should be redirected to their homepage.
+				
+				\item\textbf{Logging in} -
+				There is currently no functionality specifying whether user account has been locked or not, such as if a foreman no longer works for a farmer then their details would need to be archived. The remember me functionality hasn't been implemented yet as it is a nice-to-have component of the system. The recovery password link's functionality is specified under the Recover Password use case.
+				
+				\item\textbf{Logging out} -
+				There are no short-comings with this functionality.
+				
+				\item\textbf{Changing password} -
+				The error handling for invalid data and the Password and Confirm Password aren't currently working. If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred. Once the password has been changed, a message should display to indicate success.
+				
+				\item\textbf{Recovering password} -
+				The success message to indicate that the email has successfully been sent currently doesn't display. The error handling for invalid data and the Password and Confirm Password aren't currently working. If an error occurs with the updating of the password field, then an error message should be displayed specifying the error that occurred. Once the password has been changed, a message should display to indicate success.
+			\end{itemize}
+		\subsection{Missing Functionality}
+			\begin{itemize}
+				\item\textbf{Importing census data} -
+				This feature hasn't been implemented yet as it is considered  an important functionality and will implemented at a later stage.
+			\end{itemize}
+		\subsection{Unit Test Report for User Module}
+			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+		
+	\section{Farm Module}	
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Adding a farm} -
+				The create page for farm contains input fields that the user uses to input the required data. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. Farm Name, Registered Farm Name and Company Name requires the user to enter no more than 120 characters. Farm Name is optional. Farm Size is optional and requires the user to enter numerical data. Province uses a drop down list to limit the user to only the 9 provinces we have in our country. Region, Farming Region and Portion Number require the user to enter no more than 50 characters. Region and portion Number are optional. Error messages are displayed is any incorrect data is entered or no data is entered where required. the Create Farm button is disabled of any of the inputs are invalid. This ensures that the user does not enter any invalid data. If submition is successfull the user is taken to the main page where the details of the farm are displayed.
+				
+				%\item\textbf{Viewing a farm} -
+				%Some description.
+				
+				\item\textbf{Editing a farm} -
+				Editing a farm contains the same inputs and validation as when creating a farm. This ensures that no invalid data is stored when updating a farm. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the main page where the updated farm details are reflected.
+				
+				\item\textbf{Adding a orchard block} -
+				Some description. 
+				
+				\item\textbf{Viewing a orchard block} -
+				Some description.
+				
+				\item\textbf{Editing a orchard block} -
+				Some description.
+			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item\textbf{Adding a farm} -
+				There is no way to pass any gracefull error messages to the user if submition fails.
+				
+				\item\textbf{Viewing a farm} -
+				The user cannot select between different farms.
+				
+				\item\textbf{Editing a farm} -
+				There is no way to pass any gracefull error messages to the user if submition fails.
+				
+				\item\textbf{Adding a orchard block} -
+				Some description. 
+				
+				\item\textbf{Viewing a orchard block} -
+				Some description.
+				
+				\item\textbf{Editing a orchard block} -
+				Some description.
+			\end{itemize}
+		\subsection{Missing Functionality}
+			\begin{itemize}
+				\item\textbf{Viewing heat map} -
+				Some description.
+			\end{itemize}
+		\subsection{Unit Test Report for Farm Module}
+			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+	\section{Employee Module}
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Adding a foreman} -
+				Some description. 
+				
+				\item\textbf{Viewing a foreman} -
+				Some description.
+				
+				\item\textbf{Editing a foreman} -
+				Some description.
+			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item\textbf{Adding a foreman} -
+				Some description. 
+				
+				\item\textbf{Viewing a foreman} -
+				Some description.
+				
+				\item\textbf{Editing a foreman} -
+				Some description.
+			\end{itemize}
+		\subsection{Missing Functionality}
+			\begin{itemize}
+				\item\textbf{Maintaining worker-foreman assignments} -
+				Some description.
+				
+				\item\textbf{Viewing worker-foreman assignments} -
+				Some description.
+				
+				\item\textbf{Viewing foreman-orchard Block allocations} -
+				Some description.
+			\end{itemize}
+		\subsection{Unit Test Report for Employee Module}
+			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+			
+	\section{Reporting Module}
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Nothing yet} -
+				The entire reporting module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on reporting. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
+			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item{Not applicable}
+			\end{itemize}
+		\subsection{Missing Functionality}
+			\begin{itemize}
+				\item\textbf{Generating a statistical report of worker performance} -
+				Some description.
+				
+				\item\textbf{Generating a statistical report regarding crop yield per orchard} -
+				Some description.
+				
+				\item\textbf{Generating a revenue report regarding seasonal yields} -
+				Some description.
+				
+				\item\textbf{Generating a statistical report regarding time taken to yield specific crops} -
+				Some description.
+			\end{itemize}
+		\subsection{Unit Test Report for Reporting Module}
+			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+			
+	\section{Notification Module}
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Nothing yet} -
+				The entire notifications module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on notifications. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
+			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item{Not applicable}
+			\end{itemize}
+		\subsection{Missing Functionality}
+			\begin{itemize}
+				\item\textbf{Viewing notifications} -
+				Some description.
+				
+				\item\textbf{Deleting notifications} -
+				Some description.
+				
+				\item\textbf{Notifying farmer regarding foreman’s locations} -
+				Some description.
+				
+				\item\textbf{Notifying farmer of foreman’s activity history every half an hour} -
+				Some description.			
+			\end{itemize}
+		\subsection{Unit Test Report for Notifications Module}
+			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+
+\chapterimage{avocados.png}
+\chapter{Functional Features to be Tested}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 4
+%----------------------------------------------------------------------------------------
+
+\chapterimage{litchis.png} % Chapter heading image
+
+\chapter{Test Cases}
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 5
+%----------------------------------------------------------------------------------------
+
+\chapterimage{farmer.png} % Chapter heading image
+
+\chapter{Item Pass/Fail Criteria}
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 6
+%----------------------------------------------------------------------------------------
+
+\chapterimage{mangoes2.png} % Chapter heading image
+
+\chapter{Test Deliverables}
+	
+%----------------------------------------------------------------------------------------
+%	CHAPTER 7
+%----------------------------------------------------------------------------------------
+
+\chapterimage{macadamias2.png} % Chapter heading image
+
+\chapter{Detailed Test Results}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 8
+%----------------------------------------------------------------------------------------
+
+\chapterimage{litchiTree.png} % Chapter heading image
+
+\chapter{Other}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 9
+%----------------------------------------------------------------------------------------
+\chapterimage{avocados2.png} % Chapter heading image
+
+\chapter{Conclusions and Recommendations}
+
+\end{document}
