@@ -59,7 +59,9 @@ module.exports.routes = {
   'GET /changePassword': {view: 'user/changePassword'},
   'GET /changePassword': 'PageController.changePasswordInfo',
   'GET /generateCropYieldReport': {view: 'report/generateCropYieldReport'},
-  'GET /generateCropYieldReport': 'PageController.showGenerateCropYieldReport'
+  'GET /generateCropYieldReport': 'PageController.showGenerateCropYieldReport',
+  'GET /viewCropYieldReport': {view: 'report/viewCropYieldReport', layout: 'reportLayout'},
+  'GET /viewCropYieldReport': 'PageController.showViewCropYieldReport'
 
   // '/': {
   //   view: 'homepage'

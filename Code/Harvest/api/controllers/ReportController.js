@@ -12,7 +12,8 @@ module.exports = {
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
-		User.findOne({id: req.session.me}) 
+	    
+		/*User.findOne({id: req.session.me}) 
 		.populate("farms")
 		.exec(function (err, user) {
 			//If there is an error 
@@ -41,7 +42,7 @@ module.exports = {
 					layout: "signedInLayout", title: "Generate Crop Yield Report"});
 				});				
 			});
-		});
+		});*/
 	}
 };
 

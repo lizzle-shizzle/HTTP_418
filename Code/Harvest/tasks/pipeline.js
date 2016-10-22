@@ -29,6 +29,8 @@ var jsFilesToInject = [
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/angular.1.3.js',
   'js/dependencies/jquery.min.js',
+  'js/public/report/kendo.ui.core.min.js',
+  'js/public/report/kendo.*.js',
   'js/dependencies/script.js',
   'js/dependencies/**/*.js',
 
