@@ -1,0 +1,47 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/worker/updateWorker/<%= worker.nname %>" method="post" name="frmEditWorker" id="frmEditWorker" autocomplete="off">                        
+                        <fieldset>  
+                            <legend>Edit Worker</legend>                        						                            
+
+                            <label for="fname">New Worker Name</label>
+                            <input type="text" class="form-control" name="fname" id="fname" ng-init="editWorkerFrm.fname='<%= worker.fname %>'" ng-model="editWorkerFrm.fname" required>                                    
+                            <span class="errorText" ng-show="frmEditWorker.worker.$dirty && frmEditWorker.worker.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="lname">New Worker Surname</label>
+                            <input type="text" class="form-control" name="lname" id="lname" ng-init="editWorkerFrm.lname='<%= worker.lname %>'" ng-model="editWorkerFrm.lname" required>                                    
+                            <span class="errorText" ng-show="frmEditWorker.worker.$dirty && frmEditWorker.worker.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="nname">New Worker Nickname</label>
+                            <input type="text" class="form-control" name="nname" id="nname" ng-init="editWorkerFrm.nname='<%= worker.nname %>'" ng-model="editWorkerFrm.nname" required>                                    
+                            <span class="errorText" ng-show="frmEditWorker.worker.$dirty && frmEditWorker.worker.$error.required">Required!</span>                                                        
+                            <br/>
+
+                            <label for="wfass">Worker-Foreman Assignment</label>
+                            <select class="form-control" name="wfass" id="wfass" ng-model="frmCreateWorker.worker">
+                                <option value="" disabled>Select Foreman</option>                              
+                                <% _.each(data.foremen, function(foreman) { %>
+                                    <option value="<%= foreman.id %>"><%= foreman.fname %> <%= foreman.lname%></option> 
+                                <% }) %>
+                            </select>
+                            <br/>
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditWorker.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Worker</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editWorkerFrm.loading"></span>
+                                <span ng-show="editFrm.loading">Updating Your Worker...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

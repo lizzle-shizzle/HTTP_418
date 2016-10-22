@@ -31,10 +31,6 @@ module.exports = {
 
 	foreman: {
 		model: 'Foreman'
-	},
-
-	farmer: {
-		model: 'User'
 	}
   }
 };
