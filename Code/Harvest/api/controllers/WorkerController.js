@@ -72,9 +72,10 @@ module.exports = {
 
 	updateWorker: function(req, res){
 		Foreman.update({nname: req.param('id')}, {
-			uname: req.param('nname'),
 			fname: req.param('fname'),
 			lname: req.param('lname'),
+            nname: req.param('nname'),
+            foreman: req.param('wfass')
             //need to add foreman assigned to it.
 		}, function workerUpdated(err, user){
 			//In case of error, return message
