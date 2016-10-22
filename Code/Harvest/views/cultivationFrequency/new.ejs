@@ -1,0 +1,31 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/cultivationFrequency/create" method="post" name="frmCreateCultivationFrequency" id="frmCreateCultivationFrequency">                        
+                        <fieldset>  
+                            <legend>New Cultivation Frequency</legend>                                                    
+
+                            <!-- Only show this input when a new irrigation type needs to be added -->
+                            <div>
+                                <label for="newCultivationFrequency">New Cultivation Frequency</label>
+                                <input class="form-control" type="text" name="newCultivationFrequency" id="newCultivationFrequency" ng-model="createCultivationFrequencyFrm.newCultivationFrequency" placeholder="Weekly" required>
+                                <span class="errorText" ng-show="frmCreateCultivationFrequency.newCultivationFrequency.$dirty && frmCreateCultivationFrequency.newCultivationFrequency.$error.required">Required!</span>                                                         
+                                <br/>
+                            </div>                           											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmCreateCultivationFrequency.$invalid">
+                                <span ng-show="!createFrm.loading">Add Cultivation Frequency</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="createCultivationFrequencyFrm.loading"></span>
+                                <span ng-show="createFrm.loading">Adding Your Cultivation Frequency...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

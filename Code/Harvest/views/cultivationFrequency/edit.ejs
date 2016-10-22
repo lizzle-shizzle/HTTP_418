@@ -1,0 +1,28 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+    <div class="row jumbo">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="jumbotron">                
+                    <form action="/cultivationFrequency/update/<%= data.id %>" method="post" name="frmEditCultivationFrequency" id="frmEditCultivationFrequency">                        
+                        <fieldset>  
+                            <legend>Edit Cultivation Frequency</legend>                        						                            
+
+                            <label for="cultivationFrequency">Change Cultivation Frequency</label>
+                            <input type="text" class="form-control" name="cultivationFrequency" id="cultivationFrequency" ng-init="editCultivationFrequencyFrm.cultivationFrequency='<%= data.type.name %>'" ng-model="editCultivationFrequencyFrm.cultivationFrequency" required>                                    
+                            <span class="errorText" ng-show="frmEditCultivationFrequency.cultivationFrequency.$dirty && frmEditCultivationFrequency.cultivationFrequency.$error.required">Required!</span>                                                        
+                            <br/>                                                       											
+
+                            <!-- Disable signup button until the form has no errors -->
+                            <button type="submit" class="btn" ng-click="click()" ng-disabled="frmEditCultivationFrequency.$invalid">
+                                <span ng-show="!editFrm.loading">Edit Cultivation Frequency</span>
+                                <span class="overlord-loading-spinner fa fa-spinner" ng-show="editCultivationFrequencyFrm.loading"></span>
+                                <span ng-show="editFrm.loading">Updating Your Cultivation Frequency...</span>
+                            </button>
+
+                            <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+						</fieldset>
+					</form>
+				</div>																		
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<div class="container">
+					<fieldset>
+						<legend>Cultivation Frequencies</legend>
+						<div ng-app="CultivationFrequencyModule" ng-controller="CultivationFrequencyController" id="tableContainer">
+							<table class="table table-bordered">
+								<th>#</th>
+								<th>Cultivation Frequency</th>				
+								<th>Edit</th>
+								<% if(type.length == 0) { %>
+									<tr>
+										<td colspan="3">There are no cultivation frequencies linked to your farm yet <br />
+										Create a new cultivation frequency
+										</td>
+									</tr>
+								<% } else { %>
+									<% _.each(type, function(cultivation, index) { %>
+										<% if (typeof cultivation != "undefined" ) { %>
+											<tr>
+												<td><%= index + 1 %>.</td>
+												<td><%= cultivation.name %></td>
+												<td><a class="info" href="/cultivationFrequency/edit/<%= cultivation.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a></td>
+											</tr>																			
+										<% } %>
+									<% }) %>
+								<% } %>							
+							</table>
+						</div>
+						<br/>
+						<a href="/cultivationFrequency/new" class="btn">Add Cultivation Frequency</a>											
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
