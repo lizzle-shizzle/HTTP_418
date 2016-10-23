@@ -274,17 +274,11 @@
 				The edit form contains input fields that are populated with the foreman's current information. The First Name and Last Name fields ensure that the user doesn't enter more than 120 characters. The Username field ensures that the user doesn't enter more than 120 characters. The Password field ensures that the user doesn't enter more than 120 characters. The Edit Foreman button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Edit Foreman button is enabled.
 				
 			\end{itemize}
-%		\subsection{Short-comings of Implemented Functionality}
-%			\begin{itemize}
-%				\item\textbf{Adding a foreman} -
-%				Some description. 
-%				
-%				\item\textbf{Viewing a foreman} -
-%				Some description.
-%				
-%				\item\textbf{Editing a foreman} -
-%				Some description.
-%			\end{itemize}
+		\subsection{Short-comings of Implemented Functionality}
+			\begin{itemize}
+				\item\textbf{Adding/editing a foreman} -
+				Currently there is no way of sending an error message to the user if adding or updating a foreman fails. Currenlty the server crashes and that might confuse the user.							
+			\end{itemize}
 %		\subsection{Missing Functionality}
 %			\begin{itemize}
 %				\item\textbf{Maintaining worker-foreman assignments} -
@@ -408,6 +402,6 @@
 \chapterimage{avocados2.png} % Chapter heading image
 
 \chapter{Conclusions and Recommendations}
-We currently have some missing functionality that could greatly improve user experience. But on the positive side validation plays a large role in making sure that only valid data gets sent to the server, thereby preventing the server from crashing.
+We currently have some missing functionality that could greatly improve user experience, such as proper error handling aand showing error messages to the user. But on the positive side validation plays a large role in making sure that only valid data gets sent to the server, thereby preventing the server from crashing.
 
 \end{document}
