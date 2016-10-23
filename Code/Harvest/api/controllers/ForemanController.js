@@ -41,13 +41,6 @@ module.exports = {
 	      });
 	    });
 	},
-	updateAllocation: function(req, res, next) {
-		if (!req.session.me) {
-	      return res.view('homepage');
-	    }
-		User.findOne({id: req.session.me})
-		.populate("farms")
-		.exec(function (err, user) {
 	//load page to create foreman
 	newForeman: function(req, res){
 		//if no one is logged in, return homepage
@@ -145,41 +138,7 @@ module.exports = {
 					layout: "signedInLayout", title: "Create crop type"});
 				});				
 			});
-		});/*
-	    User.update(req.param('id'), req.params.all(), function userUpdated (err) {
-	      if (err) return res.redirect('/foreman/maintainForemanOrchardAllocation' + req.param('id'));
-	     // alert("Success");
-	      /*toastr['success']('Invalid email/password combination.', 'Success', {
-	          closeButton: true
-	        });*/
-	      //res.redirect('/user/show' + req.param('id'));
-	      //return res.redirect('/user/editFarmer' + req.param('id'));
-	      //if (req.param('email').rule !== 'unique') {
-	        //return res.emailAddressInUse();
-	      //}
-	      /*return res.view('dashboard', {
-	        me: {
-	          id: req.param('id'),
-	          fname: req.param('fname'),
-	          lname: req.param('lname'),
-	          birthdate: req.param('birthdate'),
-	          email: req.param('email'),
-	          isAdmin: !!req.param('admin'),
-	          gravatarUrl: req.param('gravatarUrl')
-	        }
-	      });
-	    });*/
-	},
-  	viewAllocation: function(req, res, next) {
-	    User.findOne(req.param('id'), function foundUser(err, user) {
-	      if (err) return next(err);
-	      if (!user) return next();
-	      res.view({
-	        user: user
-	      });
-	    });
-	},
-
+		});
 
 		Foreman.find()
 		.exec(function(err, foreman){
@@ -190,5 +149,16 @@ module.exports = {
 				layout: "signedInLayout"
 			});
 		});
+	},
+  	viewAllocation: function(req, res, next) {
+	    User.findOne(req.param('id'), function foundUser(err, user) {
+	      if (err) return next(err);
+	      if (!user) return next();
+	      res.view({
+	        user: user
+	      });
+	    });
+	}
+	
 };
 
