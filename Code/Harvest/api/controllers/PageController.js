@@ -113,6 +113,39 @@ module.exports = {
 
     });
   },
+  viewForemanOrchardAllocationInfo: function (req, res) {
+
+    // If not logged in, show the public view.
+    if (!req.session.me) {
+      return res.view('homepage');
+    }
+
+    // Otherwise, look up the logged-in user and show the logged-in view,
+    // bootstrapping basic user data in the HTML sent from the server
+    User.findOne(req.session.me, function (err, user){
+      if (err) {
+        return res.negotiate(err);
+      }
+
+      if (!user) {
+        sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
+        return res.view('homepage');
+      }
+
+      return res.view('foreman/viewForemanOrchardAllocation', {
+        me: {
+          id: user.id,
+          fname: user.fname,
+          lname: user.lname,
+          birthdate: user.birthdate,
+          email: user.email,
+          isAdmin: !!user.admin,
+          gravatarUrl: user.gravatarUrl
+        }
+      });
+
+    });
+  },
   resetPasswordInfo: function (req, res) {
 
     var flash = require('express-flash');
@@ -147,7 +180,6 @@ module.exports = {
     if (!req.session.me) {
       return res.redirect('/');
     }
-
     User.findOne(req.session.me, function (err, user){
       if (err) {
         return res.negotiate(err);
@@ -155,10 +187,43 @@ module.exports = {
 
       if (!user) {
         sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
-        return res.redirect('/');
+        return res.view('homepage');
       }
 
       return res.view('orchardBlock/viewOrchardBlock', {
+        me: {
+          id: user.id,
+          fname: user.fname,
+          lname: user.lname,
+          birthdate: user.birthdate,
+          email: user.email,
+          isAdmin: !!user.admin,
+          gravatarUrl: user.gravatarUrl
+        }
+      });
+
+    });
+  },
+  maintainForemanOrchardAllocationInfo: function (req, res) {
+
+    // If not logged in, show the public view.
+    if (!req.session.me) {
+      return res.view('homepage');
+    }
+    User.findOne(req.session.me, function (err, user){
+      if (err) {
+        return res.negotiate(err);
+      }
+
+    // Otherwise, look up the logged-in user and show the logged-in view,
+    // bootstrapping basic user data in the HTML sent from the server
+
+      if (!user) {
+        sails.log.verbose('Session refers to a user who no longer exists- did you delete a user, then try to refresh the page with an open tab logged-in as that user?');
+        return res.redirect('/');
+      }
+
+      return res.view('foreman/maintainForemanOrchardAllocation', {
         me: {
           id: user.id,
           fname: user.fname,

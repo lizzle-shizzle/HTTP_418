@@ -42,9 +42,9 @@ module.exports = {
   		via: 'shift'
   	},
 
-	farmer: {
-		model: 'User'
-	},
+  	farmer: {
+  		model: 'User'
+  	},
 	
     workers: {
       collection: 'Worker',

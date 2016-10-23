@@ -67,7 +67,13 @@ module.exports.routes = {
   'GET /editFarmer': {view: 'user/editFarmer'},
   'GET /editFarmer': 'PageController.editFarmerInfo',
   'GET /changePassword': {view: 'user/changePassword'},
-  'GET /changePassword': 'PageController.changePasswordInfo'
+  'GET /changePassword': 'PageController.changePasswordInfo',
+  //'POST /maintainForemanOrchardAllocation': 'ForemanController.updateAllocation',
+  'GET /maintainForemanOrchardAllocation': {view: 'foreman/maintainForemanOrchardAllocation'},
+  'GET /maintainForemanOrchardAllocation': 'PageController.maintainForemanOrchardAllocationInfo',
+  'GET /viewForemanOrchardAllocation': {view: 'foreman/viewForemanOrchardAllocation'},
+  'GET /viewForemanOrchardAllocation': 'PageController.viewForemanOrchardAllocationInfo',
+  //'GET /viewForemanOrchardAllocation': 'ForemanController.viewAllocation'
 
   // '/': {
   //   view: 'homepage'
