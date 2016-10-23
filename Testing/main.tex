@@ -182,14 +182,35 @@
 				\item\textbf{Editing a farm} -
 				Editing a farm contains the same inputs and validation as when creating a farm. This ensures that no invalid data is stored when updating a farm. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the main page where the updated farm details are reflected.
 				
-				\item\textbf{Adding a orchard block} -
-				Some description. 
+				\item\textbf{Adding an orchard block} -
+				The create page for orchard block contains input fields and select boxes that the user uses to input the required data. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. Name, Hectares and date Planted requires the user to enter data. Farm Name is optional. The rest are select boxes limiting the possible data the user can enter to only valid data. The select boxes are optional. Date planted requires the user to enter date values, hectares requires numerical values. Error messages are displayed when any incorrect data is entered or no data is entered where required. the Create Orchard Blokc button is disabled ff any of the inputs are invalid. This ensures that the user does not enter any invalid data. If submition is successfull the user is taken to the main page where the details of the farm are displayed.
 				
-				\item\textbf{Viewing a orchard block} -
-				Some description.
+				\item\textbf{Viewing an orchard block} -
+				Viewing an orchard block uses a dorp down for the user to select orchard blocks to view or edit. No validation needs to happen here. When successfully navigating to the edit page of an orchard block the correct details of the orchard block will be shown and be ready to edit.
 				
-				\item\textbf{Editing a orchard block} -
-				Some description.
+				\item\textbf{Editing an orchard block} -
+				Editing an orchard block contains the same inputs and validation as when creating an orchard block. This ensures that no invalid data is stored when updating an orchard block. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the view orchard block page where the updated details are reflected.							
+				
+				\item \textbf{Adding a crop type} -
+				When adding a crop type there is only one input box. Name is required and does not a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a crop type} -
+				Viewing crop types consists of a table that contains an edit button next to the crop type. This ensures that the correct crop type is selected for editing.
+				
+				\item \textbf{Editing a crop type} -
+				Editing a crop type uses the same validation as adding a crop type. Apon successfull submition the user is redirected back to view crop type where the updated details are reflected.
+				
+				\item \textbf{Adding an irrigation type} -
+				When adding an irrigation type there is only one input box. Name is required and does not a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing an irrigation type} -
+				Viewing irrigation types consists of a table that contains an edit button next to the irrigation type. This ensures that the correct crop type is selected for editing.
+				
+				\item \textbf{Editing an irrigation type} -
+				Editing an irrigation type uses the same validation as adding an irrigation type. Apon successfull submition the user is redirected back to view irrigation type where the updated details are reflected.
+				
+				\item \textbf{Viewing the heatmap} -
+				Viewing the heatmap only requires the user to be logged in. Other than that there is no other validation that is needed to view the heatmap since it automatically collects the correct data.
 			\end{itemize}
 		\subsection{Short-comings of Implemented Functionality}
 			\begin{itemize}
