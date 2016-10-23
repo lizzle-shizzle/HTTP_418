@@ -24,7 +24,7 @@ module.exports = {
       .exec(function(err, irrigation) {
         if(err) return res.negotiate(err);        
         //send all orchard blocks linked to farm
-        res.view({type: irrigation, 
+        res.view("IrrigationType/view",{type: irrigation, 
         layout: "signedInLayout"});       
       });
     });        
@@ -43,7 +43,7 @@ module.exports = {
         //return appropiate error message
       if(err) return res.negotiate(err);
 
-      res.view({layout: "signedInLayout", title: "Create irrigation type"});
+      res.view("IrrigationType/new", {layout: "signedInLayout", title: "Create irrigation type"});
     });       
   },
 
@@ -81,7 +81,7 @@ module.exports = {
       IrrigationType.findOne({id: req.param("id")}).exec(function(err, irrigationType) {
           if(err) return res.negotiate(err);          
           //send all orchard blocks linked to farm and croptypes that exist
-          res.view({data: {
+          res.view("IrrigationType/edit", {data: {
             type: irrigationType,
             id: req.param("id")}, 
           layout: "signedInLayout", title: "Edit irrigation type"});

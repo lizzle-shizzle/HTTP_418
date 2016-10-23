@@ -34,7 +34,7 @@ module.exports = {
 			.exec(function(err, crop) {
 				if(err) return res.negotiate(err);				
 				//send all orchard blocks linked to farm
-				res.view({type: crop, 
+				res.view("cropType/view", {type: crop, 
 				layout: "signedInLayout"});				
 			});
 		});        
@@ -53,7 +53,7 @@ module.exports = {
 			//return appropiate error message
 			if(err) return res.negotiate(err);
 
-			res.view({layout: "signedInLayout", title: "Create crop type"});
+			res.view("cropType/new", {layout: "signedInLayout", title: "Create crop type"});
 		});				
 	},
 
@@ -91,7 +91,7 @@ module.exports = {
 			CropType.findOne({id: req.param("id")}).exec(function(err, cropType) {
 					if(err) return res.negotiate(err);					
 					//send all orchard blocks linked to farm and croptypes that exist
-					res.view({data: {
+					res.view("cropType/edit", {data: {
 						type: cropType,
 						id: req.param("id")}, 
 					layout: "signedInLayout", title: "Edit crop type"});

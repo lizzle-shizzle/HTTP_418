@@ -192,7 +192,7 @@
 				Editing an orchard block contains the same inputs and validation as when creating an orchard block. This ensures that no invalid data is stored when updating an orchard block. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the view orchard block page where the updated details are reflected.							
 				
 				\item \textbf{Adding a crop type} -
-				When adding a crop type there is only one input box. Name is required and does not a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				When adding a crop type there is only one input box. Name is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
 				
 				\item \textbf{Viewing a crop type} -
 				Viewing crop types consists of a table that contains an edit button next to the crop type. This ensures that the correct crop type is selected for editing.
@@ -201,13 +201,31 @@
 				Editing a crop type uses the same validation as adding a crop type. Apon successfull submition the user is redirected back to view crop type where the updated details are reflected.
 				
 				\item \textbf{Adding an irrigation type} -
-				When adding an irrigation type there is only one input box. Name is required and does not a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				When adding an irrigation type there is only one input box. Name is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
 				
 				\item \textbf{Viewing an irrigation type} -
-				Viewing irrigation types consists of a table that contains an edit button next to the irrigation type. This ensures that the correct crop type is selected for editing.
+				Viewing irrigation types consists of a table that contains an edit button next to the irrigation type. This ensures that the correct irrigation type is selected for editing.
 				
 				\item \textbf{Editing an irrigation type} -
 				Editing an irrigation type uses the same validation as adding an irrigation type. Apon successfull submition the user is redirected back to view irrigation type where the updated details are reflected.
+				
+				\item \textbf{Adding a cultivation frequency} -
+				When adding a cultivation frequency there is only one input box. Cultivation frequency is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a cultivation frequency} -
+				Viewing cultivation frequencies consists of a table that contains an edit button next to the cultivation frequency. This ensures that the correct cultivation frequency is selected for editing.
+				
+				\item \textbf{Editing a cultivation frequency} -
+				Editing a cultivation frequency uses the same validation as adding a cultivation frequency. Apon successfull submition the user is redirected back to view cultivation frequencies where the updated details are reflected.
+				
+				\item \textbf{Adding a yield measurement type} -
+				When adding a yield measurement type there is only one input box. A yield measurement type is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a yield measurement type} -
+				Viewing yield measurement types consists of a table that contains an edit button next to the yield measurement type. This ensures that the correct yield measurement type is selected for editing.
+				
+				\item \textbf{Editing a yield measurement type} -
+				Editing a yield measurement type uses the same validation as adding a yield measurement type. Apon successfull submition the user is redirected back to view yield measurement types where the updated details are reflected.
 				
 				\item \textbf{Viewing the heatmap} -
 				Viewing the heatmap only requires the user to be logged in. Other than that there is no other validation that is needed to view the heatmap since it automatically collects the correct data.
@@ -224,21 +242,25 @@
 				There is no way to pass any gracefull error messages to the user if submition fails.
 				
 				\item\textbf{Adding a orchard block} -
-				Some description. 
+				Only one coordinate can be added per orchard block. Some blocks might be rectangular or long and one coordinate might not be enough to cover the whole orchard block on the heat map.
 				
-				\item\textbf{Viewing a orchard block} -
-				Some description.
+				%\item\textbf{Viewing a orchard block} -
+				%Some description.
 				
 				\item\textbf{Editing a orchard block} -
-				Some description.
+				Only one coordinate can be added or changed per orchard block. Some blocks might be rectangular or long and one coordinate might not be enough to cover the whole orchard block on the heat map.
+				
+				\item \textbf{Adding/Viewing/Editing crop type, cultivation frequency, irrigation type, yield measurement type}
+				Only one detail is added at the moment, there are no additional or fine grained details to provide more insight for the farmer.
+				
+				\item Currently there is no current gracefull way of sending error messages to the user if some error occurs. At the moment the server just returns some ugly white screen with very confusing error messages.
+				
+				\item Currently there is no 'cancel' button to press if a user accidenlty clicked on an add or edit button. This might confuse a user as he might not know that he can navigate to the previous page.
 			\end{itemize}
-		\subsection{Missing Functionality}
-			\begin{itemize}
-				\item\textbf{Viewing heat map} -
-				Some description.
-			\end{itemize}
+		\subsection{Missing Functionality}			
+				No missing functionality			
 		\subsection{Unit Test Report for Farm Module}
-			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+			This module consists mainly CRUD operations that do not require unit testing as it relies on the built in API's of the framework.
 	\section{Employee Module}
 		\subsection{Functionality which is Correctly Implemented}
 			\begin{itemize}

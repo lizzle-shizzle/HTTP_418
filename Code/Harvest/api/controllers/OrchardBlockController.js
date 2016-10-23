@@ -21,7 +21,7 @@ module.exports = {
           .exec(function(err, orchardBlocks) {
             if(err) return res.negotiate(err);     
 
-            res.view({type: orchardBlocks, 
+            res.view("OrchardBlock/viewOrchardBlock", {type: orchardBlocks, 
             layout: "signedInLayout"});
           });
         });
@@ -34,7 +34,7 @@ module.exports = {
               return res.negotiate(err);
             }
 
-            return res.view({
+            return res.view("OrchardBlock/editOrchardBlock", {
               orchardBlocks: {
                 
               },
@@ -51,7 +51,7 @@ module.exports = {
               return res.negotiate(err);
             }
 
-            return res.view({
+            return res.view("OrchardBlock/createOrchardBlock", {
               orchardBlocks: {
                 
               },
