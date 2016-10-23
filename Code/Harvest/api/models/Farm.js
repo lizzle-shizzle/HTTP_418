@@ -45,6 +45,10 @@ module.exports = {
       type: 'string',      
     },
 
+    border: {
+      type: 'array'
+    },
+
     //A farm can only belong to one farmer
   	farmer: {
   		model: 'user'

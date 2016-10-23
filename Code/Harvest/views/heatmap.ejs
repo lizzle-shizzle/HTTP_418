@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="/styles/style.css">
 	<style type="text/css">
 		#map-canvas{
-			height: 400px;
-			width: 700px;
+			height: 400px;			
 			border: 2px solid;
 		}
 		.mapDiv{}
@@ -44,7 +43,7 @@
                 <li><a href="/soon">Irrigation Types</a></li>
                 <li><a href="/soon">Cultivation Frequencies</a></li>
                 <li><a href="/yieldMeasurementType/view">Yield Measurement Types</a></li>
-                <li><a href="/heatmap.html">View Heat Map</a></li>
+                <li><a href="/#">View Heat Map</a></li>
                 <li class="divider"></li>
               </ul>
             </li>
@@ -62,7 +61,7 @@
                 <a class="active dropdown-toggle" data-toggle="dropdown" href="/soon">Your Foremen
                   <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/soon">View Foremen</a></li>
+                    <li><a href="/foreman/viewForeman">View Foremen</a></li>
                     <li class="divider"></li>
                     <li><a href="/soon">View Foreman-Orchard Block Allocations</a></li>
                     <li><a href="/soon">Manage Foremen Shifts</a></li>
@@ -98,7 +97,7 @@
 						<div class="container">
 							<fieldset>
 								<legend>Heatmap</legend>
-						        <div class="mapDiv">
+						        <div id="mapDiv">
 									<my-maps id="map-canvas"></my-maps>
 								</div>
 							</fieldset>
