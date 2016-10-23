@@ -261,18 +261,19 @@
 				No missing functionality			
 		\subsection{Unit Test Report for Farm Module}
 			This module consists mainly CRUD operations that do not require unit testing as it relies on the built in API's of the framework.
-%	\section{Employee Module}
-%		\subsection{Functionality which is Correctly Implemented}
-%			\begin{itemize}
-%				\item\textbf{Adding a foreman} -
-%				Some description. 
-%				
-%				\item\textbf{Viewing a foreman} -
-%				Some description.
-%				
-%				\item\textbf{Editing a foreman} -
-%				Some description.
-%			\end{itemize}
+	\section{Employee Module}
+		\subsection{Functionality which is Correctly Implemented}
+			\begin{itemize}
+				\item\textbf{Adding a foreman} -
+				The page for adding foreman contains input fields so that the user can input their foremen's necessary details. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. The First Name and Last Name fields ensure that the user doesn't enter more than 120 characters. The Username field ensures that the user doesn't enter more than 120 characters. The Password field only allow passwords of a maximum of 120 characters. The Create Foreman button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Create Foreman button is enabled. Once submission is successful, the user will be redirected to the View Foremen Page (details are specified below).
+				
+				\item\textbf{Viewing a foreman} -
+				The View Foremen page displays a table with all the foremen that are currently listed under the current user. This table displays every foreman's full name and Username and each foreman has an Edit button to allow for changes to be made to their details by the user.
+				
+				\item\textbf{Editing a foreman} -
+				The edit form contains input fields that are populated with the foreman's current information. The First Name and Last Name fields ensure that the user doesn't enter more than 120 characters. The Username field ensures that the user doesn't enter more than 120 characters. The Password field ensures that the user doesn't enter more than 120 characters. The Edit Foreman button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Edit Foreman button is enabled.
+				
+			\end{itemize}
 %		\subsection{Short-comings of Implemented Functionality}
 %			\begin{itemize}
 %				\item\textbf{Adding a foreman} -
