@@ -43,25 +43,23 @@ module.exports = {
         //return appropiate error message
       if(err) return res.negotiate(err);
 
-      res.view({layout: "signedInLayout", title: "Create irrigation type"});
+      res.view({layout: "signedInLayout", title: "Create Irrigation type"});
     });       
   },
 
     create: function (req, res) {
-    //redirect to homepage if user not logged in
     if (!req.session.me) {
         return res.view('homepage');
       }
-      // Create crop type from pramaters sent from -> new.ejs     
-    //Create new crop type, get crop type id and add to orchardblock
-        IrrigationType.create({name: req.param("newIrrigationType")}, function(err, irrigation) {
-            //If there is an error 
-        //return appropiate error message
+      User.findOne({id: req.session.me})
+      .populate("farms")
+      .exec(function (err, user) {
+        IrrigationType.create({name: req.param("newIrrigationType"), farm: user.farms[0]}, function(err, irrigation) {
         if(err) return res.negotiate(err);
       
-      //if successfull send 200 response
-      return res.redirect("/irrigationType/view");            
+        return res.redirect("/irrigationType/view");            
         });
+      });
   },
 
   edit: function(req, res) {    

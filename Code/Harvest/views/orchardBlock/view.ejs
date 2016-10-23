@@ -1,0 +1,61 @@
+<div class="container">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<fieldset>
+					<legend>Orchard Block Details</legend>
+					<form name="frmViewOrchardBlock" >
+						<div ng-app="OrchardBlockModule" ng-controller="OrchardBlockController">
+							<label for="selectOrchardBlock">Orchard Block</label>	
+							<select class="form-control" name="orchardBlock" id="orchardBlock" ng-model="frmViewOrchardBlock.orchardBlock" onchange="changeOrchardBlock()">
+				                 <option value="" disabled>Select Orchard Block</option>   
+				                 <% _.each(block.orchardBlocks, function(orchardBlocks) { %>
+				                     <option value="<%= orchardBlocks.id %>"><%= orchardBlocks.name %></option> 
+				                 <% }) %>
+				             </select>
+							<br/>
+							<a class="btn" href="/orchardBlock/edit">Edit</a>							
+						</div>
+						<br/>
+						<div>
+							<label>Name</label>
+							<label class="info" id="orchName"></label>
+						</div>
+						<br/>
+						<div>
+							<label>Hectares</label>
+							<label class="info" id="orchHect"></label>
+						</div>
+						<br/>
+						<div>
+							<label>Irrigation Type</label>
+							<label class="info" id="orchIrrigate"></label>
+						</div>
+						<br/>
+						<div>
+							<label>Crop Type</label>
+							<label class="info" id="orchCrop"></label>
+						</div>
+						<br/>
+						<div>
+							<label>Cultivation Frequency</label>
+							<label class="info" id="orchCult""></label>
+						</div>
+						<br/>
+						<div>
+							<label>Yield Measurement Type</label>
+							<label class="info" id="orchYield"></label>
+						</div>
+						<br/>
+						<div>
+							<label>Date Planted</label>
+							<label class="info" id="orchDate"></label>
+						</div>
+						<br/>
+						<a class="btn" ng-disabled="frmViewOrchardBlock.$invalid" href="/orchardBlock/new">Create Orchard Block</a>
+					</form>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>

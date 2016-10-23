@@ -11,6 +11,11 @@ module.exports = {
     name: {
       type: 'string',
       required: true,            
-    },    
+    },
+
+    farm: {
+    	model: 'Farm',
+    	required: true,  
+    }
   }
 };

@@ -62,14 +62,13 @@ module.exports = {
 		if (!req.session.me) {
 	      return res.view('homepage');
 	    }
-	    // Create crop type from pramaters sent from -> new.ejs	    
-		//Create new crop type, get crop type id and add to orchardblock
-        YieldMeasurementType.create({name: req.param("newYieldType")}, function(err, crop) {
-            //If there is an error 
-	    	//return appropiate error message
-	    	if(err) return res.negotiate(err);
-						
-			return res.redirect("/yieldMeasurementType/view");		    	
+	    User.findOne({id: req.session.me})
+	      .populate("farms")
+	      .exec(function (err, user) {
+        	YieldMeasurementType.create({name: req.param("newYieldType"), farm: user.farms[0]}, function(err, yield) {
+	    	if(err) return res.negotiate(err);						
+			return res.redirect("/yieldMeasurementType/view");	
+			});	    	
         });
 	},	
 

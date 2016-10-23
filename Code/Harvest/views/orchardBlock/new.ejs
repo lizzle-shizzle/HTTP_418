@@ -1,0 +1,80 @@
+<div class="container" ng-app="MainModule" ng-controller="MainController">
+	<div class="row jumbo">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="jumbotron">
+				<form action="/orchardBlock/create" method="post" name="frmCreateOrchardBlock" id="frmCreateOrchardBlock">  
+				<fieldset>
+					<legend>New Orchard Block</legend>
+						<div>
+							<label for="orchardBlockName">Name</label>
+							<input class="form-control" type="text" name="orchardBlockName" ng-model="createOrchardBlockFrm.orchardBlockName" placeholder="A5" required>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockName.$dirty && frmCreateOrchardBlock.orchardBlockName.$error.text">Not a valid name!</span>
+						</div>
+						<br/>
+						<div>
+							<label for="orchardBlockHectares">Hectares</label>
+							<input class="form-control" type="text" name="orchardBlockHectares" ng-model="createOrchardBlockFrm.orchardBlockHectares" placeholder="20" required>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.orchardBlockHectares.$dirty && frmCreateOrchardBlock.orchardBlockHectares.$error.text">Not a valid size!</span>
+						</div>
+						<br/>
+						<div>
+							<label for="selectIrrigationType">Irrigation Type</label>
+							<select class="form-control" name="selectIrrigationType" id="selectIrrigationType" ng-model="frmCreateOrchardBlock.irrigationType">
+				                 <option value="" disabled>Select Irrigation Type</option>                          
+				                 <% _.each(data.irrigation, function(irrigationTypes) { %>
+				                     <option value="<%= irrigationTypes.id %>"><%= irrigationTypes.name %></option> 
+				                 <% }) %>
+				             </select>
+						</div>
+						<br/>
+						<div>
+							<label for="selectCropType">Crop Type</label>
+							<select class="form-control" name="selectCropType" id="selectCropType" ng-model="frmCreateOrchardBlock.cropType">
+				                 <option value="" disabled>Select Crop Type</option>   
+				                 <% _.each(cropdata.crop, function(cropTypes) { %>
+				                     <option value="<%= cropTypes.id %>"><%= cropTypes.name %></option> 
+				                 <% }) %>
+				             </select>
+						</div>
+						<br/>
+						<div>
+							<label for="selectCultivationFrequency">Cultivation Frequency</label>
+							<select class="form-control" name="selectCultivationFrequency" id="selectCultivationFrequency" ng-model="frmCreateOrchardBlock.cultivationFrequency">
+				                 <option value="" disabled>Select Cultivation Frequency</option>   
+				                 <% _.each(cultivationdata.cultivation, function(cultivationFrequency) { %>
+				                     <option value="<%= cultivationFrequency.id %>"><%= cultivationFrequency.name %></option> 
+				                 <% }) %>
+				             </select>
+						</div>
+						<br/>
+						<div>
+							<label for="selectYieldMeasurement">Yield Measurement Type</label>
+							<select class="form-control" name="<select class="form-control" name="selectYieldMeasurement" id="selectYieldMeasurement" ng-model="frmCreateOrchardBlock.yieldMeasurement">
+				                 <option value="" disabled>Select Yield Measurement Type</option>   
+				                 <% _.each(yielmeasuredata.yieldMeasure, function(yieldMeasure) { %>
+				                     <option value="<%= yieldMeasure.id %>"><%= yieldMeasure.name %></option> 
+				                 <% }) %>
+				             </select>
+						</div>
+						<br/>
+						<div>
+							<label for="plantDate">Date Planted</label>
+							<input class="form-control" type="date" name="plantDate" ng-model="createOrchardBlockFrm.date" required>							
+							<span ng-show="frmCreateOrchardBlock.plantDate.$dirty && frmCreateOrchardBlock.plantDate.$error.required">Required!</span>
+							<span ng-show="frmCreateOrchardBlock.plantDate.$dirty && frmCreateOrchardBlock.plantDate.$error.date">Not a valid date!</span>
+						</div>
+						<br/>
+						<button type="submit" class="btn" ng-click="click()" ng-disabled="frmCreateOrchardBlock.$invalid">
+                            <span ng-show="!createFrm.loading">Create Orchard Block</span>
+                            <span class="overlord-loading-spinner fa fa-spinner" ng-show="createOrchardBlockFrm.loading"></span>
+                            <span ng-show="createFrm.loading">Creating Your Orchard Block...</span>
+                        </button>	
+						<input type="hidden" name="_csrf" value="<%= _csrf %>" />		
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

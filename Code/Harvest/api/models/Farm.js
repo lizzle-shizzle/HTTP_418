@@ -58,6 +58,21 @@ module.exports = {
     orchards: {
       collection: 'orchardBlock',
       via: 'farm',      
+    },
+    //A farm can have many irrigation types
+    irrigationTypes: {
+      collection: 'IrrigationType',
+      via: 'farm',      
+    },
+    //A farm can have many crop types
+    cropTypes: {
+      collection: 'CropType',
+      via: 'farm',      
+    },
+     //A farm can have many cultivation Frequencies
+    cultivationFrequencies: {
+      collection: 'CultivationFrequency',
+      via: 'farm',      
     }
   }
 };

@@ -48,20 +48,17 @@ module.exports = {
   },
 
     create: function (req, res) {
-    //redirect to homepage if user not logged in
     if (!req.session.me) {
         return res.view('homepage');
       }
-      // Create crop type from pramaters sent from -> new.ejs     
-    //Create new crop type, get crop type id and add to orchardblock
-        CultivationFrequency.create({name: req.param("newCultivationFrequency")}, function(err, irrigation) {
-            //If there is an error 
-        //return appropiate error message
+      User.findOne({id: req.session.me})
+      .populate("farms")
+      .exec(function (err, user) {
+        CultivationFrequency.create({name: req.param("newCultivationFrequency"), farm: user.farms[0]}, function(err, cultivation) {
         if(err) return res.negotiate(err);
-      
-      //if successfull send 200 response
-      return res.redirect("/cultivationFrequency/view");            
+        return res.redirect("/cultivationFrequency/view");            
         });
+      });
   },
 
   edit: function(req, res) {    

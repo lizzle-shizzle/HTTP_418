@@ -23,26 +23,26 @@ module.exports = {
 
     //An orchard block can only have one irrigation type
     irrigationType: {
-      type: 'string'
-      //model: 'irrigationType'
+      //type: 'string'
+      model: 'irrigationType'
     },
 
     //An orchard block can only have one crop type
     cropType: {
-      type: 'string'
-      //model: 'cropType'
+      //type: 'string'
+      model: 'cropType'
     },
 
     //An orchard block can only have one cultivation frequency
     cultivationFrequency: {
-      type: 'string'
-      //model: 'cultivationFrequency'
+      //type: 'string'
+      model: 'cultivationFrequency'
     },
 
     //An orchard block can only have one yield measurement type
     yieldMeasurementType: {
-      type: 'string'
-      //model: 'yieldMeasurementType'
+      //type: 'string'
+      model: 'yieldMeasurementType'
     },
 
     //An orchard block can only have one planted date

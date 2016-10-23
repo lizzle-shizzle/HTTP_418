@@ -64,13 +64,17 @@ module.exports = {
 		}
 		// Create crop type from pramaters sent from -> new.ejs	    
 		//Create new crop type, get crop type id and add to orchardblock
-		CropType.create({name: req.param("newCropType")}, function(err, crop) {
+		User.findOne({id: req.session.me})
+	      .populate("farms")
+	      .exec(function (err, user) {
+		CropType.create({name: req.param("newCropType"), farm: user.farms[0]}, function(err, crop) {
 			//If there is an error 
 			//return appropiate error message
 			if(err) return res.negotiate(err);
 			
 			//if successfull send 200 response
 			return res.redirect("/cropType/view");			    	
+		});
 		});
 	},
 
