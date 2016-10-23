@@ -1,11 +1,46 @@
 /**
  * ForemanController
  *
+<<<<<<< HEAD
+ * @description :: Server-side logic for managing foremen
+=======
  * @description :: Server-side logic for managing Foremen
+>>>>>>> refs/remotes/origin/master
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 module.exports = {
+	maintainForemanAllocations: function(req, res, next) {
+		if (!req.session.me) {
+	      return res.view('homepage');
+	    }
+
+		User.findOne({id: req.session.me})
+		.populate("farms")
+		.exec(function (err, user) {
+			//If there is an error 
+	    	//return appropiate error message
+			if(err) return res.negotiate(err);
+
+			//get foreman linked to user and fetch all
+			Foreman.find({farmer: req.session.me})			
+			.exec(function(err, foremen) {
+				if(err) return res.negotiate(err);
+
+                //send all foremen linked to user to the createWorker thingy
+                return res.view('foreman/maintainForemanOrchardAllocation', {data: {foremen}});
+            });				
+        });
+	},
+	editAllocation: function(req, res, next) {
+	    User.findOne(req.param('id'), function foundUser(err, user) {
+	      if (err) return next(err);
+	      if (!user) return next();
+	      res.view({
+	        user: user
+	      });
+	    });
+	},
 	//load page to create foreman
 	newForeman: function(req, res){
 		//if no one is logged in, return homepage
@@ -88,10 +123,21 @@ module.exports = {
 			//If there is an error 
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
+			//get farm linked to user and fetch all orchidblocks
+			Foreman.find({farm: user.farms[0].id})			
+			.exec(function(err, orchidblock) {
+				if(err) return res.negotiate(err);
 
-			//If there is no farm, create a new one
-			// if(user.farms[0] == null)
-        	// 	return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
+				//now find all croptypes
+				CropType.find().exec(function(err, cropType) {
+					if(err) return res.negotiate(err);
+
+					//send all orchid blocks linked to farm and croptypes that exist
+					res.view({data: {orchid: orchidblock,
+						type: cropType}, 
+					layout: "signedInLayout", title: "Create crop type"});
+				});				
+			});
 		});
 
 		Foreman.find()
@@ -103,6 +149,16 @@ module.exports = {
 				layout: "signedInLayout"
 			});
 		});
+	},
+  	viewAllocation: function(req, res, next) {
+	    User.findOne(req.param('id'), function foundUser(err, user) {
+	      if (err) return next(err);
+	      if (!user) return next();
+	      res.view({
+	        user: user
+	      });
+	    });
 	}
+	
 };
 

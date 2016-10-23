@@ -1,26 +1,7 @@
-var app = angular.module('Harvest', ['ngRoute']);
-app.controller('selectCropType', function($scope) {
-	$scope.cropType = [
-	{"Type" : "Avocado", "Soil" : "Base"},
-	{"Type" : "Mango", "Soil" : "Sour"},
-	{"Type" : "Macadamia", "Soil" : "Dry"}
-];
+var app = angular.module('Harvest', []);
+	app.controller("checkOrch", function($scope) {
+    $scope.orchards = ["A", "B", "C", "D"];
 });
-
-app.config(function($routeProvider/*, $locationProvider*/) {	
-	$routeProvider
-		.when('/CropType', {
-			templateUrl: "./viewCropType.html",
-			controller: "selectCropType"
-		})
-		.when('/Create', {
-			templateUrl: "./createCroptype.html",
-			controller: "Log"
-		})
-		.when("/Edit", {
-			templateUrl: "./editCropType.html",
-			controller: "selectCropType"
-		})
-		/*.otherwise({redirectTo: "/"})*/;
-		//$locationProvider.html5Mode({enabled: true, requireBase: false});
+	app.controller('selectForeman', function($scope) {
+    $scope.foremen = ["Sam", "Fred", "Lionel", "Simon"];
 });
