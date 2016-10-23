@@ -36,7 +36,7 @@ var myApp = angular.module("myApp", []);
 
 					//get middle of farm
 					middleLat = totLat/size;
-					console.log(middleLong = totLong/size);
+					middleLong = totLong/size;
 
 					//draw map
 					initMap();					

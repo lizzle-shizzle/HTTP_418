@@ -76,7 +76,7 @@ module.exports = {
 
       OrchardBlock.findOne({id: req.param("id")}).exec(function(err, orchardBlock) {
           if(err) return res.negotiate(err);          
-          res.view({data: {
+          res.view("OrchardBlock/edit", {data: {
             type: orchardBlock,
             id: req.param("id")}, 
           layout: "signedInLayout", title: "Edit Orchard Block"});

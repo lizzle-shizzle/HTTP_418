@@ -182,14 +182,53 @@
 				\item\textbf{Editing a farm} -
 				Editing a farm contains the same inputs and validation as when creating a farm. This ensures that no invalid data is stored when updating a farm. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the main page where the updated farm details are reflected.
 				
-				\item\textbf{Adding a orchard block} -
-				Some description. 
+				\item\textbf{Adding an orchard block} -
+				The create page for orchard block contains input fields and select boxes that the user uses to input the required data. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. Name, Hectares and date Planted requires the user to enter data. Farm Name is optional. The rest are select boxes limiting the possible data the user can enter to only valid data. The select boxes are optional. Date planted requires the user to enter date values, hectares requires numerical values. Error messages are displayed when any incorrect data is entered or no data is entered where required. the Create Orchard Blokc button is disabled ff any of the inputs are invalid. This ensures that the user does not enter any invalid data. If submition is successfull the user is taken to the main page where the details of the farm are displayed.
 				
-				\item\textbf{Viewing a orchard block} -
-				Some description.
+				\item\textbf{Viewing an orchard block} -
+				Viewing an orchard block uses a dorp down for the user to select orchard blocks to view or edit. No validation needs to happen here. When successfully navigating to the edit page of an orchard block the correct details of the orchard block will be shown and be ready to edit.
 				
-				\item\textbf{Editing a orchard block} -
-				Some description.
+				\item\textbf{Editing an orchard block} -
+				Editing an orchard block contains the same inputs and validation as when creating an orchard block. This ensures that no invalid data is stored when updating an orchard block. Once everything is valid, the Update Details button is enabled. Apon successfull submition the user is taken back to the view orchard block page where the updated details are reflected.							
+				
+				\item \textbf{Adding a crop type} -
+				When adding a crop type there is only one input box. Name is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a crop type} -
+				Viewing crop types consists of a table that contains an edit button next to the crop type. This ensures that the correct crop type is selected for editing.
+				
+				\item \textbf{Editing a crop type} -
+				Editing a crop type uses the same validation as adding a crop type. Apon successfull submition the user is redirected back to view crop type where the updated details are reflected.
+				
+				\item \textbf{Adding an irrigation type} -
+				When adding an irrigation type there is only one input box. Name is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing an irrigation type} -
+				Viewing irrigation types consists of a table that contains an edit button next to the irrigation type. This ensures that the correct irrigation type is selected for editing.
+				
+				\item \textbf{Editing an irrigation type} -
+				Editing an irrigation type uses the same validation as adding an irrigation type. Apon successfull submition the user is redirected back to view irrigation type where the updated details are reflected.
+				
+				\item \textbf{Adding a cultivation frequency} -
+				When adding a cultivation frequency there is only one input box. Cultivation frequency is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a cultivation frequency} -
+				Viewing cultivation frequencies consists of a table that contains an edit button next to the cultivation frequency. This ensures that the correct cultivation frequency is selected for editing.
+				
+				\item \textbf{Editing a cultivation frequency} -
+				Editing a cultivation frequency uses the same validation as adding a cultivation frequency. Apon successfull submition the user is redirected back to view cultivation frequencies where the updated details are reflected.
+				
+				\item \textbf{Adding a yield measurement type} -
+				When adding a yield measurement type there is only one input box. A yield measurement type is required and does not have a max amount of characters. When the input box is valid the add button will be enabled. This ensures that only valid data is sent to the server.
+				
+				\item \textbf{Viewing a yield measurement type} -
+				Viewing yield measurement types consists of a table that contains an edit button next to the yield measurement type. This ensures that the correct yield measurement type is selected for editing.
+				
+				\item \textbf{Editing a yield measurement type} -
+				Editing a yield measurement type uses the same validation as adding a yield measurement type. Apon successfull submition the user is redirected back to view yield measurement types where the updated details are reflected.
+				
+				\item \textbf{Viewing the heatmap} -
+				Viewing the heatmap only requires the user to be logged in. Other than that there is no other validation that is needed to view the heatmap since it automatically collects the correct data.
 			\end{itemize}
 		\subsection{Short-comings of Implemented Functionality}
 			\begin{itemize}
@@ -203,57 +242,56 @@
 				There is no way to pass any gracefull error messages to the user if submition fails.
 				
 				\item\textbf{Adding a orchard block} -
-				Some description. 
+				Only one coordinate can be added per orchard block. Some blocks might be rectangular or long and one coordinate might not be enough to cover the whole orchard block on the heat map.
 				
-				\item\textbf{Viewing a orchard block} -
-				Some description.
+				%\item\textbf{Viewing a orchard block} -
+				%Some description.
 				
 				\item\textbf{Editing a orchard block} -
-				Some description.
+				Only one coordinate can be added or changed per orchard block. Some blocks might be rectangular or long and one coordinate might not be enough to cover the whole orchard block on the heat map.
+				
+				\item \textbf{Adding/Viewing/Editing crop type, cultivation frequency, irrigation type, yield measurement type}
+				Only one detail is added at the moment, there are no additional or fine grained details to provide more insight for the farmer.
+				
+				\item Currently there is no current gracefull way of sending error messages to the user if some error occurs. At the moment the server just returns some ugly white screen with very confusing error messages.
+				
+				\item Currently there is no 'cancel' button to press if a user accidenlty clicked on an add or edit button. This might confuse a user as he might not know that he can navigate to the previous page.
 			\end{itemize}
-		\subsection{Missing Functionality}
-			\begin{itemize}
-				\item\textbf{Viewing heat map} -
-				Some description.
-			\end{itemize}
+		\subsection{Missing Functionality}			
+				No missing functionality			
 		\subsection{Unit Test Report for Farm Module}
-			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+			This module consists mainly CRUD operations that do not require unit testing as it relies on the built in API's of the framework.
 	\section{Employee Module}
 		\subsection{Functionality which is Correctly Implemented}
 			\begin{itemize}
 				\item\textbf{Adding a foreman} -
-				Some description. 
+				The page for adding foreman contains input fields so that the user can input their foremen's necessary details. Each input field has certain criteria, which is tested for compliance to ensure incorrect data is not entered. The First Name and Last Name fields ensure that the user doesn't enter more than 120 characters. The Username field ensures that the user doesn't enter more than 120 characters. The Password field only allow passwords of a maximum of 120 characters. The Create Foreman button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Create Foreman button is enabled. Once submission is successful, the user will be redirected to the View Foremen Page (details are specified below).
 				
 				\item\textbf{Viewing a foreman} -
-				Some description.
+				The View Foremen page displays a table with all the foremen that are currently listed under the current user. This table displays every foreman's full name and Username and each foreman has an Edit button to allow for changes to be made to their details by the user.
 				
 				\item\textbf{Editing a foreman} -
-				Some description.
+				The edit form contains input fields that are populated with the foreman's current information. The First Name and Last Name fields ensure that the user doesn't enter more than 120 characters. The Username field ensures that the user doesn't enter more than 120 characters. The Password field ensures that the user doesn't enter more than 120 characters. The Edit Foreman button is disabled until all inputs have valid data entered into them. This ensures that none of the fields are empty and that all data entered is valid. Once everything is valid, the Edit Foreman button is enabled.
+				
 			\end{itemize}
 		\subsection{Short-comings of Implemented Functionality}
 			\begin{itemize}
-				\item\textbf{Adding a foreman} -
-				Some description. 
-				
-				\item\textbf{Viewing a foreman} -
-				Some description.
-				
-				\item\textbf{Editing a foreman} -
-				Some description.
+				\item\textbf{Adding/editing a foreman} -
+				Currently there is no way of sending an error message to the user if adding or updating a foreman fails. Currenlty the server crashes and that might confuse the user.							
 			\end{itemize}
-		\subsection{Missing Functionality}
-			\begin{itemize}
-				\item\textbf{Maintaining worker-foreman assignments} -
-				Some description.
-				
-				\item\textbf{Viewing worker-foreman assignments} -
-				Some description.
-				
-				\item\textbf{Viewing foreman-orchard Block allocations} -
-				Some description.
-			\end{itemize}
-		\subsection{Unit Test Report for Employee Module}
-			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+%		\subsection{Missing Functionality}
+%			\begin{itemize}
+%				\item\textbf{Maintaining worker-foreman assignments} -
+%				Some description.
+%				
+%				\item\textbf{Viewing worker-foreman assignments} -
+%				Some description.
+%				
+%				\item\textbf{Viewing foreman-orchard Block allocations} -
+%				Some description.
+%			\end{itemize}
+%		\subsection{Unit Test Report for Employee Module}
+%			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
 			
 	\section{Reporting Module}
 		\subsection{Functionality which is Correctly Implemented}
@@ -261,26 +299,26 @@
 				\item\textbf{Nothing yet} -
 				The entire reporting module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on reporting. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
 			\end{itemize}
-		\subsection{Short-comings of Implemented Functionality}
-			\begin{itemize}
-				\item{Not applicable}
-			\end{itemize}
-		\subsection{Missing Functionality}
-			\begin{itemize}
-				\item\textbf{Generating a statistical report of worker performance} -
-				Some description.
-				
-				\item\textbf{Generating a statistical report regarding crop yield per orchard} -
-				Some description.
-				
-				\item\textbf{Generating a revenue report regarding seasonal yields} -
-				Some description.
-				
-				\item\textbf{Generating a statistical report regarding time taken to yield specific crops} -
-				Some description.
-			\end{itemize}
-		\subsection{Unit Test Report for Reporting Module}
-			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+%		\subsection{Short-comings of Implemented Functionality}
+%			\begin{itemize}
+%				\item{Not applicable}
+%			\end{itemize}
+%		\subsection{Missing Functionality}
+%			\begin{itemize}
+%				\item\textbf{Generating a statistical report of worker performance} -
+%				Some description.
+%				
+%				\item\textbf{Generating a statistical report regarding crop yield per orchard} -
+%				Some description.
+%				
+%				\item\textbf{Generating a revenue report regarding seasonal yields} -
+%				Some description.
+%				
+%				\item\textbf{Generating a statistical report regarding time taken to yield specific crops} -
+%				Some description.
+%			\end{itemize}
+%		\subsection{Unit Test Report for Reporting Module}
+%			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
 			
 	\section{Notification Module}
 		\subsection{Functionality which is Correctly Implemented}
@@ -288,65 +326,65 @@
 				\item\textbf{Nothing yet} -
 				The entire notifications module is considered a nice-to-hve functionality as the bulk of the system's functionality and value doesn't rely heavily on notifications. Thus, we have decided to focus on the other more important functionailities and leave this one for after the bulk of the functionality is complete. Therefore, testing cannot be performed on this module at this time.
 			\end{itemize}
-		\subsection{Short-comings of Implemented Functionality}
-			\begin{itemize}
-				\item{Not applicable}
-			\end{itemize}
-		\subsection{Missing Functionality}
-			\begin{itemize}
-				\item\textbf{Viewing notifications} -
-				Some description.
-				
-				\item\textbf{Deleting notifications} -
-				Some description.
-				
-				\item\textbf{Notifying farmer regarding foreman’s locations} -
-				Some description.
-				
-				\item\textbf{Notifying farmer of foreman’s activity history every half an hour} -
-				Some description.			
-			\end{itemize}
-		\subsection{Unit Test Report for Notifications Module}
-			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
+%		\subsection{Short-comings of Implemented Functionality}
+%			\begin{itemize}
+%				\item{Not applicable}
+%			\end{itemize}
+%		\subsection{Missing Functionality}
+%			\begin{itemize}
+%				\item\textbf{Viewing notifications} -
+%				Some description.
+%				
+%				\item\textbf{Deleting notifications} -
+%				Some description.
+%				
+%				\item\textbf{Notifying farmer regarding foreman’s locations} -
+%				Some description.
+%				
+%				\item\textbf{Notifying farmer of foreman’s activity history every half an hour} -
+%				Some description.			
+%			\end{itemize}
+%		\subsection{Unit Test Report for Notifications Module}
+%			The unit tests for this module are currently incomplete. Once complete, this section will show a screenshot of the results of the unit tests, along with an evaluation of these results.
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 3
 %----------------------------------------------------------------------------------------
 
-\chapterimage{avocados.png}
-\chapter{Functional Features to be Tested}
+%\chapterimage{avocados.png}
+%\chapter{Functional Features to be Tested}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 4
 %----------------------------------------------------------------------------------------
 
-\chapterimage{litchis.png} % Chapter heading image
+%\chapterimage{litchis.png} % Chapter heading image
 
-\chapter{Test Cases}
+%\chapter{Test Cases}
 	
 %----------------------------------------------------------------------------------------
 %	CHAPTER 5
 %----------------------------------------------------------------------------------------
 
-\chapterimage{farmer.png} % Chapter heading image
+%\chapterimage{farmer.png} % Chapter heading image
 
-\chapter{Item Pass/Fail Criteria}
+%\chapter{Item Pass/Fail Criteria}
 	
 %----------------------------------------------------------------------------------------
 %	CHAPTER 6
 %----------------------------------------------------------------------------------------
 
-\chapterimage{mangoes2.png} % Chapter heading image
+%\chapterimage{mangoes2.png} % Chapter heading image
 
-\chapter{Test Deliverables}
+%\chapter{Test Deliverables}
 	
 %----------------------------------------------------------------------------------------
 %	CHAPTER 7
 %----------------------------------------------------------------------------------------
 
-\chapterimage{macadamias2.png} % Chapter heading image
+%\chapterimage{macadamias2.png} % Chapter heading image
 
-\chapter{Detailed Test Results}
+%\chapter{Detailed Test Results}
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 8
@@ -355,6 +393,8 @@
 \chapterimage{litchiTree.png} % Chapter heading image
 
 \chapter{Other}
+	\section{Use of mock objects}
+	We have used mock data to test functionality of components that require data from other components. The way we did this is by checking the database for any existing data, if there is no data then mock data gets insterted into the database.
 
 %----------------------------------------------------------------------------------------
 %	CHAPTER 9
@@ -362,5 +402,6 @@
 \chapterimage{avocados2.png} % Chapter heading image
 
 \chapter{Conclusions and Recommendations}
+We currently have some missing functionality that could greatly improve user experience, such as proper error handling aand showing error messages to the user. But on the positive side validation plays a large role in making sure that only valid data gets sent to the server, thereby preventing the server from crashing.
 
 \end{document}
