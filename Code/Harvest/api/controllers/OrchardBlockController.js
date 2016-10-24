@@ -108,12 +108,26 @@ module.exports = {
     .exec(function (err, user) {
       if(err) return res.negotiate(err);
 
+
       if(user.farms[0] == null)
         return res.view('farm/new', {layout: "signedInLayout", title: "Create new farm"});
-      OrchardBlock.find()     
+        
+      OrchardBlock.findOne({id: req.param("orchBlock")})     
       .exec(function(err, orchardBlocks) {
-        if(err) return res.negotiate(err);    
-        res.json({block: orchardBlocks});       
+        IrrigationType.find({id: orchardBlocks.irrigationType})
+        .exec(function (err, irrigation) {
+          CropType.find({id: orchardBlocks.cropType})
+          .exec(function (err, crop) {
+            CultivationFrequency.find({id: orchardBlocks.cultivationFrequency})
+            .exec(function (err, cultivation) {
+              YieldMeasurementType.find({id: orchardBlocks.yieldMeasurementType})
+              .exec(function (err, yieldMeasure) {
+                if(err) return res.negotiate(err);    
+                res.json({block: orchardBlocks, irrig: irrigation, cro: crop, cult: cultivation, yield: yieldMeasure});       
+              });
+            });
+          });
+        });
       });
     });
   }

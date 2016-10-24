@@ -7,7 +7,7 @@
 					<form name="frmViewOrchardBlock" >
 						<div ng-app="OrchardBlockModule" ng-controller="OrchardBlockController">
 							<label for="selectOrchardBlock">Orchard Block</label>	
-							<select class="form-control" name="orchardBlock" id="orchardBlock" ng-model="frmViewOrchardBlock.orchardBlock" onchange="changeOrchardBlock()">
+							<select class="form-control" name="orchardBlock" id="orchardBlock" ng-model="frmViewOrchardBlock.orchardBlock" onchange="changeOrchardBlock(this)">
 				                 <option value="" disabled>Select Orchard Block</option>   
 				                 <% _.each(block.orchardBlocks, function(orchardBlocks) { %>
 				                     <option value="<%= orchardBlocks.id %>"><%= orchardBlocks.name %></option> 

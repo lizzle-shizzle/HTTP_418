@@ -34,7 +34,7 @@ module.exports = {
 			.exec(function(err, yieldType) {
 				if(err) return res.negotiate(err);				
 				//send all orchard blocks linked to farm
-				res.view("YieldMeasurementType/view", {type: yieldType, 
+				res.view("yieldMeasurementType/view", {type: yieldType, 
 				layout: "signedInLayout"});
 			});
 		});        
@@ -53,7 +53,7 @@ module.exports = {
 	    	//return appropiate error message
 			if(err) return res.negotiate(err);
 			
-			res.view("YieldMeasurementType/new", {layout: "signedInLayout", title: "Create yield measurement type"});				
+			res.view("yieldMeasurementType/new", {layout: "signedInLayout", title: "Create yield measurement type"});				
 		});				
 	},
 
@@ -91,7 +91,7 @@ module.exports = {
 
 				
 				//send all orchard blocks linked to farm and croptypes that exist
-				res.view("YieldMeasurementType/edit", {data: {
+				res.view("yieldMeasurementType/edit", {data: {
 					type: yieldType,
 					id: req.param("id")},					
 				layout: "signedInLayout", title: "Edit yield measurement type"});
